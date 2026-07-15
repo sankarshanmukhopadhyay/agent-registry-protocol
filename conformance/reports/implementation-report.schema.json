@@ -1,0 +1,9 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "title":"ARPA Implementation Report",
+  "type":"object",
+  "required":["report_version","generated_at","implementation","implementation_version","arpa_version","modules","checks","passed","known_limitations"],
+  "properties":{
+    "report_version":{"type":"string"},"generated_at":{"type":"string","format":"date-time"},"implementation":{"type":"string"},"implementation_version":{"type":"string"},"arpa_version":{"type":"string"},"modules":{"type":"array","items":{"type":"string"}},"profile_claims":{"type":"array","items":{"type":"string"}},"checks":{"type":"array","items":{"type":"object","required":["name","passed"],"properties":{"name":{"type":"string"},"passed":{"type":"boolean"},"output":{"type":"string"}}}},"passed":{"type":"boolean"},"known_limitations":{"type":"array","items":{"type":"string"}}
+  }
+}

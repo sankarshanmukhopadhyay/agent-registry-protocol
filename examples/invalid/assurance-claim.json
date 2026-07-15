@@ -1,0 +1,20 @@
+{
+  "_violation": "subject.artifact_digest is not a well-formed sha256 digest, and effective_until is absent. Spec §19.9 requires binding to the evaluated artifact (a verifiable digest), and §19.7/§19.11 require a validity period so an evaluator can determine expired vs valid status without out-of-band knowledge.",
+  "record_id": "assurance-bad-1",
+  "record_type": "assurance_claim",
+  "schema_version": "1.0.0",
+  "issuer": "assurance-provider:example.net",
+  "subject": {
+    "agent_id": "agentreg:example.org:agent-123",
+    "version": "agent-version-2.4.1",
+    "artifact_digest": "unspecified"
+  },
+  "issued_at": "2026-07-10T00:00:00Z",
+  "effective_from": "2026-07-10T00:00:00Z",
+  "status": "valid",
+  "profile": "high-assurance-procurement-agent",
+  "control_results": [
+    { "control_id": "AUTH-001", "result": "pass" }
+  ],
+  "proof": {}
+}

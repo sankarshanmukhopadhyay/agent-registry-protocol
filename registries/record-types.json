@@ -1,0 +1,86 @@
+{
+  "registry": "record-types",
+  "version": "0.4.0",
+  "entries": [
+    {
+      "id": "agent-core",
+      "status": "active"
+    },
+    {
+      "id": "agent-version",
+      "status": "active"
+    },
+    {
+      "id": "deployment",
+      "status": "active"
+    },
+    {
+      "id": "relationship",
+      "status": "active"
+    },
+    {
+      "id": "key-binding",
+      "status": "active"
+    },
+    {
+      "id": "service-endpoint",
+      "status": "active"
+    },
+    {
+      "id": "capability-declaration",
+      "status": "active"
+    },
+    {
+      "id": "capability-verification",
+      "status": "active"
+    },
+    {
+      "id": "assurance-claim",
+      "status": "active"
+    },
+    {
+      "id": "authority-envelope",
+      "status": "active"
+    },
+    {
+      "id": "status",
+      "status": "active"
+    },
+    {
+      "id": "event",
+      "status": "active"
+    },
+    {
+      "id": "decision-receipt",
+      "status": "active"
+    },
+    {
+      "id": "execution-receipt",
+      "status": "active"
+    },
+    {
+      "id": "governance",
+      "status": "active"
+    },
+    {
+      "id": "recognition",
+      "status": "active"
+    },
+    {
+      "id": "redress-record",
+      "status": "active"
+    },
+    {
+      "id": "agent-description-reference",
+      "status": "active"
+    },
+    {
+      "id": "identifier-alias",
+      "status": "active"
+    },
+    {
+      "id": "conformance-declaration",
+      "status": "active"
+    }
+  ]
+}

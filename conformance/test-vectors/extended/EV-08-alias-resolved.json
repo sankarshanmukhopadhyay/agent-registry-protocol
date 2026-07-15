@@ -1,0 +1,18 @@
+{
+  "id": "EV-08",
+  "kind": "alias_graph",
+  "input": {
+    "start": "did:example:a",
+    "bindings": {
+      "did:example:a": [
+        "agentreg:example:a"
+      ]
+    }
+  },
+  "expected": [
+    "resolved",
+    [
+      "agentreg:example:a"
+    ]
+  ]
+}

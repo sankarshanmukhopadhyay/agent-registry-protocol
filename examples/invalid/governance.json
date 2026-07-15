@@ -1,0 +1,15 @@
+{
+  "_violation": "appeal_procedure and redress_process are both absent. Spec §27.1 requires a conforming registry to publish or resolve an appeal procedure and redress process as governance metadata; §27.3/§27.5 treat appeal and redress as protocol concerns, not optional narrative.",
+  "record_id": "governance-bad-1",
+  "record_type": "governance",
+  "schema_version": "1.0.0",
+  "issuer": "governance-authority:example.org:procurement-board",
+  "subject": "agentreg:example.org:agent-123",
+  "issued_at": "2026-04-01T00:00:00Z",
+  "effective_from": "2026-04-01T00:00:00Z",
+  "status": "active",
+  "governance_authority": "governance-authority:example.org:procurement-board",
+  "governance_framework_id": "framework:example.org:procurement-2026",
+  "policy_version": "2026.1",
+  "proof": {}
+}

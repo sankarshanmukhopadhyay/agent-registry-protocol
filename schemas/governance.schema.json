@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sankarshanmukhopadhyay.github.io/agent-registry-protocol/schemas/governance.schema.json",
+  "title": "ARPA Governance Record",
+  "description": "Governance metadata a conforming registry publishes or resolves for a governed subject. Spec \u00a727.1.",
+  "x-spec-section": "27.1",
+  "allOf": [
+    {
+      "$ref": "common/envelope.schema.json"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "record_type": {
+          "const": "governance"
+        },
+        "governance_authority": {
+          "type": "string",
+          "minLength": 1
+        },
+        "governance_framework_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "policy_version": {
+          "type": "string"
+        },
+        "admission_criteria": {
+          "type": "string"
+        },
+        "monitoring_obligations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "suspension_and_revocation_rules": {
+          "type": "string"
+        },
+        "appeal_procedure": {
+          "type": "string",
+          "format": "uri"
+        },
+        "dispute_venue": {
+          "type": "string"
+        },
+        "incident_reporting_endpoint": {
+          "type": "string",
+          "format": "uri"
+        },
+        "recognition_policy": {
+          "type": "string"
+        },
+        "transparency_policy": {
+          "type": "string"
+        },
+        "emergency_process": {
+          "type": "string"
+        },
+        "restoration_process": {
+          "type": "string"
+        },
+        "data_retention_rules": {
+          "type": "string"
+        },
+        "redress_process": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "governance_authority",
+        "governance_framework_id",
+        "policy_version",
+        "appeal_procedure",
+        "redress_process"
+      ]
+    }
+  ]
+}

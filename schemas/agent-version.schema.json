@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sankarshanmukhopadhyay.github.io/agent-registry-protocol/schemas/agent-version.schema.json",
+  "title": "ARPA Agent Version Record",
+  "description": "Identifies a materially distinct agent version. Spec \u00a712.3, \u00a716.1.",
+  "x-spec-section": "12.3",
+  "allOf": [
+    {
+      "$ref": "common/envelope.schema.json"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "record_type": {
+          "const": "agent_version"
+        },
+        "agent_id": {
+          "type": "string",
+          "pattern": "^agentreg:[A-Za-z0-9.-]{1,253}:[A-Za-z0-9._:-]{1,255}$"
+        },
+        "version_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "semantic_version": {
+          "type": "string"
+        },
+        "artifact_digest": {
+          "type": "string",
+          "pattern": "^sha256:[A-Fa-f0-9]{64}$"
+        },
+        "release_timestamp": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "policy_bundle_id": {
+          "type": "string"
+        },
+        "model_constraints": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "predecessor_version": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "agent_id",
+        "version_id",
+        "artifact_digest",
+        "release_timestamp"
+      ]
+    }
+  ]
+}

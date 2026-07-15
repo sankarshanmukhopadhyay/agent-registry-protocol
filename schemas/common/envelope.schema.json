@@ -1,0 +1,88 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sankarshanmukhopadhyay.github.io/agent-registry-protocol/schemas/common/envelope.schema.json",
+  "title": "ARPA Record Envelope",
+  "description": "Common envelope required of every ARPA record, per spec/draft-agent-registry-protocol-architecture.md §13.1. Record-family schemas compose this via allOf and add type-specific properties.",
+  "x-spec-section": "13.1",
+  "type": "object",
+  "properties": {
+    "record_id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Unique identifier for this record instance."
+    },
+    "record_type": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Discriminator identifying which record-family schema applies."
+    },
+    "schema_version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$",
+      "description": "Semantic version of the record-family JSON Schema, per spec §33.1. Independent of the specification document version."
+    },
+    "issuer": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Identifier of the entity that issued this record."
+    },
+    "subject": {
+      "description": "The entity or entities this record is about. MAY be a string identifier or a structured object for multi-party subjects (e.g. Authority Envelope §18.2).",
+      "oneOf": [
+        { "type": "string", "minLength": 1 },
+        { "type": "object" }
+      ]
+    },
+    "issued_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "effective_from": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "effective_until": {
+      "type": ["string", "null"],
+      "format": "date-time"
+    },
+    "status": {
+      "type": "string",
+      "minLength": 1
+    },
+    "supersedes": {
+      "type": "array",
+      "items": { "type": "string" },
+      "default": []
+    },
+    "evidence": {
+      "type": "array",
+      "items": { "type": "string" },
+      "default": []
+    },
+    "governance": {
+      "type": "array",
+      "items": { "type": "string" },
+      "default": []
+    },
+    "proof": {
+      "type": "object",
+      "description": "Tamper-evidence for the record. MAY be an empty object only in non-normative illustrative examples; a conforming implementation MUST populate proof for any record it treats as authoritative (§13.2, §29).",
+      "properties": {
+        "type": { "type": "string" },
+        "verification_method": { "type": "string" },
+        "created": { "type": "string", "format": "date-time" },
+        "value": { "type": "string" }
+      }
+    }
+  },
+  "required": [
+    "record_id",
+    "record_type",
+    "schema_version",
+    "issuer",
+    "subject",
+    "issued_at",
+    "effective_from",
+    "status"
+  ]
+}

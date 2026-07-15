@@ -1,0 +1,66 @@
+{
+  "registry": "relationship-types",
+  "version": "0.4.0",
+  "entries": [
+    {
+      "id": "developed_by",
+      "status": "active"
+    },
+    {
+      "id": "published_by",
+      "status": "active"
+    },
+    {
+      "id": "deployed_by",
+      "status": "active"
+    },
+    {
+      "id": "operated_by",
+      "status": "active"
+    },
+    {
+      "id": "controlled_by",
+      "status": "active"
+    },
+    {
+      "id": "sponsored_by",
+      "status": "active"
+    },
+    {
+      "id": "accountable_to",
+      "status": "active"
+    },
+    {
+      "id": "assured_by",
+      "status": "active"
+    },
+    {
+      "id": "governed_by",
+      "status": "active"
+    },
+    {
+      "id": "hosted_by",
+      "status": "active"
+    },
+    {
+      "id": "acts_for",
+      "status": "active"
+    },
+    {
+      "id": "benefits",
+      "status": "active"
+    },
+    {
+      "id": "supervises",
+      "status": "active"
+    },
+    {
+      "id": "delegates_to",
+      "status": "active"
+    },
+    {
+      "id": "recognized_by",
+      "status": "active"
+    }
+  ]
+}

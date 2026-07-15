@@ -1,0 +1,122 @@
+{
+  "registry": "event-types",
+  "version": "0.4.0",
+  "entries": [
+    {
+      "id": "agent.registered",
+      "status": "active"
+    },
+    {
+      "id": "agent.metadata.updated",
+      "status": "active"
+    },
+    {
+      "id": "agent.suspended",
+      "status": "active"
+    },
+    {
+      "id": "agent.restored",
+      "status": "active"
+    },
+    {
+      "id": "agent.retired",
+      "status": "active"
+    },
+    {
+      "id": "agent.superseded",
+      "status": "active"
+    },
+    {
+      "id": "controller.changed",
+      "status": "active"
+    },
+    {
+      "id": "operator.changed",
+      "status": "active"
+    },
+    {
+      "id": "alias.added",
+      "status": "active"
+    },
+    {
+      "id": "alias.revoked",
+      "status": "active"
+    },
+    {
+      "id": "key.rotated",
+      "status": "active"
+    },
+    {
+      "id": "deployment.created",
+      "status": "active"
+    },
+    {
+      "id": "deployment.quarantined",
+      "status": "active"
+    },
+    {
+      "id": "delegation.issued",
+      "status": "active"
+    },
+    {
+      "id": "delegation.suspended",
+      "status": "active"
+    },
+    {
+      "id": "delegation.revoked",
+      "status": "active"
+    },
+    {
+      "id": "assurance.issued",
+      "status": "active"
+    },
+    {
+      "id": "assurance.expired",
+      "status": "active"
+    },
+    {
+      "id": "assurance.suspended",
+      "status": "active"
+    },
+    {
+      "id": "assurance.revoked",
+      "status": "active"
+    },
+    {
+      "id": "incident.opened",
+      "status": "active"
+    },
+    {
+      "id": "incident.updated",
+      "status": "active"
+    },
+    {
+      "id": "incident.closed",
+      "status": "active"
+    },
+    {
+      "id": "appeal.filed",
+      "status": "active"
+    },
+    {
+      "id": "appeal.decided",
+      "status": "active"
+    },
+    {
+      "id": "status.restored",
+      "status": "active"
+    },
+    {
+      "id": "recognition.added",
+      "status": "active"
+    },
+    {
+      "id": "recognition.changed",
+      "status": "active"
+    },
+    {
+      "id": "recognition.withdrawn",
+      "status": "active"
+    }
+  ]
+}

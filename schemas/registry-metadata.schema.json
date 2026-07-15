@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sankarshanmukhopadhyay.github.io/agent-registry-protocol/schemas/registry-metadata.schema.json",
+  "title": "ARPA Registry Metadata",
+  "type": "object",
+  "properties": {
+    "registry_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "arpa_version": {
+      "type": "string"
+    },
+    "supported_modules": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "supported_profiles": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ]
+      }
+    },
+    "authoritative_base_uri": {
+      "type": "string",
+      "format": "uri"
+    },
+    "conformance_declaration_uri": {
+      "type": "string",
+      "format": "uri"
+    },
+    "event_retention_seconds": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "status_max_age_seconds": {
+      "type": "integer",
+      "minimum": 0
+    }
+  },
+  "required": [
+    "registry_id",
+    "name",
+    "arpa_version",
+    "supported_modules",
+    "supported_profiles",
+    "authoritative_base_uri",
+    "conformance_declaration_uri"
+  ],
+  "additionalProperties": false
+}

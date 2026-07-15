@@ -1,0 +1,20 @@
+{
+  "record_id": "record-deployment-prod-in-1",
+  "record_type": "deployment",
+  "schema_version": "1.0.0",
+  "issuer": "registry:example.org",
+  "subject": "agentreg:example.org:agent-123",
+  "issued_at": "2026-06-02T00:00:00Z",
+  "effective_from": "2026-06-02T00:00:00Z",
+  "effective_until": null,
+  "status": "active",
+  "deployment_id": "deployment-prod-in-1",
+  "agent_id": "agentreg:example.org:agent-123",
+  "version_id": "agent-version-2.4.1",
+  "operator": "relationship-operator-1",
+  "runtime_identifiers": ["runtime:example.org:prod-in-1:node-a"],
+  "region_or_jurisdiction": ["IN"],
+  "deployment_profile": "prod-in-1",
+  "operational_status": "available",
+  "proof": {}
+}

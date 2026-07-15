@@ -1,0 +1,9 @@
+{
+  "id": "EV-14",
+  "kind": "lifecycle_transition",
+  "input": {
+    "prior": "suspended",
+    "new": "restricted"
+  },
+  "expected": true
+}

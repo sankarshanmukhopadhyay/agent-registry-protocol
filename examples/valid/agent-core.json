@@ -1,0 +1,36 @@
+{
+  "record_id": "record-agent-123",
+  "record_type": "agent_core",
+  "schema_version": "1.0.0",
+  "issuer": "registry:example.org",
+  "subject": "agentreg:example.org:agent-123",
+  "issued_at": "2026-07-15T00:00:00Z",
+  "effective_from": "2026-07-15T00:00:00Z",
+  "effective_until": null,
+  "status": "active",
+  "agent_id": "agentreg:example.org:agent-123",
+  "name": "Procurement Review Agent",
+  "agent_class": "delegated_transactional_agent",
+  "registration_status": "active",
+  "current_version": "agent-version-2.4.1",
+  "controllers": ["relationship-controller-1"],
+  "operators": ["relationship-operator-1"],
+  "accountable_entities": ["relationship-accountable-1"],
+  "description": "record-description-1",
+  "service_endpoints": ["endpoint-1"],
+  "keys": ["key-binding-runtime-1", "key-binding-admin-1"],
+  "lineage": {
+    "predecessors": ["agentreg:example.org:agent-100"],
+    "successors": []
+  },
+  "governance": ["governance-financial-agent-1"],
+  "status_endpoints": ["https://registry.example.org/agents/agent-123/status"],
+  "created_at": "2026-07-15T00:00:00Z",
+  "updated_at": "2026-07-15T00:00:00Z",
+  "proof": {
+    "type": "JcsEddsa2026",
+    "verification_method": "registry:example.org#signing-key-1",
+    "created": "2026-07-15T00:00:00Z",
+    "value": "z3f9c8b1a2e7d6c5b4a3928170..."
+  }
+}

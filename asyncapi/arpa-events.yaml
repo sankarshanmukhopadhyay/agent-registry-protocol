@@ -1,0 +1,22 @@
+asyncapi: 3.0.0
+info:
+  title: ARPA Event Contract
+  version: 0.4.0
+  description: Replayable, attributable and gap-detectable registry events.
+channels:
+  registryEvents:
+    address: events
+    messages:
+      registryEvent:
+        $ref: '#/components/messages/RegistryEvent'
+operations:
+  receiveRegistryEvents:
+    action: receive
+    channel: {$ref: '#/channels/registryEvents'}
+components:
+  messages:
+    RegistryEvent:
+      payload:
+        $ref: '../schemas/event.schema.json'
+      correlationId:
+        location: $message.payload#/correlation_id

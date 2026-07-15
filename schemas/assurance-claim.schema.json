@@ -1,0 +1,101 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sankarshanmukhopadhyay.github.io/agent-registry-protocol/schemas/assurance-claim.schema.json",
+  "title": "ARPA Assurance Claim",
+  "description": "A bounded, evidence-backed claim about controls evaluated for a subject, version, and scope. Spec \u00a719.7.",
+  "x-spec-section": "19.7",
+  "allOf": [
+    {
+      "$ref": "common/envelope.schema.json"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "record_type": {
+          "const": "assurance_claim"
+        },
+        "subject": {
+          "type": "object",
+          "properties": {
+            "agent_id": {
+              "type": "string",
+              "pattern": "^agentreg:[A-Za-z0-9.-]{1,253}:[A-Za-z0-9._:-]{1,255}$"
+            },
+            "version": {
+              "type": "string"
+            },
+            "artifact_digest": {
+              "type": "string",
+              "pattern": "^sha256:[A-Fa-f0-9]{64}$"
+            },
+            "deployment_profile": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "agent_id",
+            "version",
+            "artifact_digest"
+          ]
+        },
+        "profile": {
+          "type": "string",
+          "minLength": 1
+        },
+        "control_results": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "control_id": {
+                "type": "string"
+              },
+              "result": {
+                "type": "string",
+                "enum": [
+                  "pass",
+                  "fail",
+                  "not_applicable",
+                  "indeterminate"
+                ]
+              },
+              "evidence_ref": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "control_id",
+              "result"
+            ]
+          },
+          "minItems": 1
+        },
+        "limitations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "valid",
+            "conditional",
+            "expired",
+            "suspended",
+            "revoked",
+            "superseded",
+            "indeterminate"
+          ]
+        }
+      },
+      "required": [
+        "subject",
+        "profile",
+        "control_results",
+        "status",
+        "effective_until"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "agent_id": "agentreg:example.org:agent-123",
+  "description_digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+  "status_endpoint": "https://registry.example.org/agents/agentreg:example.org:agent-123/status",
+  "critical": [
+    "agent_id",
+    "description_digest"
+  ]
+}

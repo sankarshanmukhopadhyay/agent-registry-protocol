@@ -1,0 +1,38 @@
+{
+  "vector_id": "TV-C-01",
+  "profile": "C",
+  "check": "authority_evaluation",
+  "description": "Delegated Authority Registry (Profile C): procurement action within the per-transaction limit and below the approval threshold MUST allow without conditions. Mirrors spec Appendix A.3/B.1.",
+  "spec_refs": ["18.2", "18.5", "28.2"],
+  "input": {
+    "profile": "C",
+    "agent_status": {
+      "registration": "active",
+      "operation": "available",
+      "security": "normal",
+      "observed_at": "2026-07-15T10:00:00Z",
+      "valid_until": "2026-07-15T10:05:00Z"
+    },
+    "authority_envelope": {
+      "effective_from": "2026-07-15T00:00:00Z",
+      "effective_until": "2026-08-15T00:00:00Z",
+      "action_classes": ["purchase.prepare", "purchase.submit"],
+      "resource_scope": ["account:procurement:regional"],
+      "jurisdiction_scope": ["IN"],
+      "prohibitions": ["related-party-transactions", "supplier-bank-detail-changes"],
+      "required_approvals": [
+        { "condition": "amount > 25000", "approval": "human-procurement-owner" }
+      ],
+      "limits": { "per_transaction": 50000, "aggregate": 250000 }
+    },
+    "request": {
+      "action": "purchase.submit",
+      "resource": "account:procurement:regional",
+      "jurisdiction": "IN",
+      "amount": 12000,
+      "time": "2026-07-15T10:00:30Z",
+      "policy_max_status_age_seconds": 120
+    }
+  },
+  "expected_outcome": "allow"
+}

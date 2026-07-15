@@ -1,0 +1,19 @@
+{
+  "schema_version": "1.0.0",
+  "issuer": "registry:example.org",
+  "issued_at": "2026-07-15T00:00:00Z",
+  "effective_from": "2026-07-15T00:00:00Z",
+  "effective_until": null,
+  "status": "active",
+  "proof": {},
+  "record_id": "capver-1",
+  "record_type": "capability-verification",
+  "subject": "agentreg:example.org:agent-123",
+  "tested_subject": "agentreg:example.org:agent-123",
+  "tested_version": "1.0.0",
+  "test_method": "arpa-test-profile:purchase-prepare-v1",
+  "test_environment": "isolated-test",
+  "evaluator": "assurance:example.net",
+  "result": "pass",
+  "evidence_reference": "evidence:capver-1"
+}

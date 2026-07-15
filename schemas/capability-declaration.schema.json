@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sankarshanmukhopadhyay.github.io/agent-registry-protocol/schemas/capability-declaration.schema.json",
+  "title": "ARPA Capability Declaration",
+  "allOf": [
+    {
+      "$ref": "common/envelope.schema.json"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "record_type": {
+          "const": "capability-declaration"
+        },
+        "capability_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "claim_class": {
+          "const": "self_declared"
+        },
+        "vocabulary": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        },
+        "input_types": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "output_types": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "side_effects": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "risk_class": {
+          "enum": [
+            "informational",
+            "advisory",
+            "data_accessing",
+            "workflow_modifying",
+            "transaction_preparing",
+            "transaction_submitting",
+            "asset_controlling",
+            "identity_affecting",
+            "rights_affecting",
+            "safety_critical",
+            "irreversible"
+          ]
+        },
+        "limitations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "record_type",
+        "capability_id",
+        "claim_class",
+        "version",
+        "risk_class"
+      ]
+    }
+  ]
+}

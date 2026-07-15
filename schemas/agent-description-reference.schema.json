@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sankarshanmukhopadhyay.github.io/agent-registry-protocol/schemas/agent-description-reference.schema.json",
+  "title": "ARPA Agent Description Reference",
+  "allOf": [
+    {
+      "$ref": "common/envelope.schema.json"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "record_type": {
+          "const": "agent-description-reference"
+        },
+        "uri": {
+          "type": "string",
+          "format": "uri"
+        },
+        "media_type": {
+          "type": "string"
+        },
+        "canonicalization": {
+          "enum": [
+            "JCS",
+            "raw-bytes",
+            "none"
+          ]
+        },
+        "digest_algorithm": {
+          "const": "sha-256"
+        },
+        "digest": {
+          "type": "string",
+          "pattern": "^[A-Fa-f0-9]{64}$"
+        },
+        "claim_class": {
+          "enum": [
+            "self_declared",
+            "verified",
+            "authoritative"
+          ]
+        },
+        "retrieved_at": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "record_type",
+        "uri",
+        "media_type",
+        "canonicalization",
+        "digest_algorithm",
+        "digest",
+        "claim_class"
+      ]
+    }
+  ]
+}

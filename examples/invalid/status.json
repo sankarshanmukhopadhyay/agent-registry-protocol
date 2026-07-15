@@ -1,0 +1,11 @@
+{
+  "_violation": "observed_at and valid_until are both absent. Spec §20.11 requires operational and security status responses to include observed_at and valid_until/maximum age so a relying party can evaluate freshness (§28.4, ARPA-STATUS-STALE) rather than trust an undated snapshot.",
+  "agent_id": "agentreg:example.org:agent-123",
+  "registration": "active",
+  "operation": "available",
+  "authority": "valid",
+  "assurance": "valid",
+  "security": "normal",
+  "effective_at": "2026-07-15T10:00:00Z",
+  "source": "registry:example.org"
+}

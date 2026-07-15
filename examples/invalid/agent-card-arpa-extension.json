@@ -1,0 +1,5 @@
+{
+  "agent_id": "not-agentreg",
+  "description_digest": "bad",
+  "status_endpoint": "not-uri"
+}

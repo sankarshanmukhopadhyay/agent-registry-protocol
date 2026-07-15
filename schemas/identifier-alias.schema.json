@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sankarshanmukhopadhyay.github.io/agent-registry-protocol/schemas/identifier-alias.schema.json",
+  "title": "ARPA Identifier Alias",
+  "allOf": [
+    {
+      "$ref": "common/envelope.schema.json"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "record_type": {
+          "const": "identifier-alias"
+        },
+        "canonical_id": {
+          "type": "string",
+          "pattern": "^agentreg:"
+        },
+        "alias": {
+          "type": "string",
+          "minLength": 1
+        },
+        "namespace": {
+          "type": "string"
+        },
+        "binding_type": {
+          "enum": [
+            "equivalent_subject",
+            "implementation_anchor",
+            "legacy_identifier",
+            "service_identifier"
+          ]
+        },
+        "competence_basis": {
+          "type": "string"
+        },
+        "alias_status": {
+          "enum": [
+            "active",
+            "suspended",
+            "revoked",
+            "expired",
+            "superseded"
+          ]
+        }
+      },
+      "required": [
+        "record_type",
+        "canonical_id",
+        "alias",
+        "namespace",
+        "binding_type",
+        "competence_basis",
+        "alias_status"
+      ]
+    }
+  ]
+}

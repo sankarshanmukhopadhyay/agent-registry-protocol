@@ -1,0 +1,16 @@
+{
+  "id": "EV-01",
+  "kind": "digest",
+  "input": {
+    "document": {
+      "record_id": "r1",
+      "record_type": "agent_core",
+      "subject": "agentreg:example:a",
+      "status": "active",
+      "proof": {
+        "value": "ignored"
+      }
+    }
+  },
+  "expected": "sha256:b7ff84fa15a0602195ee4546b45347b9ee3ad4d49d5e4a4c9151ef94bc1e4849"
+}

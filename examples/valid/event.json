@@ -1,0 +1,13 @@
+{
+  "event_id": "event-1021",
+  "event_type": "agent.suspended",
+  "subject": "agentreg:example.org:agent-123",
+  "sequence": 1021,
+  "occurred_at": "2026-07-15T10:00:00Z",
+  "effective_at": "2026-07-15T10:00:00Z",
+  "issuer": "registry:example.org",
+  "reason_code": "security_review",
+  "scope": { "restrictions": ["no_transaction_submission"] },
+  "record_refs": ["record-agent-123"],
+  "proof": {}
+}

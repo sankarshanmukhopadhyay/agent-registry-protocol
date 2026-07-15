@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sankarshanmukhopadhyay.github.io/agent-registry-protocol/schemas/recognition.schema.json",
+  "title": "ARPA Recognition Record",
+  "description": "An explicit statement that one governance/registry domain recognizes another's records, decisions, or assurance. Spec \u00a726.2.",
+  "x-spec-section": "26.2",
+  "allOf": [
+    {
+      "$ref": "common/envelope.schema.json"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "record_type": {
+          "const": "recognition"
+        },
+        "recognizing_domain": {
+          "type": "string",
+          "minLength": 1
+        },
+        "recognized_domain": {
+          "type": "string",
+          "minLength": 1
+        },
+        "recognized_record_types": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
+        },
+        "recognized_assurance_profiles": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "recognized_governance_decisions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "status_handling": {
+          "type": "string"
+        },
+        "exclusions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "transformation_rules": {
+          "type": "string"
+        },
+        "dispute_rules": {
+          "type": "string"
+        },
+        "withdrawal_semantics": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "recognizing_domain",
+        "recognized_domain",
+        "recognized_record_types",
+        "status_handling"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "_violation": "authority_envelope_id and authority_decision_receipt are both absent. Spec §25.2 requires an Execution Receipt to reference the authority envelope and decision receipt that authorized the action, and §6.8/design principle 10 require consequential action to be reconstructable — a receipt with no authority reference cannot support that reconstruction.",
+  "record_id": "execution-receipt-bad-1",
+  "record_type": "execution_receipt",
+  "schema_version": "1.0.0",
+  "issuer": "runtime:example.org:prod-in-1:node-a",
+  "subject": "agentreg:example.org:agent-123",
+  "issued_at": "2026-07-15T10:04:00Z",
+  "effective_from": "2026-07-15T10:04:00Z",
+  "status": "final",
+  "task_id": "task-purchase-bad-1",
+  "agent_id": "agentreg:example.org:agent-123",
+  "agent_version": "agent-version-2.4.1",
+  "deployment_id": "deployment-prod-in-1",
+  "action_class": "purchase.submit",
+  "start_time": "2026-07-15T10:03:50Z",
+  "completion_time": "2026-07-15T10:04:00Z",
+  "result": "success",
+  "proof": {}
+}

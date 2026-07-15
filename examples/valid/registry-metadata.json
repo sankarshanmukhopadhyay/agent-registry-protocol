@@ -1,0 +1,15 @@
+{
+  "registry_id": "registry:reference",
+  "name": "ARPA Reference Registry",
+  "arpa_version": "0.4.0",
+  "supported_modules": [
+    "ARPA-Core"
+  ],
+  "supported_profiles": [
+    "A"
+  ],
+  "authoritative_base_uri": "https://registry.example.org",
+  "conformance_declaration_uri": "https://registry.example.org/records/conformance",
+  "event_retention_seconds": 86400,
+  "status_max_age_seconds": 300
+}

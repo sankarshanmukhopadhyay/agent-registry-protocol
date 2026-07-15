@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.0.0",
+  "issuer": "registry:example.org",
+  "issued_at": "2026-07-15T00:00:00Z",
+  "effective_from": "2026-07-15T00:00:00Z",
+  "effective_until": null,
+  "status": "active",
+  "proof": {},
+  "record_id": "alias-1",
+  "record_type": "identifier-alias",
+  "subject": "agentreg:example.org:agent-123",
+  "canonical_id": "agentreg:example.org:agent-123",
+  "alias": "did:web:agents.example.org:agent-123",
+  "namespace": "did",
+  "binding_type": "equivalent_subject",
+  "competence_basis": "governance:example",
+  "alias_status": "active"
+}

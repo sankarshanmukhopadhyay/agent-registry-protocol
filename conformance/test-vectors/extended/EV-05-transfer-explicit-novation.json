@@ -1,0 +1,17 @@
+{
+  "id": "EV-05",
+  "kind": "transfer",
+  "input": {
+    "assertions": [
+      "delegations",
+      "assurance_claims"
+    ],
+    "explicit_novations": [
+      "delegations"
+    ]
+  },
+  "expected": {
+    "delegations": "remains_valid",
+    "assurance_claims": "requires_reissuance"
+  }
+}

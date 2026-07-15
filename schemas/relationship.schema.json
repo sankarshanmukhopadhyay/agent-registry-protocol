@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sankarshanmukhopadhyay.github.io/agent-registry-protocol/schemas/relationship.schema.json",
+  "title": "ARPA Relationship Record",
+  "description": "Typed relationship between an agent and another entity. Spec \u00a713.4.",
+  "x-spec-section": "13.4",
+  "allOf": [
+    {
+      "$ref": "common/envelope.schema.json"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "record_type": {
+          "const": "relationship"
+        },
+        "relationship_type": {
+          "type": "string",
+          "enum": [
+            "developed_by",
+            "published_by",
+            "deployed_by",
+            "operated_by",
+            "controlled_by",
+            "sponsored_by",
+            "accountable_to",
+            "assured_by",
+            "governed_by",
+            "hosted_by",
+            "acts_for",
+            "benefits",
+            "supervises",
+            "delegates_to",
+            "recognized_by"
+          ]
+        },
+        "related_entity": {
+          "type": "string",
+          "minLength": 1
+        },
+        "scope": {
+          "type": "object"
+        },
+        "authority_source": {
+          "type": "string"
+        },
+        "revocation": {
+          "type": "object",
+          "properties": {
+            "status_endpoint": {
+              "type": "string",
+              "format": "uri"
+            }
+          }
+        }
+      },
+      "required": [
+        "relationship_type",
+        "related_entity",
+        "authority_source"
+      ]
+    }
+  ]
+}

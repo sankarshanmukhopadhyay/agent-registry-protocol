@@ -1,0 +1,32 @@
+{
+  "vector_id": "TV-B-03",
+  "profile": "B",
+  "check": "authority_evaluation",
+  "description": "Accountable Agent Registry (Profile B): a status record older than the relying party's maximum-age policy MUST yield indeterminate (ARPA-STATUS-STALE), not a silent allow. Negative case for §20.11/§28.2 step 5.",
+  "spec_refs": ["20.11", "28.2", "34.2"],
+  "input": {
+    "profile": "B",
+    "agent_status": {
+      "registration": "active",
+      "operation": "available",
+      "security": "normal",
+      "observed_at": "2026-07-15T09:50:00Z",
+      "valid_until": "2026-07-15T10:30:00Z"
+    },
+    "authority_envelope": {
+      "effective_from": "2026-01-01T00:00:00Z",
+      "effective_until": "2026-12-31T00:00:00Z",
+      "action_classes": ["ticket.create"],
+      "prohibitions": [],
+      "required_approvals": [],
+      "limits": {}
+    },
+    "request": {
+      "action": "ticket.create",
+      "resource": "project:example-workspace",
+      "time": "2026-07-15T10:00:00Z",
+      "policy_max_status_age_seconds": 120
+    }
+  },
+  "expected_outcome": "indeterminate"
+}

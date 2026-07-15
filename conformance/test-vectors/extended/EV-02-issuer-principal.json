@@ -1,0 +1,9 @@
+{
+  "id": "EV-02",
+  "kind": "issuer_competence",
+  "input": {
+    "relationship_type": "acts_for",
+    "issuer_role": "principal"
+  },
+  "expected": true
+}

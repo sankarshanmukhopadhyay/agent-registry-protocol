@@ -1,0 +1,38 @@
+{
+  "registry": "proof-purposes",
+  "version": "0.4.0",
+  "entries": [
+    {
+      "id": "registry_administration",
+      "status": "active"
+    },
+    {
+      "id": "runtime_identity",
+      "status": "active"
+    },
+    {
+      "id": "delegation_issuance",
+      "status": "active"
+    },
+    {
+      "id": "receipt_signing",
+      "status": "active"
+    },
+    {
+      "id": "security_suspension",
+      "status": "active"
+    },
+    {
+      "id": "assurance_issuance",
+      "status": "active"
+    },
+    {
+      "id": "alias_binding",
+      "status": "active"
+    },
+    {
+      "id": "governance_decision",
+      "status": "active"
+    }
+  ]
+}

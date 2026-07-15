@@ -1,0 +1,9 @@
+{
+  "id": "EV-03",
+  "kind": "issuer_competence",
+  "input": {
+    "relationship_type": "acts_for",
+    "issuer_role": "registry_operator"
+  },
+  "expected": false
+}

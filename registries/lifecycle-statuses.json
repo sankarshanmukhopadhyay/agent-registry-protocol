@@ -1,0 +1,50 @@
+{
+  "registry": "lifecycle-statuses",
+  "version": "0.4.0",
+  "entries": [
+    {
+      "id": "provisioned",
+      "status": "active"
+    },
+    {
+      "id": "pending_assurance",
+      "status": "active"
+    },
+    {
+      "id": "active",
+      "status": "active"
+    },
+    {
+      "id": "restricted",
+      "status": "active"
+    },
+    {
+      "id": "suspended",
+      "status": "active"
+    },
+    {
+      "id": "quarantined",
+      "status": "active"
+    },
+    {
+      "id": "compromised",
+      "status": "active"
+    },
+    {
+      "id": "revoked",
+      "status": "active"
+    },
+    {
+      "id": "retired",
+      "status": "active"
+    },
+    {
+      "id": "superseded",
+      "status": "active"
+    },
+    {
+      "id": "under_investigation",
+      "status": "active"
+    }
+  ]
+}

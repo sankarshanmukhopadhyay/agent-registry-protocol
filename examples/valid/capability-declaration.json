@@ -1,0 +1,17 @@
+{
+  "schema_version": "1.0.0",
+  "issuer": "registry:example.org",
+  "issued_at": "2026-07-15T00:00:00Z",
+  "effective_from": "2026-07-15T00:00:00Z",
+  "effective_until": null,
+  "status": "active",
+  "proof": {},
+  "record_id": "capdecl-1",
+  "record_type": "capability-declaration",
+  "subject": "agentreg:example.org:agent-123",
+  "capability_id": "purchase.prepare",
+  "claim_class": "self_declared",
+  "version": "1.0.0",
+  "risk_class": "transaction_preparing",
+  "limitations": []
+}

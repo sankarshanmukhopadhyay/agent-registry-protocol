@@ -1,0 +1,9 @@
+{
+  "vector_id": "TV-A-02",
+  "profile": "A",
+  "check": "identifier_resolution",
+  "description": "Discovery Registry (Profile A): an identifier the registry has never issued MUST return not_found.",
+  "spec_refs": ["12.6"],
+  "input": { "known": false, "terminal": false, "authorized_caller": true },
+  "expected_outcome": "not_found"
+}

@@ -1,0 +1,141 @@
+openapi: 3.1.0
+info:
+  title: ARPA Protocol API
+  version: 0.4.0
+  description: Machine-readable contract for ARPA Core and optional modules. Registration does not imply authority, assurance or trust.
+servers:
+  - url: http://127.0.0.1:8000
+paths:
+  /health:
+    get:
+      operationId: health
+      responses:
+        '200': {description: Healthy}
+  /registry:
+    get:
+      operationId: getRegistryMetadata
+      responses:
+        '200':
+          description: Registry metadata
+          content: {application/json: {schema: {$ref: '../schemas/registry-metadata.schema.json'}}}
+  /agents:
+    post:
+      operationId: registerAgent
+      requestBody:
+        required: true
+        content: {application/json: {schema: {$ref: '../schemas/agent-core.schema.json'}}}
+      responses:
+        '201': {description: Registered}
+        '409': {$ref: '#/components/responses/Problem'}
+  /agents/{agent_id}:
+    parameters:
+      - $ref: '#/components/parameters/AgentId'
+      - $ref: '#/components/parameters/At'
+    get:
+      operationId: resolveAgent
+      responses:
+        '200': {description: Current or point-in-time agent record}
+        '404': {$ref: '#/components/responses/Problem'}
+  /agents/{agent_id}/status:
+    parameters:
+      - $ref: '#/components/parameters/AgentId'
+      - $ref: '#/components/parameters/At'
+    get:
+      operationId: getAgentStatus
+      responses:
+        '200':
+          description: Multidimensional status
+          content: {application/json: {schema: {$ref: '../schemas/status.schema.json'}}}
+  /agents/{agent_id}/events:
+    parameters:
+      - $ref: '#/components/parameters/AgentId'
+      - name: after
+        in: query
+        schema: {type: integer, minimum: 0}
+    get:
+      operationId: listAgentEvents
+      responses:
+        '200': {description: Ordered events}
+  /aliases/{alias}:
+    parameters:
+      - name: alias
+        in: path
+        required: true
+        schema: {type: string}
+      - $ref: '#/components/parameters/At'
+    get:
+      operationId: resolveAlias
+      responses:
+        '200': {description: Alias resolution}
+        '409': {$ref: '#/components/responses/Problem'}
+  /records/{record_id}:
+    parameters:
+      - name: record_id
+        in: path
+        required: true
+        schema: {type: string}
+    get:
+      operationId: getRecord
+      responses:
+        '200': {description: Record}
+        '404': {$ref: '#/components/responses/Problem'}
+  /authority/evaluate:
+    post:
+      operationId: evaluateAuthority
+      requestBody:
+        required: true
+        content: {application/json: {schema: {type: object}}}
+      responses:
+        '200':
+          description: Authority decision and decision receipt
+        '501': {$ref: '#/components/responses/Problem'}
+  /reliance/evaluate:
+    post:
+      operationId: evaluateReliance
+      requestBody:
+        required: true
+        content: {application/json: {schema: {type: object}}}
+      responses:
+        '200': {description: Reliance decision}
+        '501': {$ref: '#/components/responses/Problem'}
+  /events:
+    get:
+      operationId: listEvents
+      parameters:
+        - name: after
+          in: query
+          schema: {type: integer, minimum: 0}
+      responses:
+        '200': {description: Replayable event stream}
+components:
+  parameters:
+    AgentId:
+      name: agent_id
+      in: path
+      required: true
+      schema: {type: string, pattern: '^agentreg:'}
+    At:
+      name: at
+      in: query
+      required: false
+      schema: {type: string, format: date-time}
+  schemas:
+    Problem:
+      type: object
+      required: [type, title, status, code]
+      properties:
+        type: {type: string, format: uri}
+        title: {type: string}
+        status: {type: integer}
+        code: {type: string}
+        detail: {type: string}
+        instance: {type: string}
+        correlation_id: {type: string}
+        reason_codes: {type: array, items: {type: string}}
+        retryable: {type: boolean}
+  responses:
+    Problem:
+      description: ARPA problem response
+      content:
+        application/problem+json:
+          schema: {$ref: '#/components/schemas/Problem'}

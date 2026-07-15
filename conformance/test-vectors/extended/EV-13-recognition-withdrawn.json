@@ -1,0 +1,14 @@
+{
+  "id": "EV-13",
+  "kind": "recognition",
+  "input": {
+    "status": "withdrawn",
+    "at": "2026-07-15T00:00:00Z"
+  },
+  "expected": [
+    false,
+    [
+      "recognition_withdrawn"
+    ]
+  ]
+}

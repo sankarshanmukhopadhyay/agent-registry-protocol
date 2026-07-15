@@ -1,0 +1,87 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sankarshanmukhopadhyay.github.io/agent-registry-protocol/schemas/event.schema.json",
+  "title": "ARPA Event Record",
+  "description": "A single event in a subject's or registry's ordered event stream. Uses its own envelope (\u00a724.3), not the common record envelope (\u00a713.1), because events are append-only and ordered by `sequence` rather than superseded by `supersedes`. Spec \u00a724.2, \u00a724.3.",
+  "x-spec-section": "24.3",
+  "type": "object",
+  "properties": {
+    "event_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "event_type": {
+      "type": "string",
+      "enum": [
+        "agent.registered",
+        "agent.suspended",
+        "agent.restored",
+        "agent.retired",
+        "agent.superseded",
+        "deployment.created",
+        "deployment.quarantined",
+        "delegation.issued",
+        "delegation.suspended",
+        "delegation.revoked",
+        "assurance.issued",
+        "assurance.expired",
+        "assurance.suspended",
+        "assurance.revoked",
+        "incident.opened",
+        "incident.updated",
+        "incident.closed",
+        "appeal.filed",
+        "appeal.decided",
+        "status.restored",
+        "recognition.added",
+        "recognition.changed",
+        "recognition.withdrawn"
+      ]
+    },
+    "subject": {
+      "type": "string",
+      "pattern": "^agentreg:[A-Za-z0-9.-]{1,253}:[A-Za-z0-9._:-]{1,255}$"
+    },
+    "sequence": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "occurred_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "effective_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "issuer": {
+      "type": "string",
+      "minLength": 1
+    },
+    "reason_code": {
+      "type": "string"
+    },
+    "scope": {
+      "type": "object"
+    },
+    "record_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "proof": {
+      "type": "object"
+    }
+  },
+  "required": [
+    "event_id",
+    "event_type",
+    "subject",
+    "sequence",
+    "occurred_at",
+    "effective_at",
+    "issuer",
+    "reason_code"
+  ]
+}

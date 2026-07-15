@@ -1,0 +1,20 @@
+{
+  "record_id": "record-agent-version-2.4.1",
+  "record_type": "agent_version",
+  "schema_version": "1.0.0",
+  "issuer": "registry:example.org",
+  "subject": "agentreg:example.org:agent-123",
+  "issued_at": "2026-06-01T00:00:00Z",
+  "effective_from": "2026-06-01T00:00:00Z",
+  "effective_until": null,
+  "status": "active",
+  "agent_id": "agentreg:example.org:agent-123",
+  "version_id": "agent-version-2.4.1",
+  "semantic_version": "2.4.1",
+  "artifact_digest": "sha256:a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2",
+  "release_timestamp": "2026-06-01T00:00:00Z",
+  "policy_bundle_id": "policy-bundle-procurement-7",
+  "model_constraints": ["model-family:example-llm-v3"],
+  "predecessor_version": "agent-version-2.3.0",
+  "proof": {}
+}

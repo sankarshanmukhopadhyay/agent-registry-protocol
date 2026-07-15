@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.0.0",
+  "issuer": "registry:example.org",
+  "issued_at": "2026-07-15T00:00:00Z",
+  "effective_from": "2026-07-15T00:00:00Z",
+  "effective_until": null,
+  "status": "active",
+  "proof": {},
+  "record_id": "description-1",
+  "record_type": "agent-description-reference",
+  "subject": "agentreg:example.org:agent-123",
+  "media_type": "application/json",
+  "canonicalization": "JCS",
+  "digest_algorithm": "sha-256",
+  "digest": "0000000000000000000000000000000000000000000000000000000000000000",
+  "claim_class": "self_declared",
+  "retrieved_at": null
+}

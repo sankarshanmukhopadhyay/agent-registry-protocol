@@ -1,0 +1,45 @@
+{
+  "id": "EV-12",
+  "kind": "delegation_chain",
+  "input": {
+    "chain": [
+      {
+        "actions": [
+          "purchase.prepare"
+        ],
+        "resources": [
+          "approved-suppliers"
+        ],
+        "jurisdictions": [
+          "IN"
+        ],
+        "per_transaction": 10000,
+        "prohibitions": [
+          "bank-detail-change"
+        ]
+      },
+      {
+        "actions": [
+          "purchase.prepare",
+          "purchase.submit"
+        ],
+        "resources": [
+          "approved-suppliers"
+        ],
+        "jurisdictions": [
+          "IN"
+        ],
+        "per_transaction": 10000,
+        "prohibitions": [
+          "bank-detail-change"
+        ]
+      }
+    ]
+  },
+  "expected": [
+    false,
+    [
+      "downstream_action_expansion"
+    ]
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "id": "EV-06",
+  "kind": "event_gap",
+  "input": {
+    "sequences": [
+      10,
+      11,
+      12
+    ]
+  },
+  "expected": false
+}

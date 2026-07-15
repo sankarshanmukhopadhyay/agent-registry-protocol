@@ -1,0 +1,38 @@
+{
+  "vector_id": "TV-C-02",
+  "profile": "C",
+  "check": "authority_evaluation",
+  "description": "Delegated Authority Registry (Profile C): an amount above the required-approval threshold MUST return allow_with_conditions enumerating the unmet approval, not a bare allow. Spec §18.5.",
+  "spec_refs": ["18.5", "28.2"],
+  "input": {
+    "profile": "C",
+    "agent_status": {
+      "registration": "active",
+      "operation": "available",
+      "security": "normal",
+      "observed_at": "2026-07-15T10:00:00Z",
+      "valid_until": "2026-07-15T10:05:00Z"
+    },
+    "authority_envelope": {
+      "effective_from": "2026-07-15T00:00:00Z",
+      "effective_until": "2026-08-15T00:00:00Z",
+      "action_classes": ["purchase.prepare", "purchase.submit"],
+      "resource_scope": ["account:procurement:regional"],
+      "jurisdiction_scope": ["IN"],
+      "prohibitions": ["related-party-transactions", "supplier-bank-detail-changes"],
+      "required_approvals": [
+        { "condition": "amount > 25000", "approval": "human-procurement-owner" }
+      ],
+      "limits": { "per_transaction": 50000, "aggregate": 250000 }
+    },
+    "request": {
+      "action": "purchase.submit",
+      "resource": "account:procurement:regional",
+      "jurisdiction": "IN",
+      "amount": 40000,
+      "time": "2026-07-15T10:00:30Z",
+      "policy_max_status_age_seconds": 120
+    }
+  },
+  "expected_outcome": "allow_with_conditions"
+}

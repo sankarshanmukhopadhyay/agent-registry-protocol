@@ -1,0 +1,100 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sankarshanmukhopadhyay.github.io/agent-registry-protocol/schemas/conformance-declaration.schema.json",
+  "title": "ARPA Conformance Declaration",
+  "allOf": [
+    {
+      "$ref": "common/envelope.schema.json"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "record_type": {
+          "const": "conformance-declaration"
+        },
+        "implementation_name": {
+          "type": "string"
+        },
+        "implementation_version": {
+          "type": "string"
+        },
+        "arpa_version": {
+          "type": "string"
+        },
+        "modules": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "ARPA-Core",
+              "ARPA-Relations",
+              "ARPA-Assurance",
+              "ARPA-Authority",
+              "ARPA-Evidence",
+              "ARPA-Federation"
+            ]
+          }
+        },
+        "profile": {
+          "enum": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ]
+        },
+        "identifier_schemes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "proof_suites": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "query_transports": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "event_transports": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "freshness_targets": {
+          "type": "object"
+        },
+        "revocation_targets": {
+          "type": "object"
+        },
+        "implementation_report": {
+          "type": "string"
+        },
+        "known_limitations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "record_type",
+        "implementation_name",
+        "implementation_version",
+        "arpa_version",
+        "modules",
+        "profile",
+        "identifier_schemes",
+        "query_transports",
+        "known_limitations"
+      ]
+    }
+  ]
+}

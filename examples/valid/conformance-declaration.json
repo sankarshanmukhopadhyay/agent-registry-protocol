@@ -1,0 +1,42 @@
+{
+  "schema_version": "1.0.0",
+  "issuer": "registry:example.org",
+  "issued_at": "2026-07-15T00:00:00Z",
+  "effective_from": "2026-07-15T00:00:00Z",
+  "effective_until": null,
+  "status": "active",
+  "proof": {},
+  "record_id": "conformance-reference",
+  "record_type": "conformance-declaration",
+  "subject": "registry:reference",
+  "implementation_name": "ARPA Reference Service",
+  "implementation_version": "0.4.0",
+  "arpa_version": "0.4.0",
+  "modules": [
+    "ARPA-Core",
+    "ARPA-Relations",
+    "ARPA-Authority",
+    "ARPA-Evidence"
+  ],
+  "profile": "A",
+  "identifier_schemes": [
+    "agentreg"
+  ],
+  "proof_suites": [],
+  "query_transports": [
+    "https"
+  ],
+  "event_transports": [
+    "polling"
+  ],
+  "freshness_targets": {
+    "status_max_age_seconds": 300
+  },
+  "revocation_targets": {
+    "maximum_propagation_seconds": 300
+  },
+  "implementation_report": "conformance/reports/reference-implementation-report.json",
+  "known_limitations": [
+    "Not production-ready"
+  ]
+}

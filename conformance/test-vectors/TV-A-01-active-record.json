@@ -1,0 +1,9 @@
+{
+  "vector_id": "TV-A-01",
+  "profile": "A",
+  "check": "identifier_resolution",
+  "description": "Discovery Registry (Profile A): a known, non-terminal identifier resolved by an authorized caller MUST return active_record.",
+  "spec_refs": ["12.6", "35.1"],
+  "input": { "known": true, "terminal": false, "authorized_caller": true },
+  "expected_outcome": "active_record"
+}

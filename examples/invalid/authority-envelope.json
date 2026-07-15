@@ -1,0 +1,21 @@
+{
+  "_violation": "revocation.cascade is missing, violating §18.7/§18.9 which require revocation to specify downstream propagation behavior, and delegation_mode uses an undefined mode string ('delegable_freely') rather than one of the six modes enumerated in §18.3.",
+  "record_id": "authority-bad-1",
+  "record_type": "authority_envelope",
+  "schema_version": "1.0.0",
+  "issuer": "did:example:principal",
+  "subject": {
+    "principal": "did:example:principal",
+    "agent": "agentreg:example.org:agent-123"
+  },
+  "issued_at": "2026-07-15T00:00:00Z",
+  "effective_from": "2026-07-15T00:00:00Z",
+  "effective_until": "2026-08-15T00:00:00Z",
+  "status": "active",
+  "action_classes": ["purchase.submit"],
+  "delegation_mode": "delegable_freely",
+  "revocation": {
+    "status_endpoint": "https://authority.example.org/authority-bad-1/status"
+  },
+  "proof": {}
+}

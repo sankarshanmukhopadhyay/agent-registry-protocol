@@ -1,0 +1,9 @@
+services:
+  arpa-reference:
+    build: .
+    ports: ["8000:8000"]
+    environment:
+      ARPA_DB: /data/arpa.db
+    volumes: ["arpa-data:/data"]
+volumes:
+  arpa-data: {}

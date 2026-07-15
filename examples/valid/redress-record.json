@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.0.0",
+  "issuer": "registry:example.org",
+  "issued_at": "2026-07-15T00:00:00Z",
+  "effective_from": "2026-07-15T00:00:00Z",
+  "effective_until": null,
+  "status": "active",
+  "proof": {},
+  "record_id": "redress-1",
+  "record_type": "redress-record",
+  "subject": "agentreg:example.org:agent-123",
+  "case_type": "appeal",
+  "target_record": "status-1",
+  "filed_by": "org:operator",
+  "filed_at": "2026-07-15T00:00:00Z",
+  "decision_authority": "governance:appeal-board",
+  "case_status": "under_review",
+  "reason_codes": [
+    "contested_attribution"
+  ],
+  "outcome": null,
+  "restoration_records": []
+}

@@ -1,0 +1,17 @@
+{
+  "_violation": "uri value 'registry.example.org/agents/agent-123' is not a well-formed URI (missing scheme), and purpose is absent though required by §13.6.",
+  "record_id": "endpoint-bad-1",
+  "record_type": "service_endpoint",
+  "schema_version": "1.0.0",
+  "issuer": "registry:example.org",
+  "subject": "agentreg:example.org:agent-123",
+  "issued_at": "2026-06-02T00:00:00Z",
+  "effective_from": "2026-06-02T00:00:00Z",
+  "status": "active",
+  "endpoint_id": "endpoint-bad-1",
+  "bound_subject": "deployment-prod-in-1",
+  "protocol": "https+arpa-query/1",
+  "uri": "registry.example.org/agents/agent-123",
+  "availability_status": "available",
+  "proof": {}
+}

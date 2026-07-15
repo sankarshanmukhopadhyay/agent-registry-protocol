@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sankarshanmukhopadhyay.github.io/agent-registry-protocol/schemas/redress-record.schema.json",
+  "title": "ARPA Redress Record",
+  "allOf": [
+    {
+      "$ref": "common/envelope.schema.json"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "record_type": {
+          "const": "redress-record"
+        },
+        "case_type": {
+          "enum": [
+            "correction",
+            "complaint",
+            "appeal",
+            "remediation",
+            "compensation"
+          ]
+        },
+        "target_record": {
+          "type": "string"
+        },
+        "filed_by": {
+          "type": "string"
+        },
+        "filed_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "decision_authority": {
+          "type": "string"
+        },
+        "case_status": {
+          "enum": [
+            "filed",
+            "acknowledged",
+            "under_review",
+            "decided",
+            "remediated",
+            "closed"
+          ]
+        },
+        "reason_codes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "outcome": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "restoration_records": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "record_type",
+        "case_type",
+        "target_record",
+        "filed_by",
+        "filed_at",
+        "decision_authority",
+        "case_status"
+      ]
+    }
+  ]
+}

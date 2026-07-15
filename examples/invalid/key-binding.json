@@ -1,0 +1,17 @@
+{
+  "_violation": "controller is absent (required per §13.5), and intended_use value 'runtime_identity_and_administration' is not one of the separated key uses required by §13.5 — key uses MUST be separated, not combined into a single binding.",
+  "record_id": "key-binding-bad-1",
+  "record_type": "key_binding",
+  "schema_version": "1.0.0",
+  "issuer": "registry:example.org",
+  "subject": "agentreg:example.org:agent-123",
+  "issued_at": "2026-05-01T00:00:00Z",
+  "effective_from": "2026-05-01T00:00:00Z",
+  "status": "active",
+  "bound_subject": "deployment-prod-in-1",
+  "key_id": "key-bad-1",
+  "key_type": "Ed25519",
+  "intended_use": "runtime_identity_and_administration",
+  "validity_interval": { "from": "2026-05-01T00:00:00Z" },
+  "proof": {}
+}

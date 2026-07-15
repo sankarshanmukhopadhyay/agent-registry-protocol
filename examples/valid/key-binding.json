@@ -1,0 +1,22 @@
+{
+  "record_id": "key-binding-runtime-1",
+  "record_type": "key_binding",
+  "schema_version": "1.0.0",
+  "issuer": "registry:example.org",
+  "subject": "agentreg:example.org:agent-123",
+  "issued_at": "2026-05-01T00:00:00Z",
+  "effective_from": "2026-05-01T00:00:00Z",
+  "effective_until": null,
+  "status": "active",
+  "bound_subject": "deployment-prod-in-1",
+  "key_id": "key-runtime-1",
+  "key_type": "Ed25519",
+  "intended_use": "runtime_identity",
+  "controller": "relationship-operator-1",
+  "validity_interval": {
+    "from": "2026-05-01T00:00:00Z",
+    "until": "2027-05-01T00:00:00Z"
+  },
+  "rotation_of": null,
+  "proof": {}
+}

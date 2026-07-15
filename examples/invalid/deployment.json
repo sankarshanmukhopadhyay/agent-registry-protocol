@@ -1,0 +1,16 @@
+{
+  "_violation": "operational_status 'running' is not one of the operational states enumerated in spec §20.8 (available, degraded, restricted, maintenance, offline, draining, quarantined, unknown).",
+  "record_id": "record-deployment-bad-1",
+  "record_type": "deployment",
+  "schema_version": "1.0.0",
+  "issuer": "registry:example.org",
+  "subject": "agentreg:example.org:agent-123",
+  "issued_at": "2026-06-02T00:00:00Z",
+  "effective_from": "2026-06-02T00:00:00Z",
+  "status": "active",
+  "deployment_id": "deployment-bad-1",
+  "agent_id": "agentreg:example.org:agent-123",
+  "version_id": "agent-version-2.4.1",
+  "operational_status": "running",
+  "proof": {}
+}

@@ -1,0 +1,35 @@
+{
+  "vector_id": "TV-D-03",
+  "profile": "D",
+  "check": "authority_evaluation",
+  "description": "High-Assurance / Fiduciary Registry (Profile D): a request evaluated after the authority envelope's effective_until MUST deny. Mirrors spec Appendix B.2 'Expired Assurance' pattern applied to authority expiry. Negative case for §28.10/§28.2 step 6.",
+  "spec_refs": ["28.10", "28.2"],
+  "input": {
+    "profile": "D",
+    "agent_status": {
+      "registration": "active",
+      "operation": "available",
+      "security": "normal",
+      "observed_at": "2026-09-01T10:00:00Z",
+      "valid_until": "2026-09-01T10:05:00Z"
+    },
+    "authority_envelope": {
+      "effective_from": "2026-01-01T00:00:00Z",
+      "effective_until": "2026-08-31T00:00:00Z",
+      "action_classes": ["portfolio.analyze"],
+      "resource_scope": ["account:fiduciary:client-001"],
+      "jurisdiction_scope": ["IN"],
+      "prohibitions": [],
+      "required_approvals": [],
+      "limits": {}
+    },
+    "request": {
+      "action": "portfolio.analyze",
+      "resource": "account:fiduciary:client-001",
+      "jurisdiction": "IN",
+      "time": "2026-09-01T10:00:30Z",
+      "policy_max_status_age_seconds": 60
+    }
+  },
+  "expected_outcome": "deny"
+}

@@ -1,0 +1,22 @@
+{
+  "record_id": "endpoint-1",
+  "record_type": "service_endpoint",
+  "schema_version": "1.0.0",
+  "issuer": "registry:example.org",
+  "subject": "agentreg:example.org:agent-123",
+  "issued_at": "2026-06-02T00:00:00Z",
+  "effective_from": "2026-06-02T00:00:00Z",
+  "effective_until": null,
+  "status": "active",
+  "endpoint_id": "endpoint-1",
+  "bound_subject": "deployment-prod-in-1",
+  "protocol": "https+arpa-query/1",
+  "uri": "https://registry.example.org/agents/agent-123/query",
+  "purpose": "authority_evaluation",
+  "authentication_requirements": ["mtls"],
+  "region_or_jurisdiction": ["IN"],
+  "data_classification": "confidential",
+  "availability_status": "available",
+  "health_reference": "https://registry.example.org/agents/agent-123/health",
+  "proof": {}
+}

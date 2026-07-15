@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sankarshanmukhopadhyay.github.io/agent-registry-protocol/schemas/agent-card-arpa-extension.schema.json",
+  "title": "ARPA Agent Card Extension",
+  "type": "object",
+  "properties": {
+    "agent_id": {
+      "type": "string",
+      "pattern": "^agentreg:"
+    },
+    "description_digest": {
+      "type": "string",
+      "pattern": "^sha256:[A-Fa-f0-9]{64}$"
+    },
+    "status_endpoint": {
+      "type": "string",
+      "format": "uri"
+    },
+    "relationships_endpoint": {
+      "type": "string",
+      "format": "uri"
+    },
+    "assurance_endpoint": {
+      "type": "string",
+      "format": "uri"
+    },
+    "authority_endpoint": {
+      "type": "string",
+      "format": "uri"
+    },
+    "governance_endpoint": {
+      "type": "string",
+      "format": "uri"
+    },
+    "critical": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "agent_id",
+    "description_digest",
+    "status_endpoint"
+  ],
+  "additionalProperties": false
+}

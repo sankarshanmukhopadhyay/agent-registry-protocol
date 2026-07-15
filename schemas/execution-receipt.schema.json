@@ -1,0 +1,128 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sankarshanmukhopadhyay.github.io/agent-registry-protocol/schemas/execution-receipt.schema.json",
+  "title": "ARPA Execution Receipt",
+  "description": "Tamper-evident record of a completed, failed, or denied consequential action. Required for accountable, delegated-authority, and high-assurance profiles (\u00a725.1). Spec \u00a725.2.",
+  "x-spec-section": "25.2",
+  "allOf": [
+    {
+      "$ref": "common/envelope.schema.json"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "record_type": {
+          "const": "execution_receipt"
+        },
+        "task_id": {
+          "type": "string"
+        },
+        "agent_id": {
+          "type": "string",
+          "pattern": "^agentreg:[A-Za-z0-9.-]{1,253}:[A-Za-z0-9._:-]{1,255}$"
+        },
+        "agent_version": {
+          "type": "string"
+        },
+        "deployment_id": {
+          "type": "string"
+        },
+        "runtime_id": {
+          "type": "string"
+        },
+        "principal": {
+          "type": "string"
+        },
+        "beneficiary": {
+          "type": "string"
+        },
+        "authority_envelope_id": {
+          "type": "string"
+        },
+        "authority_decision_receipt": {
+          "type": "string"
+        },
+        "policy_version": {
+          "type": "string"
+        },
+        "action_class": {
+          "type": "string"
+        },
+        "resource": {
+          "type": "string"
+        },
+        "purpose": {
+          "type": "string"
+        },
+        "input_digest": {
+          "type": "string"
+        },
+        "output_digest": {
+          "type": "string"
+        },
+        "tool_and_service_references": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "approvals_obtained": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "downstream_delegations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "start_time": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "completion_time": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "result": {
+          "type": "string",
+          "enum": [
+            "success",
+            "partial",
+            "failure",
+            "denied"
+          ]
+        },
+        "side_effects": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "error_or_exception": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "redress_reference": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "task_id",
+        "agent_id",
+        "agent_version",
+        "deployment_id",
+        "authority_envelope_id",
+        "authority_decision_receipt",
+        "action_class",
+        "start_time",
+        "completion_time",
+        "result"
+      ]
+    }
+  ]
+}

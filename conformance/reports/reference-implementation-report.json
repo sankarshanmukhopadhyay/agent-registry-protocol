@@ -1,0 +1,52 @@
+{
+  "report_version": "1.0.0",
+  "generated_at": "2026-07-15T03:43:39.581528+00:00",
+  "implementation": "ARPA reference service",
+  "implementation_version": "0.4.0",
+  "arpa_version": "0.4.0",
+  "modules": [
+    "ARPA-Core",
+    "ARPA-Relations",
+    "ARPA-Authority",
+    "ARPA-Evidence"
+  ],
+  "profile_claims": [
+    "A",
+    "C-demonstration-only"
+  ],
+  "checks": [
+    {
+      "name": "examples",
+      "passed": true,
+      "output": "' is a required property\n    - $.subject.artifact_digest: 'unspecified' does not match '^sha256:[A-Fa-f0-9]{64}$'\n[OK] examples/invalid/authority-envelope.json: expected invalid, got invalid\n    - $.delegation_mode: 'delegable_freely' is not one of ['non_delegable', 'delegable_once', 'delegable_within_scope', 'delegable_with_explicit_approval', 'delegable_to_named_agents', 'delegable_under_governance_profile']\n    - $.revocation: 'cascade' is a required property\n[OK] examples/invalid/capability-declaration.json: expected invalid, got invalid\n    - $: 'capability_id' is a required property\n[OK] examples/invalid/capability-verification.json: expected invalid, got invalid\n    - $: 'capability_id' is a required property\n[OK] examples/invalid/conformance-declaration.json: expected invalid, got invalid\n    - $: 'implementation_name' is a required property\n[OK] examples/invalid/decision-receipt.json: expected invalid, got invalid\n    - $.conditions: [] should be non-empty\n[OK] examples/invalid/deployment.json: expected invalid, got invalid\n    - $.operational_status: 'running' is not one of ['available', 'degraded', 'restricted', 'maintenance', 'offline', 'draining', 'quarantined', 'unknown']\n[OK] examples/invalid/event.json: expected invalid, got invalid\n    - $: 'sequence' is a required property\n    - $.event_type: 'agent.updated' is not one of ['agent.registered', 'agent.suspended', 'agent.restored', 'agent.retired', 'agent.superseded', 'deployment.created', 'deployment.quarantined', 'delegation.issued', 'delegation.suspended', 'delegation.revoked', 'assurance.issued', 'assurance.expired', 'assurance.suspended', 'assurance.revoked', 'incident.opened', 'incident.updated', 'incident.closed', 'appeal.filed', 'appeal.decided', 'status.restored', 'recognition.added', 'recognition.changed', 'recognition.withdrawn']\n[OK] examples/invalid/execution-receipt.json: expected invalid, got invalid\n    - $: 'authority_envelope_id' is a required property\n    - $: 'authority_decision_receipt' is a required property\n[OK] examples/invalid/governance.json: expected invalid, got invalid\n    - $: 'appeal_procedure' is a required property\n    - $: 'redress_process' is a required property\n[OK] examples/invalid/identifier-alias.json: expected invalid, got invalid\n    - $: 'canonical_id' is a required property\n[OK] examples/invalid/key-binding.json: expected invalid, got invalid\n    - $: 'controller' is a required property\n    - $.intended_use: 'runtime_identity_and_administration' is not one of ['registry_administration', 'runtime_identity', 'delegation_issuance', 'receipt_signing', 'payment', 'recovery', 'security_suspension', 'assurance_issuance']\n[OK] examples/invalid/recognition.json: expected invalid, got invalid\n    - $: 'status_handling' is a required property\n    - $.recognized_record_types: [] should be non-empty\n[OK] examples/invalid/redress-record.json: expected invalid, got invalid\n    - $: 'case_type' is a required property\n[OK] examples/invalid/registry-metadata.json: expected invalid, got invalid\n    - $: 'name' is a required property\n    - $: 'arpa_version' is a required property\n    - $: 'supported_modules' is a required property\n    - $: 'supported_profiles' is a required property\n    - $: 'authoritative_base_uri' is a required property\n    - $: 'conformance_declaration_uri' is a required property\n[OK] examples/invalid/relationship.json: expected invalid, got invalid\n    - $.relationship_type: 'owns' is not one of ['developed_by', 'published_by', 'deployed_by', 'operated_by', 'controlled_by', 'sponsored_by', 'accountable_to', 'assured_by', 'governed_by', 'hosted_by', 'acts_for', 'benefits', 'supervises', 'delegates_to', 'recognized_by']\n[OK] examples/invalid/service-endpoint.json: expected invalid, got invalid\n    - $: 'purpose' is a required property\n[OK] examples/invalid/status.json: expected invalid, got invalid\n    - $: 'observed_at' is a required property\n    - $: 'valid_until' is a required property\n\nvalidate_examples.py: 44/44 OK\n"
+    },
+    {
+      "name": "vectors",
+      "passed": true,
+      "output": "[OK] TV-A-01 (A): active_record\n[OK] TV-A-02 (A): not_found\n[OK] TV-A-03 (A): terminal_record\n[OK] TV-B-01 (B): allow\n[OK] TV-B-02 (B): deny\n[OK] TV-B-03 (B): indeterminate\n[OK] TV-C-01 (C): allow\n[OK] TV-C-02 (C): allow_with_conditions\n[OK] TV-C-03 (C): deny\n[OK] TV-D-01 (D): allow\n[OK] TV-D-02 (D): deny\n[OK] TV-D-03 (D): deny\n\nPer-profile positive/negative coverage:\n  Profile A: 1 granting case(s), 2 blocking case(s) [OK]\n  Profile B: 1 granting case(s), 2 blocking case(s) [OK]\n  Profile C: 2 granting case(s), 1 blocking case(s) [OK]\n  Profile D: 1 granting case(s), 2 blocking case(s) [OK]\n\nvalidate_test_vectors.py: 12/12 OK\n"
+    },
+    {
+      "name": "extended-vectors",
+      "passed": true,
+      "output": "[OK] EV-01: digest\n[OK] EV-02: issuer_competence\n[OK] EV-03: issuer_competence\n[OK] EV-04: transfer\n[OK] EV-05: transfer\n[OK] EV-06: event_gap\n[OK] EV-07: event_gap\n[OK] EV-08: alias_graph\n[OK] EV-09: alias_graph\n[OK] EV-10: alias_graph\n[OK] EV-11: delegation_chain\n[OK] EV-12: delegation_chain\n[OK] EV-13: recognition\n[OK] EV-14: lifecycle_transition\nvalidate_extended_vectors.py: 14/14 OK\n"
+    },
+    {
+      "name": "artifacts",
+      "passed": true,
+      "output": "validate_artifacts.py: schemas, registries and YAML parsed successfully\n"
+    },
+    {
+      "name": "tests",
+      "passed": true,
+      "output": "....                                                                     [100%]\n4 passed in 2.87s\n"
+    }
+  ],
+  "passed": true,
+  "known_limitations": [
+    "No production key custody",
+    "No independent identity proofing",
+    "No distributed consensus",
+    "No production federation service",
+    "Authority evaluator supports the deterministic reference policy subset"
+  ]
+}

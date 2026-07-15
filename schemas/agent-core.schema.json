@@ -1,0 +1,131 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sankarshanmukhopadhyay.github.io/agent-registry-protocol/schemas/agent-core.schema.json",
+  "title": "ARPA Agent Core Record",
+  "description": "Persistent core record for a registered agent. Spec \u00a713.3.",
+  "x-spec-section": "13.3",
+  "allOf": [
+    {
+      "$ref": "common/envelope.schema.json"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "record_type": {
+          "const": "agent_core"
+        },
+        "agent_id": {
+          "type": "string",
+          "pattern": "^agentreg:[A-Za-z0-9.-]{1,253}:[A-Za-z0-9._:-]{1,255}$",
+          "description": "Agent identifier per \u00a712.2 ABNF."
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "agent_class": {
+          "type": "string",
+          "minLength": 1
+        },
+        "registration_status": {
+          "type": "string",
+          "enum": [
+            "provisioned",
+            "pending_assurance",
+            "active",
+            "restricted",
+            "suspended",
+            "quarantined",
+            "compromised",
+            "revoked",
+            "retired",
+            "superseded",
+            "under_investigation"
+          ],
+          "description": "Registration state per \u00a720.1."
+        },
+        "current_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "controllers": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
+        },
+        "operators": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "accountable_entities": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "description": {
+          "type": "string"
+        },
+        "service_endpoints": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "keys": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "lineage": {
+          "type": "object",
+          "properties": {
+            "predecessors": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "successors": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "status_endpoints": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "updated_at": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "agent_id",
+        "name",
+        "agent_class",
+        "registration_status",
+        "current_version",
+        "controllers",
+        "accountable_entities",
+        "description",
+        "created_at",
+        "updated_at"
+      ]
+    }
+  ]
+}

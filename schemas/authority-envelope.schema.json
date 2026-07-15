@@ -1,0 +1,144 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sankarshanmukhopadhyay.github.io/agent-registry-protocol/schemas/authority-envelope.schema.json",
+  "title": "ARPA Authority Envelope",
+  "description": "A machine-readable grant of bounded authority from a principal to an agent. Spec \u00a718.2.",
+  "x-spec-section": "18.2",
+  "allOf": [
+    {
+      "$ref": "common/envelope.schema.json"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "record_type": {
+          "const": "authority_envelope"
+        },
+        "subject": {
+          "type": "object",
+          "properties": {
+            "principal": {
+              "type": "string",
+              "minLength": 1
+            },
+            "agent": {
+              "type": "string",
+              "pattern": "^agentreg:[A-Za-z0-9.-]{1,253}:[A-Za-z0-9._:-]{1,255}$"
+            }
+          },
+          "required": [
+            "principal",
+            "agent"
+          ]
+        },
+        "action_classes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
+        },
+        "resource_scope": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "purpose_scope": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "jurisdiction_scope": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "limits": {
+          "type": "object",
+          "properties": {
+            "currency": {
+              "type": "string"
+            },
+            "per_transaction": {
+              "type": "number"
+            },
+            "aggregate": {
+              "type": "number"
+            }
+          }
+        },
+        "required_approvals": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "condition": {
+                "type": "string"
+              },
+              "approval": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "condition",
+              "approval"
+            ]
+          }
+        },
+        "prohibitions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "delegation_mode": {
+          "type": "string",
+          "enum": [
+            "non_delegable",
+            "delegable_once",
+            "delegable_within_scope",
+            "delegable_with_explicit_approval",
+            "delegable_to_named_agents",
+            "delegable_under_governance_profile"
+          ]
+        },
+        "evidence_policy": {
+          "type": "string"
+        },
+        "revocation": {
+          "type": "object",
+          "properties": {
+            "status_endpoint": {
+              "type": "string",
+              "format": "uri"
+            },
+            "cascade": {
+              "type": "string",
+              "enum": [
+                "all_downstream",
+                "none",
+                "review_required"
+              ]
+            }
+          },
+          "required": [
+            "status_endpoint",
+            "cascade"
+          ]
+        },
+        "redress_profile": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "subject",
+        "action_classes",
+        "delegation_mode",
+        "revocation"
+      ]
+    }
+  ]
+}

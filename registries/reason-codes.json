@@ -1,0 +1,54 @@
+{
+  "registry": "reason-codes",
+  "version": "0.4.0",
+  "entries": [
+    {
+      "id": "identifier_never_issued",
+      "status": "active"
+    },
+    {
+      "id": "identifier_known_but_terminal",
+      "status": "active"
+    },
+    {
+      "id": "alias_conflict",
+      "status": "active"
+    },
+    {
+      "id": "alias_loop",
+      "status": "active"
+    },
+    {
+      "id": "status_stale_past_valid_until",
+      "status": "active"
+    },
+    {
+      "id": "proof_verification_failed",
+      "status": "active"
+    },
+    {
+      "id": "issuer_not_competent",
+      "status": "active"
+    },
+    {
+      "id": "operation_not_supported",
+      "status": "active"
+    },
+    {
+      "id": "action_not_within_authority_scope",
+      "status": "active"
+    },
+    {
+      "id": "amount_exceeds_per_transaction_limit",
+      "status": "active"
+    },
+    {
+      "id": "approval_required",
+      "status": "active"
+    },
+    {
+      "id": "recognition_withdrawn",
+      "status": "active"
+    }
+  ]
+}

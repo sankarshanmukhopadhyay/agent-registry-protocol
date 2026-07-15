@@ -1,0 +1,15 @@
+{
+  "_violation": "recognized_record_types is empty and status_handling is absent. Spec §26.2 requires a Recognition Record to specify recognized record types and status handling explicitly; §26.4 further prohibits inferring transitive recognition — an empty/underspecified record cannot be used as the basis for any recognition decision.",
+  "record_id": "recognition-bad-1",
+  "record_type": "recognition",
+  "schema_version": "1.0.0",
+  "issuer": "registry:eu.example.org",
+  "subject": "registry:example.org",
+  "issued_at": "2026-03-01T00:00:00Z",
+  "effective_from": "2026-03-01T00:00:00Z",
+  "status": "active",
+  "recognizing_domain": "registry:eu.example.org",
+  "recognized_domain": "registry:example.org",
+  "recognized_record_types": [],
+  "proof": {}
+}

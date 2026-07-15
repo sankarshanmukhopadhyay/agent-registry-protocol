@@ -1,0 +1,19 @@
+{
+  "_violation": "decision is 'allow_with_conditions' but conditions is an empty array. Spec §18.5 states an allow_with_conditions result MUST enumerate all required conditions — an empty condition list makes the conditional grant unenforceable.",
+  "record_id": "decision-receipt-bad-1",
+  "record_type": "decision_receipt",
+  "schema_version": "1.0.0",
+  "issuer": "authority.example.org",
+  "subject": "agentreg:example.org:agent-123",
+  "issued_at": "2026-07-15T10:00:00Z",
+  "effective_from": "2026-07-15T10:00:00Z",
+  "status": "issued",
+  "request_digest": "sha256:4444444444444444444444444444444444444444444444444444444444dd",
+  "decision": "allow_with_conditions",
+  "evaluated_authority_records": ["authority-789"],
+  "conditions": [],
+  "evaluation_time": "2026-07-15T10:00:00Z",
+  "evaluator_identity": "pdp:example.org:evaluator-1",
+  "reason_codes": ["within_scope"],
+  "proof": {}
+}

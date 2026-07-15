@@ -1,0 +1,15 @@
+{
+  "id": "EV-04",
+  "kind": "transfer",
+  "input": {
+    "assertions": [
+      "delegations",
+      "service_endpoints"
+    ],
+    "explicit_novations": []
+  },
+  "expected": {
+    "delegations": "requires_reissuance",
+    "service_endpoints": "remains_valid"
+  }
+}

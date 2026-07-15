@@ -1,0 +1,16 @@
+{
+  "_violation": "relationship_type 'owns' is not one of the base relationship types in spec §13.4. Ownership is deliberately not a first-class relationship type — see design principle G.3 ('Why Ownership Is Not Central'); the accountability graph must use the typed relationships listed in §13.4.",
+  "record_id": "relationship-bad-1",
+  "record_type": "relationship",
+  "schema_version": "1.0.0",
+  "issuer": "registry:example.org",
+  "subject": "agentreg:example.org:agent-123",
+  "issued_at": "2026-07-15T00:00:00Z",
+  "effective_from": "2026-07-15T00:00:00Z",
+  "effective_until": null,
+  "status": "active",
+  "relationship_type": "owns",
+  "related_entity": "org:example:procurement-services",
+  "authority_source": "governance-financial-agent-1",
+  "proof": {}
+}

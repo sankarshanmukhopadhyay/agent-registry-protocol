@@ -1,0 +1,22 @@
+{
+  "record_id": "relationship-accountable-1",
+  "record_type": "relationship",
+  "schema_version": "1.0.0",
+  "issuer": "registry:example.org",
+  "subject": "agentreg:example.org:agent-123",
+  "issued_at": "2026-07-15T00:00:00Z",
+  "effective_from": "2026-07-15T00:00:00Z",
+  "effective_until": null,
+  "status": "active",
+  "relationship_type": "accountable_to",
+  "related_entity": "org:example:procurement-services",
+  "scope": {
+    "actions": ["purchase.prepare", "purchase.submit"],
+    "jurisdictions": ["IN"]
+  },
+  "authority_source": "governance-financial-agent-1",
+  "revocation": {
+    "status_endpoint": "https://registry.example.org/records/relationship-accountable-1/status"
+  },
+  "proof": {}
+}

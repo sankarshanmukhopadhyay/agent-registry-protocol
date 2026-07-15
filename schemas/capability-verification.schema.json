@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sankarshanmukhopadhyay.github.io/agent-registry-protocol/schemas/capability-verification.schema.json",
+  "title": "ARPA Capability Verification",
+  "allOf": [
+    {
+      "$ref": "common/envelope.schema.json"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "record_type": {
+          "const": "capability-verification"
+        },
+        "capability_id": {
+          "type": "string"
+        },
+        "tested_subject": {
+          "type": "string"
+        },
+        "tested_version": {
+          "type": "string"
+        },
+        "test_method": {
+          "type": "string"
+        },
+        "test_environment": {
+          "type": "string"
+        },
+        "evaluator": {
+          "type": "string"
+        },
+        "result": {
+          "enum": [
+            "pass",
+            "conditional",
+            "fail",
+            "indeterminate"
+          ]
+        },
+        "limitations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "evidence_reference": {
+          "type": "string"
+        },
+        "valid_until": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "record_type",
+        "capability_id",
+        "tested_subject",
+        "tested_version",
+        "test_method",
+        "evaluator",
+        "result",
+        "evidence_reference"
+      ]
+    }
+  ]
+}

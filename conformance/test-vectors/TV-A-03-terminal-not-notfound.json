@@ -1,0 +1,9 @@
+{
+  "vector_id": "TV-A-03",
+  "profile": "A",
+  "check": "identifier_resolution",
+  "description": "Discovery Registry (Profile A): a known, retired/revoked/superseded identifier MUST resolve to terminal_record, never not_found. Negative case for the §12.6 prohibition on masking known-terminal identifiers as unknown.",
+  "spec_refs": ["12.6"],
+  "input": { "known": true, "terminal": true, "authorized_caller": true },
+  "expected_outcome": "terminal_record"
+}

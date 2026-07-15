@@ -1,0 +1,21 @@
+{
+  "id": "EV-10",
+  "kind": "alias_graph",
+  "input": {
+    "start": "did:example:a",
+    "bindings": {
+      "did:example:a": [
+        "did:example:b"
+      ],
+      "did:example:b": [
+        "did:example:a"
+      ]
+    }
+  },
+  "expected": [
+    "conflict",
+    [
+      "alias_loop"
+    ]
+  ]
+}

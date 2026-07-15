@@ -1,0 +1,22 @@
+{
+  "record_id": "recognition-eu-in-1",
+  "record_type": "recognition",
+  "schema_version": "1.0.0",
+  "issuer": "registry:eu.example.org",
+  "subject": "registry:example.org",
+  "issued_at": "2026-03-01T00:00:00Z",
+  "effective_from": "2026-03-01T00:00:00Z",
+  "effective_until": null,
+  "status": "active",
+  "recognizing_domain": "registry:eu.example.org",
+  "recognized_domain": "registry:example.org",
+  "recognized_record_types": ["agent_core", "relationship"],
+  "recognized_assurance_profiles": ["high-assurance-procurement-agent"],
+  "recognized_governance_decisions": ["suspension", "revocation"],
+  "status_handling": "suspensions_recognized_immediately_restorations_reviewed",
+  "exclusions": ["fiduciary-agent-class"],
+  "transformation_rules": "https://registry.eu.example.org/recognition/example-org/transform",
+  "dispute_rules": "https://registry.eu.example.org/recognition/example-org/disputes",
+  "withdrawal_semantics": "30_day_notice_then_effective",
+  "proof": {}
+}

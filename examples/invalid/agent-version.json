@@ -1,0 +1,15 @@
+{
+  "_violation": "artifact_digest does not match the required 'sha256:<64-hex>' pattern (§12.3 requires a version identifier to resolve to an artifact digest so a deployment can be verified as running the registered artifact), and release_timestamp is omitted entirely, which is a required field.",
+  "record_id": "record-agent-version-bad-1",
+  "record_type": "agent_version",
+  "schema_version": "1.0.0",
+  "issuer": "registry:example.org",
+  "subject": "agentreg:example.org:agent-123",
+  "issued_at": "2026-06-01T00:00:00Z",
+  "effective_from": "2026-06-01T00:00:00Z",
+  "status": "active",
+  "agent_id": "agentreg:example.org:agent-123",
+  "version_id": "agent-version-bad-1",
+  "artifact_digest": "not-a-digest",
+  "proof": {}
+}

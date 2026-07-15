@@ -1,0 +1,120 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sankarshanmukhopadhyay.github.io/agent-registry-protocol/schemas/status.schema.json",
+  "title": "ARPA Multi-Dimensional Status",
+  "description": "A point-in-time status resolution response. Unlike other record families this is a resolved projection, not a signed-at-issuance record, so it does not use the common envelope (\u00a713.1); it instead follows the freshness fields required by \u00a720.11 and the dimensions required by \u00a720.7. Spec \u00a720.7, \u00a720.11, Appendix A.5.",
+  "x-spec-section": "20.7",
+  "type": "object",
+  "properties": {
+    "agent_id": {
+      "type": "string",
+      "pattern": "^agentreg:[A-Za-z0-9.-]{1,253}:[A-Za-z0-9._:-]{1,255}$"
+    },
+    "registration": {
+      "type": "string",
+      "enum": [
+        "provisioned",
+        "pending_assurance",
+        "active",
+        "restricted",
+        "suspended",
+        "quarantined",
+        "compromised",
+        "revoked",
+        "retired",
+        "superseded",
+        "under_investigation"
+      ]
+    },
+    "operation": {
+      "type": "string",
+      "enum": [
+        "available",
+        "degraded",
+        "restricted",
+        "maintenance",
+        "offline",
+        "draining",
+        "quarantined",
+        "unknown"
+      ]
+    },
+    "authority": {
+      "type": "string",
+      "enum": [
+        "valid",
+        "conditional",
+        "expired",
+        "suspended",
+        "revoked",
+        "superseded",
+        "indeterminate"
+      ]
+    },
+    "assurance": {
+      "type": "string",
+      "enum": [
+        "valid",
+        "conditional",
+        "expired",
+        "suspended",
+        "revoked",
+        "superseded",
+        "indeterminate"
+      ]
+    },
+    "security": {
+      "type": "string",
+      "enum": [
+        "normal",
+        "elevated_monitoring",
+        "suspected_compromise",
+        "confirmed_compromise",
+        "containment_in_progress",
+        "recovery_in_progress",
+        "under_investigation",
+        "unknown"
+      ]
+    },
+    "effective_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "observed_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "valid_until": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "restrictions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "source": {
+      "type": "string",
+      "minLength": 1
+    },
+    "appeal_available": {
+      "type": "boolean"
+    },
+    "proof": {
+      "type": "object"
+    }
+  },
+  "required": [
+    "agent_id",
+    "registration",
+    "operation",
+    "authority",
+    "assurance",
+    "security",
+    "effective_at",
+    "observed_at",
+    "valid_until",
+    "source"
+  ]
+}

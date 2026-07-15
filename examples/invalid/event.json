@@ -1,0 +1,10 @@
+{
+  "_violation": "event_type 'agent.updated' is not one of the event types enumerated in spec §24.2, and sequence is absent though §24.4 requires a per-subject or per-registry ordering mechanism.",
+  "event_id": "event-bad-1",
+  "event_type": "agent.updated",
+  "subject": "agentreg:example.org:agent-123",
+  "occurred_at": "2026-07-15T10:00:00Z",
+  "effective_at": "2026-07-15T10:00:00Z",
+  "issuer": "registry:example.org",
+  "reason_code": "profile_update"
+}

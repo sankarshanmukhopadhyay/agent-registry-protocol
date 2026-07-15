@@ -1,0 +1,23 @@
+{
+  "record_id": "assurance-456",
+  "record_type": "assurance_claim",
+  "schema_version": "1.0.0",
+  "issuer": "assurance-provider:example.net",
+  "subject": {
+    "agent_id": "agentreg:example.org:agent-123",
+    "version": "agent-version-2.4.1",
+    "artifact_digest": "sha256:a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1",
+    "deployment_profile": "prod-in-1"
+  },
+  "issued_at": "2026-07-10T00:00:00Z",
+  "effective_from": "2026-07-10T00:00:00Z",
+  "effective_until": "2026-10-10T00:00:00Z",
+  "status": "valid",
+  "profile": "high-assurance-procurement-agent",
+  "control_results": [
+    { "control_id": "AUTH-001", "result": "pass", "evidence_ref": "evidence-auth-001" },
+    { "control_id": "REV-004", "result": "pass", "evidence_ref": "evidence-rev-004" }
+  ],
+  "limitations": ["excludes-autonomous-bank-detail-modification"],
+  "proof": {}
+}

@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sankarshanmukhopadhyay.github.io/agent-registry-protocol/schemas/service-endpoint.schema.json",
+  "title": "ARPA Service Endpoint Record",
+  "description": "A resolvable, health-tracked endpoint for an agent or deployment. Spec \u00a713.6.",
+  "x-spec-section": "13.6",
+  "allOf": [
+    {
+      "$ref": "common/envelope.schema.json"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "record_type": {
+          "const": "service_endpoint"
+        },
+        "endpoint_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "bound_subject": {
+          "type": "string",
+          "minLength": 1
+        },
+        "protocol": {
+          "type": "string"
+        },
+        "uri": {
+          "type": "string",
+          "format": "uri"
+        },
+        "purpose": {
+          "type": "string"
+        },
+        "authentication_requirements": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "region_or_jurisdiction": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "data_classification": {
+          "type": "string"
+        },
+        "availability_status": {
+          "type": "string",
+          "enum": [
+            "available",
+            "degraded",
+            "restricted",
+            "maintenance",
+            "offline",
+            "draining",
+            "quarantined",
+            "unknown"
+          ]
+        },
+        "health_reference": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "endpoint_id",
+        "bound_subject",
+        "protocol",
+        "uri",
+        "purpose",
+        "availability_status"
+      ]
+    }
+  ]
+}

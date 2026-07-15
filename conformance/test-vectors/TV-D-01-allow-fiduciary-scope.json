@@ -1,0 +1,35 @@
+{
+  "vector_id": "TV-D-01",
+  "profile": "D",
+  "check": "authority_evaluation",
+  "description": "High-Assurance / Fiduciary Registry (Profile D): a portfolio-analysis request within scope, jurisdiction, and limits, with no prohibited action, MUST allow. Mirrors use case §4.6.",
+  "spec_refs": ["18.2", "28.2"],
+  "input": {
+    "profile": "D",
+    "agent_status": {
+      "registration": "active",
+      "operation": "available",
+      "security": "normal",
+      "observed_at": "2026-07-15T10:00:00Z",
+      "valid_until": "2026-07-15T10:05:00Z"
+    },
+    "authority_envelope": {
+      "effective_from": "2026-01-01T00:00:00Z",
+      "effective_until": "2026-12-31T00:00:00Z",
+      "action_classes": ["portfolio.analyze", "instruction.prepare"],
+      "resource_scope": ["account:fiduciary:client-001"],
+      "jurisdiction_scope": ["IN"],
+      "prohibitions": ["asset.transfer"],
+      "required_approvals": [],
+      "limits": {}
+    },
+    "request": {
+      "action": "portfolio.analyze",
+      "resource": "account:fiduciary:client-001",
+      "jurisdiction": "IN",
+      "time": "2026-07-15T10:00:30Z",
+      "policy_max_status_age_seconds": 60
+    }
+  },
+  "expected_outcome": "allow"
+}

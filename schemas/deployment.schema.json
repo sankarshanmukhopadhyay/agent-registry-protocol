@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sankarshanmukhopadhyay.github.io/agent-registry-protocol/schemas/deployment.schema.json",
+  "title": "ARPA Deployment Record",
+  "description": "A distinct operational deployment of an agent version. Spec \u00a712.4, \u00a716.2.",
+  "x-spec-section": "16.2",
+  "allOf": [
+    {
+      "$ref": "common/envelope.schema.json"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "record_type": {
+          "const": "deployment"
+        },
+        "deployment_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "agent_id": {
+          "type": "string",
+          "pattern": "^agentreg:[A-Za-z0-9.-]{1,253}:[A-Za-z0-9._:-]{1,255}$"
+        },
+        "version_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "operator": {
+          "type": "string"
+        },
+        "runtime_identifiers": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "region_or_jurisdiction": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "deployment_profile": {
+          "type": "string"
+        },
+        "operational_status": {
+          "type": "string",
+          "enum": [
+            "available",
+            "degraded",
+            "restricted",
+            "maintenance",
+            "offline",
+            "draining",
+            "quarantined",
+            "unknown"
+          ]
+        }
+      },
+      "required": [
+        "deployment_id",
+        "agent_id",
+        "version_id",
+        "operational_status"
+      ]
+    }
+  ]
+}

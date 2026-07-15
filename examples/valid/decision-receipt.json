@@ -1,0 +1,26 @@
+{
+  "record_id": "decision-receipt-req-556",
+  "record_type": "decision_receipt",
+  "schema_version": "1.0.0",
+  "issuer": "authority.example.org",
+  "subject": "agentreg:example.org:agent-123",
+  "issued_at": "2026-07-15T10:00:00Z",
+  "effective_from": "2026-07-15T10:00:00Z",
+  "effective_until": "2026-07-15T10:05:00Z",
+  "status": "issued",
+  "request_digest": "sha256:3333333333333333333333333333333333333333333333333333333333cc",
+  "decision": "allow_with_conditions",
+  "evaluated_authority_records": ["authority-789"],
+  "evaluated_status_records": ["status-agent-123-20260715T100005Z"],
+  "evaluated_policy_version": "2026.1",
+  "conditions": ["require-human-procurement-owner-approval-if-amount-exceeds-25000-INR"],
+  "evaluation_time": "2026-07-15T10:00:00Z",
+  "validity_duration_seconds": 300,
+  "evaluator_identity": "pdp:example.org:evaluator-1",
+  "freshness_metadata": {
+    "max_status_age_seconds": 60,
+    "observed_at": "2026-07-15T10:00:00Z"
+  },
+  "reason_codes": ["within_scope", "approval_required"],
+  "proof": {}
+}

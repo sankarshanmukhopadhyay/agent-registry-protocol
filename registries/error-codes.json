@@ -1,0 +1,50 @@
+{
+  "registry": "error-codes",
+  "version": "0.4.0",
+  "entries": [
+    {
+      "id": "ARPA-ID-NOT-FOUND",
+      "status": "active"
+    },
+    {
+      "id": "ARPA-ID-NOT-AUTHORIZED",
+      "status": "active"
+    },
+    {
+      "id": "ARPA-ID-CONFLICT",
+      "status": "active"
+    },
+    {
+      "id": "ARPA-STATUS-STALE",
+      "status": "active"
+    },
+    {
+      "id": "ARPA-PROOF-INVALID",
+      "status": "active"
+    },
+    {
+      "id": "ARPA-ISSUER-NOT-COMPETENT",
+      "status": "active"
+    },
+    {
+      "id": "ARPA-OP-NOT-SUPPORTED",
+      "status": "active"
+    },
+    {
+      "id": "ARPA-EXT-CRITICAL-UNKNOWN",
+      "status": "active"
+    },
+    {
+      "id": "ARPA-STATE-TRANSITION-INVALID",
+      "status": "active"
+    },
+    {
+      "id": "ARPA-AUTHORITY-DENIED",
+      "status": "active"
+    },
+    {
+      "id": "ARPA-AUTHORITY-INDETERMINATE",
+      "status": "active"
+    }
+  ]
+}

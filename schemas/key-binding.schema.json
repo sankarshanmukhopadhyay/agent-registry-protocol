@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sankarshanmukhopadhyay.github.io/agent-registry-protocol/schemas/key-binding.schema.json",
+  "title": "ARPA Key Binding Record",
+  "description": "Binds a cryptographic key to an agent or deployment for a declared use. Spec \u00a713.5.",
+  "x-spec-section": "13.5",
+  "allOf": [
+    {
+      "$ref": "common/envelope.schema.json"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "record_type": {
+          "const": "key_binding"
+        },
+        "bound_subject": {
+          "type": "string",
+          "minLength": 1
+        },
+        "key_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "key_type": {
+          "type": "string"
+        },
+        "intended_use": {
+          "type": "string",
+          "enum": [
+            "registry_administration",
+            "runtime_identity",
+            "delegation_issuance",
+            "receipt_signing",
+            "payment",
+            "recovery",
+            "security_suspension",
+            "assurance_issuance"
+          ]
+        },
+        "controller": {
+          "type": "string",
+          "minLength": 1
+        },
+        "validity_interval": {
+          "type": "object",
+          "properties": {
+            "from": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "until": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "format": "date-time"
+            }
+          },
+          "required": [
+            "from"
+          ]
+        },
+        "rotation_of": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "bound_subject",
+        "key_id",
+        "key_type",
+        "intended_use",
+        "controller",
+        "validity_interval"
+      ]
+    }
+  ]
+}

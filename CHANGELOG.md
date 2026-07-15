@@ -1,0 +1,33 @@
+# Changelog
+
+## [0.4.0] - 2026-07-15
+
+### Added
+
+- six composable protocol modules and explicit non-implication rules;
+- normative ARPA-Core Identity and Discovery, Identifier/Alias, and Agent Card interoperability profiles;
+- Capability Declaration, Capability Verification, Redress Record, Conformance Declaration, Agent Description Reference, Identifier Alias, Agent Card extension and Registry Metadata schemas;
+- controlled registries for record, relationship, lifecycle, event, error, reason, proof-purpose, extension and profile identifiers;
+- OpenAPI 3.1 REST contract and AsyncAPI event contract;
+- runnable FastAPI/SQLite reference registry, resolver, event replay service and policy decision point;
+- multidimensional implementation-report schema and generator;
+- identifier, implementor, deployment, security, privacy, conformance, governance and migration guidance;
+- twelve end-to-end governance scenarios;
+- Makefile, Dockerfile, Compose configuration and expanded CI.
+
+### Changed
+
+- advanced the community draft to v0.4.0;
+- clarified that Profile A is independently implementable and unsupported higher-module operations return a deterministic error;
+- formalized self-declared Agent Card capabilities as distinct from verification, authorization and assurance;
+- strengthened transfer, issuer-competence and alias conflict semantics;
+- reframed conformance as protocol, semantic, cryptographic, operational, governance and enforcement evidence.
+
+### Security
+
+- documented alias hijacking, issuer confusion, projection poisoning, replay, event gaps, malicious extensions, transfer abuse and revocation-convergence risks;
+- added negative validation and service tests for non-reassignment and alias conflict.
+
+## [0.3.0] - 2026-07-15
+
+- Initial machine-readable schemas, examples, profile matrices and executable conformance vectors.

@@ -1,0 +1,35 @@
+{
+  "vector_id": "TV-B-01",
+  "profile": "B",
+  "check": "authority_evaluation",
+  "description": "Accountable Agent Registry (Profile B): active/available/normal agent with a current authority envelope covering the requested action MUST allow.",
+  "spec_refs": ["28.2"],
+  "input": {
+    "profile": "B",
+    "agent_status": {
+      "registration": "active",
+      "operation": "available",
+      "security": "normal",
+      "observed_at": "2026-07-15T10:00:00Z",
+      "valid_until": "2026-07-15T10:05:00Z"
+    },
+    "authority_envelope": {
+      "effective_from": "2026-01-01T00:00:00Z",
+      "effective_until": "2026-12-31T00:00:00Z",
+      "action_classes": ["ticket.create"],
+      "resource_scope": ["project:example-workspace"],
+      "jurisdiction_scope": [],
+      "prohibitions": [],
+      "required_approvals": [],
+      "limits": {}
+    },
+    "request": {
+      "action": "ticket.create",
+      "resource": "project:example-workspace",
+      "jurisdiction": null,
+      "time": "2026-07-15T10:00:30Z",
+      "policy_max_status_age_seconds": 120
+    }
+  },
+  "expected_outcome": "allow"
+}
