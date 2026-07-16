@@ -1,0 +1,71 @@
+name: Defect report
+description: Report a reproducible defect in the protocol, schemas, tools, or documentation.
+title: "[Defect]: "
+labels:
+  - defect
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Provide enough information for the defect to be independently reproduced and assessed.
+
+  - type: dropdown
+    id: component
+    attributes:
+      label: Affected component
+      options:
+        - Protocol specification
+        - JSON Schema
+        - Controlled registry
+        - OpenAPI or AsyncAPI contract
+        - Reference implementation
+        - Conformance suite
+        - Interoperability harness
+        - Documentation
+        - GitHub Pages or automation
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: Affected version
+      placeholder: v0.5.0
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Defect description
+      description: Explain the observed behaviour and why it is incorrect.
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction steps
+      description: Include commands, inputs, fixtures, or links needed to reproduce the defect.
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behaviour
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: Attach logs, validation output, failing vectors, screenshots, or evidence bundles.
+
+  - type: textarea
+    id: impact
+    attributes:
+      label: Governance or interoperability impact
+      description: Describe any effect on authority, delegation, revocation, enforcement, compatibility, or assurance.
