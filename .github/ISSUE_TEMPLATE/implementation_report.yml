@@ -1,0 +1,97 @@
+name: Implementation report
+description: Submit evidence from an ARPA implementation or interoperability exercise.
+title: "[Implementation]: "
+labels:
+  - implementation-report
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Implementation reports provide evidence for protocol maturity,
+        interoperability, and future conformance claims.
+
+  - type: input
+    id: implementation
+    attributes:
+      label: Implementation name
+    validations:
+      required: true
+
+  - type: input
+    id: organisation
+    attributes:
+      label: Implementing organisation or maintainer
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: ARPA version evaluated
+      placeholder: v0.5.0
+    validations:
+      required: true
+
+  - type: dropdown
+    id: scope
+    attributes:
+      label: Implementation scope
+      options:
+        - Registry publisher
+        - Registry consumer
+        - Resolver
+        - Policy enforcement point
+        - Conformance implementation
+        - Interoperability participant
+        - Full implementation
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: capabilities
+    attributes:
+      label: Implemented capabilities
+      description: Identify supported protocol operations, schemas, events, and policy behaviours.
+    validations:
+      required: true
+
+  - type: textarea
+    id: tests
+    attributes:
+      label: Tests executed
+      description: Include commands, test-vector identifiers, and results.
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence location
+      description: Link to logs, reports, evidence bundles, commits, or reproducible fixtures.
+    validations:
+      required: true
+
+  - type: textarea
+    id: interoperability
+    attributes:
+      label: Interoperability observations
+      description: Identify counterpart implementations, compatibility results, and unresolved differences.
+
+  - type: textarea
+    id: limitations
+    attributes:
+      label: Known limitations
+      description: State unsupported requirements, deviations, security constraints, or assurance boundaries.
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: declaration
+    attributes:
+      label: Implementation declaration
+      options:
+        - label: The report distinguishes test evidence from certification or formal assurance.
+          required: true
+        - label: The submitted results can be independently reviewed or reproduced.
+          required: true
