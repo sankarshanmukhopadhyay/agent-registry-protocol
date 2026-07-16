@@ -3,9 +3,9 @@
 ## A Distributed Authority-Control Plane for Delegated Action
 
 **Category:** Standards Track  
-**Intended Status:** Proposed Standard  
-**Version:** 0.5.0  
-**Date:** 2026-07-15  
+**Intended Status:** Candidate Specification  
+**Version:** 0.9.0  
+**Date:** 2026-07-16  
 **Author:** Sankarshan Mukhopadhyay  
 **License:** CC BY 4.0  
 
@@ -13,9 +13,9 @@
 
 ## Status of This Memo
 
-This document is a circulation-ready first draft of a standards-oriented specification for interoperable agent registries. It is intended to support architectural review, implementation experiments, security analysis, governance review, and the development of interoperable test suites.
+This document is the authoritative Candidate Specification for Agent Registry Protocol and Architecture (ARPA) v0.9.0. It consolidates the architecture, normative protocol requirements, conformance targets, extension boundaries, implementation contracts, and evidence expectations into a single specification surface.
 
-This document is not yet an adopted standard. It deliberately includes normative requirements, explanatory rationale, implementation notes, examples, deployment patterns, and open issues. Normative requirements define behavior necessary for conformance. Explanatory text is provided to make the design reviewable by implementors, security architects, governance specialists, policy experts, and standards participants.
+This document is not an adopted standard and does not claim certification, accreditation, legal recognition, formal cryptographic review, or production security approval. Normative requirements define behavior necessary for the applicable conformance target. Explanatory text, implementation notes, examples, deployment patterns, and appendices are informative unless a section explicitly states otherwise.
 
 The key words **MUST**, **MUST NOT**, **REQUIRED**, **SHALL**, **SHALL NOT**, **SHOULD**, **SHOULD NOT**, **RECOMMENDED**, **NOT RECOMMENDED**, **MAY**, and **OPTIONAL** in this document are to be interpreted as described in [BCP 14](https://www.rfc-editor.org/info/bcp14) (RFC 2119, RFC 8174) when, and only when, they appear in all capitals, as shown here. Use of these terms does not imply IETF process or endorsement; they are adopted here solely as a precise, widely understood requirements vocabulary.
 
@@ -50,6 +50,53 @@ This draft uses four kinds of text:
 Unless explicitly stated otherwise, examples use JSON and HTTP for readability. The architecture is transport-independent and proof-format-independent.
 
 ---
+
+## Candidate Specification Control
+
+This document is the sole authoritative prose specification for ARPA v0.9.0. Schemas, controlled registries, OpenAPI and AsyncAPI descriptions, conformance vectors, implementation reports, and evidence bundles are subordinate machine-readable artifacts. Where an inconsistency is found, implementations MUST fail safely, record the conflict, and open a specification defect rather than infer an affirmative authority decision.
+
+### Normative and informative content
+
+Sections 12 through 37 are normative except where marked as rationale, example, implementation note, deployment guidance, or informative interoperability material. Sections 1 through 11 establish the architectural and authority model and are normative where they use BCP 14 requirement terms. Appendices are informative unless a requirement explicitly incorporates an appendix item.
+
+### Conformance targets
+
+ARPA defines the following independently claimable conformance targets:
+
+- Registry publisher
+- Registry consumer or resolver
+- Authority evaluator
+- Event publisher
+- Event consumer or enforcement point
+- Proof verifier
+- Policy adapter
+- Federation participant
+- ARPA–TRQP projection adapter
+
+An implementation MUST declare each target it claims, the profiles and versions implemented, its known deviations, and the evidence supporting the claim. Conformance to one target MUST NOT be presented as conformance to another.
+
+### Stable Candidate requirements
+
+The following requirement identifiers anchor the Candidate Specification. Detailed requirements in later sections refine these controls and are traceable through the conformance manifests.
+
+| ID | Candidate requirement | Primary target |
+| --- | --- | --- |
+| ARPA-CAND-001 | Implementations MUST distinguish identity, authority, assurance, proof validity, registry operation, and lifecycle status. | Registry, consumer |
+| ARPA-CAND-002 | Delegation MUST NOT expand the issuer's effective scope. | Authority evaluator |
+| ARPA-CAND-003 | Recognition MUST be scoped, current, withdrawable, and non-transitive unless explicitly declared. | Registry, evaluator |
+| ARPA-CAND-004 | Technical federation MUST NOT imply governance recognition or authority transfer. | Federation participant |
+| ARPA-CAND-005 | Revocation MUST produce durable evidence and MUST NOT be considered converged until applicable enforcement acknowledgements exist. | Publisher, consumer, enforcement point |
+| ARPA-CAND-006 | Unknown, conflicting, stale, unsupported, or unavailable authority MUST resolve to deny or indeterminate and MUST NOT result in implicit allow. | Evaluator |
+| ARPA-CAND-007 | Events MUST be persistently sequenceable, replayable, deduplicated, and processable idempotently. | Event publisher, consumer |
+| ARPA-CAND-008 | Proof validity MUST NOT be interpreted as authority validity. | Proof verifier, evaluator |
+| ARPA-CAND-009 | Policy decisions MUST retain policy version, evaluated inputs, outcome, reason codes, conditions, prohibitions, and evidence references. | Policy adapter |
+| ARPA-CAND-010 | Capability and conformance claims MUST be machine-readable, versioned, and evidence-bounded. | Implementation |
+| ARPA-CAND-011 | ARPA–TRQP projection support MUST be declared independently from ARPA and TRQP conformance. | Projection adapter |
+| ARPA-CAND-012 | A query projection MUST preserve scope and MUST NOT produce an affirmative result for revoked, suspended, expired, stale, conflicting, or unresolved authority. | Projection adapter |
+
+### Artifact authority and traceability
+
+Every objectively testable normative requirement MUST map to at least one test or inspection procedure and an expected evidence output. Machine-readable artifacts MUST identify their specification version and governing authority. Extensions MUST use a registered namespace, declare version and authority, and MUST NOT redefine a core field or weaken a fail-safe requirement.
 
 ## Table of Contents
 
@@ -1307,6 +1354,8 @@ A relationship change MUST produce an event and trigger impact analysis for link
 
 # 18. Delegation and Authority
 
+> **Candidate controls:** ARPA-CAND-001, ARPA-CAND-002, ARPA-CAND-006. Delegation evaluation MUST compute the intersection of all applicable scopes, conditions, prohibitions, validity intervals, and lifecycle states. Circular, expired, suspended, revoked, or unverifiable links MUST NOT yield affirmative authority.
+
 ## 18.1 General Requirement
 
 An agent registry supporting consequential action MUST support machine-readable delegation records.
@@ -1616,6 +1665,8 @@ A registry MUST NOT reduce assurance to a universal boolean “trusted” field.
 ---
 
 # 20. Lifecycle and Status
+
+> **Candidate controls:** ARPA-CAND-005 and ARPA-CAND-006. Lifecycle state is time-dependent. Implementations MUST preserve effective timestamps and MUST distinguish registry publication of a state change from enforcement convergence.
 
 ## 20.1 Registration States
 
@@ -2016,6 +2067,8 @@ The evaluator MUST follow Section 28.3 and produce a Decision Receipt when requi
 
 # 24. Events and Subscriptions
 
+> **Candidate control:** ARPA-CAND-007. Candidate-conformant event delivery requires durable sequencing, replay, deduplication, idempotent processing, checkpointing, gap detection, retry, and evidence of consumer acknowledgement.
+
 ## 24.1 Event Requirements
 
 Every material state change MUST produce an event.
@@ -2164,6 +2217,8 @@ Governance profiles MUST define retention periods for receipts and supporting ev
 ---
 
 # 26. Federation and Recognition
+
+> **Candidate controls:** ARPA-CAND-003 and ARPA-CAND-004. Recognition is an explicit, scoped, time-bound governance statement. Federation is a technical exchange relationship and MUST NOT be interpreted as recognition, transitive trust, or transfer of authority.
 
 ## 26.1 Federation Principle
 
@@ -2501,6 +2556,8 @@ A status or revocation event affecting the decision MAY invalidate the receipt b
 ---
 
 # 29. Security Architecture
+
+> **Candidate control:** ARPA-CAND-008. Cryptographic proof establishes only the claims supported by the proof and trust configuration. It MUST NOT, by itself, establish current authority, assurance, governance recognition, or acceptable reliance.
 
 ## 29.1 Threat Model
 
@@ -3082,6 +3139,8 @@ A registry MUST publicly declare:
 
 # 36. Conformance Requirements
 
+> **Candidate controls:** ARPA-CAND-009 and ARPA-CAND-010. Each implementation MUST publish a capability declaration, conformance targets, deviations, evidence references, and the exact specification and profile versions evaluated.
+
 ## 36.1 Minimum Components
 
 A conforming deployment MUST provide:
@@ -3325,6 +3384,36 @@ Implementations MUST test:
 - appeal restoration.
 
 ---
+
+# 39A. Informative ARPA–TRQP Query Projection
+
+This section is informative. It documents an interoperability boundary for architects and designers; it does not modify the normative core of ARPA or the Trust Registry Query Protocol (TRQP).
+
+## 39A.1 Layering
+
+ARPA governs the creation, evaluation, lifecycle, evidence, revocation, enforcement, federation, and redress of agent authority state. TRQP is treated as an external read-only query interface capable of exposing selected authorization and recognition answers derived from authoritative state.
+
+```text
+ARPA authority-control plane
+        |
+        v
+Governed query projection
+        |
+        v
+TRQP authorization or recognition response
+```
+
+ARPA conformance does not imply TRQP conformance. TRQP conformance does not imply ARPA conformance. Projection support MUST be separately versioned and declared under ARPA-CAND-011.
+
+## 39A.2 Projection safety
+
+A projection adapter MUST preserve action, resource, context, validity, recognition scope, prohibitions, and evidence provenance. It MUST NOT broaden delegated or recognized scope, infer transitive recognition, equate technical federation with governance recognition, or convert missing, stale, conflicting, suspended, revoked, expired, or unavailable authority into an affirmative result.
+
+The detailed, machine-verifiable mapping is defined by `mappings/trqp-arpa-query-projection.yaml`. The architecture rationale, information-loss analysis, and sequence diagrams are defined by `docs/architecture/trqp-arpa-interoperability.md`.
+
+## 39A.3 Lifecycle ownership
+
+ARPA owns the operations and evidence through which authority state changes. A TRQP projection queries the resulting state; it is not an ARPA lifecycle API and does not add write operations to TRQP. Discovery metadata for a projection endpoint is an optional ARPA interoperability declaration and MUST NOT be presented as a mandatory registry-of-registries mechanism.
 
 # 40. Open Issues
 
@@ -3960,6 +4049,14 @@ A conforming registry therefore exists not merely to make agents visible, but to
 
 # Appendix H. Change Log
 
+## H.0 Version 0.9.0
+
+- Promoted the document to the authoritative Candidate Specification.
+- Added stable Candidate requirement identifiers and independent conformance targets.
+- Hardened delegation, recognition, lifecycle, durable-event, proof, policy, and evidence semantics.
+- Added the informative ARPA–TRQP governed query-projection boundary.
+- Required machine-verifiable requirement-to-test-to-evidence traceability.
+
 ## H.2 Version 0.5.0
 
 - Added composable protocol modules, ARPA-Core profile, identifier/alias and Agent Card profiles.
@@ -3996,7 +4093,7 @@ A conforming registry therefore exists not merely to make agents visible, but to
 
 - Established the initial architecture, record model, lifecycle model, protocol endpoints, security considerations, and four conformance profiles.
 
-# End of Draft
+# End of Candidate Specification
 
 
 ---

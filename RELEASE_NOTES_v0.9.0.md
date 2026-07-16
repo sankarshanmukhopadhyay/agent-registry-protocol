@@ -18,3 +18,12 @@ The existing ARPA record-schema track remains compatible. v0.9.0 adds Candidate 
 ## Assurance boundary
 
 This release is not v1.0. The bundled implementation paths are maintained in one repository; network testing uses loopback endpoints; durable-event testing uses SQLite; and the TRQP projection is informative. No certification, legal recognition, production security approval, universal interoperability or formal TRQP conformance is claimed.
+
+## Specification consolidation
+
+The final payload contains one authoritative prose specification at
+`spec/agent-registry-protocol-v0.9.0.md`. Candidate requirements,
+conformance targets, hardened lifecycle and authority controls, and the
+informative ARPA–TRQP architecture boundary are integrated directly into
+that document. The earlier unchanged draft and detached candidate overlay
+have been removed to prevent conflicting interpretation.

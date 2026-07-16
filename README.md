@@ -1,6 +1,6 @@
 # Agent Registry Protocol
 
-[![Specification status](https://img.shields.io/badge/specification-v0.9.0%20candidate-blue)](spec/arpa-v0.9.0-candidate-specification.md)
+[![Specification status](https://img.shields.io/badge/specification-v0.9.0%20candidate-blue)](spec/agent-registry-protocol-v0.9.0.md)
 [![Validation](https://github.com/sankarshanmukhopadhyay/agent-registry-protocol/actions/workflows/validate.yml/badge.svg)](https://github.com/sankarshanmukhopadhyay/agent-registry-protocol/actions/workflows/validate.yml)
 [![License: CC BY 4.0](https://img.shields.io/badge/spec-CC%20BY%204.0-lightgrey.svg)](LICENSE)
 [![Code: Apache-2.0](https://img.shields.io/badge/code-Apache--2.0-lightgrey.svg)](LICENSE-CODE)
@@ -35,8 +35,7 @@
 ## Start here
 
 1. [Documentation home](docs/index.md)
-2. [v0.9.0 Candidate Specification](spec/arpa-v0.9.0-candidate-specification.md)
-3. [Architecture specification](spec/draft-agent-registry-protocol-architecture.md)
+2. [Authoritative v0.9.0 Candidate Specification](spec/agent-registry-protocol-v0.9.0.md)
 4. [Candidate implementation guide](docs/candidate-specification-guide.md)
 5. [ARPA–TRQP interoperability architecture](docs/architecture/trqp-arpa-interoperability.md)
 6. [Migration from v0.5.0](docs/migration-v0.5.0-to-v0.9.0.md)

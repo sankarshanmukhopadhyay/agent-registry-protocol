@@ -3,11 +3,12 @@
   "status": "Candidate Specification",
   "generated_on": "2026-07-16",
   "release_gate": "make release-check",
+  "authoritative_specification": "spec/agent-registry-protocol-v0.9.0.md",
   "artifacts": [
     {
-      "path": "spec/arpa-v0.9.0-candidate-specification.md",
-      "sha256": "5aa45e09cd2c566ba2ec61c4c39e1ebbe426f50df3dd56a11a3f0e16a118338d",
-      "bytes": 3103
+      "path": "spec/agent-registry-protocol-v0.9.0.md",
+      "sha256": "1e37776f0013af1c1102349921229ba637c67872b6c0ed1a55da45d18e6ca49e",
+      "bytes": 136951
     },
     {
       "path": "docs/architecture/trqp-arpa-interoperability.md",
@@ -21,33 +22,33 @@
     },
     {
       "path": "artifacts/candidate-specification/candidate-validation-report.json",
-      "sha256": "4d7a45cbab00c28999a546c21832de5aa8104e2fba90af66620599a8e5a317a4",
+      "sha256": "7346c63379c6573224afb7d4dc3613d0e26e5f9d200aeb2e702918f102cf1646",
       "bytes": 3493
     },
     {
       "path": "artifacts/candidate-specification/evidence-bundle.json",
-      "sha256": "f52ceeb1cc250226a524751b771d1d40b9159e425715ecc688962b7f889c50e7",
+      "sha256": "b40fac8dc5e465203436695e01d77bbfbfc3b247a5fb0b506c8b343e015d6492",
       "bytes": 618
     },
     {
       "path": "artifacts/interoperability/interoperability-report.json",
-      "sha256": "6ca081fac67964939362d172e905e5f3900cb73e2bb75a952f91bb55796d1569",
+      "sha256": "8d346ea745d18c0d97b775f94af6a3491fa0363250d13df3706b3b03e9929701",
       "bytes": 2389
     },
     {
       "path": "conformance/reports/reference-implementation-report.json",
-      "sha256": "0c15b11ef314fc09f8398482b2b2b87375548e9890a0727b625a272c4f74c3be",
+      "sha256": "2a1ea3f9ec17ee7a2e60633dde9e4410796038d01ff25739205f29087183f4c8",
       "bytes": 6883
     },
     {
       "path": "RELEASE_NOTES_v0.9.0.md",
-      "sha256": "951b0843218a87ca7e2dd10f2c6f1d2aa58dd11e7ebb105d09a7ea93b7e1e09c",
-      "bytes": 1431
+      "sha256": "7a630ca5f567445f7ef5fd899b5ef1d2d3acd271eea5af260795cb83ccf19c3b",
+      "bytes": 1876
     },
     {
       "path": "VALIDATION_SUMMARY.md",
-      "sha256": "c416f91b004db3862bb6494938277e85cc1a75847d8e8067d62c9e530bde4690",
-      "bytes": 1550
+      "sha256": "4692ac049dbc7a0939d47622234d95d3201f6a82343d5dfd53a77f3f69bf3396",
+      "bytes": 1871
     }
   ],
   "assurance_boundary": [

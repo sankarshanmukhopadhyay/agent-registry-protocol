@@ -34,3 +34,10 @@ make release-check
 ## Assurance boundary
 
 The bundled implementation paths are maintained in one repository and are not evidence of independent external adoption. Network testing uses loopback endpoints, durable-event behavior uses SQLite, and the ARPA–TRQP profile is informative. The validation does not constitute certification, legal recognition, formal TRQP conformance, production security approval, or universal interoperability.
+
+## Specification authority correction
+
+The release now has one authoritative prose specification:
+`spec/agent-registry-protocol-v0.9.0.md`. The unchanged v0.5.0 draft and
+detached Candidate requirements overlay have been removed. All repository
+references and validation gates resolve to the consolidated specification.

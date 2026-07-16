@@ -2,7 +2,7 @@ from pathlib import Path
 import json, sys, yaml
 ROOT=Path(__file__).resolve().parents[1]
 errors=[]
-required=['spec/arpa-v0.9.0-candidate-specification.md','docs/architecture/trqp-arpa-interoperability.md','mappings/trqp-arpa-query-projection.yaml','conformance/trqp-projection/manifest.json','independent_impl/projection.py']
+required=['spec/agent-registry-protocol-v0.9.0.md','docs/architecture/trqp-arpa-interoperability.md','mappings/trqp-arpa-query-projection.yaml','conformance/trqp-projection/manifest.json','independent_impl/projection.py']
 for r in required:
  if not (ROOT/r).exists(): errors.append('missing candidate artifact: '+r)
 m=yaml.safe_load((ROOT/'mappings/trqp-arpa-query-projection.yaml').read_text())

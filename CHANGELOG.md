@@ -53,3 +53,9 @@ The release does not claim external implementation independence, formal TRQP con
 ## [0.3.0] - 2026-07-15
 
 - Initial machine-readable schemas, examples, profile matrices and executable conformance vectors.
+
+### Candidate specification consolidation correction
+
+- Consolidated the v0.9.0 Candidate requirements into the authoritative protocol specification.
+- Removed the unchanged v0.5.0 draft and detached candidate overlay to eliminate competing specification surfaces.
+- Updated all repository references, schemas, manifests, validation rules, and documentation to point to `spec/agent-registry-protocol-v0.9.0.md`.

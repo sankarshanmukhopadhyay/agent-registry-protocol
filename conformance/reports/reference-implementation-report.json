@@ -1,6 +1,6 @@
 {
   "report_version": "1.0.0",
-  "generated_at": "2026-07-16T05:47:01.290837+00:00",
+  "generated_at": "2026-07-16T06:01:04.165027+00:00",
   "implementation": "ARPA reference service",
   "implementation_version": "0.5.0",
   "arpa_version": "0.5.0",
@@ -48,7 +48,7 @@
     {
       "name": "tests",
       "passed": true,
-      "output": ".....                                                                    [100%]\n5 passed in 0.77s\n"
+      "output": ".....                                                                    [100%]\n5 passed in 0.74s\n"
     }
   ],
   "passed": true,

@@ -2,7 +2,7 @@
 
 ## Start here
 
-- [Candidate Specification](../spec/arpa-v0.9.0-candidate-specification.md)
+- [Candidate Specification](../spec/agent-registry-protocol-v0.9.0.md)
 - [Candidate implementation guide](candidate-specification-guide.md)
 - [Quickstart](quickstart.md)
 - [Protocol modules](protocol-modules.md)
