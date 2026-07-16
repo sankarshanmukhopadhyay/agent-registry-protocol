@@ -1,0 +1,90 @@
+{
+  "report_version": "1.0.0",
+  "generated_at": "2026-07-16T04:47:49.602331+00:00",
+  "release": "v0.5.0",
+  "title": "ARPA interoperability report",
+  "participants": [
+    "registry:alpha",
+    "registry:beta"
+  ],
+  "checks": [
+    {
+      "name": "metadata-discovery",
+      "passed": true,
+      "evidence": {
+        "registry_id": "registry:alpha",
+        "modules": [
+          "ARPA-Core",
+          "ARPA-Relations",
+          "ARPA-Authority",
+          "ARPA-Evidence"
+        ]
+      }
+    },
+    {
+      "name": "canonical-resolution",
+      "passed": true,
+      "evidence": {
+        "agent_id": "agentreg:alpha:procurement-001",
+        "digest": "sha256:37ed360973f2b33fef3220f5c2cbdb84dac207a23d22cac967fd99e38de900fa"
+      }
+    },
+    {
+      "name": "scoped-recognition",
+      "passed": true,
+      "evidence": {
+        "recognition_id": "beta-recognises-alpha-core",
+        "record_type": "agent_core"
+      }
+    },
+    {
+      "name": "event-continuity",
+      "passed": true,
+      "evidence": {
+        "sequences": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "name": "revocation-propagation",
+      "passed": true,
+      "evidence": {
+        "event_id": "alpha-event-002",
+        "event_type": "agent.suspended"
+      }
+    },
+    {
+      "name": "enforcement-acknowledgement",
+      "passed": true,
+      "evidence": {
+        "enforcement_point": "pdp:beta",
+        "event_id": "alpha-event-002",
+        "subject": "agentreg:alpha:procurement-001",
+        "acknowledged_at": "2026-07-16T01:00:02Z",
+        "resulting_status": "blocked"
+      }
+    },
+    {
+      "name": "policy-portability",
+      "passed": true,
+      "evidence": {
+        "portable_active": "allow",
+        "reference_active": "allow",
+        "portable_suspended": "deny",
+        "reference_suspended": "deny"
+      }
+    }
+  ],
+  "passed": true,
+  "evidence_bundle": "artifacts/interoperability/evidence-bundle.json",
+  "evidence_bundle_digest": "sha256:6db65a53334689dcb04aa634b0c8a106f634754bb921d758edb1135da8858d41",
+  "independence_claim": false,
+  "known_limitations": [
+    "Fixtures are maintained in one repository and are not independent implementations",
+    "No production cryptographic proof or key custody",
+    "No network transport or durable message broker",
+    "Recognition is demonstrated by deterministic fixture processing"
+  ]
+}

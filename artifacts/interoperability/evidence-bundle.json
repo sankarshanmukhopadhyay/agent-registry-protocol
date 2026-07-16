@@ -1,0 +1,31 @@
+{
+  "bundle_version": "1.0.0",
+  "arpa_version": "0.5.0",
+  "producer": "ARPA repository interoperability harness",
+  "fixtures": [
+    "registry:alpha",
+    "registry:beta"
+  ],
+  "artifacts": {
+    "alpha_metadata": "sha256:2c08b7b79c334c2c6c970bd91d9ba4c23a39044f3594d217c29bab1dc256a7fc",
+    "beta_metadata": "sha256:10aa7dd3a87f72a75e79209f9be59a6b1dc400466c7a4593e1fd1dfb9b24e937",
+    "agent_core": "sha256:37ed360973f2b33fef3220f5c2cbdb84dac207a23d22cac967fd99e38de900fa",
+    "recognition": "sha256:793301f309f768f4e54e80bec5e136daf5d4e7f592fc33cafbc2970b80641ab1",
+    "events": "sha256:939fb228c4997ff21d9023793439c0ddfd4c5edcdb3c5588bf97adadc480dc1e",
+    "policy": "sha256:ee001094208a64d4b5de197bcce131ff950037070121afb9fd0d567223f2ff1b"
+  },
+  "revocation_acknowledgement": {
+    "enforcement_point": "pdp:beta",
+    "event_id": "alpha-event-002",
+    "subject": "agentreg:alpha:procurement-001",
+    "acknowledged_at": "2026-07-16T01:00:02Z",
+    "resulting_status": "blocked"
+  },
+  "limitations": [
+    "Fixtures are maintained in one repository and are not independent implementations",
+    "No production cryptographic proof or key custody",
+    "No network transport or durable message broker",
+    "Recognition is demonstrated by deterministic fixture processing"
+  ],
+  "bundle_digest": "sha256:6db65a53334689dcb04aa634b0c8a106f634754bb921d758edb1135da8858d41"
+}

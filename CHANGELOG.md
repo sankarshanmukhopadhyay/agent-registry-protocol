@@ -1,6 +1,6 @@
 # Changelog
 
-## [0.4.0] - 2026-07-15
+## [0.5.0] - 2026-07-15
 
 ### Added
 
@@ -17,7 +17,7 @@
 
 ### Changed
 
-- advanced the community draft to v0.4.0;
+- advanced the community draft to v0.5.0;
 - clarified that Profile A is independently implementable and unsupported higher-module operations return a deterministic error;
 - formalized self-declared Agent Card capabilities as distinct from verification, authorization and assurance;
 - strengthened transfer, issuer-competence and alias conflict semantics;

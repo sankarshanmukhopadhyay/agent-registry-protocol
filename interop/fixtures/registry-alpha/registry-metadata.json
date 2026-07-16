@@ -1,0 +1,19 @@
+{
+  "registry_id": "registry:alpha",
+  "name": "Alpha Registry",
+  "arpa_version": "0.5.0",
+  "supported_modules": [
+    "ARPA-Core",
+    "ARPA-Relations",
+    "ARPA-Authority",
+    "ARPA-Evidence"
+  ],
+  "supported_profiles": [
+    "A",
+    "C"
+  ],
+  "authoritative_base_uri": "https://alpha.example.test",
+  "conformance_declaration_uri": "https://alpha.example.test/records/conformance-alpha",
+  "event_retention_seconds": 86400,
+  "status_max_age_seconds": 300
+}

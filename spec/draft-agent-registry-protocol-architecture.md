@@ -4,7 +4,7 @@
 
 **Category:** Standards Track  
 **Intended Status:** Proposed Standard  
-**Version:** 0.4.0  
+**Version:** 0.5.0  
 **Date:** 2026-07-15  
 **Author:** Sankarshan Mukhopadhyay  
 **License:** CC BY 4.0  
@@ -2862,7 +2862,7 @@ A registry SHOULD publish signed checkpoints or equivalent integrity commitments
 
 Every response and record MUST identify the supported specification or schema version.
 
-The record envelope's `schema_version` (§13.1) identifies the version of the per-record-type JSON Schema under `schemas/` and follows its own semantic-versioning track, independent of this document's `Version` header (§ front matter). The two tracks are related as follows: a document major or minor version MAY be released without changing any `schema_version` (editorial or non-normative change); a `schema_version` MAY advance independently of the document version only for schema-level corrections that do not alter normative record semantics (for example, tightening a pattern already implied by prose). Any change to a record's required fields or field semantics MUST be reflected in both the document's Change Log (Appendix H) and a corresponding `schema_version` bump, and the mapping between document version and the `schema_version` values it corresponds to MUST be recorded in `schemas/README.md`. As of document version 0.4.0, the corresponding schema track is `1.0.0` (see `schemas/README.md`).
+The record envelope's `schema_version` (§13.1) identifies the version of the per-record-type JSON Schema under `schemas/` and follows its own semantic-versioning track, independent of this document's `Version` header (§ front matter). The two tracks are related as follows: a document major or minor version MAY be released without changing any `schema_version` (editorial or non-normative change); a `schema_version` MAY advance independently of the document version only for schema-level corrections that do not alter normative record semantics (for example, tightening a pattern already implied by prose). Any change to a record's required fields or field semantics MUST be reflected in both the document's Change Log (Appendix H) and a corresponding `schema_version` bump, and the mapping between document version and the `schema_version` values it corresponds to MUST be recorded in `schemas/README.md`. As of document version 0.5.0, the corresponding schema track is `1.0.0` (see `schemas/README.md`).
 
 ## 33.2 Backward Compatibility
 
@@ -3960,7 +3960,7 @@ A conforming registry therefore exists not merely to make agents visible, but to
 
 # Appendix H. Change Log
 
-## H.2 Version 0.4.0
+## H.2 Version 0.5.0
 
 - Added composable protocol modules, ARPA-Core profile, identifier/alias and Agent Card profiles.
 - Added normative OpenAPI/event contracts, controlled registries, completed schemas and reference implementation.
@@ -4013,7 +4013,7 @@ A Profile A implementation MUST satisfy `spec/profiles/arpa-core-identity-discov
 
 ## 42.3 Machine-readable contracts
 
-The JSON Schemas, controlled registries, OpenAPI contract, event contract and conformance vectors in this repository are normative implementation artifacts for v0.4.0. Where prose and a machine-readable artifact conflict, an implementation MUST report the conflict; neither form silently overrides the other until corrected through governance.
+The JSON Schemas, controlled registries, OpenAPI contract, event contract and conformance vectors in this repository are normative implementation artifacts for v0.5.0. Where prose and a machine-readable artifact conflict, an implementation MUST report the conflict; neither form silently overrides the other until corrected through governance.
 
 ## 42.4 External descriptions
 

@@ -17,3 +17,10 @@ def test_alias_conflict_is_not_silent():
     a=dict(base,record_id='alias-1',canonical_id='agentreg:test:one'); b=dict(base,record_id='alias-2',canonical_id='agentreg:test:two',subject='agentreg:test:two')
     client.post('/records',json=a); client.post('/records',json=b)
     assert client.get('/aliases/did:example:shared').status_code==409
+
+
+def test_interoperability_declaration():
+    data=client.get('/interoperability').json()
+    assert data['arpa_version']=='0.5.0'
+    assert data['independent_implementation'] is False
+    assert 'revocation-acknowledgement' in data['supports']

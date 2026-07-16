@@ -10,6 +10,8 @@ for name, command in [
     ('vectors', ['python3', 'scripts/validate_test_vectors.py']),
     ('extended-vectors', ['python3', 'scripts/validate_extended_vectors.py']),
     ('artifacts', ['python3', 'scripts/validate_artifacts.py']),
+    ('repository', ['python3', 'scripts/validate_repository.py']),
+    ('interoperability', ['python3', 'scripts/run_interoperability.py']),
     ('tests', ['python3', '-m', 'pytest', '-q']),
 ]:
     process = subprocess.run(command, cwd=ROOT, text=True, capture_output=True)
@@ -23,8 +25,8 @@ report = {
     'report_version': '1.0.0',
     'generated_at': datetime.datetime.now(datetime.timezone.utc).isoformat(),
     'implementation': 'ARPA reference service',
-    'implementation_version': '0.4.0',
-    'arpa_version': '0.4.0',
+    'implementation_version': '0.5.0',
+    'arpa_version': '0.5.0',
     'modules': ['ARPA-Core', 'ARPA-Relations', 'ARPA-Authority', 'ARPA-Evidence'],
     'profile_claims': ['A', 'C-demonstration-only'],
     'checks': checks,
@@ -34,6 +36,7 @@ report = {
         'No independent identity proofing',
         'No distributed consensus',
         'No production federation service',
+        'Repository interoperability fixtures are not independent implementations',
         'Authority evaluator supports the deterministic reference policy subset',
     ],
 }

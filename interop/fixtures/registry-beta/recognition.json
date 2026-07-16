@@ -1,0 +1,14 @@
+{
+  "recognition_id": "beta-recognises-alpha-core",
+  "recognizer": "registry:beta",
+  "recognized_registry": "registry:alpha",
+  "recognized_record_types": [
+    "agent_core",
+    "status",
+    "authority-envelope"
+  ],
+  "status": "active",
+  "effective_from": "2026-07-16T00:00:00Z",
+  "effective_until": null,
+  "status_handling": "require_current"
+}

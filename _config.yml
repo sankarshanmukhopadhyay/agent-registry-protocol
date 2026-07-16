@@ -1,0 +1,12 @@
+title: Agent Registry Protocol
+description: A modular authority-control protocol for delegated software agents.
+theme: jekyll-theme-minimal
+include:
+  - .well-known
+exclude:
+  - reference
+  - scripts
+  - interop
+  - artifacts
+  - Dockerfile
+  - docker-compose.yml

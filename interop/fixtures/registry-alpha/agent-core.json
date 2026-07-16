@@ -1,0 +1,15 @@
+{
+  "record_id": "alpha-agent-001",
+  "record_type": "agent_core",
+  "schema_version": "1.0.0",
+  "issuer": "registry:alpha",
+  "subject": "agentreg:alpha:procurement-001",
+  "issued_at": "2026-07-16T00:00:00Z",
+  "effective_from": "2026-07-16T00:00:00Z",
+  "effective_until": null,
+  "status": "active",
+  "agent_id": "agentreg:alpha:procurement-001",
+  "name": "Bounded Procurement Agent",
+  "agent_class": "transactional",
+  "registration_status": "active"
+}

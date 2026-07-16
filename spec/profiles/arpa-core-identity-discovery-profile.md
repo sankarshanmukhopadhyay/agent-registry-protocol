@@ -1,6 +1,6 @@
 # ARPA Core Identity and Discovery Profile
 
-**Status:** Normative profile for ARPA v0.4.0  
+**Status:** Normative profile for ARPA v0.5.0  
 **Module:** ARPA-Core  
 **Conformance profile:** Profile A
 

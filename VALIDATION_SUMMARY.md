@@ -1,26 +1,32 @@
-# v0.4.0 Validation Summary
+# v0.5.0 Validation Summary
 
-## Automated results
+## Release gate
 
-| Surface | Result |
+The release was validated on 16 July 2026 using:
+
+```bash
+make release-check
+```
+
+## Results
+
+| Validation surface | Result |
 |---|---:|
-| Valid and targeted invalid schema examples | 44/44 passed |
-| Profile A-D decision vectors | 12/12 passed |
-| Extended governance and interoperability vectors | 14/14 passed |
-| Reference service integration tests | 4/4 passed |
-| JSON Schema meta-validation | Passed |
-| Controlled registry uniqueness and structure | Passed |
-| OpenAPI and AsyncAPI YAML parsing | Passed |
-| Machine-readable implementation report | Generated; all checks passed |
+| Valid and invalid schema examples | 44/44 passed |
+| Profile conformance vectors | 12/12 passed |
+| Extended governance vectors | 14/14 passed |
+| Schema, controlled-registry, OpenAPI, and AsyncAPI parsing | Passed |
+| Flagship repository baseline and local Markdown links | Passed |
+| Reference-service tests | 5/5 passed |
+| Interoperability gates | 7/7 passed |
+| Reference implementation report | Passed |
 
 ## Evidence produced
 
 - `conformance/reports/reference-implementation-report.json`
-- positive and negative records under `examples/`
-- profile vectors under `conformance/test-vectors/TV-*`
-- governance vectors under `conformance/test-vectors/extended/`
-- FastAPI integration tests under `reference/tests/`
+- `artifacts/interoperability/interoperability-report.json`
+- `artifacts/interoperability/evidence-bundle.json`
 
 ## Assurance boundary
 
-The results establish deterministic behavior for the published schemas, vectors and local reference service. They do not establish production security, legal authority, regulatory certification, independent interoperability or operational service-level compliance. See `KNOWN_LIMITATIONS.md`.
+These results demonstrate reproducibility of the repository artifacts and supplied fixtures. They do not constitute independent implementation evidence, production security assurance, legal recognition, or certification.

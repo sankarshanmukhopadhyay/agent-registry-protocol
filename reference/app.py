@@ -6,7 +6,7 @@ from fastapi.responses import JSONResponse
 from .storage import Store
 from scripts.reference_evaluator import evaluate_authority
 
-app=FastAPI(title='ARPA Reference Service',version='0.4.0')
+app=FastAPI(title='ARPA Reference Service',version='0.5.0')
 store=Store(os.getenv('ARPA_DB',':memory:'))
 
 def now(): return datetime.now(timezone.utc).isoformat().replace('+00:00','Z')
@@ -17,11 +17,11 @@ def emit(subject,event_type,payload=None):
     event['sequence']=store.add_event(event); return event
 
 @app.get('/health')
-def health(): return {'status':'ok','version':'0.4.0'}
+def health(): return {'status':'ok','version':'0.5.0'}
 
 @app.get('/registry')
 def registry():
-    return {'registry_id':'registry:reference','name':'ARPA Reference Registry','arpa_version':'0.4.0','supported_modules':['ARPA-Core','ARPA-Relations','ARPA-Authority','ARPA-Evidence'],'supported_profiles':['A','C'],'authoritative_base_uri':'http://127.0.0.1:8000','conformance_declaration_uri':'http://127.0.0.1:8000/records/conformance-reference','event_retention_seconds':86400,'status_max_age_seconds':300}
+    return {'registry_id':'registry:reference','name':'ARPA Reference Registry','arpa_version':'0.5.0','supported_modules':['ARPA-Core','ARPA-Relations','ARPA-Authority','ARPA-Evidence'],'supported_profiles':['A','C'],'authoritative_base_uri':'http://127.0.0.1:8000','conformance_declaration_uri':'http://127.0.0.1:8000/records/conformance-reference','event_retention_seconds':86400,'status_max_age_seconds':300}
 
 @app.post('/agents',status_code=201)
 def register_agent(record:dict):
@@ -75,7 +75,7 @@ def resolve_alias(alias:str,at:str|None=Query(None)):
 @app.post('/authority/evaluate')
 def authority_evaluate(payload:dict):
     decision,reasons=evaluate_authority(payload)
-    receipt={'record_id':str(uuid.uuid4()),'record_type':'decision-receipt','schema_version':'1.0.0','issuer':'pdp:reference','subject':payload.get('request',{}).get('agent','unknown'),'issued_at':now(),'effective_from':now(),'effective_until':None,'status':'issued','request_digest':'sha256:'+hashlib.sha256(json.dumps(payload,sort_keys=True,separators=(',',':')).encode()).hexdigest(),'decision':decision,'reason_codes':reasons,'evaluator':'pdp:reference','policy_version':'reference-0.4.0'}
+    receipt={'record_id':str(uuid.uuid4()),'record_type':'decision-receipt','schema_version':'1.0.0','issuer':'pdp:reference','subject':payload.get('request',{}).get('agent','unknown'),'issued_at':now(),'effective_from':now(),'effective_until':None,'status':'issued','request_digest':'sha256:'+hashlib.sha256(json.dumps(payload,sort_keys=True,separators=(',',':')).encode()).hexdigest(),'decision':decision,'reason_codes':reasons,'evaluator':'pdp:reference','policy_version':'reference-0.5.0'}
     store.put_record(receipt)
     return {'decision':decision,'reason_codes':reasons,'decision_receipt':receipt}
 
@@ -84,3 +84,13 @@ def reliance_evaluate(payload:dict):
     required=payload.get('required_modules',[]); supported=set(registry()['supported_modules']); missing=[m for m in required if m not in supported]
     if missing: return {'decision':'indeterminate','reason_codes':['required_module_not_supported'],'missing_modules':missing}
     return {'decision':'allow','reason_codes':['required_modules_supported']}
+
+@app.get('/interoperability')
+def interoperability():
+    return {
+        'arpa_version':'0.5.0',
+        'exchange_profile':'arpa-interoperability-0.5',
+        'supports':['registry-metadata','canonical-resolution','scoped-recognition','event-replay','revocation-acknowledgement'],
+        'evidence_format':'artifacts/interoperability/evidence-bundle.json',
+        'independent_implementation':False
+    }

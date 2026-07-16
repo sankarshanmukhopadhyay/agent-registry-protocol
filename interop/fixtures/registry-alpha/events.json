@@ -1,0 +1,27 @@
+[
+  {
+    "sequence": 1,
+    "event_id": "alpha-event-001",
+    "event_type": "agent.registered",
+    "subject": "agentreg:alpha:procurement-001",
+    "source": "registry:alpha",
+    "effective_at": "2026-07-16T00:00:00Z",
+    "issued_at": "2026-07-16T00:00:01Z",
+    "payload": {
+      "record_id": "alpha-agent-001"
+    }
+  },
+  {
+    "sequence": 2,
+    "event_id": "alpha-event-002",
+    "event_type": "agent.suspended",
+    "subject": "agentreg:alpha:procurement-001",
+    "source": "registry:alpha",
+    "effective_at": "2026-07-16T01:00:00Z",
+    "issued_at": "2026-07-16T01:00:01Z",
+    "payload": {
+      "reason_code": "security_incident",
+      "status": "suspended"
+    }
+  }
+]

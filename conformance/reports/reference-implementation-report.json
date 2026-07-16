@@ -1,9 +1,9 @@
 {
   "report_version": "1.0.0",
-  "generated_at": "2026-07-15T03:43:39.581528+00:00",
+  "generated_at": "2026-07-16T04:47:53.694146+00:00",
   "implementation": "ARPA reference service",
-  "implementation_version": "0.4.0",
-  "arpa_version": "0.4.0",
+  "implementation_version": "0.5.0",
+  "arpa_version": "0.5.0",
   "modules": [
     "ARPA-Core",
     "ARPA-Relations",
@@ -36,9 +36,19 @@
       "output": "validate_artifacts.py: schemas, registries and YAML parsed successfully\n"
     },
     {
+      "name": "repository",
+      "passed": true,
+      "output": "validate_repository.py: flagship baseline and local Markdown links OK\n"
+    },
+    {
+      "name": "interoperability",
+      "passed": true,
+      "output": "[OK] metadata-discovery\n[OK] canonical-resolution\n[OK] scoped-recognition\n[OK] event-continuity\n[OK] revocation-propagation\n[OK] enforcement-acknowledgement\n[OK] policy-portability\ninteroperability: 7/7 checks passed\n"
+    },
+    {
       "name": "tests",
       "passed": true,
-      "output": "....                                                                     [100%]\n4 passed in 2.87s\n"
+      "output": ".....                                                                    [100%]\n5 passed in 0.80s\n"
     }
   ],
   "passed": true,
@@ -47,6 +57,7 @@
     "No independent identity proofing",
     "No distributed consensus",
     "No production federation service",
+    "Repository interoperability fixtures are not independent implementations",
     "Authority evaluator supports the deterministic reference policy subset"
   ]
 }

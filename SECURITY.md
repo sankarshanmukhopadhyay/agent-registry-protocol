@@ -40,6 +40,6 @@ Security issues may include:
 
 Maintainers will acknowledge valid reports, assess impact, prepare corrections, and coordinate disclosure. No guaranteed response time is offered while the project remains volunteer-maintained, but security reports receive priority.
 
-## v0.4.0 implementation threats
+## v0.5.0 implementation threats
 
 Security review should explicitly test alias hijacking and loops, issuer-competence confusion, unauthorized control changes, projection poisoning, stale status, event gaps and replay, malicious critical extensions, authority expansion, transfer abuse, key compromise and incomplete revocation convergence. The reference implementation is not a production security boundary.

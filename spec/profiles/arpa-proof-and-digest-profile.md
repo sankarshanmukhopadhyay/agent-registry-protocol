@@ -6,7 +6,7 @@ For JSON records, the default canonical representation is JCS-compatible determi
 
 ## Digest
 
-The v0.4.0 baseline digest is SHA-256 and is serialized as `sha256:<lowercase-hex>`. A digest establishes byte-level commitment to canonical content. It does not establish issuer competence, truth, authority or assurance.
+The v0.5.0 baseline digest is SHA-256 and is serialized as `sha256:<lowercase-hex>`. A digest establishes byte-level commitment to canonical content. It does not establish issuer competence, truth, authority or assurance.
 
 ## Proof object
 

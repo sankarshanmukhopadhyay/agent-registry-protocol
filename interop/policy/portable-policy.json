@@ -1,0 +1,22 @@
+{
+  "policy_id": "portable-procurement-v1",
+  "version": "1.0.0",
+  "effect": "allow",
+  "all": [
+    {
+      "path": "request.action",
+      "operator": "equals",
+      "value": "purchase"
+    },
+    {
+      "path": "request.amount",
+      "operator": "less_than_or_equal",
+      "value": 1000
+    },
+    {
+      "path": "subject.status",
+      "operator": "equals",
+      "value": "active"
+    }
+  ]
+}

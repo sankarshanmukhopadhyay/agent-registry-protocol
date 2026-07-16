@@ -1,68 +1,62 @@
 # Agent Registry Protocol
 
-[![Specification status](https://img.shields.io/badge/specification-v0.4.0%20community%20draft-blue)](spec/draft-agent-registry-protocol-architecture.md)
+[![Specification status](https://img.shields.io/badge/specification-v0.5.0%20interoperability%20draft-blue)](spec/draft-agent-registry-protocol-architecture.md)
 [![Validation](https://github.com/sankarshanmukhopadhyay/agent-registry-protocol/actions/workflows/validate.yml/badge.svg)](https://github.com/sankarshanmukhopadhyay/agent-registry-protocol/actions/workflows/validate.yml)
 [![License: CC BY 4.0](https://img.shields.io/badge/spec-CC%20BY%204.0-lightgrey.svg)](LICENSE)
 [![Code: Apache-2.0](https://img.shields.io/badge/code-Apache--2.0-lightgrey.svg)](LICENSE-CODE)
 
 **A modular protocol for treating agent registries as distributed authority-control planes for delegated action.**
 
-> An agent registry is not merely a directory of autonomous software objects. It is infrastructure for resolving identity, attribution, bounded authority, assurance, status, evidence, governance and redress without collapsing those claims into a universal trust flag.
+> An agent registry is not merely a directory of autonomous software objects. It resolves identity, attribution, bounded authority, assurance, status, evidence, governance, enforcement, and redress without collapsing those claims into a universal trust flag.
 
-## v0.4.0 deliverables
+## Repository status
 
-- six composable protocol modules and a minimal ARPA-Core profile;
-- canonical `agentreg` identifiers and governed aliases;
+| Attribute | Value |
+|---|---|
+| Portfolio tier | Flagship candidate |
+| Lifecycle | Active |
+| Stability | v0.5.0 interoperability draft |
+| Primary artifacts | Specification, schemas, controlled registries, API contracts, reference service, conformance and interoperability evidence |
+| Release gate | `make release-check` |
+| Evidence output | `artifacts/interoperability/evidence-bundle.json` |
+| Authority | Community draft governed by `GOVERNANCE.md` |
+
+## What v0.5.0 delivers
+
+- six composable protocol modules and profile-specific conformance;
+- canonical `agentreg` identifiers, governed aliases, and scoped registry recognition;
 - 20 normative record schemas plus Agent Card and registry metadata schemas;
-- machine-readable controlled registries;
-- OpenAPI and AsyncAPI contracts;
-- typed relationship and issuer-competence semantics;
-- multidimensional conformance reports;
-- a runnable FastAPI/SQLite reference registry, resolver, event service and PDP;
-- end-to-end adoption scenarios, deployment guidance and hardened CI.
+- controlled registries, OpenAPI and AsyncAPI contracts;
+- runnable FastAPI/SQLite registry, resolver, event service, and policy decision point;
+- positive, negative, and extended governance vectors;
+- a two-registry interoperability harness covering discovery, resolution, recognition, event continuity, revocation, enforcement acknowledgement, and policy portability;
+- machine-readable implementation reports and an interoperability evidence bundle;
+- adoption, deployment, security, privacy, governance, migration, and AI-use guidance.
 
 ## Start here
 
-1. [Architecture specification](spec/draft-agent-registry-protocol-architecture.md)
-2. [Protocol modules](docs/protocol-modules.md)
-3. [Implementation selection guide](docs/implementation-selection-guide.md)
-4. [ARPA-Core profile](spec/profiles/arpa-core-identity-discovery-profile.md)
-5. [Quickstart](docs/quickstart.md)
-6. [OpenAPI contract](openapi/arpa-openapi.yaml)
-7. [Conformance guide](docs/conformance-guide.md)
-8. [Known limitations](KNOWN_LIMITATIONS.md)
+1. [Documentation home](docs/index.md)
+2. [Architecture specification](spec/draft-agent-registry-protocol-architecture.md)
+3. [Quickstart](docs/quickstart.md)
+4. [Interoperability guide](docs/interoperability.md)
+5. [Implementation selection guide](docs/implementation-selection-guide.md)
+6. [Conformance guide](docs/conformance-guide.md)
+7. [Known limitations](KNOWN_LIMITATIONS.md)
 
-## Validate and run
+## Validate, test, and produce evidence
 
 ```bash
 make setup
-make validate
-make test
-make report
+make release-check
 make run
 ```
 
-API documentation is available at `http://127.0.0.1:8000/docs` while the reference service is running.
-
-## Repository structure
-
-```text
-spec/          architecture and normative profiles
-docs/          implementor, operator, security and governance guidance
-schemas/       JSON Schema 2020-12 record contracts
-registries/    controlled machine-readable identifiers
-openapi/       REST contract
-asyncapi/      event contract
-reference/     runnable reference registry, resolver and PDP
-conformance/   profiles, vectors and implementation reports
-examples/      valid/invalid records and end-to-end scenarios
-scripts/       validators and report generation
-```
+`make release-check` validates schemas, examples, conformance vectors, repository controls, service tests, interoperability behavior, and implementation reporting. API documentation is available at `http://127.0.0.1:8000/docs` while the reference service runs.
 
 ## Governing distinctions
 
-Identity is not authority. Key control is not accountability. Capability is not permission. Ownership is not delegation. Assurance is not universal trust. Registry revocation is incomplete until enforcement surfaces converge. Technical federation does not imply governance recognition.
+Identity is not authority. Key control is not accountability. Capability is not permission. Ownership is not delegation. Assurance is not universal trust. Technical federation is not governance recognition. Revocation is incomplete until enforcement surfaces acknowledge and apply it.
 
-## Status and licensing
+## Authority and limitations
 
-This is an independent community draft, not an adopted standard. Specifications and documentation use CC BY 4.0; code and executable artifacts use Apache-2.0. See [LICENSE](LICENSE), [LICENSE-CODE](LICENSE-CODE) and [NOTICE](NOTICE).
+This repository defines an independent community draft and its supplied implementation artifacts. It does not certify implementations, establish legal authority, provide production identity proofing, or count its own fixtures as independent implementations. Specifications and documentation use CC BY 4.0; code and executable artifacts use Apache-2.0. See [AI usage](AI_USAGE.md), [governance](GOVERNANCE.md), [security](SECURITY.md), and [release policy](docs/release-policy.md).
