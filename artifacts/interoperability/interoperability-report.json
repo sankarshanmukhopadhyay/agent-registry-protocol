@@ -1,7 +1,7 @@
 {
   "report_version": "1.0.0",
-  "generated_at": "2026-07-16T04:47:49.602331+00:00",
-  "release": "v0.5.0",
+  "generated_at": "2026-07-16T05:46:57.689380+00:00",
+  "release": "v0.9.0",
   "title": "ARPA interoperability report",
   "participants": [
     "registry:alpha",
@@ -79,7 +79,7 @@
   ],
   "passed": true,
   "evidence_bundle": "artifacts/interoperability/evidence-bundle.json",
-  "evidence_bundle_digest": "sha256:6db65a53334689dcb04aa634b0c8a106f634754bb921d758edb1135da8858d41",
+  "evidence_bundle_digest": "sha256:5348a6b6866a9de9a745b0b1263fae40ba34621014a43cf3f023463d770da64c",
   "independence_claim": false,
   "known_limitations": [
     "Fixtures are maintained in one repository and are not independent implementations",

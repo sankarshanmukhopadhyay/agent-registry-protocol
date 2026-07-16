@@ -1,0 +1,16 @@
+{
+  "bundle_version": "1.0",
+  "release": "v0.9.0",
+  "reports": {
+    "candidate_validation": "sha256:5d53c668263b78cdfb6cd8c665aa09e0ff9c6a5317937987d435c39e9f22ffba",
+    "mapping": "sha256:dc7cdbd5ff985cc97d208acd773153cd6f236398794d119baea065f66685f0c4"
+  },
+  "passed": true,
+  "limitations": [
+    "No external implementation is bundled",
+    "No formal TRQP conformance claim",
+    "Network test uses local loopback endpoints",
+    "Durable event test demonstrates semantics, not production broker operations"
+  ],
+  "bundle_digest": "sha256:61b667af9fd70bead0343a8f91d454f3d07e88f36305bb1d3325e656448b7874"
+}

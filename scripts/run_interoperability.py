@@ -40,7 +40,7 @@ def main():
     events=load(FIX/'registry-alpha'/'events.json')
     policy=load(ROOT/'interop'/'policy'/'portable-policy.json')
     checks=[]
-    checks.append(check('metadata-discovery',alpha['arpa_version']=='0.5.0' and 'ARPA-Core' in alpha['supported_modules'],{'registry_id':alpha['registry_id'],'modules':alpha['supported_modules']}))
+    checks.append(check('metadata-discovery',alpha['arpa_version']=='0.9.0' and 'ARPA-Core' in alpha['supported_modules'],{'registry_id':alpha['registry_id'],'modules':alpha['supported_modules']}))
     imported_digest=digest(agent)
     checks.append(check('canonical-resolution',agent['agent_id']==agent['subject'] and imported_digest.startswith('sha256:'),{'agent_id':agent['agent_id'],'digest':imported_digest}))
     recognized=recognition['status']=='active' and agent['record_type'] in recognition['recognized_record_types'] and recognition['recognized_registry']==alpha['registry_id']
@@ -56,9 +56,9 @@ def main():
     decisions={'portable_active':eval_portable(policy,active_context),'reference_active':eval_reference(policy,active_context),'portable_suspended':eval_portable(policy,suspended_context),'reference_suspended':eval_reference(policy,suspended_context)}
     equivalent=decisions['portable_active']==decisions['reference_active']=='allow' and decisions['portable_suspended']==decisions['reference_suspended']=='deny'
     checks.append(check('policy-portability',equivalent,decisions))
-    bundle={'bundle_version':'1.0.0','arpa_version':'0.5.0','producer':'ARPA repository interoperability harness','fixtures':[alpha['registry_id'],beta['registry_id']],'artifacts':{'alpha_metadata':digest(alpha),'beta_metadata':digest(beta),'agent_core':imported_digest,'recognition':digest(recognition),'events':digest(events),'policy':digest(policy)},'revocation_acknowledgement':acknowledgement,'limitations':['Fixtures are maintained in one repository and are not independent implementations','No production cryptographic proof or key custody','No network transport or durable message broker','Recognition is demonstrated by deterministic fixture processing']}
+    bundle={'bundle_version':'1.0.0','arpa_version':'0.9.0','producer':'ARPA repository interoperability harness','fixtures':[alpha['registry_id'],beta['registry_id']],'artifacts':{'alpha_metadata':digest(alpha),'beta_metadata':digest(beta),'agent_core':imported_digest,'recognition':digest(recognition),'events':digest(events),'policy':digest(policy)},'revocation_acknowledgement':acknowledgement,'limitations':['Fixtures are maintained in one repository and are not independent implementations','No production cryptographic proof or key custody','No network transport or durable message broker','Recognition is demonstrated by deterministic fixture processing']}
     bundle['bundle_digest']=digest(bundle)
-    report={'report_version':'1.0.0','generated_at':datetime.now(timezone.utc).isoformat(),'release':'v0.5.0','title':'ARPA interoperability report','participants':[alpha['registry_id'],beta['registry_id']],'checks':checks,'passed':all(c['passed'] for c in checks),'evidence_bundle':'artifacts/interoperability/evidence-bundle.json','evidence_bundle_digest':bundle['bundle_digest'],'independence_claim':False,'known_limitations':bundle['limitations']}
+    report={'report_version':'1.0.0','generated_at':datetime.now(timezone.utc).isoformat(),'release':'v0.9.0','title':'ARPA interoperability report','participants':[alpha['registry_id'],beta['registry_id']],'checks':checks,'passed':all(c['passed'] for c in checks),'evidence_bundle':'artifacts/interoperability/evidence-bundle.json','evidence_bundle_digest':bundle['bundle_digest'],'independence_claim':False,'known_limitations':bundle['limitations']}
     OUT.mkdir(parents=True,exist_ok=True)
     (OUT/'evidence-bundle.json').write_text(json.dumps(bundle,indent=2)+'\n')
     (OUT/'interoperability-report.json').write_text(json.dumps(report,indent=2)+'\n')

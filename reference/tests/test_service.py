@@ -21,6 +21,6 @@ def test_alias_conflict_is_not_silent():
 
 def test_interoperability_declaration():
     data=client.get('/interoperability').json()
-    assert data['arpa_version']=='0.5.0'
+    assert data['arpa_version']=='0.9.0'
     assert data['independent_implementation'] is False
     assert 'revocation-acknowledgement' in data['supports']

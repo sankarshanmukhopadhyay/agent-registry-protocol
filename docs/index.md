@@ -1,20 +1,25 @@
-# Agent Registry Protocol Documentation
+# ARPA documentation
 
-ARPA defines a modular authority-control protocol for discovering agents and resolving bounded claims about identity, relationships, authority, status, assurance, evidence, governance, and redress.
+## Start here
 
-## Adoption path
+- [Candidate Specification](../spec/arpa-v0.9.0-candidate-specification.md)
+- [Candidate implementation guide](candidate-specification-guide.md)
+- [Quickstart](quickstart.md)
+- [Protocol modules](protocol-modules.md)
+- [Reference implementation architecture](reference-implementation-architecture.md)
 
-1. Read the [architecture specification](../spec/draft-agent-registry-protocol-architecture.md).
-2. Select the required [protocol modules](protocol-modules.md) and [implementation profile](implementation-selection-guide.md).
-3. Run the [quickstart](quickstart.md).
-4. Execute the [interoperability demonstration](interoperability.md).
-5. Produce an [implementation report](conformance-guide.md).
-6. Review [governance](../GOVERNANCE.md), [security](../SECURITY.md), and [known limitations](../KNOWN_LIMITATIONS.md).
+## Architecture and interoperability
 
-## Authority boundary
+- [Architecture-to-module mapping](architecture-to-module-mapping.md)
+- [ARPA–TRQP interoperability](architecture/trqp-arpa-interoperability.md)
+- [Interoperability guide](interoperability.md)
+- [Migration from v0.5.0](migration-v0.5.0-to-v0.9.0.md)
+- [Identifier resolution](identifier-resolution-guide.md)
 
-This repository owns the ARPA community-draft protocol text, repository schemas, controlled registries, conformance fixtures, and reference implementation published in this repository. It does not certify implementations, establish legal authority, provide production identity proofing, or create governance recognition between registry operators.
+## Governance and assurance
 
-## Evidence surface
-
-The repository produces machine-verifiable schema results, positive and negative conformance outcomes, reference-service tests, implementation reports, and an interoperability evidence bundle. These outputs demonstrate the behavior of the supplied fixtures. They do not establish production assurance.
+- [Conformance guide](conformance-guide.md)
+- [Governance operator guide](governance-operator-guide.md)
+- [Security deployment guide](security-deployment-guide.md)
+- [Privacy implementation guide](privacy-implementation-guide.md)
+- [Release policy](release-policy.md)

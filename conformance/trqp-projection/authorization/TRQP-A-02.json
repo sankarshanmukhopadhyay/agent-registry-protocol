@@ -1,0 +1,8 @@
+{
+  "id": "TRQP-A-02",
+  "kind": "authorization",
+  "state": "revoked",
+  "expected": "negative",
+  "scope_match": true,
+  "evidence_current": true
+}

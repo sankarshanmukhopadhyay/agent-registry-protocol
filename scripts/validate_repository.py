@@ -1,7 +1,7 @@
 from pathlib import Path
 import re, sys
 ROOT=Path(__file__).resolve().parents[1]
-required=['README.md','LICENSE','LICENSE-CODE','CHANGELOG.md','ROADMAP.md','GOVERNANCE.md','CONTRIBUTING.md','SECURITY.md','CODE_OF_CONDUCT.md','CITATION.cff','AI_USAGE.md','PORTFOLIO_STATUS.md','docs/index.md','docs/interoperability.md','docs/release-policy.md','.github/workflows/validate.yml','.github/workflows/pages.yml','.github/ISSUE_TEMPLATE/bug_report.yml','.github/ISSUE_TEMPLATE/implementation_report.yml','.github/pull_request_template.md']
+required=['README.md','LICENSE','LICENSE-CODE','CHANGELOG.md','ROADMAP.md','GOVERNANCE.md','CONTRIBUTING.md','SECURITY.md','CODE_OF_CONDUCT.md','CITATION.cff','AI_USAGE.md','PORTFOLIO_STATUS.md','docs/index.md','docs/interoperability.md','docs/release-policy.md','spec/arpa-v0.9.0-candidate-specification.md','docs/architecture/trqp-arpa-interoperability.md','docs/candidate-specification-guide.md','docs/migration-v0.5.0-to-v0.9.0.md','RELEASE_NOTES_v0.9.0.md','.github/workflows/validate.yml','.github/workflows/pages.yml','.github/ISSUE_TEMPLATE/bug_report.yml','.github/ISSUE_TEMPLATE/implementation_report.yml','.github/pull_request_template.md']
 errors=[]
 for rel in required:
     if not (ROOT/rel).exists(): errors.append(f'missing required flagship artifact: {rel}')

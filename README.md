@@ -1,62 +1,60 @@
 # Agent Registry Protocol
 
-[![Specification status](https://img.shields.io/badge/specification-v0.5.0%20interoperability%20draft-blue)](spec/draft-agent-registry-protocol-architecture.md)
+[![Specification status](https://img.shields.io/badge/specification-v0.9.0%20candidate-blue)](spec/arpa-v0.9.0-candidate-specification.md)
 [![Validation](https://github.com/sankarshanmukhopadhyay/agent-registry-protocol/actions/workflows/validate.yml/badge.svg)](https://github.com/sankarshanmukhopadhyay/agent-registry-protocol/actions/workflows/validate.yml)
 [![License: CC BY 4.0](https://img.shields.io/badge/spec-CC%20BY%204.0-lightgrey.svg)](LICENSE)
 [![Code: Apache-2.0](https://img.shields.io/badge/code-Apache--2.0-lightgrey.svg)](LICENSE-CODE)
 
-**A modular protocol for treating agent registries as distributed authority-control planes for delegated action.**
+**A modular authority-control protocol for governed agent identity, delegation, recognition, lifecycle, evidence, enforcement and redress.**
 
-> An agent registry is not merely a directory of autonomous software objects. It resolves identity, attribution, bounded authority, assurance, status, evidence, governance, enforcement, and redress without collapsing those claims into a universal trust flag.
+> An agent registry is not merely a directory. It is an authority control plane whose claims must be scoped, revocable, inspectable and enforceable.
 
 ## Repository status
 
 | Attribute | Value |
 |---|---|
-| Portfolio tier | Flagship candidate |
+| Portfolio tier | Flagship |
 | Lifecycle | Active |
-| Stability | v0.5.0 interoperability draft |
-| Primary artifacts | Specification, schemas, controlled registries, API contracts, reference service, conformance and interoperability evidence |
+| Stability | v0.9.0 Candidate Specification |
+| Primary artifacts | Specification, schemas, API/event contracts, reference implementations, conformance and evidence |
 | Release gate | `make release-check` |
-| Evidence output | `artifacts/interoperability/evidence-bundle.json` |
+| Candidate evidence | `artifacts/candidate-specification/evidence-bundle.json` |
 | Authority | Community draft governed by `GOVERNANCE.md` |
 
-## What v0.5.0 delivers
+## What v0.9.0 delivers
 
-- six composable protocol modules and profile-specific conformance;
-- canonical `agentreg` identifiers, governed aliases, and scoped registry recognition;
-- 20 normative record schemas plus Agent Card and registry metadata schemas;
-- controlled registries, OpenAPI and AsyncAPI contracts;
-- runnable FastAPI/SQLite registry, resolver, event service, and policy decision point;
-- positive, negative, and extended governance vectors;
-- a two-registry interoperability harness covering discovery, resolution, recognition, event continuity, revocation, enforcement acknowledgement, and policy portability;
-- machine-readable implementation reports and an interoperability evidence bundle;
-- adoption, deployment, security, privacy, governance, migration, and AI-use guidance.
+- stable Candidate Specification requirements and conformance targets;
+- hardened authority, delegation, recognition and fail-closed lifecycle semantics;
+- two independently structured projection implementations with disclosed limits;
+- network-boundary discovery and durable event replay, deduplication and acknowledgement tests;
+- production-oriented proof, key and policy integration boundaries;
+- machine-readable compatibility, requirement and evidence artifacts;
+- an informative ARPA–TRQP governed query-projection profile with architecture guidance, mappings and 13 positive/negative vectors;
+- flagship documentation, CI, GitHub Pages, contribution controls and AI-use governance.
 
 ## Start here
 
 1. [Documentation home](docs/index.md)
-2. [Architecture specification](spec/draft-agent-registry-protocol-architecture.md)
-3. [Quickstart](docs/quickstart.md)
-4. [Interoperability guide](docs/interoperability.md)
-5. [Implementation selection guide](docs/implementation-selection-guide.md)
-6. [Conformance guide](docs/conformance-guide.md)
+2. [v0.9.0 Candidate Specification](spec/arpa-v0.9.0-candidate-specification.md)
+3. [Architecture specification](spec/draft-agent-registry-protocol-architecture.md)
+4. [Candidate implementation guide](docs/candidate-specification-guide.md)
+5. [ARPA–TRQP interoperability architecture](docs/architecture/trqp-arpa-interoperability.md)
+6. [Migration from v0.5.0](docs/migration-v0.5.0-to-v0.9.0.md)
 7. [Known limitations](KNOWN_LIMITATIONS.md)
 
-## Validate, test, and produce evidence
+## Validate and produce evidence
 
 ```bash
 make setup
 make release-check
-make run
 ```
 
-`make release-check` validates schemas, examples, conformance vectors, repository controls, service tests, interoperability behavior, and implementation reporting. API documentation is available at `http://127.0.0.1:8000/docs` while the reference service runs.
+The gate validates the complete schema and conformance surface, repository controls, service tests, v0.5.0 interoperability behavior, v0.9.0 candidate requirements, ARPA–TRQP mapping and vectors, independent adapter equivalence, loopback network discovery, durable event semantics and implementation reports.
 
-## Governing distinctions
+## ARPA and TRQP
 
-Identity is not authority. Key control is not accountability. Capability is not permission. Ownership is not delegation. Assurance is not universal trust. Technical federation is not governance recognition. Revocation is incomplete until enforcement surfaces acknowledge and apply it.
+ARPA owns the authority, lifecycle, evidence, revocation, enforcement and federation control plane. TRQP is treated as an external, minimal read-only query interface. The optional v0.9.0 projection demonstrates how selected ARPA authorization and recognition state can be exposed without merging the protocols or implying cross-protocol conformance.
 
-## Authority and limitations
+## Assurance boundary
 
-This repository defines an independent community draft and its supplied implementation artifacts. It does not certify implementations, establish legal authority, provide production identity proofing, or count its own fixtures as independent implementations. Specifications and documentation use CC BY 4.0; code and executable artifacts use Apache-2.0. See [AI usage](AI_USAGE.md), [governance](GOVERNANCE.md), [security](SECURITY.md), and [release policy](docs/release-policy.md).
+The supplied implementations and loopback network tests are repository-controlled candidate evidence, not external certification or proof of universal interoperability. The release does not claim legal authority, production key custody, formal cryptographic review, independent TRQP approval, or completed revocation without enforcement acknowledgement. See [known limitations](KNOWN_LIMITATIONS.md), [AI usage](AI_USAGE.md), [governance](GOVERNANCE.md), and [security](SECURITY.md).

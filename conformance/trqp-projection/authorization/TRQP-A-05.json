@@ -1,0 +1,8 @@
+{
+  "id": "TRQP-A-05",
+  "kind": "authorization",
+  "state": "active",
+  "expected": "negative",
+  "scope_match": false,
+  "evidence_current": true
+}

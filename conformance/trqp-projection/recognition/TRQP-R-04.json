@@ -1,0 +1,9 @@
+{
+  "id": "TRQP-R-04",
+  "kind": "recognition",
+  "state": "active",
+  "expected": "negative",
+  "scope_match": false,
+  "withdrawn": false,
+  "transitive": false
+}

@@ -1,0 +1,8 @@
+{
+  "id": "TRQP-A-07",
+  "kind": "authorization",
+  "state": "conflicting",
+  "expected": "indeterminate",
+  "scope_match": true,
+  "evidence_current": true
+}

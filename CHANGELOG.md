@@ -1,5 +1,27 @@
 # Changelog
 
+## [0.9.0] - 2026-07-16
+
+### Added
+
+- Candidate Specification requirements and conformance targets.
+- Machine-readable requirement traceability and compatibility matrix.
+- Two separately structured ARPA–TRQP projection implementations.
+- Network-boundary metadata discovery and durable event replay/deduplication/checkpoint evidence.
+- Informative ARPA–TRQP architecture, machine-readable mapping, discovery declaration model and 13 projection vectors.
+- Candidate validation report and evidence bundle.
+- Migration guidance from v0.5.0.
+
+### Changed
+
+- Repository status advanced from interoperability draft to Candidate Specification.
+- Release gate now includes candidate mapping, adapter equivalence, network and durable-event validation.
+
+### Assurance boundary
+
+The release does not claim external implementation independence, formal TRQP conformance, production deployment assurance, certification or legal recognition.
+
+
 ## [0.5.0] - 2026-07-15
 
 ### Added

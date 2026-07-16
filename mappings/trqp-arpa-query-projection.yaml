@@ -1,0 +1,132 @@
+schema_version: "0.1"
+profile_id: arpa-trqp-query-projection-0.1
+normative_status: informative
+relationship:
+  arpa_role: authority-control-plane
+  trqp_role: read-only-query-interface
+  conformance_independent: true
+  authority_transfer: false
+trqp_target:
+  specification: TRQP v2 approved core
+  query_types: [authorization, recognition]
+profiles:
+  authorization_projection: {supported: true}
+  recognition_projection: {supported: true}
+  discovery_extension: {supported: optional}
+state_projection:
+  active: {outcome: affirmative, reason_code: authority-active}
+  suspended: {outcome: negative, reason_code: authority-suspended}
+  revoked: {outcome: negative, reason_code: authority-revoked}
+  expired: {outcome: negative, reason_code: authority-expired}
+  unknown: {outcome: indeterminate, reason_code: authority-unknown}
+  conflicting: {outcome: indeterminate, reason_code: authority-conflicting}
+  unavailable: {outcome: indeterminate, reason_code: authority-source-unavailable}
+mappings:
+  authorization:
+    - target: authority_id
+      source_artifact: authority-envelope
+      source_field: issuer
+      transform: identity
+      cardinality: one
+      preconditions: [current-envelope, issuer-resolvable]
+      failure_outcome: indeterminate
+      evidence: authority-envelope-id
+      information_loss: ARPA governance and delegation path are not represented in the core field
+    - target: entity_id
+      source_artifact: agent-core
+      source_field: agent_id
+      transform: identity
+      cardinality: one
+      preconditions: [canonical-identifier]
+      failure_outcome: indeterminate
+      evidence: agent-record-digest
+      information_loss: aliases and deployments are omitted
+    - target: action
+      source_artifact: authority-envelope
+      source_field: scope.actions
+      transform: requested-action-must-be-member
+      cardinality: one-from-many
+      preconditions: [scope-match]
+      failure_outcome: negative
+      evidence: evaluated-scope
+      information_loss: conditions remain in response metadata
+    - target: resource
+      source_artifact: authority-envelope
+      source_field: scope.resources
+      transform: requested-resource-must-be-member
+      cardinality: one-from-many
+      preconditions: [scope-match]
+      failure_outcome: negative
+      evidence: evaluated-scope
+      information_loss: resource constraints remain in response metadata
+    - target: context
+      source_artifact: decision-receipt
+      source_field: evaluated_context
+      transform: safe-context-projection
+      cardinality: optional
+      preconditions: [privacy-filtered]
+      failure_outcome: indeterminate
+      evidence: decision-receipt-id
+      information_loss: sensitive context may be redacted
+    - target: authorized
+      source_artifact: decision-receipt
+      source_field: outcome
+      transform: allow-to-true-all-other-to-false
+      cardinality: one
+      preconditions: [current-state, complete-evidence]
+      failure_outcome: false
+      evidence: decision-receipt-id
+      information_loss: indeterminate and conditional outcomes require details metadata
+  recognition:
+    - target: authority_id
+      source_artifact: recognition
+      source_field: recognizing_authority
+      transform: identity
+      cardinality: one
+      preconditions: [current-recognition]
+      failure_outcome: indeterminate
+      evidence: recognition-id
+      information_loss: governance metadata omitted
+    - target: entity_id
+      source_artifact: recognition
+      source_field: recognized_authority
+      transform: identity
+      cardinality: one
+      preconditions: [authority-identifier]
+      failure_outcome: indeterminate
+      evidence: recognition-id
+      information_loss: registry and authority identifiers may differ
+    - target: action
+      source_artifact: recognition
+      source_field: scope.actions
+      transform: requested-action-must-be-member
+      cardinality: one-from-many
+      preconditions: [scope-match]
+      failure_outcome: negative
+      evidence: recognition-scope
+      information_loss: none
+    - target: resource
+      source_artifact: recognition
+      source_field: scope.resources
+      transform: requested-resource-must-be-member
+      cardinality: one-from-many
+      preconditions: [scope-match]
+      failure_outcome: negative
+      evidence: recognition-scope
+      information_loss: none
+    - target: recognized
+      source_artifact: recognition
+      source_field: status
+      transform: active-current-and-in-scope-to-true
+      cardinality: one
+      preconditions: [not-withdrawn, not-expired, proof-available]
+      failure_outcome: false
+      evidence: recognition-id
+      information_loss: negative and indeterminate distinctions require details metadata
+safety_rules:
+  - no-affirmative-on-revoked-expired-suspended
+  - no-scope-expansion
+  - no-implicit-transitivity
+  - federation-does-not-imply-recognition
+  - recognition-does-not-transfer-authority
+  - unresolved-conflict-is-indeterminate

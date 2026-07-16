@@ -1,0 +1,59 @@
+{
+  "release": "v0.9.0",
+  "status": "Candidate Specification",
+  "generated_on": "2026-07-16",
+  "release_gate": "make release-check",
+  "artifacts": [
+    {
+      "path": "spec/arpa-v0.9.0-candidate-specification.md",
+      "sha256": "5aa45e09cd2c566ba2ec61c4c39e1ebbe426f50df3dd56a11a3f0e16a118338d",
+      "bytes": 3103
+    },
+    {
+      "path": "docs/architecture/trqp-arpa-interoperability.md",
+      "sha256": "7d9d78107769b5613c400c342dbe5be752699164d3b0c6f6de80da9ffb97d8c0",
+      "bytes": 4686
+    },
+    {
+      "path": "mappings/trqp-arpa-query-projection.yaml",
+      "sha256": "f1f908a06d8f241e4816572b8d51dadaa52b95b279ec89d644d2c94ffd23f55c",
+      "bytes": 5010
+    },
+    {
+      "path": "artifacts/candidate-specification/candidate-validation-report.json",
+      "sha256": "4d7a45cbab00c28999a546c21832de5aa8104e2fba90af66620599a8e5a317a4",
+      "bytes": 3493
+    },
+    {
+      "path": "artifacts/candidate-specification/evidence-bundle.json",
+      "sha256": "f52ceeb1cc250226a524751b771d1d40b9159e425715ecc688962b7f889c50e7",
+      "bytes": 618
+    },
+    {
+      "path": "artifacts/interoperability/interoperability-report.json",
+      "sha256": "6ca081fac67964939362d172e905e5f3900cb73e2bb75a952f91bb55796d1569",
+      "bytes": 2389
+    },
+    {
+      "path": "conformance/reports/reference-implementation-report.json",
+      "sha256": "0c15b11ef314fc09f8398482b2b2b87375548e9890a0727b625a272c4f74c3be",
+      "bytes": 6883
+    },
+    {
+      "path": "RELEASE_NOTES_v0.9.0.md",
+      "sha256": "951b0843218a87ca7e2dd10f2c6f1d2aa58dd11e7ebb105d09a7ea93b7e1e09c",
+      "bytes": 1431
+    },
+    {
+      "path": "VALIDATION_SUMMARY.md",
+      "sha256": "c416f91b004db3862bb6494938277e85cc1a75847d8e8067d62c9e530bde4690",
+      "bytes": 1550
+    }
+  ],
+  "assurance_boundary": [
+    "No external implementation independence claim",
+    "No formal TRQP conformance claim",
+    "No certification or legal recognition",
+    "Loopback and SQLite test environments are not production deployments"
+  ]
+}

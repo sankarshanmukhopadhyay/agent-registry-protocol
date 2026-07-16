@@ -1,0 +1,66 @@
+{
+  "schema_version": "1.0",
+  "release": "v0.9.0",
+  "requirements": [
+    {
+      "id": "ARPA-CAND-001",
+      "test": "candidate-001",
+      "evidence": "artifacts/candidate-specification/candidate-validation-report.json"
+    },
+    {
+      "id": "ARPA-CAND-002",
+      "test": "candidate-002",
+      "evidence": "artifacts/candidate-specification/candidate-validation-report.json"
+    },
+    {
+      "id": "ARPA-CAND-003",
+      "test": "candidate-003",
+      "evidence": "artifacts/candidate-specification/candidate-validation-report.json"
+    },
+    {
+      "id": "ARPA-CAND-004",
+      "test": "candidate-004",
+      "evidence": "artifacts/candidate-specification/candidate-validation-report.json"
+    },
+    {
+      "id": "ARPA-CAND-005",
+      "test": "candidate-005",
+      "evidence": "artifacts/candidate-specification/candidate-validation-report.json"
+    },
+    {
+      "id": "ARPA-CAND-006",
+      "test": "candidate-006",
+      "evidence": "artifacts/candidate-specification/candidate-validation-report.json"
+    },
+    {
+      "id": "ARPA-CAND-007",
+      "test": "candidate-007",
+      "evidence": "artifacts/candidate-specification/candidate-validation-report.json"
+    },
+    {
+      "id": "ARPA-CAND-008",
+      "test": "candidate-008",
+      "evidence": "artifacts/candidate-specification/candidate-validation-report.json"
+    },
+    {
+      "id": "ARPA-CAND-009",
+      "test": "candidate-009",
+      "evidence": "artifacts/candidate-specification/candidate-validation-report.json"
+    },
+    {
+      "id": "ARPA-CAND-010",
+      "test": "candidate-010",
+      "evidence": "artifacts/candidate-specification/candidate-validation-report.json"
+    },
+    {
+      "id": "ARPA-CAND-011",
+      "test": "candidate-011",
+      "evidence": "artifacts/candidate-specification/candidate-validation-report.json"
+    },
+    {
+      "id": "ARPA-CAND-012",
+      "test": "candidate-012",
+      "evidence": "artifacts/candidate-specification/candidate-validation-report.json"
+    }
+  ]
+}

@@ -1,12 +1,11 @@
-# Known Limitations
+# Known limitations
 
-The v0.5.0 reference implementation and two-registry harness are interoperability demonstrators, not production registries or independent implementations.
+ARPA v0.9.0 is a Candidate Specification, not a stable v1.0 release.
 
-- Proof fields are schema-modeled, but the service does not manage production signing keys or verify every proof suite.
-- The authority evaluator implements the deterministic policy subset exercised by the conformance vectors; it is not a universal policy engine.
-- SQLite provides reproducible local state, not distributed consensus or high availability.
-- Federation records and recognition schemas are present, but no production peer-to-peer federation service is provided.
-- Identity proofing, legal capacity, liability, accreditation and regulatory recognition remain ecosystem responsibilities.
-- Event delivery is exposed through replayable polling; production webhook authentication and durable message-broker bindings require deployment-specific work.
-- Agent Card interoperability is a generic mapping and does not endorse any vendor implementation.
-- Independent interoperability testing remains necessary before Candidate Specification status.
+- The two implementation paths are separately structured but maintained in the same repository; external independent implementation evidence remains required for v1.0.
+- Network federation is demonstrated over loopback endpoints, not a production multi-operator deployment.
+- Durable event behavior is demonstrated with SQLite semantics, not a production message broker or multi-region system.
+- Proof and key-management artifacts define integration boundaries and fixtures, not certified custody or formal cryptographic assurance.
+- The ARPA–TRQP projection is informative and does not claim approval by, or conformance certification from, the TRQP project.
+- TRQP response details may not preserve all ARPA delegation, condition, evidence, redress or enforcement information.
+- Legal recognition, regulated-sector compliance, production availability and operational SLAs remain deployment responsibilities.

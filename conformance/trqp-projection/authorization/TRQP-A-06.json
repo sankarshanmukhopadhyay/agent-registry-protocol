@@ -1,0 +1,8 @@
+{
+  "id": "TRQP-A-06",
+  "kind": "authorization",
+  "state": "unknown",
+  "expected": "indeterminate",
+  "scope_match": true,
+  "evidence_current": false
+}

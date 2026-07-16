@@ -1,0 +1,71 @@
+{
+  "profile": "arpa-trqp-query-projection-0.1",
+  "trqp_target": "v2-approved",
+  "vectors": [
+    {
+      "id": "TRQP-A-01",
+      "path": "authorization/TRQP-A-01.json",
+      "expected": "affirmative"
+    },
+    {
+      "id": "TRQP-A-02",
+      "path": "authorization/TRQP-A-02.json",
+      "expected": "negative"
+    },
+    {
+      "id": "TRQP-A-03",
+      "path": "authorization/TRQP-A-03.json",
+      "expected": "negative"
+    },
+    {
+      "id": "TRQP-A-04",
+      "path": "authorization/TRQP-A-04.json",
+      "expected": "negative"
+    },
+    {
+      "id": "TRQP-A-05",
+      "path": "authorization/TRQP-A-05.json",
+      "expected": "negative"
+    },
+    {
+      "id": "TRQP-A-06",
+      "path": "authorization/TRQP-A-06.json",
+      "expected": "indeterminate"
+    },
+    {
+      "id": "TRQP-A-07",
+      "path": "authorization/TRQP-A-07.json",
+      "expected": "indeterminate"
+    },
+    {
+      "id": "TRQP-R-01",
+      "path": "recognition/TRQP-R-01.json",
+      "expected": "affirmative"
+    },
+    {
+      "id": "TRQP-R-02",
+      "path": "recognition/TRQP-R-02.json",
+      "expected": "negative"
+    },
+    {
+      "id": "TRQP-R-03",
+      "path": "recognition/TRQP-R-03.json",
+      "expected": "negative"
+    },
+    {
+      "id": "TRQP-R-04",
+      "path": "recognition/TRQP-R-04.json",
+      "expected": "negative"
+    },
+    {
+      "id": "TRQP-R-05",
+      "path": "recognition/TRQP-R-05.json",
+      "expected": "negative"
+    },
+    {
+      "id": "TRQP-R-06",
+      "path": "recognition/TRQP-R-06.json",
+      "expected": "indeterminate"
+    }
+  ]
+}

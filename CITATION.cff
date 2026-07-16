@@ -1,23 +1,12 @@
 cff-version: 1.2.0
-message: If you use or discuss this specification, please cite the repository and
-  specification version.
-title: Agent Registry Protocol and Architecture
+title: Agent Registry Protocol
 type: software
+version: 0.9.0
+date-released: 2026-07-16
+message: "Please cite ARPA v0.9.0 as a Candidate Specification."
 authors:
-- family-names: Mukhopadhyay
-  given-names: Sankarshan
-version: 0.5.0
-date-released: 2026-07-15
-license: CC-BY-4.0
+  - family-names: Mukhopadhyay
+    given-names: Sankarshan
 repository-code: https://github.com/sankarshanmukhopadhyay/agent-registry-protocol
-url: https://github.com/sankarshanmukhopadhyay/agent-registry-protocol
-abstract: A standards-oriented specification for agent registries as distributed authority-control
-  planes for delegated action.
-keywords:
-- agents
-- registry
-- delegation
-- authority
-- assurance
-- governance
-- trust infrastructure
+url: https://sankarshanmukhopadhyay.github.io/agent-registry-protocol/
+license: CC-BY-4.0
