@@ -21,30 +21,65 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v7
+        uses: actions/checkout@v5
 
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: "3.3"
           bundler-cache: true
-          cache-version: 0
+          cache-version: 1
 
       - name: Configure GitHub Pages
         id: pages
         uses: actions/configure-pages@v6
 
       - name: Build site
-        run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
+        run: bundle exec jekyll build --trace --baseurl "${{ steps.pages.outputs.base_path }}"
         env:
           JEKYLL_ENV: production
 
-      - name: Verify generated site
+      - name: Verify complete documentation rendering
+        shell: bash
         run: |
-          test -f _site/index.html
-          test -f _site/docs/reference-implementation-architecture.html
+          set -euo pipefail
+
+          required_pages=(
+            _site/index.html
+            _site/docs/index.html
+            _site/spec/agent-registry-protocol-v0.9.0.html
+            _site/spec/profiles/arpa-core-identity-discovery-profile.html
+            _site/spec/profiles/arpa-identifier-profile.html
+            _site/spec/profiles/arpa-proof-and-digest-profile.html
+            _site/spec/profiles/arpa-agent-card-interoperability.html
+            _site/docs/reference-implementation-architecture.html
+            _site/docs/architecture/trqp-arpa-interoperability.html
+            _site/conformance/profiles/profile-a.html
+            _site/conformance/profiles/profile-d.html
+            _site/examples/scenarios/delegated-action.html
+            _site/GOVERNANCE.html
+            _site/SECURITY.html
+            _site/RELEASE_NOTES_v0.9.0.html
+          )
+
+          for page in "${required_pages[@]}"; do
+            test -f "$page" || { echo "Missing rendered page: $page"; exit 1; }
+          done
+
           grep -q 'mermaid@11.16.0' _site/docs/reference-implementation-architecture.html
           grep -q 'language-mermaid' _site/docs/reference-implementation-architecture.html
+          grep -q 'language-mermaid' _site/docs/architecture/trqp-arpa-interoperability.html
+
+          rendered_markdown_count="$(find _site -type f -name '*.html' | wc -l | tr -d ' ')"
+          test "$rendered_markdown_count" -ge 65 || {
+            echo "Expected at least 65 rendered HTML pages; found $rendered_markdown_count"
+            exit 1
+          }
+
+          if grep -RInE 'href="[^"]+\.md([#?][^"]*)?"' _site --include='*.html'; then
+            echo "Generated site contains unresolved Markdown links"
+            exit 1
+          fi
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v4

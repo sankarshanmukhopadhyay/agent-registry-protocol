@@ -1,5 +1,14 @@
 # Changelog
 
+## [Unreleased]
+
+### Changed
+
+- Hardened GitHub Pages publication so Markdown documentation across the repository, including the Candidate Specification, profiles, conformance material, governance documents, and worked scenarios, is rendered as HTML.
+- Added a complete documentation catalogue and updated the site landing page.
+- Added deterministic Pages build assertions for required pages, Mermaid rendering, rendered-page coverage, and unresolved Markdown links.
+- Updated GitHub-hosted JavaScript actions to Node 24-capable major versions where applicable.
+
 ## [0.9.0] - 2026-07-16
 
 ### Added

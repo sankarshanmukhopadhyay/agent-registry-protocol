@@ -3,6 +3,31 @@ description: A modular authority-control protocol for delegated software agents.
 theme: just-the-docs
 url: https://sankarshanmukhopadhyay.github.io
 baseurl: /agent-registry-protocol
+repository: sankarshanmukhopadhyay/agent-registry-protocol
+
+plugins:
+  - jekyll-optional-front-matter
+  - jekyll-relative-links
+  - jekyll-titles-from-headings
+
+# Render repository Markdown, including specifications, profiles, guides,
+# conformance documentation, examples, and governance documents.
+optional_front_matter:
+  remove_originals: true
+
+relative_links:
+  enabled: true
+  collections: true
+
+titles_from_headings:
+  enabled: true
+  strip_title: false
+  collections: true
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
 
 search_enabled: true
 heading_anchors: true
@@ -15,19 +40,34 @@ aux_links_new_tab: true
 mermaid:
   version: "11.16.0"
 
+footer_content: "Agent Registry Protocol documentation. Specification text and documentation are licensed as stated in the repository NOTICE and license files."
+last_edit_timestamp: true
+last_edit_time_format: "%Y-%m-%d"
+
 include:
   - .well-known
 
 exclude:
-  - reference
-  - scripts
-  - interop
-  - artifacts
+  - .github
+  - .gitignore
+  - .DS_Store
   - vendor
+  - artifacts
   - Dockerfile
   - docker-compose.yml
+  - Makefile
+  - Gemfile
+  - Gemfile.lock
+  - scripts/*.py
+  - scripts/*.txt
+  - reference/*.py
+  - independent_impl/*.py
+  - "**/__pycache__"
+  - "**/*.pyc"
 
-# Keep the navigation intentional while still rendering linked Markdown files.
+# The two curated landing pages are visible in the left navigation. Other
+# rendered Markdown pages remain searchable and reachable through the
+# documentation catalogue without producing an unmanageable flat menu.
 defaults:
   - scope:
       path: ""
@@ -35,3 +75,13 @@ defaults:
     values:
       layout: default
       nav_exclude: true
+  - scope:
+      path: "index.md"
+    values:
+      nav_exclude: false
+      nav_order: 1
+  - scope:
+      path: "docs/index.md"
+    values:
+      nav_exclude: false
+      nav_order: 2
