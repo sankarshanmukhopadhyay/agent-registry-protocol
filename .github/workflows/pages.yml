@@ -13,7 +13,7 @@ permissions:
 
 concurrency:
   group: pages
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   build:
@@ -21,19 +21,35 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3"
+          bundler-cache: true
+          cache-version: 0
 
       - name: Configure GitHub Pages
-        uses: actions/configure-pages@v5
+        id: pages
+        uses: actions/configure-pages@v6
 
       - name: Build site
-        uses: actions/jekyll-build-pages@v1
-        with:
-          source: .
-          destination: ./_site
+        run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
+        env:
+          JEKYLL_ENV: production
+
+      - name: Verify generated site
+        run: |
+          test -f _site/index.html
+          test -f _site/docs/reference-implementation-architecture.html
+          grep -q 'mermaid@11.16.0' _site/docs/reference-implementation-architecture.html
+          grep -q 'language-mermaid' _site/docs/reference-implementation-architecture.html
 
       - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
 
   deploy:
     environment:
@@ -46,4 +62,4 @@ jobs:
     steps:
       - name: Deploy GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5

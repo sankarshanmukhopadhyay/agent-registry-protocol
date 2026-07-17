@@ -1,3 +1,10 @@
+---
+layout: default
+title: ARPA–TRQP Interoperability Architecture
+parent: Documentation
+nav_exclude: true
+---
+
 # ARPA–TRQP Interoperability Architecture
 
 **Status:** Informative Candidate Specification companion for ARPA v0.9.0  

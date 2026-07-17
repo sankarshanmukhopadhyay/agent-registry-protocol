@@ -1,12 +1,37 @@
 title: Agent Registry Protocol
 description: A modular authority-control protocol for delegated software agents.
-theme: jekyll-theme-minimal
+theme: just-the-docs
+url: https://sankarshanmukhopadhyay.github.io
+baseurl: /agent-registry-protocol
+
+search_enabled: true
+heading_anchors: true
+enable_copy_code_button: true
+
+aux_links:
+  Repository: https://github.com/sankarshanmukhopadhyay/agent-registry-protocol
+aux_links_new_tab: true
+
+mermaid:
+  version: "11.16.0"
+
 include:
   - .well-known
+
 exclude:
   - reference
   - scripts
   - interop
   - artifacts
+  - vendor
   - Dockerfile
   - docker-compose.yml
+
+# Keep the navigation intentional while still rendering linked Markdown files.
+defaults:
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: default
+      nav_exclude: true

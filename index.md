@@ -1,6 +1,9 @@
 ---
 layout: default
 title: Agent Registry Protocol
+nav_exclude: false
+nav_order: 1
+has_toc: false
 ---
 
 # Agent Registry Protocol
