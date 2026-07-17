@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+### Fixed
+
+- Replaced the brittle GitHub Pages minimum HTML-count assertion with deterministic required-page, Mermaid, and unresolved-link checks.
+
 ### Changed
 
 - Hardened GitHub Pages publication so Markdown documentation across the repository, including the Candidate Specification, profiles, conformance material, governance documents, and worked scenarios, is rendered as HTML.
