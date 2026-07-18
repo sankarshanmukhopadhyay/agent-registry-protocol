@@ -1,0 +1,25 @@
+{
+  "record_id": "acme-authority-001",
+  "record_type": "authority-envelope",
+  "schema_version": "1.0.0",
+  "issuer": "entity:acme.example",
+  "subject": "agentreg:acme.example:procurement-review",
+  "issued_at": "2026-07-18T00:00:00Z",
+  "effective_from": "2026-07-18T00:00:00Z",
+  "effective_until": "2027-07-18T00:00:00Z",
+  "status": "active",
+  "authority_type": "delegated",
+  "scope": {
+    "actions": [
+      "procurement.review"
+    ],
+    "resources": [
+      "purchase-request"
+    ],
+    "constraints": {
+      "maximum_value": 10000,
+      "currency": "USD"
+    }
+  },
+  "proof": {}
+}

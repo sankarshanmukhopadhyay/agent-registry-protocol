@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "source_count": 70,
+  "source_count": 89,
   "entries": [
     {
       "source": "AI_USAGE.md",
@@ -421,6 +421,120 @@
       "expected_output": "_site/spec/profiles/arpa-proof-and-digest-profile.html",
       "mode": "rendered-page",
       "title": "ARPA Proof and Digest Profile"
+    },
+    {
+      "source": "RELEASE_NOTES_v0.9.1.md",
+      "expected_output": "_site/RELEASE_NOTES_v0.9.1.html",
+      "mode": "rendered-page",
+      "title": "Release Notes v0.9.1"
+    },
+    {
+      "source": "docs/implementation-accelerator/01-15-minute-quickstart.md",
+      "expected_output": "_site/docs/implementation-accelerator/01-15-minute-quickstart.html",
+      "mode": "rendered-page",
+      "title": "15-minute quickstart"
+    },
+    {
+      "source": "docs/implementation-accelerator/02-first-registry.md",
+      "expected_output": "_site/docs/implementation-accelerator/02-first-registry.html",
+      "mode": "rendered-page",
+      "title": "Your first registry"
+    },
+    {
+      "source": "docs/implementation-accelerator/03-first-authority.md",
+      "expected_output": "_site/docs/implementation-accelerator/03-first-authority.html",
+      "mode": "rendered-page",
+      "title": "Your first authority"
+    },
+    {
+      "source": "docs/implementation-accelerator/04-first-agent.md",
+      "expected_output": "_site/docs/implementation-accelerator/04-first-agent.html",
+      "mode": "rendered-page",
+      "title": "Your first agent"
+    },
+    {
+      "source": "docs/implementation-accelerator/05-first-delegation.md",
+      "expected_output": "_site/docs/implementation-accelerator/05-first-delegation.html",
+      "mode": "rendered-page",
+      "title": "Your first delegation"
+    },
+    {
+      "source": "docs/implementation-accelerator/06-federation.md",
+      "expected_output": "_site/docs/implementation-accelerator/06-federation.html",
+      "mode": "rendered-page",
+      "title": "Federation starter"
+    },
+    {
+      "source": "docs/implementation-accelerator/07-deployment-profiles.md",
+      "expected_output": "_site/docs/implementation-accelerator/07-deployment-profiles.html",
+      "mode": "rendered-page",
+      "title": "Deployment profiles"
+    },
+    {
+      "source": "docs/implementation-accelerator/08-pilot-readiness.md",
+      "expected_output": "_site/docs/implementation-accelerator/08-pilot-readiness.html",
+      "mode": "rendered-page",
+      "title": "Pilot readiness"
+    },
+    {
+      "source": "docs/implementation-accelerator/09-production-hardening.md",
+      "expected_output": "_site/docs/implementation-accelerator/09-production-hardening.html",
+      "mode": "rendered-page",
+      "title": "Production hardening"
+    },
+    {
+      "source": "docs/implementation-accelerator/10-api-toolkit.md",
+      "expected_output": "_site/docs/implementation-accelerator/10-api-toolkit.html",
+      "mode": "rendered-page",
+      "title": "API consumer toolkit"
+    },
+    {
+      "source": "docs/implementation-accelerator/index.md",
+      "expected_output": "_site/docs/implementation-accelerator/index.html",
+      "mode": "rendered-page",
+      "title": "Implementation Accelerator"
+    },
+    {
+      "source": "implementation-accelerator/README.md",
+      "expected_output": "_site/implementation-accelerator/README.html",
+      "mode": "rendered-page",
+      "title": "ARPA Implementation Accelerator"
+    },
+    {
+      "source": "pilot-kit/README.md",
+      "expected_output": "_site/pilot-kit/README.html",
+      "mode": "rendered-page",
+      "title": "ARPA Pilot Starter Kit"
+    },
+    {
+      "source": "pilot-kit/checklists/exit-and-revocation.md",
+      "expected_output": "_site/pilot-kit/checklists/exit-and-revocation.html",
+      "mode": "rendered-page",
+      "title": "Exit and revocation"
+    },
+    {
+      "source": "pilot-kit/checklists/governance-readiness.md",
+      "expected_output": "_site/pilot-kit/checklists/governance-readiness.html",
+      "mode": "rendered-page",
+      "title": "Governance readiness"
+    },
+    {
+      "source": "pilot-kit/checklists/operations-readiness.md",
+      "expected_output": "_site/pilot-kit/checklists/operations-readiness.html",
+      "mode": "rendered-page",
+      "title": "Operations readiness"
+    },
+    {
+      "source": "pilot-kit/checklists/security-readiness.md",
+      "expected_output": "_site/pilot-kit/checklists/security-readiness.html",
+      "mode": "rendered-page",
+      "title": "Security readiness"
+    },
+    {
+      "source": "pilot-kit/topologies/federated-pilot.md",
+      "expected_output": "_site/pilot-kit/topologies/federated-pilot.html",
+      "mode": "rendered-page",
+      "title": "Federated pilot topology"
     }
   ]
 }

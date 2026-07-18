@@ -1,9 +1,19 @@
 services:
   arpa-reference:
     build: .
-    ports: ["8000:8000"]
+    ports:
+      - "8000:8000"
     environment:
       ARPA_DB: /data/arpa.db
-    volumes: ["arpa-data:/data"]
+      ARPA_REGISTRY_ID: registry:acme.example
+      ARPA_REGISTRY_NAME: Acme Pilot Registry
+      ARPA_PUBLIC_BASE_URI: http://localhost:8000
+    volumes:
+      - arpa-data:/data
+    healthcheck:
+      test: ["CMD", "python3", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health')"]
+      interval: 3s
+      timeout: 2s
+      retries: 20
 volumes:
   arpa-data: {}

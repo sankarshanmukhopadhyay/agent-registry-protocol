@@ -1,0 +1,41 @@
+{
+  "profile": "C",
+  "agent_status": {
+    "registration": "active",
+    "operation": "available",
+    "security": "normal",
+    "observed_at": "2026-07-18T10:00:00Z",
+    "valid_until": "2026-07-18T10:05:00Z"
+  },
+  "authority_envelope": {
+    "effective_from": "2026-07-18T00:00:00Z",
+    "effective_until": "2027-07-18T00:00:00Z",
+    "action_classes": [
+      "procurement.review"
+    ],
+    "resource_scope": [
+      "purchase-request"
+    ],
+    "jurisdiction_scope": [
+      "US"
+    ],
+    "prohibitions": [
+      "payment.submit",
+      "funds.transfer"
+    ],
+    "required_approvals": [],
+    "limits": {
+      "per_transaction": 10000,
+      "aggregate": 50000
+    }
+  },
+  "request": {
+    "agent": "agentreg:acme.example:procurement-review",
+    "action": "procurement.review",
+    "resource": "purchase-request",
+    "jurisdiction": "US",
+    "amount": 2500,
+    "time": "2026-07-18T10:00:30Z",
+    "policy_max_status_age_seconds": 120
+  }
+}

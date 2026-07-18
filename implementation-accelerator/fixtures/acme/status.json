@@ -1,0 +1,27 @@
+{
+  "record_id": "acme-status-001",
+  "record_type": "status",
+  "schema_version": "1.0.0",
+  "issuer": "registry:acme.example",
+  "subject": "agentreg:acme.example:procurement-review",
+  "issued_at": "2026-07-18T00:00:00Z",
+  "effective_from": "2026-07-18T00:00:00Z",
+  "effective_until": null,
+  "status": "active",
+  "agent_id": "agentreg:acme.example:procurement-review",
+  "registration": "active",
+  "operation": "active",
+  "authority": "valid",
+  "assurance": "pilot",
+  "security": "normal",
+  "effective_at": "2026-07-18T00:00:00Z",
+  "observed_at": "2026-07-18T00:00:00Z",
+  "valid_until": "2027-07-18T00:00:00Z",
+  "restrictions": [
+    "no_transaction_submission",
+    "no_funds_transfer"
+  ],
+  "source": "registry:acme.example",
+  "appeal_available": true,
+  "proof": {}
+}

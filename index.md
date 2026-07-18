@@ -11,15 +11,21 @@ permalink: /
 
 The Agent Registry Protocol (ARPA) defines a modular authority-control protocol for delegated software agents. It treats a registry as an operational control plane for identity, authority, delegation, lifecycle state, assurance evidence, and redress rather than as a universal directory of trustworthy agents.
 
+## Deploy before you read everything
+
+The [ARPA Implementation Accelerator](docs/implementation-accelerator/index.md) provides a 15-minute local deployment, canonical sample registry, authority decisions and pilot-readiness evidence. Start with `make pilot-up`, `make pilot-seed`, and `make pilot-check`.
+
 ## Start here
 
+- [Run the 15-minute quickstart](docs/implementation-accelerator/01-15-minute-quickstart.md)
 - [Browse the complete documentation catalogue](docs/index.md)
 - [Read the Candidate Specification v0.9.0](spec/agent-registry-protocol-v0.9.0.md)
 - [Follow the candidate specification guide](docs/candidate-specification-guide.md)
 - [Review the protocol modules](docs/protocol-modules.md)
 - [Understand the reference implementation architecture](docs/reference-implementation-architecture.md)
 - [Review conformance and assurance](docs/conformance-guide.md)
-- [Read the v0.9.0 release notes](RELEASE_NOTES_v0.9.0.md)
+- [Read the v0.9.1 release notes](RELEASE_NOTES_v0.9.1.md)
+- [Read the normative v0.9.0 release notes](RELEASE_NOTES_v0.9.0.md)
 
 ## Publication scope
 

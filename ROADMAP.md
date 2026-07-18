@@ -6,7 +6,7 @@ nav_exclude: true
 
 # Roadmap
 
-## v0.9.0 — Candidate Specification (current)
+## v0.9.1 — Candidate Specification (current)
 
 - stable normative requirements and traceability;
 - independent implementation-path evidence;

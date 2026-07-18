@@ -53,3 +53,14 @@ references and validation gates resolve to the consolidated specification.
 The repository now declares 70 rendered Markdown sources in `docs/publication-map.yml`. The publication pipeline generates a deterministic source-to-output manifest and blocks deployment when a declared page is absent, an internal `.md` URL remains unresolved, a local target or asset is missing, a heading fragment is invalid, or two sources collide on one output path.
 
 Offline validation completed for the publication inventory, explicit front matter, local Markdown source links, workflow YAML, repository validation, candidate validation, and the complete release-check suite. The authoritative Jekyll rendering check runs in GitHub Actions through `make pages-check`, where the pinned Ruby dependencies are installed by `ruby/setup-ruby`.
+
+## v0.9.1 Implementation Accelerator validation
+
+- `make release-check`: passed.
+- Python service and publication-validator tests: 10 passed.
+- End-to-end sample registry loading: 6 records accepted.
+- Pilot readiness validator: 14/14 checks passed; decision `ready`.
+- Publication manifest: 89 rendered pages declared.
+- Local Jekyll rendering was not executed in the build environment because Bundler was unavailable; GitHub Actions remains the authoritative Pages rendering gate.
+
+Passing these checks demonstrates repository-controlled reference behaviour only. It does not replace operator governance, security review, production hardening or independent conformance assessment.

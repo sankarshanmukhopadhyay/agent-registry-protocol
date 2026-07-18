@@ -1,60 +1,61 @@
 {
-  "release": "v0.9.0",
-  "status": "Candidate Specification",
-  "generated_on": "2026-07-16",
-  "release_gate": "make release-check",
+  "release": "v0.9.1",
+  "status": "Implementation Accelerator & Pilot Readiness",
+  "generated_on": "2026-07-18",
+  "release_gate": "make release-check plus make pilot-check",
   "authoritative_specification": "spec/agent-registry-protocol-v0.9.0.md",
+  "implementation_release": "0.9.1",
   "artifacts": [
     {
       "path": "spec/agent-registry-protocol-v0.9.0.md",
-      "sha256": "1e37776f0013af1c1102349921229ba637c67872b6c0ed1a55da45d18e6ca49e",
-      "bytes": 136951
+      "sha256": "5de213950e0ab5b6be16c407a4a83ed40beeeeb5ff2950aa2454b8f4ac36e5d8",
+      "bytes": 137051
     },
     {
-      "path": "docs/architecture/trqp-arpa-interoperability.md",
-      "sha256": "7d9d78107769b5613c400c342dbe5be752699164d3b0c6f6de80da9ffb97d8c0",
-      "bytes": 4686
+      "path": "RELEASE_NOTES_v0.9.1.md",
+      "sha256": "85d2d5d65e44528c865d820f169c961db25979b1696e3fb0ba9dd7eb7e05af18",
+      "bytes": 1417
     },
     {
-      "path": "mappings/trqp-arpa-query-projection.yaml",
-      "sha256": "f1f908a06d8f241e4816572b8d51dadaa52b95b279ec89d644d2c94ffd23f55c",
-      "bytes": 5010
+      "path": "docs/implementation-accelerator/index.md",
+      "sha256": "2b4d630ae2bce65fb257fce732ea9682299e3af1e47cc04d785631faba135cdc",
+      "bytes": 1794
     },
     {
-      "path": "artifacts/candidate-specification/candidate-validation-report.json",
-      "sha256": "7346c63379c6573224afb7d4dc3613d0e26e5f9d200aeb2e702918f102cf1646",
-      "bytes": 3493
+      "path": "docs/implementation-accelerator/01-15-minute-quickstart.md",
+      "sha256": "10a2efde3dd0a8c6d1e4cea458b5c1ea31d38b22fbcb14e01b58b925a6c95019",
+      "bytes": 1966
     },
     {
-      "path": "artifacts/candidate-specification/evidence-bundle.json",
-      "sha256": "b40fac8dc5e465203436695e01d77bbfbfc3b247a5fb0b506c8b343e015d6492",
-      "bytes": 618
+      "path": "implementation-accelerator/fixtures/acme/agent-core.json",
+      "sha256": "0100f59113e2451df24eafbff8f9f99503156ec38121c952ed8fd5f998722d24",
+      "bytes": 1136
     },
     {
-      "path": "artifacts/interoperability/interoperability-report.json",
-      "sha256": "8d346ea745d18c0d97b775f94af6a3491fa0363250d13df3706b3b03e9929701",
-      "bytes": 2389
+      "path": "implementation-accelerator/postman/ARPA-v0.9.1.postman_collection.json",
+      "sha256": "b0c1820dd4deeb2e1ea400c5dd668abe4cc07a1ea9d51c66c8d513ae18402e4c",
+      "bytes": 1672
     },
     {
-      "path": "conformance/reports/reference-implementation-report.json",
-      "sha256": "2a1ea3f9ec17ee7a2e60633dde9e4410796038d01ff25739205f29087183f4c8",
-      "bytes": 6883
+      "path": "scripts/validate_pilot.py",
+      "sha256": "863fd3a534959587ad00a31230bf2db1ffc28ab72d50347068012201b2b1378d",
+      "bytes": 2213
     },
     {
-      "path": "RELEASE_NOTES_v0.9.0.md",
-      "sha256": "7a630ca5f567445f7ef5fd899b5ef1d2d3acd271eea5af260795cb83ccf19c3b",
-      "bytes": 1876
+      "path": "artifacts/pilot/pilot-readiness-report.json",
+      "sha256": "f0377d08df2bff5aad8841518df22d0fa0686fc9d7032b6b741d0e75891e104b",
+      "bytes": 1808
     },
     {
       "path": "VALIDATION_SUMMARY.md",
-      "sha256": "4692ac049dbc7a0939d47622234d95d3201f6a82343d5dfd53a77f3f69bf3396",
-      "bytes": 1871
+      "sha256": "6252ba395985ab38e91fb7837a8937370319906994975de7e93a8120f9bb0901",
+      "bytes": 3428
     }
   ],
   "assurance_boundary": [
-    "No external implementation independence claim",
-    "No formal TRQP conformance claim",
-    "No certification or legal recognition",
-    "Loopback and SQLite test environments are not production deployments"
+    "Normative protocol baseline remains v0.9.0 Candidate Specification",
+    "No production deployment, certification or legal authority claim",
+    "Pilot automation does not replace accountable governance and security sign-off",
+    "Reference implementation and local fixtures are repository-controlled evidence"
   ]
 }

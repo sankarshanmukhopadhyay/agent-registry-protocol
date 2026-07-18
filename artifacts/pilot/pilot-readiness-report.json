@@ -1,0 +1,82 @@
+{
+  "release": "0.9.1",
+  "generated_at": "2026-07-18T02:16:09.960451+00:00",
+  "base_url": "http://127.0.0.1:8766",
+  "decision": "ready",
+  "checks": [
+    {
+      "name": "health",
+      "status": "pass",
+      "detail": "ok"
+    },
+    {
+      "name": "registry_metadata",
+      "status": "pass",
+      "detail": "registry:reference"
+    },
+    {
+      "name": "agent_resolution",
+      "status": "pass",
+      "detail": "agentreg:acme.example:procurement-review"
+    },
+    {
+      "name": "agent_status",
+      "status": "pass",
+      "detail": "active"
+    },
+    {
+      "name": "alias_resolution",
+      "status": "pass",
+      "detail": "agentreg:acme.example:procurement-review"
+    },
+    {
+      "name": "authority_allow",
+      "status": "pass",
+      "detail": "allow"
+    },
+    {
+      "name": "authority_deny",
+      "status": "pass",
+      "detail": "deny"
+    },
+    {
+      "name": "events",
+      "status": "pass",
+      "detail": 6
+    },
+    {
+      "name": "fixture:agent-core.json",
+      "status": "pass",
+      "detail": "acme-agent-core-001"
+    },
+    {
+      "name": "fixture:authority-envelope.json",
+      "status": "pass",
+      "detail": "acme-authority-001"
+    },
+    {
+      "name": "fixture:governance.json",
+      "status": "pass",
+      "detail": "acme-governance-001"
+    },
+    {
+      "name": "fixture:identifier-alias.json",
+      "status": "pass",
+      "detail": "acme-alias-001"
+    },
+    {
+      "name": "fixture:service-endpoint.json",
+      "status": "pass",
+      "detail": "acme-service-endpoint"
+    },
+    {
+      "name": "fixture:status.json",
+      "status": "pass",
+      "detail": "acme-status-001"
+    }
+  ],
+  "limitations": [
+    "Reference implementation only",
+    "Human governance and security checklists require accountable sign-off"
+  ]
+}

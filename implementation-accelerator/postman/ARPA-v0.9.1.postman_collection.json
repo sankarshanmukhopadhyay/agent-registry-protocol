@@ -1,0 +1,83 @@
+{
+  "info": {
+    "name": "ARPA v0.9.1 Implementation Accelerator",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8000"
+    },
+    {
+      "key": "agentId",
+      "value": "agentreg:acme.example:procurement-review"
+    }
+  ],
+  "item": [
+    {
+      "name": "Health",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/health",
+          "host": [
+            "{{baseUrl}}/health"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Registry metadata",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/registry",
+          "host": [
+            "{{baseUrl}}/registry"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Resolve first agent",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/agents/{{agentId}}",
+          "host": [
+            "{{baseUrl}}/agents/{{agentId}}"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Agent status",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/agents/{{agentId}}/status",
+          "host": [
+            "{{baseUrl}}/agents/{{agentId}}/status"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Events",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/events",
+          "host": [
+            "{{baseUrl}}/events"
+          ]
+        }
+      }
+    }
+  ]
+}

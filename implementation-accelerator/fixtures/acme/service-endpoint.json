@@ -1,0 +1,14 @@
+{
+  "record_id": "acme-service-endpoint",
+  "record_type": "service-endpoint",
+  "schema_version": "1.0.0",
+  "issuer": "registry:acme.example",
+  "subject": "agentreg:acme.example:procurement-review",
+  "issued_at": "2026-07-18T00:00:00Z",
+  "effective_from": "2026-07-18T00:00:00Z",
+  "effective_until": null,
+  "status": "active",
+  "service_type": "agent-api",
+  "endpoint": "https://agents.acme.example/procurement-review",
+  "proof": {}
+}

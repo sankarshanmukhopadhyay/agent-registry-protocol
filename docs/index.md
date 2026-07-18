@@ -11,6 +11,19 @@ permalink: /docs/
 
 This catalogue provides a stable GitHub Pages entry point for the complete normative specification, implementation guidance, governance material, conformance profiles, interoperability artefacts, and worked scenarios maintained in this repository.
 
+## Deploy before you read everything
+
+The [ARPA Implementation Accelerator](implementation-accelerator/index.md) provides a 15-minute local deployment, canonical sample registry, authority decisions and pilot-readiness evidence. Start with `make pilot-up`, `make pilot-seed`, and `make pilot-check`.
+
+## Implementation Accelerator
+
+- [Implementation Accelerator home](implementation-accelerator/index.md)
+- [15-minute quickstart](implementation-accelerator/01-15-minute-quickstart.md)
+- [Deployment profiles](implementation-accelerator/07-deployment-profiles.md)
+- [Pilot readiness](implementation-accelerator/08-pilot-readiness.md)
+- [Production hardening](implementation-accelerator/09-production-hardening.md)
+- [API consumer toolkit](implementation-accelerator/10-api-toolkit.md)
+
 ## Normative specification and profiles
 
 - [Agent Registry Protocol Candidate Specification v0.9.0](../spec/agent-registry-protocol-v0.9.0.md)

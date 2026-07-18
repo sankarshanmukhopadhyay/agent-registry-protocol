@@ -6,6 +6,20 @@ nav_exclude: true
 
 # Changelog
 
+## [0.9.1] - 2026-07-18
+
+### Added
+- Implementation Accelerator with a 15-minute executable quickstart.
+- Canonical Acme pilot registry fixtures and API consumer collections.
+- Automated pilot-readiness evidence generation.
+- Pilot governance, security, operations and exit checklists.
+- Deployment profiles, delegation tutorial and production-hardening guidance.
+
+### Changed
+- Reference implementation metadata now advertises implementation release 0.9.1.
+- GitHub Pages navigation exposes an implementation-first journey.
+
+
 ## [Unreleased]
 
 ### Fixed

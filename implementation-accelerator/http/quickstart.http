@@ -1,0 +1,29 @@
+@base = http://localhost:8000
+@agent = agentreg:acme.example:procurement-review
+
+### Health
+GET {{base}}/health
+
+### Registry metadata
+GET {{base}}/registry
+
+### Resolve canonical agent
+GET {{base}}/agents/{{agent}}
+
+### Current lifecycle status
+GET {{base}}/agents/{{agent}}/status
+
+### Resolve alias
+GET {{base}}/aliases/acme:procurement-review
+
+### Authority allow
+POST {{base}}/authority/evaluate
+Content-Type: application/json
+
+{
+  "authority": {"status":"active","actions":["procurement.review"],"maximum_value":10000},
+  "request": {"agent":"agentreg:acme.example:procurement-review","action":"procurement.review","value":2500}
+}
+
+### Events
+GET {{base}}/events

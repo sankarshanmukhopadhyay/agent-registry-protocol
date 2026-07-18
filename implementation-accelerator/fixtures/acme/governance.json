@@ -1,0 +1,15 @@
+{
+  "record_id": "acme-governance-001",
+  "record_type": "governance",
+  "schema_version": "1.0.0",
+  "issuer": "registry:acme.example",
+  "subject": "agentreg:acme.example:procurement-review",
+  "issued_at": "2026-07-18T00:00:00Z",
+  "effective_from": "2026-07-18T00:00:00Z",
+  "effective_until": null,
+  "status": "active",
+  "governance_uri": "https://acme.example/governance/procurement-agents",
+  "policy_version": "pilot-1",
+  "appeal_uri": "https://acme.example/redress",
+  "proof": {}
+}

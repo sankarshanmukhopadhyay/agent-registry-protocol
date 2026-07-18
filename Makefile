@@ -1,4 +1,4 @@
-.PHONY: setup validate test interop candidate run report pages-manifest pages-build pages-validate pages-check release-check package clean
+.PHONY: pilot-up pilot-down pilot-seed pilot-check pilot-reset  setup validate test interop candidate run report pages-manifest pages-build pages-validate pages-check release-check package clean
 setup:
 	python3 -m pip install -r scripts/requirements.txt
 validate:
@@ -30,3 +30,19 @@ release-check: validate test interop candidate report
 package: release-check
 clean:
 	rm -rf .pytest_cache __pycache__ reference/__pycache__ scripts/__pycache__ independent_impl/__pycache__
+
+
+pilot-up:
+	docker compose up --build -d
+
+pilot-down:
+	docker compose down
+
+pilot-reset:
+	docker compose down -v
+
+pilot-seed:
+	python3 implementation-accelerator/scripts/seed_registry.py
+
+pilot-check:
+	python3 scripts/validate_pilot.py
