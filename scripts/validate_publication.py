@@ -8,14 +8,33 @@ from urllib.parse import unquote, urlsplit
 
 ATTRS=("href","src")
 class Parser(HTMLParser):
-    def __init__(self): super().__init__(); self.refs=[]; self.ids=set(); self.title_count=0
+    def __init__(self):
+        super().__init__()
+        self.refs=[]
+        self.ids=set()
+        self.title_count=0
+        self.mermaid_blocks=0
+        self._head_depth=0
+
     def handle_starttag(self,tag,attrs):
         d=dict(attrs)
-        if tag=="title": self.title_count+=1
+        if tag=="head":
+            self._head_depth += 1
+        elif tag=="title" and self._head_depth:
+            # Count only the document title in <head>. SVG diagrams and icons
+            # may legitimately contain their own <title> accessibility nodes.
+            self.title_count += 1
+        classes=set((d.get("class") or "").split())
+        if tag in {"code", "pre", "div"} and "language-mermaid" in classes:
+            self.mermaid_blocks += 1
         for key in ("id","name"):
             if d.get(key): self.ids.add(d[key])
         for key in ATTRS:
             if d.get(key): self.refs.append((key,d[key]))
+
+    def handle_endtag(self,tag):
+        if tag=="head" and self._head_depth:
+            self._head_depth -= 1
 
 def page_for_url(site:Path, current:Path, path:str, baseurl:str)->Path:
     path=unquote(path)
@@ -56,10 +75,7 @@ def main()->int:
                 if tp is None:
                     q=Parser(); q.feed(target.read_text(encoding="utf-8",errors="replace")); parsed[target]=q; tp=q
                 if unquote(u.fragment) not in tp.ids: errors.append(f"Missing fragment in {current.relative_to(site)}: {raw}")
-    mermaid_pages=0
-    for f in html_files:
-        text=f.read_text(encoding="utf-8",errors="replace")
-        if "language-mermaid" in text: mermaid_pages+=1
+    mermaid_pages=sum(1 for parser in parsed.values() if parser.mermaid_blocks)
     report={"schema_version":1,"source_pages":manifest["source_count"],"rendered_html_pages":len(html_files),"internal_references_checked":checked,"fragment_references_checked":fragments,"local_assets_checked":assets,"mermaid_pages":mermaid_pages,"errors":errors}
     out=Path(a.report); out.parent.mkdir(parents=True,exist_ok=True); out.write_text(json.dumps(report,indent=2)+"\n")
     print(json.dumps({k:v for k,v in report.items() if k!="errors"},indent=2))
