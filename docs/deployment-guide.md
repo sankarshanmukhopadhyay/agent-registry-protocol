@@ -1,3 +1,9 @@
+---
+layout: default
+title: "Deployment Guide"
+nav_exclude: true
+---
+
 # Deployment Guide
 
 A production deployment should separate authoritative writes, projections, policy evaluation, evidence storage and appeal administration. Publish service objectives for query availability, status freshness, event latency, revocation propagation, incident acknowledgement and point-in-time reconstruction.

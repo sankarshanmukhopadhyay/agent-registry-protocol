@@ -1,3 +1,9 @@
+---
+layout: default
+title: "ARPA Implementation Report"
+nav_exclude: true
+---
+
 # ARPA Implementation Report
 
 - Implementation and version:

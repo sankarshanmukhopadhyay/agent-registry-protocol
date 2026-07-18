@@ -1,3 +1,9 @@
+---
+layout: default
+title: "ARPA Proof and Digest Profile"
+nav_exclude: true
+---
+
 # ARPA Proof and Digest Profile
 
 ## Canonical input

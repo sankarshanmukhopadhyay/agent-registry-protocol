@@ -1,3 +1,9 @@
+---
+layout: default
+title: "Low-Risk Informational Agent"
+nav_exclude: true
+---
+
 # Low-Risk Informational Agent
 
 ## Flow

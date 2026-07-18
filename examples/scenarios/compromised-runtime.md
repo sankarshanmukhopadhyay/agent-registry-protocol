@@ -1,3 +1,9 @@
+---
+layout: default
+title: "Compromised Runtime"
+nav_exclude: true
+---
+
 # Compromised Runtime
 
 ## Flow

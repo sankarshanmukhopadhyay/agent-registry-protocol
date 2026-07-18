@@ -1,3 +1,9 @@
+---
+layout: default
+title: "Quickstart"
+nav_exclude: true
+---
+
 # Quickstart
 
 ## Local validation

@@ -1,3 +1,9 @@
+---
+layout: default
+title: "ARPA Protocol Modules"
+nav_exclude: true
+---
+
 # ARPA Protocol Modules
 
 ARPA is a composable protocol family. Conformance to a lower module does not imply support for, or a positive result from, a higher module.

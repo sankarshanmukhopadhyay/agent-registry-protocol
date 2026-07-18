@@ -1,3 +1,9 @@
+---
+layout: default
+title: "Project Governance"
+nav_exclude: true
+---
+
 # Project Governance
 
 ## Purpose

@@ -1,3 +1,9 @@
+---
+layout: default
+title: "ARPA v0.9.0 — Candidate Specification and Governed Query Interoperability"
+nav_exclude: true
+---
+
 # ARPA v0.9.0 — Candidate Specification and Governed Query Interoperability
 
 ARPA v0.9.0 advances the protocol from a same-repository interoperability draft to a Candidate Specification with stable requirements, broader executable assurance and a documented relationship with TRQP.

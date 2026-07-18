@@ -1,3 +1,9 @@
+---
+layout: default
+title: "ARPA v0.4.0: Protocol Contracts and Reference Implementation Release"
+nav_exclude: true
+---
+
 # ARPA v0.4.0: Protocol Contracts and Reference Implementation Release
 
 ARPA v0.4.0 turns the architecture draft into a modular, machine-verifiable implementation package while preserving the central distinction between identity, authority, assurance, accountability and governance.

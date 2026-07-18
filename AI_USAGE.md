@@ -1,3 +1,9 @@
+---
+layout: default
+title: "AI Usage Disclosure"
+nav_exclude: true
+---
+
 # AI Usage Disclosure
 
 ## Purpose

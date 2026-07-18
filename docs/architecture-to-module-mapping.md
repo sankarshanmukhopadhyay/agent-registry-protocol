@@ -1,3 +1,9 @@
+---
+layout: default
+title: "Architecture-to-Module Mapping"
+nav_exclude: true
+---
+
 # Architecture-to-Module Mapping
 
 | Architecture concern | Module | Primary artifacts |

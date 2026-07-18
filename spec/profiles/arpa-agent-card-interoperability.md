@@ -1,3 +1,9 @@
+---
+layout: default
+title: "ARPA Agent Card Interoperability Profile"
+nav_exclude: true
+---
+
 # ARPA Agent Card Interoperability Profile
 
 ## 1. Scope

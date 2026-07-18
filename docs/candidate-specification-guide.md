@@ -1,3 +1,9 @@
+---
+layout: default
+title: "Candidate Specification implementation guide"
+nav_exclude: true
+---
+
 # Candidate Specification implementation guide
 
 ## Reading paths

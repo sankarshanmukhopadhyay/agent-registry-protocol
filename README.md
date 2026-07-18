@@ -1,3 +1,9 @@
+---
+layout: default
+title: "Agent Registry Protocol"
+nav_exclude: true
+---
+
 # Agent Registry Protocol
 
 [![Specification status](https://img.shields.io/badge/specification-v0.9.0%20candidate-blue)](spec/agent-registry-protocol-v0.9.0.md)

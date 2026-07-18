@@ -1,3 +1,9 @@
+---
+layout: default
+title: "End-to-End Scenarios"
+nav_exclude: true
+---
+
 # End-to-End Scenarios
 
 The scenarios below are executable governance narratives. Each identifies authority, enforcement, evidence and revocation outcomes.

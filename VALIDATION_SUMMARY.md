@@ -1,3 +1,9 @@
+---
+layout: default
+title: "Validation Summary — ARPA v0.9.0"
+nav_exclude: true
+---
+
 # Validation Summary — ARPA v0.9.0
 
 Validation command:
@@ -41,3 +47,9 @@ The release now has one authoritative prose specification:
 `spec/agent-registry-protocol-v0.9.0.md`. The unchanged v0.5.0 draft and
 detached Candidate requirements overlay have been removed. All repository
 references and validation gates resolve to the consolidated specification.
+
+## GitHub Pages publication hardening
+
+The repository now declares 70 rendered Markdown sources in `docs/publication-map.yml`. The publication pipeline generates a deterministic source-to-output manifest and blocks deployment when a declared page is absent, an internal `.md` URL remains unresolved, a local target or asset is missing, a heading fragment is invalid, or two sources collide on one output path.
+
+Offline validation completed for the publication inventory, explicit front matter, local Markdown source links, workflow YAML, repository validation, candidate validation, and the complete release-check suite. The authoritative Jekyll rendering check runs in GitHub Actions through `make pages-check`, where the pinned Ruby dependencies are installed by `ruby/setup-ruby`.

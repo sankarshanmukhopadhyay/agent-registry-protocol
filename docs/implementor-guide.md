@@ -1,3 +1,9 @@
+---
+layout: default
+title: "Implementor Guide"
+nav_exclude: true
+---
+
 # Implementor Guide
 
 ## Build order

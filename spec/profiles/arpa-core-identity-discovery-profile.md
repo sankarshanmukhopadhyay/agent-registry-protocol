@@ -1,3 +1,9 @@
+---
+layout: default
+title: "ARPA Core Identity and Discovery Profile"
+nav_exclude: true
+---
+
 # ARPA Core Identity and Discovery Profile
 
 **Status:** Normative profile for ARPA v0.5.0  

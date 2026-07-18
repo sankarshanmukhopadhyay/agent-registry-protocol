@@ -1,3 +1,9 @@
+---
+layout: default
+title: "Interoperability Harness"
+nav_exclude: true
+---
+
 # Interoperability Harness
 
 This directory contains two separately configured registry fixtures and a deterministic exchange harness for ARPA v0.5.0.

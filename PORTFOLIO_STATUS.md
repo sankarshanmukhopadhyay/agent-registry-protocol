@@ -1,3 +1,9 @@
+---
+layout: default
+title: "Portfolio Status"
+nav_exclude: true
+---
+
 # Portfolio Status
 
 | Attribute | Value |

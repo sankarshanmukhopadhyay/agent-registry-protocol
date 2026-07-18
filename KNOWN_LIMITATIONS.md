@@ -1,3 +1,9 @@
+---
+layout: default
+title: "Known limitations"
+nav_exclude: true
+---
+
 # Known limitations
 
 ARPA v0.9.0 is a Candidate Specification, not a stable v1.0 release.

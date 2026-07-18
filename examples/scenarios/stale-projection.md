@@ -1,3 +1,9 @@
+---
+layout: default
+title: "Stale Projection"
+nav_exclude: true
+---
+
 # Stale Projection
 
 ## Flow

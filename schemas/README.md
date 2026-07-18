@@ -1,3 +1,9 @@
+---
+layout: default
+title: "JSON Schemas"
+nav_exclude: true
+---
+
 # JSON Schemas
 
 ARPA v0.5.0 publishes JSON Schema 2020-12 contracts for 20 envelope-based record families plus standalone Agent Card extension and Registry Metadata contracts. The record schema track remains `1.0.0`.

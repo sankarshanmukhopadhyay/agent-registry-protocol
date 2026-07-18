@@ -1,3 +1,9 @@
+---
+layout: default
+title: "Conformance Profile B: Accountable Agent Registry"
+nav_exclude: true
+---
+
 # Conformance Profile B: Accountable Agent Registry
 
 Source: spec §35.2, Appendix D.1–D.2. Includes Profile A. Suitable for agents that access protected data, produce consequential recommendations, or modify workflows.

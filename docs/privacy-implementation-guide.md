@@ -1,3 +1,9 @@
+---
+layout: default
+title: "Privacy Implementation Guide"
+nav_exclude: true
+---
+
 # Privacy Implementation Guide
 
 Publish only data required for a relying decision. Keep principals, beneficiaries, confidential delegation terms, detailed evidence and execution records behind authorized resolution. Use pairwise identifiers, selective disclosure, access-controlled status responses and privacy-preserving projections where appropriate.

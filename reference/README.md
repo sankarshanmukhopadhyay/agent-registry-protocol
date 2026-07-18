@@ -1,3 +1,9 @@
+---
+layout: default
+title: "ARPA Reference Service"
+nav_exclude: true
+---
+
 # ARPA Reference Service
 
 This FastAPI service demonstrates ARPA-Core resolution, aliases, events, point-in-time record filtering and the scoped ARPA-Authority evaluator. It is intentionally local-first and not production-ready.

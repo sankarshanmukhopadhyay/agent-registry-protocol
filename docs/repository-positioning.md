@@ -1,3 +1,9 @@
+---
+layout: default
+title: "Repository Positioning"
+nav_exclude: true
+---
+
 # Repository Positioning
 
 The Agent Registry Protocol is the normative protocol layer for resolving agent identity, relationships, authority, assurance, status, evidence, and governance.

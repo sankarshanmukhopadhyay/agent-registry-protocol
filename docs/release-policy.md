@@ -1,3 +1,9 @@
+---
+layout: default
+title: "Release Policy"
+nav_exclude: true
+---
+
 # Release Policy
 
 ARPA uses semantic versioning for repository releases and maintains a separate schema-version track where documented in `schemas/README.md`.

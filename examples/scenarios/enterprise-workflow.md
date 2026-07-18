@@ -1,3 +1,9 @@
+---
+layout: default
+title: "Enterprise Workflow Agent"
+nav_exclude: true
+---
+
 # Enterprise Workflow Agent
 
 ## Flow

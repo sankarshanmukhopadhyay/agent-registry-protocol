@@ -1,3 +1,9 @@
+---
+layout: default
+title: "Examples"
+nav_exclude: true
+---
+
 # Examples
 
 Machine-validatable example records, one valid and one invalid instance per record family defined in `schemas/`.

@@ -1,3 +1,9 @@
+---
+layout: default
+title: "Migration and Versioning"
+nav_exclude: true
+---
+
 # Migration and Versioning
 
 Record schema versions evolve independently from the specification version. Backward-compatible additions use a minor schema version; incompatible changes use a major version and require migration guidance.

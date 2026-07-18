@@ -1,3 +1,9 @@
+---
+layout: default
+title: "Bounded Procurement Agent"
+nav_exclude: true
+---
+
 # Bounded Procurement Agent
 
 ## Flow

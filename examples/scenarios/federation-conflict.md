@@ -1,3 +1,9 @@
+---
+layout: default
+title: "Federation Conflict"
+nav_exclude: true
+---
+
 # Federation Conflict
 
 ## Flow

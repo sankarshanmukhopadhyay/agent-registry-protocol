@@ -1,3 +1,9 @@
+---
+layout: default
+title: "Identifier Resolution Guide"
+nav_exclude: true
+---
+
 # Identifier Resolution Guide
 
 Resolution returns one of: `active_record`, `terminal_record`, `not_found`, `not_authorized`, `conflict` or `indeterminate`.

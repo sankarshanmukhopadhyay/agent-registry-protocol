@@ -1,3 +1,9 @@
+---
+layout: default
+title: "Design Principles"
+nav_exclude: true
+---
+
 # Design Principles
 
 The specification is governed by the following architectural invariants:

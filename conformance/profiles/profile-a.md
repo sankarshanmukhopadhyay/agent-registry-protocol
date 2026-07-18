@@ -1,3 +1,9 @@
+---
+layout: default
+title: "Conformance Profile A: Discovery Registry"
+nav_exclude: true
+---
+
 # Conformance Profile A: Discovery Registry
 
 Source: spec §35.1, Appendix D.1. Suitable for low-risk informational agents.

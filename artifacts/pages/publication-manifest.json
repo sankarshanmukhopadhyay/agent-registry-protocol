@@ -1,0 +1,426 @@
+{
+  "schema_version": 1,
+  "source_count": 70,
+  "entries": [
+    {
+      "source": "AI_USAGE.md",
+      "expected_output": "_site/AI_USAGE.html",
+      "mode": "rendered-page",
+      "title": "AI Usage Disclosure"
+    },
+    {
+      "source": "CHANGELOG.md",
+      "expected_output": "_site/CHANGELOG.html",
+      "mode": "rendered-page",
+      "title": "Changelog"
+    },
+    {
+      "source": "CODE_OF_CONDUCT.md",
+      "expected_output": "_site/CODE_OF_CONDUCT.html",
+      "mode": "rendered-page",
+      "title": "Code of Conduct"
+    },
+    {
+      "source": "CONTRIBUTING.md",
+      "expected_output": "_site/CONTRIBUTING.html",
+      "mode": "rendered-page",
+      "title": "Contributing"
+    },
+    {
+      "source": "GOVERNANCE.md",
+      "expected_output": "_site/GOVERNANCE.html",
+      "mode": "rendered-page",
+      "title": "Project Governance"
+    },
+    {
+      "source": "KNOWN_LIMITATIONS.md",
+      "expected_output": "_site/KNOWN_LIMITATIONS.html",
+      "mode": "rendered-page",
+      "title": "Known limitations"
+    },
+    {
+      "source": "PORTFOLIO_STATUS.md",
+      "expected_output": "_site/PORTFOLIO_STATUS.html",
+      "mode": "rendered-page",
+      "title": "Portfolio Status"
+    },
+    {
+      "source": "README.md",
+      "expected_output": "_site/README.html",
+      "mode": "rendered-page",
+      "title": "Agent Registry Protocol"
+    },
+    {
+      "source": "RELEASE_NOTES_v0.4.0.md",
+      "expected_output": "_site/RELEASE_NOTES_v0.4.0.html",
+      "mode": "rendered-page",
+      "title": "ARPA v0.4.0: Protocol Contracts and Reference Implementation Release"
+    },
+    {
+      "source": "RELEASE_NOTES_v0.5.0.md",
+      "expected_output": "_site/RELEASE_NOTES_v0.5.0.html",
+      "mode": "rendered-page",
+      "title": "ARPA v0.5.0: Interoperability and Evidence Release"
+    },
+    {
+      "source": "RELEASE_NOTES_v0.9.0.md",
+      "expected_output": "_site/RELEASE_NOTES_v0.9.0.html",
+      "mode": "rendered-page",
+      "title": "ARPA v0.9.0 \u2014 Candidate Specification and Governed Query Interoperability"
+    },
+    {
+      "source": "ROADMAP.md",
+      "expected_output": "_site/ROADMAP.html",
+      "mode": "rendered-page",
+      "title": "Roadmap"
+    },
+    {
+      "source": "SECURITY.md",
+      "expected_output": "_site/SECURITY.html",
+      "mode": "rendered-page",
+      "title": "Security Policy"
+    },
+    {
+      "source": "VALIDATION_SUMMARY.md",
+      "expected_output": "_site/VALIDATION_SUMMARY.html",
+      "mode": "rendered-page",
+      "title": "Validation Summary \u2014 ARPA v0.9.0"
+    },
+    {
+      "source": "conformance/README.md",
+      "expected_output": "_site/conformance/README.html",
+      "mode": "rendered-page",
+      "title": "Conformance"
+    },
+    {
+      "source": "conformance/profiles/profile-a.md",
+      "expected_output": "_site/conformance/profiles/profile-a.html",
+      "mode": "rendered-page",
+      "title": "Conformance Profile A: Discovery Registry"
+    },
+    {
+      "source": "conformance/profiles/profile-b.md",
+      "expected_output": "_site/conformance/profiles/profile-b.html",
+      "mode": "rendered-page",
+      "title": "Conformance Profile B: Accountable Agent Registry"
+    },
+    {
+      "source": "conformance/profiles/profile-c.md",
+      "expected_output": "_site/conformance/profiles/profile-c.html",
+      "mode": "rendered-page",
+      "title": "Conformance Profile C: Delegated Authority Registry"
+    },
+    {
+      "source": "conformance/profiles/profile-d.md",
+      "expected_output": "_site/conformance/profiles/profile-d.html",
+      "mode": "rendered-page",
+      "title": "Conformance Profile D: High-Assurance or Fiduciary Registry"
+    },
+    {
+      "source": "conformance/reports/implementation-report-template.md",
+      "expected_output": "_site/conformance/reports/implementation-report-template.html",
+      "mode": "rendered-page",
+      "title": "ARPA Implementation Report"
+    },
+    {
+      "source": "conformance/trqp-projection/README.md",
+      "expected_output": "_site/conformance/trqp-projection/README.html",
+      "mode": "rendered-page",
+      "title": "ARPA\u2013TRQP projection vectors"
+    },
+    {
+      "source": "docs/PUBLICATION_ASSURANCE.md",
+      "expected_output": "_site/docs/PUBLICATION_ASSURANCE.html",
+      "mode": "rendered-page",
+      "title": "GitHub Pages Publication Assurance"
+    },
+    {
+      "source": "docs/agent-card-integration-guide.md",
+      "expected_output": "_site/docs/agent-card-integration-guide.html",
+      "mode": "rendered-page",
+      "title": "Agent Card Integration Guide"
+    },
+    {
+      "source": "docs/architecture/trqp-arpa-interoperability.md",
+      "expected_output": "_site/docs/architecture/trqp-arpa-interoperability.html",
+      "mode": "rendered-page",
+      "title": "ARPA\u2013TRQP Interoperability Architecture"
+    },
+    {
+      "source": "docs/architecture-to-module-mapping.md",
+      "expected_output": "_site/docs/architecture-to-module-mapping.html",
+      "mode": "rendered-page",
+      "title": "Architecture-to-Module Mapping"
+    },
+    {
+      "source": "docs/candidate-specification-guide.md",
+      "expected_output": "_site/docs/candidate-specification-guide.html",
+      "mode": "rendered-page",
+      "title": "Candidate Specification implementation guide"
+    },
+    {
+      "source": "docs/conformance-guide.md",
+      "expected_output": "_site/docs/conformance-guide.html",
+      "mode": "rendered-page",
+      "title": "Conformance Guide"
+    },
+    {
+      "source": "docs/deployment-guide.md",
+      "expected_output": "_site/docs/deployment-guide.html",
+      "mode": "rendered-page",
+      "title": "Deployment Guide"
+    },
+    {
+      "source": "docs/design-principles.md",
+      "expected_output": "_site/docs/design-principles.html",
+      "mode": "rendered-page",
+      "title": "Design Principles"
+    },
+    {
+      "source": "docs/governance-operator-guide.md",
+      "expected_output": "_site/docs/governance-operator-guide.html",
+      "mode": "rendered-page",
+      "title": "Governance Operator Guide"
+    },
+    {
+      "source": "docs/identifier-resolution-guide.md",
+      "expected_output": "_site/docs/identifier-resolution-guide.html",
+      "mode": "rendered-page",
+      "title": "Identifier Resolution Guide"
+    },
+    {
+      "source": "docs/implementation-selection-guide.md",
+      "expected_output": "_site/docs/implementation-selection-guide.html",
+      "mode": "rendered-page",
+      "title": "Implementation Selection Guide"
+    },
+    {
+      "source": "docs/implementor-guide.md",
+      "expected_output": "_site/docs/implementor-guide.html",
+      "mode": "rendered-page",
+      "title": "Implementor Guide"
+    },
+    {
+      "source": "docs/index.md",
+      "expected_output": "_site/docs/index.html",
+      "mode": "rendered-page",
+      "title": "Documentation"
+    },
+    {
+      "source": "docs/interoperability.md",
+      "expected_output": "_site/docs/interoperability.html",
+      "mode": "rendered-page",
+      "title": "v0.5.0 Interoperability Guide"
+    },
+    {
+      "source": "docs/issuer-competence-and-transfer.md",
+      "expected_output": "_site/docs/issuer-competence-and-transfer.html",
+      "mode": "rendered-page",
+      "title": "Issuer Competence and Transfer Semantics"
+    },
+    {
+      "source": "docs/migration-and-versioning.md",
+      "expected_output": "_site/docs/migration-and-versioning.html",
+      "mode": "rendered-page",
+      "title": "Migration and Versioning"
+    },
+    {
+      "source": "docs/migration-v0.5.0-to-v0.9.0.md",
+      "expected_output": "_site/docs/migration-v0.5.0-to-v0.9.0.html",
+      "mode": "rendered-page",
+      "title": "Migration from v0.5.0 to v0.9.0"
+    },
+    {
+      "source": "docs/privacy-implementation-guide.md",
+      "expected_output": "_site/docs/privacy-implementation-guide.html",
+      "mode": "rendered-page",
+      "title": "Privacy Implementation Guide"
+    },
+    {
+      "source": "docs/protocol-modules.md",
+      "expected_output": "_site/docs/protocol-modules.html",
+      "mode": "rendered-page",
+      "title": "ARPA Protocol Modules"
+    },
+    {
+      "source": "docs/quickstart.md",
+      "expected_output": "_site/docs/quickstart.html",
+      "mode": "rendered-page",
+      "title": "Quickstart"
+    },
+    {
+      "source": "docs/reference-implementation-architecture.md",
+      "expected_output": "_site/docs/reference-implementation-architecture.html",
+      "mode": "rendered-page",
+      "title": "Reference Implementation Architecture"
+    },
+    {
+      "source": "docs/release-policy.md",
+      "expected_output": "_site/docs/release-policy.html",
+      "mode": "rendered-page",
+      "title": "Release Policy"
+    },
+    {
+      "source": "docs/repository-positioning.md",
+      "expected_output": "_site/docs/repository-positioning.html",
+      "mode": "rendered-page",
+      "title": "Repository Positioning"
+    },
+    {
+      "source": "docs/security-deployment-guide.md",
+      "expected_output": "_site/docs/security-deployment-guide.html",
+      "mode": "rendered-page",
+      "title": "Security Deployment Guide"
+    },
+    {
+      "source": "examples/README.md",
+      "expected_output": "_site/examples/README.html",
+      "mode": "rendered-page",
+      "title": "Examples"
+    },
+    {
+      "source": "examples/scenarios/README.md",
+      "expected_output": "_site/examples/scenarios/README.html",
+      "mode": "rendered-page",
+      "title": "End-to-End Scenarios"
+    },
+    {
+      "source": "examples/scenarios/bounded-procurement.md",
+      "expected_output": "_site/examples/scenarios/bounded-procurement.html",
+      "mode": "rendered-page",
+      "title": "Bounded Procurement Agent"
+    },
+    {
+      "source": "examples/scenarios/compromised-runtime.md",
+      "expected_output": "_site/examples/scenarios/compromised-runtime.html",
+      "mode": "rendered-page",
+      "title": "Compromised Runtime"
+    },
+    {
+      "source": "examples/scenarios/delegated-action.md",
+      "expected_output": "_site/examples/scenarios/delegated-action.html",
+      "mode": "rendered-page",
+      "title": "End-to-End Delegated Action"
+    },
+    {
+      "source": "examples/scenarios/emergency-suspension.md",
+      "expected_output": "_site/examples/scenarios/emergency-suspension.html",
+      "mode": "rendered-page",
+      "title": "Emergency Suspension and Restoration"
+    },
+    {
+      "source": "examples/scenarios/enterprise-workflow.md",
+      "expected_output": "_site/examples/scenarios/enterprise-workflow.html",
+      "mode": "rendered-page",
+      "title": "Enterprise Workflow Agent"
+    },
+    {
+      "source": "examples/scenarios/federation-conflict.md",
+      "expected_output": "_site/examples/scenarios/federation-conflict.html",
+      "mode": "rendered-page",
+      "title": "Federation Conflict"
+    },
+    {
+      "source": "examples/scenarios/fiduciary-agent.md",
+      "expected_output": "_site/examples/scenarios/fiduciary-agent.html",
+      "mode": "rendered-page",
+      "title": "Fiduciary Agent"
+    },
+    {
+      "source": "examples/scenarios/healthcare-access.md",
+      "expected_output": "_site/examples/scenarios/healthcare-access.html",
+      "mode": "rendered-page",
+      "title": "Healthcare Data-Access Agent"
+    },
+    {
+      "source": "examples/scenarios/informational-agent.md",
+      "expected_output": "_site/examples/scenarios/informational-agent.html",
+      "mode": "rendered-page",
+      "title": "Low-Risk Informational Agent"
+    },
+    {
+      "source": "examples/scenarios/operator-change.md",
+      "expected_output": "_site/examples/scenarios/operator-change.html",
+      "mode": "rendered-page",
+      "title": "Operator Change"
+    },
+    {
+      "source": "examples/scenarios/public-service-eligibility.md",
+      "expected_output": "_site/examples/scenarios/public-service-eligibility.html",
+      "mode": "rendered-page",
+      "title": "Public-Service Eligibility Agent"
+    },
+    {
+      "source": "examples/scenarios/stale-projection.md",
+      "expected_output": "_site/examples/scenarios/stale-projection.html",
+      "mode": "rendered-page",
+      "title": "Stale Projection"
+    },
+    {
+      "source": "independent_impl/README.md",
+      "expected_output": "_site/independent_impl/README.html",
+      "mode": "rendered-page",
+      "title": "Independent candidate implementation path"
+    },
+    {
+      "source": "index.md",
+      "expected_output": "_site/index.html",
+      "mode": "rendered-page",
+      "title": "Agent Registry Protocol"
+    },
+    {
+      "source": "interop/README.md",
+      "expected_output": "_site/interop/README.html",
+      "mode": "rendered-page",
+      "title": "Interoperability Harness"
+    },
+    {
+      "source": "reference/README.md",
+      "expected_output": "_site/reference/README.html",
+      "mode": "rendered-page",
+      "title": "ARPA Reference Service"
+    },
+    {
+      "source": "registries/README.md",
+      "expected_output": "_site/registries/README.html",
+      "mode": "rendered-page",
+      "title": "Controlled Registries"
+    },
+    {
+      "source": "schemas/README.md",
+      "expected_output": "_site/schemas/README.html",
+      "mode": "rendered-page",
+      "title": "JSON Schemas"
+    },
+    {
+      "source": "spec/agent-registry-protocol-v0.9.0.md",
+      "expected_output": "_site/spec/agent-registry-protocol-v0.9.0.html",
+      "mode": "rendered-page",
+      "title": "Agent Registry Protocol and Architecture (ARPA)"
+    },
+    {
+      "source": "spec/profiles/arpa-agent-card-interoperability.md",
+      "expected_output": "_site/spec/profiles/arpa-agent-card-interoperability.html",
+      "mode": "rendered-page",
+      "title": "ARPA Agent Card Interoperability Profile"
+    },
+    {
+      "source": "spec/profiles/arpa-core-identity-discovery-profile.md",
+      "expected_output": "_site/spec/profiles/arpa-core-identity-discovery-profile.html",
+      "mode": "rendered-page",
+      "title": "ARPA Core Identity and Discovery Profile"
+    },
+    {
+      "source": "spec/profiles/arpa-identifier-profile.md",
+      "expected_output": "_site/spec/profiles/arpa-identifier-profile.html",
+      "mode": "rendered-page",
+      "title": "ARPA Identifier and Alias Profile"
+    },
+    {
+      "source": "spec/profiles/arpa-proof-and-digest-profile.md",
+      "expected_output": "_site/spec/profiles/arpa-proof-and-digest-profile.html",
+      "mode": "rendered-page",
+      "title": "ARPA Proof and Digest Profile"
+    }
+  ]
+}

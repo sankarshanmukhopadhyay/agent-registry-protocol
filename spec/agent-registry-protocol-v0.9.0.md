@@ -1,3 +1,9 @@
+---
+layout: default
+title: "Agent Registry Protocol and Architecture (ARPA)"
+nav_exclude: true
+---
+
 # Agent Registry Protocol and Architecture (ARPA)
 
 ## A Distributed Authority-Control Plane for Delegated Action

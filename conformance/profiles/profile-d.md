@@ -1,3 +1,9 @@
+---
+layout: default
+title: "Conformance Profile D: High-Assurance or Fiduciary Registry"
+nav_exclude: true
+---
+
 # Conformance Profile D: High-Assurance or Fiduciary Registry
 
 Source: spec §35.4, Appendix D.1–D.4. Includes Profile C. Suitable for public services, healthcare, finance, legal services, identity-affecting systems, or fiduciary contexts.

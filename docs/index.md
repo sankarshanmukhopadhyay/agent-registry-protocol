@@ -98,3 +98,7 @@ This catalogue provides a stable GitHub Pages entry point for the complete norma
 - [v0.5.0 release notes](../RELEASE_NOTES_v0.5.0.md)
 - [v0.4.0 release notes](../RELEASE_NOTES_v0.4.0.md)
 - [Portfolio status](../PORTFOLIO_STATUS.md)
+
+## Publication assurance
+
+- [GitHub Pages publication assurance](PUBLICATION_ASSURANCE.md)

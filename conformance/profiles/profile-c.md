@@ -1,3 +1,9 @@
+---
+layout: default
+title: "Conformance Profile C: Delegated Authority Registry"
+nav_exclude: true
+---
+
 # Conformance Profile C: Delegated Authority Registry
 
 Source: spec §35.3, Appendix D.1–D.3. Includes Profile B. Suitable for agents that transact, commit resources, exercise delegated permissions, or act for principals.

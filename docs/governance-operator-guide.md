@@ -1,3 +1,9 @@
+---
+layout: default
+title: "Governance Operator Guide"
+nav_exclude: true
+---
+
 # Governance Operator Guide
 
 Governance authorities define admission, transition, recognition, appeal and redress rules. Registry operators execute only the delegated administrative scope. Assurance providers evaluate controls but do not grant operational authority. Appeal authorities should be independent for high-assurance profiles.

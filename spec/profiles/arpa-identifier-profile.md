@@ -1,3 +1,9 @@
+---
+layout: default
+title: "ARPA Identifier and Alias Profile"
+nav_exclude: true
+---
+
 # ARPA Identifier and Alias Profile
 
 ## 1. Canonical syntax

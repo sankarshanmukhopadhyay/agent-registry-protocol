@@ -1,3 +1,9 @@
+---
+layout: default
+title: "Security Deployment Guide"
+nav_exclude: true
+---
+
 # Security Deployment Guide
 
 Threats include alias hijacking, confused-deputy use, unauthorized relationship issuance, projection poisoning, replay, stale status, event gaps, key compromise, transfer abuse, malicious extensions, privacy leakage, authority expansion and revocation convergence failure.

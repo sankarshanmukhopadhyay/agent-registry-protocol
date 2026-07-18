@@ -1,3 +1,9 @@
+---
+layout: default
+title: "Contributing"
+nav_exclude: true
+---
+
 # Contributing
 
 Thank you for helping develop the Agent Registry Protocol.

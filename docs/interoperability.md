@@ -1,3 +1,9 @@
+---
+layout: default
+title: "v0.5.0 Interoperability Guide"
+nav_exclude: true
+---
+
 # v0.5.0 Interoperability Guide
 
 ## Objective

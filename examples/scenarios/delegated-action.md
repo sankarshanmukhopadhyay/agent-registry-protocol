@@ -1,3 +1,9 @@
+---
+layout: default
+title: "End-to-End Delegated Action"
+nav_exclude: true
+---
+
 # End-to-End Delegated Action
 
 ## Flow

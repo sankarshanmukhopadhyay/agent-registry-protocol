@@ -1,3 +1,9 @@
+---
+layout: default
+title: "Implementation Selection Guide"
+nav_exclude: true
+---
+
 # Implementation Selection Guide
 
 Select the smallest profile that accurately represents the relying decision. Do not claim a higher profile merely because the implementation can parse its records.

@@ -1,3 +1,9 @@
+---
+layout: default
+title: "Migration from v0.5.0 to v0.9.0"
+nav_exclude: true
+---
+
 # Migration from v0.5.0 to v0.9.0
 
 v0.9.0 preserves the v0.5.0 record-schema track and adds Candidate Specification requirements, durable event expectations, implementation capability declarations, evidence reports and an optional ARPA–TRQP projection profile.

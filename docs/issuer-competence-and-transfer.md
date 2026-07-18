@@ -1,3 +1,9 @@
+---
+layout: default
+title: "Issuer Competence and Transfer Semantics"
+nav_exclude: true
+---
+
 # Issuer Competence and Transfer Semantics
 
 ## Competence matrix

@@ -1,3 +1,9 @@
+---
+layout: default
+title: "Conformance Guide"
+nav_exclude: true
+---
+
 # Conformance Guide
 
 ARPA conformance is multidimensional:

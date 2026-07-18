@@ -1,3 +1,9 @@
+---
+layout: default
+title: "ARPA v0.5.0: Interoperability and Evidence Release"
+nav_exclude: true
+---
+
 # ARPA v0.5.0: Interoperability and Evidence Release
 
 ARPA v0.5.0 advances the community draft from an implementation package to a reproducible interoperability release. It introduces a two-registry exchange harness, scoped recognition, revocation propagation and enforcement acknowledgement, portable policy evaluation, and a deterministic evidence bundle.

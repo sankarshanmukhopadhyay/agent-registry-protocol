@@ -1,3 +1,9 @@
+---
+layout: default
+title: "Conformance"
+nav_exclude: true
+---
+
 # Conformance
 
 ARPA conformance is evidence-based across six dimensions: protocol, semantic, cryptographic, operational, governance and enforcement.
