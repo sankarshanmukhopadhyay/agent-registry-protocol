@@ -11,6 +11,10 @@ def output_path(source: str) -> str:
         return str(Path("_site") / p.parent / "index.html")
     return str(Path("_site") / p.with_suffix(".html"))
 
+def has_front_matter(path: Path) -> bool:
+    text = path.read_text(encoding="utf-8")
+    return text.startswith("---\n") and "\n---\n" in text[4:]
+
 def title_of(path: Path) -> str:
     text=path.read_text(encoding="utf-8")
     if text.startswith("---\n"):
@@ -34,6 +38,10 @@ def main() -> int:
         source=item["path"]
         src=root/source
         if not src.is_file(): raise SystemExit(f"Publication source does not exist: {source}")
+        if item["mode"] == "rendered-page" and not has_front_matter(src):
+            raise SystemExit(
+                f"Rendered publication source lacks explicit Jekyll front matter: {source}"
+            )
         out=output_path(source)
         if out in outputs: raise SystemExit(f"Output collision: {source} and {outputs[out]} -> {out}")
         outputs[out]=source

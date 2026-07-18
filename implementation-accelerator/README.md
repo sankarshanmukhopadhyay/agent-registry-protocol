@@ -1,3 +1,9 @@
+---
+layout: default
+title: "ARPA Implementation Accelerator Assets"
+nav_exclude: true
+---
+
 # ARPA Implementation Accelerator
 
 Start a complete local pilot path:

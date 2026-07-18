@@ -498,7 +498,7 @@
       "source": "implementation-accelerator/README.md",
       "expected_output": "_site/implementation-accelerator/README.html",
       "mode": "rendered-page",
-      "title": "ARPA Implementation Accelerator"
+      "title": "ARPA Implementation Accelerator Assets"
     },
     {
       "source": "pilot-kit/README.md",
