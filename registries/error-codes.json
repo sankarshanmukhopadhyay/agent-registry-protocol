@@ -1,6 +1,6 @@
 {
   "registry": "error-codes",
-  "version": "0.5.0",
+  "version": "0.9.2",
   "entries": [
     {
       "id": "ARPA-ID-NOT-FOUND",
@@ -44,6 +44,42 @@
     },
     {
       "id": "ARPA-AUTHORITY-INDETERMINATE",
+      "status": "active"
+    },
+    {
+      "id": "ARPA-A2A-VERSION-UNSUPPORTED",
+      "status": "active"
+    },
+    {
+      "id": "ARPA-A2A-CARD-DIGEST-MISMATCH",
+      "status": "active"
+    },
+    {
+      "id": "ARPA-A2A-CARD-SIGNATURE-INVALID",
+      "status": "active"
+    },
+    {
+      "id": "ARPA-A2A-CARD-CONTEXT-MISMATCH",
+      "status": "active"
+    },
+    {
+      "id": "ARPA-A2A-INTERFACE-UNRECOGNISED",
+      "status": "active"
+    },
+    {
+      "id": "ARPA-A2A-REQUIRED-EXTENSION-UNSUPPORTED",
+      "status": "active"
+    },
+    {
+      "id": "ARPA-A2A-CARD-STATUS-CONFLICT",
+      "status": "active"
+    },
+    {
+      "id": "ARPA-A2A-TASK-AUTHORITY-MISSING",
+      "status": "active"
+    },
+    {
+      "id": "ARPA-A2A-ARTIFACT-DIGEST-MISSING",
       "status": "active"
     }
   ]

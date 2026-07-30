@@ -6,6 +6,23 @@ nav_exclude: true
 
 # Changelog
 
+## [0.9.2] - 2026-07-30
+
+### Added
+- Versioned ARPA A2A v1.0 interoperability profile and implementation guide.
+- Machine-readable A2A field, claim, precedence and safe-failure mapping.
+- A2A task, context, interface, terminal-state and artifact-digest evidence fields for Execution Receipts.
+- Controlled A2A interoperability error codes and six executable conformance vectors.
+
+### Changed
+- Agent Description References now classify A2A profile, disclosure context, representation version, protocol versions and validity.
+- Agent Card ARPA extensions now declare profile, registry, extension version, event and conformance endpoints.
+- Release validation now checks A2A interoperability and preserves ARPA authority precedence over card content.
+
+### Assurance boundary
+- A2A discovery, authentication and task completion do not imply ARPA authority, capability verification, assurance or governance recognition.
+
+
 ## [0.9.1] - 2026-07-18
 
 ### Added

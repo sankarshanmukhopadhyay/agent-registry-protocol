@@ -1,9 +1,16 @@
 {
+  "extension_version": "1.0",
+  "arpa_profile": "https://arpa.example/profiles/a2a/1.0",
+  "registry_id": "registry:example.org",
   "agent_id": "agentreg:example.org:agent-123",
   "description_digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
-  "status_endpoint": "https://registry.example.org/agents/agentreg:example.org:agent-123/status",
-  "critical": [
-    "agent_id",
-    "description_digest"
-  ]
+  "status_endpoint": "https://registry.example.org/agents/agent-123/status",
+  "relationships_endpoint": "https://registry.example.org/agents/agent-123/relationships",
+  "assurance_endpoint": "https://registry.example.org/agents/agent-123/assurance",
+  "authority_endpoint": "https://registry.example.org/agents/agent-123/authority",
+  "governance_endpoint": "https://registry.example.org/agents/agent-123/governance",
+  "events_endpoint": "https://registry.example.org/events",
+  "conformance_endpoint": "https://registry.example.org/conformance/a2a-v1",
+  "valid_until": "2026-07-30T00:05:00Z",
+  "critical": ["agent_id", "description_digest", "status_endpoint"]
 }

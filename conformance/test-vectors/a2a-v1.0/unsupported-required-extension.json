@@ -1,0 +1,1 @@
+{"case":"unsupported-required-extension","a2a":{"required_extension":"https://example.org/a2a/extensions/authority-sensitive"},"arpa":{"required_extensions_supported":false},"expected":"reject","error":"ARPA-A2A-REQUIRED-EXTENSION-UNSUPPORTED"}

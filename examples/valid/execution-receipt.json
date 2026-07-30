@@ -23,14 +23,28 @@
   "purpose": "approved-supplier-procurement",
   "input_digest": "sha256:5555555555555555555555555555555555555555555555555555555555ee",
   "output_digest": "sha256:6666666666666666666666666666666666666666666666666666666666ff",
-  "tool_and_service_references": ["service:example.org:supplier-catalog"],
-  "approvals_obtained": ["human-procurement-owner:approval-88231"],
+  "tool_and_service_references": [
+    "service:example.org:supplier-catalog"
+  ],
+  "approvals_obtained": [
+    "human-procurement-owner:approval-88231"
+  ],
   "downstream_delegations": [],
   "start_time": "2026-07-15T10:03:50Z",
   "completion_time": "2026-07-15T10:04:00Z",
   "result": "success",
-  "side_effects": ["purchase_order:PO-88231:created"],
+  "side_effects": [
+    "purchase_order:PO-88231:created"
+  ],
   "error_or_exception": null,
   "redress_reference": "https://registry.example.org/agents/agent-123/redress",
-  "proof": {}
+  "proof": {},
+  "interaction_protocol": "A2A",
+  "interaction_protocol_version": "1.0",
+  "interaction_context_id": "context-procurement-2026-07-30",
+  "interaction_interface_uri": "https://agent.example.org/a2a",
+  "interaction_terminal_state": "completed",
+  "artifact_digests": [
+    "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+  ]
 }

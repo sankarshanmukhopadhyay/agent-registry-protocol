@@ -46,6 +46,47 @@
             "null"
           ],
           "format": "date-time"
+        },
+        "description_profile": {
+          "enum": [
+            "a2a-agent-card-1.0",
+            "generic-agent-description"
+          ]
+        },
+        "disclosure_class": {
+          "enum": [
+            "public",
+            "authenticated-extended",
+            "tenant-specific",
+            "private"
+          ]
+        },
+        "representation_version": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "protocol_versions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        },
+        "valid_until": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "access_context_digest": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^[A-Fa-f0-9]{64}$"
         }
       },
       "required": [

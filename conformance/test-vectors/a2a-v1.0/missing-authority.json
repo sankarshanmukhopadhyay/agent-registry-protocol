@@ -1,0 +1,1 @@
+{"case":"missing-authority","a2a":{"task_id":"task-999","action_class":"purchase.submit"},"arpa":{"authority_decision":"indeterminate"},"expected":"reject","error":"ARPA-A2A-TASK-AUTHORITY-MISSING"}

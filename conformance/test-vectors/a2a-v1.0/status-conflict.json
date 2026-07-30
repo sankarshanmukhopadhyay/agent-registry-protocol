@@ -1,0 +1,1 @@
+{"case":"status-conflict","card":{"status":"active"},"arpa":{"agent_status":"suspended"},"expected":"reject","error":"ARPA-A2A-CARD-STATUS-CONFLICT"}

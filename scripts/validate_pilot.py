@@ -34,7 +34,7 @@ check("events",lambda: len(get("/events")["events"]))
 for f in sorted((ROOT/"implementation-accelerator/fixtures/acme").glob("*.json")):
     check("fixture:"+f.name,lambda f=f: json.loads(f.read_text()).get("record_id"))
 ready=all(c["status"]=="pass" for c in checks)
-report={"release":"0.9.1","generated_at":datetime.now(timezone.utc).isoformat(),"base_url":BASE,"decision":"ready" if ready else "not_ready","checks":checks,"limitations":["Reference implementation only","Human governance and security checklists require accountable sign-off"]}
+report={"release":"0.9.2","generated_at":datetime.now(timezone.utc).isoformat(),"base_url":BASE,"decision":"ready" if ready else "not_ready","checks":checks,"limitations":["Reference implementation only","Human governance and security checklists require accountable sign-off"]}
 OUT.parent.mkdir(parents=True,exist_ok=True); OUT.write_text(json.dumps(report,indent=2)+"\n")
 print(json.dumps(report,indent=2))
 sys.exit(0 if ready else 1)

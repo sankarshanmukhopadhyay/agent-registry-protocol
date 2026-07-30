@@ -6,7 +6,7 @@ nav_exclude: true
 
 # Agent Registry Protocol
 
-[![Specification status](https://img.shields.io/badge/specification-v0.9.1%20accelerator-blue)](https://sankarshanmukhopadhyay.github.io/agent-registry-protocol/spec/agent-registry-protocol-v0.9.0.html)
+[![Specification status](https://img.shields.io/badge/specification-v0.9.2%20accelerator-blue)](https://sankarshanmukhopadhyay.github.io/agent-registry-protocol/spec/agent-registry-protocol-v0.9.0.html)
 [![Validation](https://github.com/sankarshanmukhopadhyay/agent-registry-protocol/actions/workflows/validate.yml/badge.svg)](https://github.com/sankarshanmukhopadhyay/agent-registry-protocol/actions/workflows/validate.yml)
 [![License: CC BY 4.0](https://img.shields.io/badge/spec-CC%20BY%204.0-lightgrey.svg)](https://github.com/sankarshanmukhopadhyay/agent-registry-protocol/blob/main/LICENSE)
 [![Code: Apache-2.0](https://img.shields.io/badge/code-Apache--2.0-lightgrey.svg)](https://github.com/sankarshanmukhopadhyay/agent-registry-protocol/blob/main/LICENSE-CODE)
@@ -21,13 +21,13 @@ nav_exclude: true
 |---|---|
 | Portfolio tier | Flagship |
 | Lifecycle | Active |
-| Stability | v0.9.1 Implementation Accelerator over v0.9.0 Candidate Specification |
+| Stability | v0.9.2 Implementation Accelerator over v0.9.0 Candidate Specification |
 | Primary artifacts | Specification, schemas, API/event contracts, reference implementations, conformance and evidence |
 | Release gate | `make release-check` |
 | Candidate evidence | `artifacts/candidate-specification/evidence-bundle.json` |
 | Authority | Community draft governed by `GOVERNANCE.md` |
 
-## What v0.9.1 delivers
+## What v0.9.2 delivers
 
 - an executable 15-minute path from clone to a resolved governed agent;
 - a canonical sample registry, pilot kit and machine-readable readiness evidence;

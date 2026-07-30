@@ -109,6 +109,61 @@
         },
         "redress_reference": {
           "type": "string"
+        },
+        "interaction_protocol": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "A2A",
+            null
+          ]
+        },
+        "interaction_protocol_version": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "interaction_context_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "interaction_interface_uri": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "uri"
+        },
+        "interaction_terminal_state": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "submitted",
+            "working",
+            "input-required",
+            "auth-required",
+            "completed",
+            "failed",
+            "canceled",
+            "rejected",
+            "unknown",
+            null
+          ]
+        },
+        "artifact_digests": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^sha256:[A-Fa-f0-9]{64}$"
+          },
+          "uniqueItems": true
         }
       },
       "required": [

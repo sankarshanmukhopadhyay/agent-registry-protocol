@@ -1,0 +1,12 @@
+{
+  "profile": "https://arpa.example/profiles/a2a/1.0",
+  "version": "1.0.0",
+  "vectors": [
+    {"id":"A2A-001","file":"valid-public-card.json","expected":"accept"},
+    {"id":"A2A-002","file":"valid-task-receipt.json","expected":"accept"},
+    {"id":"A2A-003","file":"digest-mismatch.json","expected":"reject","error":"ARPA-A2A-CARD-DIGEST-MISMATCH"},
+    {"id":"A2A-004","file":"unsupported-required-extension.json","expected":"reject","error":"ARPA-A2A-REQUIRED-EXTENSION-UNSUPPORTED"},
+    {"id":"A2A-005","file":"status-conflict.json","expected":"reject","error":"ARPA-A2A-CARD-STATUS-CONFLICT"},
+    {"id":"A2A-006","file":"missing-authority.json","expected":"reject","error":"ARPA-A2A-TASK-AUTHORITY-MISSING"}
+  ]
+}

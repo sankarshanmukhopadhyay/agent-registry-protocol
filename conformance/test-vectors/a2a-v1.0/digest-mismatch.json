@@ -1,0 +1,1 @@
+{"case":"digest-mismatch","arpa":{"digest_match":false},"expected":"reject","error":"ARPA-A2A-CARD-DIGEST-MISMATCH"}

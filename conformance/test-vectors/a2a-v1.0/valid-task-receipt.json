@@ -1,0 +1,1 @@
+{"case":"task-receipt","a2a":{"task_id":"task-123","context_id":"context-456","protocol_version":"1.0","terminal_state":"completed","artifact_digests":["sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"]},"arpa":{"authority_decision":"permit","agent_status":"active"},"expected":"accept"}

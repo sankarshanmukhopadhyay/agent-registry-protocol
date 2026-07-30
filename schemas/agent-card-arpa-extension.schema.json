@@ -4,6 +4,16 @@
   "title": "ARPA Agent Card Extension",
   "type": "object",
   "properties": {
+    "extension_version": {
+      "const": "1.0"
+    },
+    "arpa_profile": {
+      "const": "https://arpa.example/profiles/a2a/1.0"
+    },
+    "registry_id": {
+      "type": "string",
+      "minLength": 1
+    },
     "agent_id": {
       "type": "string",
       "pattern": "^agentreg:"
@@ -38,9 +48,27 @@
       "items": {
         "type": "string"
       }
+    },
+    "events_endpoint": {
+      "type": "string",
+      "format": "uri"
+    },
+    "conformance_endpoint": {
+      "type": "string",
+      "format": "uri"
+    },
+    "valid_until": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
     }
   },
   "required": [
+    "extension_version",
+    "arpa_profile",
+    "registry_id",
     "agent_id",
     "description_digest",
     "status_endpoint"
