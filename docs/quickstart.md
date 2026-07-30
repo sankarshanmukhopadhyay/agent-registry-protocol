@@ -6,6 +6,8 @@ nav_exclude: true
 
 # Quickstart
 
+> This path validates and runs the reference implementation locally. For a pilot registry with retained evidence, use the [15-minute quickstart](implementation-accelerator/01-15-minute-quickstart.md). For a complete release gate, use the [Candidate Specification implementation guide](candidate-specification-guide.md). Compare all journeys in [Start Here](start-here.md).
+
 ## Local validation
 
 ```bash

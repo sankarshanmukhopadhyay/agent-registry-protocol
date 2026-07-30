@@ -68,6 +68,8 @@ publication_sources:
   mode: rendered-page
 - path: docs/index.md
   mode: rendered-page
+- path: docs/start-here.md
+  mode: rendered-page
 - path: docs/interoperability.md
   mode: rendered-page
 - path: docs/issuer-competence-and-transfer.md
@@ -134,6 +136,8 @@ publication_sources:
   mode: rendered-page
 - path: spec/profiles/arpa-agent-card-interoperability.md
   mode: rendered-page
+- path: spec/profiles/arpa-a2a-v1.0-interoperability-profile.md
+  mode: rendered-page
 - path: spec/profiles/arpa-core-identity-discovery-profile.md
   mode: rendered-page
 - path: spec/profiles/arpa-identifier-profile.md
@@ -141,6 +145,8 @@ publication_sources:
 - path: spec/profiles/arpa-proof-and-digest-profile.md
   mode: rendered-page
 - path: RELEASE_NOTES_v0.9.1.md
+  mode: rendered-page
+- path: RELEASE_NOTES_v0.9.2.md
   mode: rendered-page
 - path: docs/implementation-accelerator/01-15-minute-quickstart.md
   mode: rendered-page

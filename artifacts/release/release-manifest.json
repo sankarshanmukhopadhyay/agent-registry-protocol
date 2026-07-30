@@ -43,12 +43,51 @@
     },
     {
       "path": "RELEASE_NOTES_v0.9.2.md",
-      "sha256": "1f787ff58aeaef5b390cf267aeb0edfa9c87792db36776d8088b82401274a6ee"
+      "sha256": "664a4d8ab9785cca54da99ddb7905f26668667c0797282e0692636f5097df9ed"
+    },
+    {
+      "path": "docs/start-here.md",
+      "sha256": "0cf68f03725f2389a3047ada8cd12f34b1cdf0a0fb0f11a974586151cf2106ea"
+    },
+    {
+      "path": "docs/index.md",
+      "sha256": "9cdc423ccc39ec56ed689835676ac49c6138a83193130bb82649669ce3ee56a9"
+    },
+    {
+      "path": "docs/conformance-guide.md",
+      "sha256": "e842adf35ae38dc63f574ee64b81756026d393749d961f2faf5944ed9b0519d9"
+    },
+    {
+      "path": "docs/repository-positioning.md",
+      "sha256": "67424019a5e90c5b441575acf4bd8a1863c8281b2b684ae6522811c25cd69f4e"
+    },
+    {
+      "path": "scripts/validate_docs_links.py",
+      "sha256": "e23304f3926ead8a9e09b71945e3208be3d7271124b451ff4092d718b16f3bad"
+    },
+    {
+      "path": "docs/publication-map.yml",
+      "sha256": "f1ad998db93026667d8200229b9bd71eb5843efe5e2232fa95d5e50581d45d05"
+    },
+    {
+      "path": "Makefile",
+      "sha256": "bb381354c68ddc30b7787255e6fae4d21e3b09695247c1e388f00aaf6e2dbd40"
     }
   ],
   "assurance_boundary": [
     "Normative protocol baseline remains v0.9.0 Candidate Specification",
     "A2A support is optional for ARPA-Core conformance",
     "Repository validation is not certification or production deployment assurance"
-  ]
+  ],
+  "documentation_commit": {
+    "title": "docs(ia): establish guided documentation architecture and publication assurance",
+    "normative_change": false,
+    "artifacts": [
+      "docs/start-here.md",
+      "docs/index.md",
+      "docs/conformance-guide.md",
+      "docs/repository-positioning.md",
+      "scripts/validate_docs_links.py"
+    ]
+  }
 }

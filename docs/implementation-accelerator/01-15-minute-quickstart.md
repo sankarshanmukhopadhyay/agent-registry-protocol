@@ -6,6 +6,8 @@ nav_order: 1
 ---
 # 15-minute quickstart
 
+> This path deploys a pilot registry and produces readiness evidence. For local development validation, use the [Quickstart](../quickstart.md). For a complete release gate, use the [Candidate Specification implementation guide](../candidate-specification-guide.md). Compare all journeys in [Start Here](../start-here.md).
+
 ## Objective
 
 Start the reference registry, load a governed sample agent and prove that resolution and authority evaluation work.
@@ -82,7 +84,7 @@ make pilot-down
 | Gate | Required result |
 |---|---|
 | Health | HTTP 200 and `status=ok` |
-| Metadata | Registry advertises ARPA v0.9.0 and implementation release v0.9.1 |
+| Metadata | Registry advertises ARPA v0.9.0 and implementation release v0.9.2 |
 | Registration | Agent core accepted |
 | Resolution | Canonical agent resolves with linked records |
 | Authority | Decision receipt returned |

@@ -19,6 +19,12 @@ nav_exclude: true
 - Agent Card ARPA extensions now declare profile, registry, extension version, event and conformance endpoints.
 - Release validation now checks A2A interoperability and preserves ARPA authority precedence over card content.
 
+### Documentation
+- Added a Start Here decision page linking architecture, local validation, pilot, release, conformance and A2A journeys.
+- Added explicit normative, profile-normative and informative document boundaries.
+- Linked conformance declarations, implementation reports, schemas, vectors and validation evidence.
+- Added machine-verifiable documentation reachability and catalogue assurance.
+
 ### Assurance boundary
 - A2A discovery, authentication and task completion do not imply ARPA authority, capability verification, assurance or governance recognition.
 

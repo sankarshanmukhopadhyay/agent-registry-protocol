@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "source_count": 89,
+  "source_count": 92,
   "entries": [
     {
       "source": "AI_USAGE.md",
@@ -207,6 +207,12 @@
       "title": "Documentation"
     },
     {
+      "source": "docs/start-here.md",
+      "expected_output": "_site/docs/start-here.html",
+      "mode": "rendered-page",
+      "title": "Start Here"
+    },
+    {
       "source": "docs/interoperability.md",
       "expected_output": "_site/docs/interoperability.html",
       "mode": "rendered-page",
@@ -405,6 +411,12 @@
       "title": "ARPA Agent Card Interoperability Profile"
     },
     {
+      "source": "spec/profiles/arpa-a2a-v1.0-interoperability-profile.md",
+      "expected_output": "_site/spec/profiles/arpa-a2a-v1.0-interoperability-profile.html",
+      "mode": "rendered-page",
+      "title": "ARPA A2A v1.0 Interoperability Profile"
+    },
+    {
       "source": "spec/profiles/arpa-core-identity-discovery-profile.md",
       "expected_output": "_site/spec/profiles/arpa-core-identity-discovery-profile.html",
       "mode": "rendered-page",
@@ -427,6 +439,12 @@
       "expected_output": "_site/RELEASE_NOTES_v0.9.1.html",
       "mode": "rendered-page",
       "title": "Release Notes v0.9.1"
+    },
+    {
+      "source": "RELEASE_NOTES_v0.9.2.md",
+      "expected_output": "_site/RELEASE_NOTES_v0.9.2.html",
+      "mode": "rendered-page",
+      "title": "Release Notes v0.9.2"
     },
     {
       "source": "docs/implementation-accelerator/01-15-minute-quickstart.md",

@@ -42,14 +42,15 @@ nav_exclude: true
 
 ## Start here
 
-1. [Run the 15-minute implementation quickstart](docs/implementation-accelerator/01-15-minute-quickstart.md)
-2. [Implementation Accelerator](docs/implementation-accelerator/index.md)
-3. [Documentation home](docs/index.md)
-4. [Authoritative v0.9.0 Candidate Specification](https://sankarshanmukhopadhyay.github.io/agent-registry-protocol/spec/agent-registry-protocol-v0.9.0.html)
-5. [Candidate implementation guide](docs/candidate-specification-guide.md)
-6. [ARPA–TRQP interoperability architecture](docs/architecture/trqp-arpa-interoperability.md)
-7. [Migration from v0.5.0](docs/migration-v0.5.0-to-v0.9.0.md)
-8. [Known limitations](KNOWN_LIMITATIONS.md)
+1. [Choose the correct journey in Start Here](docs/start-here.md)
+2. [Run the 15-minute implementation quickstart](docs/implementation-accelerator/01-15-minute-quickstart.md)
+3. [Implementation Accelerator](docs/implementation-accelerator/index.md)
+4. [Documentation home](docs/index.md)
+5. [Authoritative v0.9.0 Candidate Specification](https://sankarshanmukhopadhyay.github.io/agent-registry-protocol/spec/agent-registry-protocol-v0.9.0.html)
+6. [Candidate implementation guide](docs/candidate-specification-guide.md)
+7. [ARPA–TRQP interoperability architecture](docs/architecture/trqp-arpa-interoperability.md)
+8. [Migration from v0.5.0](docs/migration-v0.5.0-to-v0.9.0.md)
+9. [Known limitations](KNOWN_LIMITATIONS.md)
 
 ## Validate and produce evidence
 

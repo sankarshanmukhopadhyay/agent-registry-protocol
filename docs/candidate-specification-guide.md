@@ -6,6 +6,8 @@ nav_exclude: true
 
 # Candidate Specification implementation guide
 
+> This path executes the complete repository release gate. For local development validation, use the [Quickstart](quickstart.md). For a pilot registry, use the [15-minute quickstart](implementation-accelerator/01-15-minute-quickstart.md). Compare all journeys in [Start Here](start-here.md).
+
 ## Reading paths
 
 **Architects:** candidate specification → authority model → ARPA–TRQP architecture → federation and lifecycle evidence.  

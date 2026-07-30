@@ -7,7 +7,7 @@ has_children: true
 ---
 # ARPA Implementation Accelerator
 
-The Implementation Accelerator is the shortest supported path from the ARPA theory of governed agent identity to a running, inspectable pilot registry.
+The Implementation Accelerator is the shortest supported path from the ARPA theory of governed agent identity to a running, inspectable pilot registry. For other entry paths, evidence targets and assurance boundaries, begin with [Start Here](../start-here.md).
 
 It is **informative**. The [v0.9.0 Candidate Specification](../../spec/agent-registry-protocol-v0.9.0.md) remains normative. Accelerator assets demonstrate one implementation approach and produce evidence that can be tested, retained and reviewed.
 

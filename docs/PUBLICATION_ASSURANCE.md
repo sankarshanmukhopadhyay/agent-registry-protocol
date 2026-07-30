@@ -18,9 +18,10 @@ Each validation run generates:
 
 - `artifacts/pages/publication-manifest.json`, mapping each publication source to its required output;
 - `artifacts/pages/publication-assurance.json`, recording page counts, checked references, Mermaid coverage, and defects;
+- `artifacts/pages/docs-link-validation.json`, recording catalogue coverage, page reachability, navigation depth and required journey links;
 - the complete `_site` build as the Pages deployment artefact.
 
-A missing rendered page, unresolved Markdown URL, missing local target, invalid heading fragment, missing local asset, or output collision fails the workflow.
+A missing rendered page, unresolved Markdown URL, missing local target, invalid heading fragment, missing local asset, output collision, uncatalogued normative artifact, missing journey link, or unreachable generated page fails the workflow.
 
 ## Local validation
 

@@ -34,6 +34,10 @@ Authoritative ARPA lifecycle, key, deployment, delegation, recognition and revoc
 - Existing ARPA-Core records remain compatible.
 - A2A support is an optional profile and is not required for ARPA-Core conformance.
 
+## Documentation architecture
+
+A post-release documentation commit adds a single Start Here decision page, explicit normative and informative status boundaries, linked conformance artefacts, A2A-aware repository positioning, scenario-to-module mappings and machine-verifiable navigation assurance. No protocol, schema, API or normative conformance requirement changes.
+
 ## Validation
 
 The release gate now includes:

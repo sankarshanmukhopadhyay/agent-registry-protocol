@@ -1,4 +1,4 @@
-.PHONY: pilot-up pilot-down pilot-seed pilot-check pilot-reset  setup validate test interop candidate run report pages-manifest pages-build pages-validate pages-check release-check package clean
+.PHONY: pilot-up pilot-down pilot-seed pilot-check pilot-reset setup validate test interop candidate run report pages-manifest pages-build pages-validate docs-links pages-check release-check package clean
 setup:
 	python3 -m pip install -r scripts/requirements.txt
 validate:
@@ -26,7 +26,9 @@ pages-build:
 	bundle exec jekyll build --trace --baseurl "/agent-registry-protocol"
 pages-validate:
 	python3 scripts/validate_publication.py --baseurl "/agent-registry-protocol"
-pages-check: pages-manifest pages-build pages-validate
+docs-links:
+	python3 scripts/validate_docs_links.py --baseurl "/agent-registry-protocol"
+pages-check: pages-manifest pages-build pages-validate docs-links
 release-check: validate test interop candidate report
 package: release-check
 clean:

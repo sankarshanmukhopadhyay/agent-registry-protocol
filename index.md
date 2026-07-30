@@ -11,21 +11,22 @@ permalink: /
 
 The Agent Registry Protocol (ARPA) defines a modular authority-control protocol for delegated software agents. It treats a registry as an operational control plane for identity, authority, delegation, lifecycle state, assurance evidence, and redress rather than as a universal directory of trustworthy agents.
 
-## Deploy before you read everything
+## Start with the decision you need to make
 
-The [ARPA Implementation Accelerator](docs/implementation-accelerator/index.md) provides a 15-minute local deployment, canonical sample registry, authority decisions and pilot-readiness evidence. Start with `make pilot-up`, `make pilot-seed`, and `make pilot-check`.
+Use [Start Here](docs/start-here.md) to choose between architecture review, local validation, pilot deployment, release validation, conformance assessment and A2A interoperability. Each path identifies its commands, evidence outputs and normative boundary.
 
-## Start here
+## Direct entry points
 
-- [Run the 15-minute quickstart](docs/implementation-accelerator/01-15-minute-quickstart.md)
+- [Open Start Here](docs/start-here.md)
+- [Run the 15-minute pilot quickstart](docs/implementation-accelerator/01-15-minute-quickstart.md)
 - [Browse the complete documentation catalogue](docs/index.md)
 - [Read the Candidate Specification v0.9.0](spec/agent-registry-protocol-v0.9.0.md)
 - [Follow the candidate specification guide](docs/candidate-specification-guide.md)
 - [Review the protocol modules](docs/protocol-modules.md)
 - [Understand the reference implementation architecture](docs/reference-implementation-architecture.md)
 - [Review conformance and assurance](docs/conformance-guide.md)
-- [Read the v0.9.2 release notes](RELEASE_NOTES_v0.9.2.md)
-- [Read the normative v0.9.0 release notes](RELEASE_NOTES_v0.9.0.md)
+- [Read the v0.9.2 implementation release notes](RELEASE_NOTES_v0.9.2.md)
+- [Read the normative v0.9.0 Candidate Specification release notes](RELEASE_NOTES_v0.9.0.md)
 
 ## Publication scope
 
