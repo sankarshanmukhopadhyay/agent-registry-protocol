@@ -2,7 +2,7 @@
   "bundle_version": "1.0",
   "release": "v0.9.0",
   "reports": {
-    "candidate_validation": "sha256:697fd4c427d84d1b74389951092c8f6237879b5c583f49c1dae255583cb02342",
+    "candidate_validation": "sha256:94ae30eee18b98a715c7ca43d25b2d8620c3a6fe25366c7cad1544ab7f9ac69d",
     "mapping": "sha256:dc7cdbd5ff985cc97d208acd773153cd6f236398794d119baea065f66685f0c4"
   },
   "passed": true,
@@ -12,5 +12,5 @@
     "Network test uses local loopback endpoints",
     "Durable event test demonstrates semantics, not production broker operations"
   ],
-  "bundle_digest": "sha256:7ff81c6bd1f841c45b8e1e39acd2744bd836eb24f4699c2c6a293ea628dcfe26"
+  "bundle_digest": "sha256:054b4c3f55a3f470aabb72a3dc284a523b1e10e75065f979d34a571ca6dfff33"
 }

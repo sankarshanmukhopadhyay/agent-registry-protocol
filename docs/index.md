@@ -76,6 +76,16 @@ See [Protocol modules](protocol-modules.md) for the dependency table, profile ma
 - [Pilot readiness](implementation-accelerator/08-pilot-readiness.md)
 - [Production hardening](implementation-accelerator/09-production-hardening.md)
 - [API consumer toolkit](implementation-accelerator/10-api-toolkit.md)
+- [Implementation Accelerator asset catalogue](../implementation-accelerator/README.md)
+
+### Pilot governance and readiness assets
+
+- [Pilot Starter Kit](../pilot-kit/README.md)
+- [Governance readiness checklist](../pilot-kit/checklists/governance-readiness.md)
+- [Security readiness checklist](../pilot-kit/checklists/security-readiness.md)
+- [Operations readiness checklist](../pilot-kit/checklists/operations-readiness.md)
+- [Exit and revocation checklist](../pilot-kit/checklists/exit-and-revocation.md)
+- [Federated pilot topology](../pilot-kit/topologies/federated-pilot.md)
 
 ## Governance, security, privacy, and lifecycle
 
@@ -141,6 +151,9 @@ See [Protocol modules](protocol-modules.md) for the dependency table, profile ma
 - [Changelog](../CHANGELOG.md)
 - [v0.9.2 release notes](../RELEASE_NOTES_v0.9.2.md)
 - [Normative v0.9.0 release notes](../RELEASE_NOTES_v0.9.0.md)
+- [v0.9.1 implementation accelerator release notes](../RELEASE_NOTES_v0.9.1.md)
+- [v0.5.0 interoperability and evidence release notes](../RELEASE_NOTES_v0.5.0.md)
+- [v0.4.0 protocol contracts and reference implementation release notes](../RELEASE_NOTES_v0.4.0.md)
 - [Portfolio status](../PORTFOLIO_STATUS.md)
 
 ## Publication assurance

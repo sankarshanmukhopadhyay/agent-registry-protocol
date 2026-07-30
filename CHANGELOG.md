@@ -47,6 +47,10 @@ nav_exclude: true
 ## [Unreleased]
 
 ### Fixed
+- Linked all published historical release notes, Implementation Accelerator assets, pilot-readiness checklists, and the federated-pilot topology from the documentation catalogue so every generated page is reachable from the assured navigation roots.
+- Preserved strict documentation reachability validation rather than excluding published evidence and governance pages from the publication surface.
+
+### Fixed
 
 - Replaced the brittle GitHub Pages minimum HTML-count assertion with deterministic required-page, Mermaid, and unresolved-link checks.
 

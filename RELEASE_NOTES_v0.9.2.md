@@ -50,3 +50,7 @@ make release-check
 ```
 
 Passing the supplied vectors demonstrates conformance of the repository implementation artifacts only. It does not constitute certification, legal recognition, production security assurance or independent interoperability validation.
+## Post-release documentation assurance fix
+
+The documentation catalogue now links the historical release notes, Implementation Accelerator asset catalogue, pilot governance and readiness checklists, and federated-pilot topology. This closes the remaining navigation-assurance failures while retaining strict reachability checks across the complete published site.
+
