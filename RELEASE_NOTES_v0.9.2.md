@@ -38,6 +38,8 @@ Authoritative ARPA lifecycle, key, deployment, delegation, recognition and revoc
 
 A post-release documentation commit adds a single Start Here decision page, explicit normative and informative status boundaries, linked conformance artefacts, A2A-aware repository positioning, scenario-to-module mappings and machine-verifiable navigation assurance. No protocol, schema, API or normative conformance requirement changes.
 
+A follow-up build fix makes the publication manifest permalink-aware, aligning clean Jekyll URLs such as `/docs/start-here/` with `_site/docs/start-here/index.html` during Pages validation.
+
 ## Validation
 
 The release gate now includes:

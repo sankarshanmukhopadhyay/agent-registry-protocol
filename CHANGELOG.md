@@ -24,6 +24,7 @@ nav_exclude: true
 - Added explicit normative, profile-normative and informative document boundaries.
 - Linked conformance declarations, implementation reports, schemas, vectors and validation evidence.
 - Added machine-verifiable documentation reachability and catalogue assurance.
+- Fixed GitHub Pages publication-manifest generation so explicit Jekyll permalinks resolve to their actual rendered output paths.
 
 ### Assurance boundary
 - A2A discovery, authentication and task completion do not imply ARPA authority, capability verification, assurance or governance recognition.

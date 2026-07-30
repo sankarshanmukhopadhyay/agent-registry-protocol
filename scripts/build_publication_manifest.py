@@ -5,8 +5,29 @@ import argparse, json, re
 from pathlib import Path
 import yaml
 
-def output_path(source: str) -> str:
-    p=Path(source)
+def front_matter(path: Path) -> dict:
+    text = path.read_text(encoding="utf-8")
+    if not text.startswith("---\n"):
+        return {}
+    end = text.find("\n---\n", 4)
+    if end == -1:
+        return {}
+    return yaml.safe_load(text[4:end]) or {}
+
+def output_path(source: str, src: Path) -> str:
+    data = front_matter(src)
+    permalink = data.get("permalink")
+    if permalink:
+        clean = str(permalink).split("?", 1)[0].split("#", 1)[0].strip()
+        if not clean.startswith("/"):
+            clean = "/" + clean
+        target = Path("_site") / clean.lstrip("/")
+        if clean.endswith("/"):
+            target = target / "index.html"
+        elif target.suffix == "":
+            target = target.with_suffix(".html")
+        return str(target)
+    p = Path(source)
     if p.name == "index.md":
         return str(Path("_site") / p.parent / "index.html")
     return str(Path("_site") / p.with_suffix(".html"))
@@ -42,7 +63,7 @@ def main() -> int:
             raise SystemExit(
                 f"Rendered publication source lacks explicit Jekyll front matter: {source}"
             )
-        out=output_path(source)
+        out=output_path(source, src)
         if out in outputs: raise SystemExit(f"Output collision: {source} and {outputs[out]} -> {out}")
         outputs[out]=source
         entries.append({"source":source,"expected_output":out,"mode":item["mode"],"title":title_of(src)})

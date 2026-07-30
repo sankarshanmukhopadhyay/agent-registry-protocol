@@ -208,7 +208,7 @@
     },
     {
       "source": "docs/start-here.md",
-      "expected_output": "_site/docs/start-here.html",
+      "expected_output": "_site/docs/start-here/index.html",
       "mode": "rendered-page",
       "title": "Start Here"
     },
