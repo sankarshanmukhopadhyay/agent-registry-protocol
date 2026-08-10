@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "policy_version": "1.0",
+  "project": "Agent Registry Protocol",
+  "default_rule": "classify by artifact type; an explicit file-level license notice takes precedence",
+  "licenses": {
+    "content": {
+      "spdx": "CC-BY-4.0",
+      "license_file": "LICENSE-CONTENT",
+      "applies_to": [
+        "normative and informative specification prose",
+        "human-readable documentation",
+        "diagrams",
+        "narrative examples",
+        "governance and contribution prose",
+        "release notes and changelog content"
+      ]
+    },
+    "software": {
+      "spdx": "Apache-2.0",
+      "license_file": "LICENSE-CODE",
+      "applies_to": [
+        "source code and scripts",
+        "reference implementations and tests",
+        "machine-readable schemas",
+        "OpenAPI and AsyncAPI contracts",
+        "test vectors and fixtures",
+        "machine-readable mappings and registries",
+        "executable configuration",
+        "generated machine-readable evidence artifacts"
+      ]
+    }
+  },
+  "path_guidance": [
+    {"paths": ["spec/**/*.md", "docs/**/*.md", "*.md"], "license": "CC-BY-4.0"},
+    {"paths": ["reference/**", "scripts/**", "tests/**", "independent_impl/**", "interop/**"], "license": "Apache-2.0"},
+    {"paths": ["schemas/**", "openapi/**", "asyncapi/**", "conformance/test-vectors/**", "mappings/**", "registries/**"], "license": "Apache-2.0"},
+    {"paths": ["artifacts/**/*.json", "implementation-accelerator/**", "pilot-kit/**/*.json", "pilot-kit/**/*.yaml", "pilot-kit/**/*.yml"], "license": "Apache-2.0"}
+  ]
+}

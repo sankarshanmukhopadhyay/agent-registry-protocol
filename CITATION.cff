@@ -9,4 +9,6 @@ authors:
     given-names: Sankarshan
 repository-code: https://github.com/sankarshanmukhopadhyay/agent-registry-protocol
 url: https://sankarshanmukhopadhyay.github.io/agent-registry-protocol/
-license: CC-BY-4.0
+license: Apache-2.0
+
+abstract: "This citation describes the ARPA software implementation release, licensed Apache-2.0. Normative and explanatory specification content in the repository is licensed CC-BY-4.0; see LICENSE for the artifact-specific licensing map."

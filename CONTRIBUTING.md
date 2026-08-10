@@ -72,10 +72,12 @@ Use concise, imperative commit titles. Recommended prefixes include:
 
 ## Licensing of contributions
 
-By submitting a contribution, you agree that:
+By submitting a contribution, you agree that the repository uses artifact-specific licensing:
 
-- specification text, documentation, diagrams, and prose examples are contributed under CC BY 4.0; and
-- code, executable validators, schemas used as software artifacts, and reference implementations are contributed under Apache-2.0.
+- normative and informative specification text, documentation, diagrams, narrative examples, governance prose, and release-note content are contributed under **CC BY 4.0**; and
+- source code, scripts, reference implementations, executable validators, machine-readable schemas, OpenAPI/AsyncAPI contracts, test vectors, fixtures, machine-readable mappings, executable configuration, and generated machine-readable evidence are contributed under **Apache-2.0**.
+
+The deterministic classification map is maintained in `licensing/artifact-license-policy.json`. A file-level license notice, if present, takes precedence for that file.
 
 You certify that you have the right to submit the contribution under these terms.
 

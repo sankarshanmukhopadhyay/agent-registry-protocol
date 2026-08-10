@@ -6,6 +6,15 @@ nav_exclude: true
 
 # Changelog
 
+## Unreleased
+
+### Repository governance
+
+- Clarified artifact-specific licensing: human-readable specification and documentation content is CC-BY-4.0; code and executable/machine-readable artifacts are Apache-2.0.
+- Added `LICENSE-CONTENT`, a root licensing map, a machine-readable artifact classification policy, and licensing validation in the release gate.
+- Corrected `CITATION.cff` so the cited software implementation is identified as Apache-2.0 while documenting the separate CC-BY-4.0 content license.
+
+
 ## [0.9.3] - 2026-08-10
 
 ### Added
