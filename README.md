@@ -6,7 +6,7 @@ nav_exclude: true
 
 # Agent Registry Protocol
 
-[![Specification status](https://img.shields.io/badge/specification-v0.9.2%20accelerator-blue)](https://sankarshanmukhopadhyay.github.io/agent-registry-protocol/spec/agent-registry-protocol-v0.9.0.html)
+[![Specification status](https://img.shields.io/badge/specification-v0.9.3%20A2A--registry-blue)](https://sankarshanmukhopadhyay.github.io/agent-registry-protocol/spec/agent-registry-protocol-v0.9.0.html)
 [![Validation](https://github.com/sankarshanmukhopadhyay/agent-registry-protocol/actions/workflows/validate.yml/badge.svg)](https://github.com/sankarshanmukhopadhyay/agent-registry-protocol/actions/workflows/validate.yml)
 [![License: CC BY 4.0](https://img.shields.io/badge/spec-CC%20BY%204.0-lightgrey.svg)](https://github.com/sankarshanmukhopadhyay/agent-registry-protocol/blob/main/LICENSE)
 [![Code: Apache-2.0](https://img.shields.io/badge/code-Apache--2.0-lightgrey.svg)](https://github.com/sankarshanmukhopadhyay/agent-registry-protocol/blob/main/LICENSE-CODE)
@@ -21,14 +21,17 @@ nav_exclude: true
 |---|---|
 | Portfolio tier | Flagship |
 | Lifecycle | Active |
-| Stability | v0.9.2 Implementation Accelerator over v0.9.0 Candidate Specification |
+| Stability | v0.9.3 A2A Registry Convergence over v0.9.0 Candidate Specification |
 | Primary artifacts | Specification, schemas, API/event contracts, reference implementations, conformance and evidence |
 | Release gate | `make release-check` |
 | Candidate evidence | `artifacts/candidate-specification/evidence-bundle.json` |
 | Authority | Community draft governed by `GOVERNANCE.md` |
 
-## What v0.9.2 delivers
+## What v0.9.3 delivers
 
+- A2A registry publication semantics separating portable Agent Cards, publication projections and authorization overlays;
+- structured caller-visible discovery, exact Agent Card URI preservation and immutable snapshot/reference semantics;
+- Agent Card compatibility classification and twelve additional registry-assurance vectors;
 - an executable 15-minute path from clone to a resolved governed agent;
 - a canonical sample registry, pilot kit and machine-readable readiness evidence;
 - stable Candidate Specification requirements and conformance targets;
@@ -50,7 +53,8 @@ nav_exclude: true
 6. [Candidate implementation guide](docs/candidate-specification-guide.md)
 7. [ARPA–TRQP interoperability architecture](docs/architecture/trqp-arpa-interoperability.md)
 8. [Migration from v0.5.0](docs/migration-v0.5.0-to-v0.9.0.md)
-9. [Known limitations](KNOWN_LIMITATIONS.md)
+9. [A2A Registry Integration Guide](docs/a2a-registry-integration-guide.md)
+10. [Known limitations](KNOWN_LIMITATIONS.md)
 
 ## Validate and produce evidence
 

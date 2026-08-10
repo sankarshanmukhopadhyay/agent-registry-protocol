@@ -1,0 +1,16 @@
+{
+  "type": "arpa-a2a-registry-evidence-bundle",
+  "implementation_release": "0.9.3",
+  "report": "artifacts/interoperability/a2a-registry-report.json",
+  "mapping": "mappings/a2a-v1.0-arpa-mapping.yaml",
+  "publication_schema": "schemas/a2a-publication-projection.schema.json",
+  "compatibility_schema": "schemas/a2a-card-compatibility-result.schema.json",
+  "vector_manifest": "conformance/test-vectors/a2a-v1.0/manifest.json",
+  "invariants": [
+    "exact-source-uri",
+    "caller-filtered-visibility",
+    "immutable-snapshot",
+    "discovery-not-authority",
+    "arpa-state-precedence"
+  ]
+}

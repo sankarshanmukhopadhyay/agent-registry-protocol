@@ -17,6 +17,9 @@ class Store:
         if isinstance(subject,dict): subject=json.dumps(subject,sort_keys=True)
         self.db.execute('INSERT OR REPLACE INTO records VALUES(?,?,?,?,?)',(record['record_id'],record['record_type'],subject,record['issued_at'],json.dumps(record,sort_keys=True)))
         self.db.commit()
+    def all_records(self):
+        rows=self.db.execute('SELECT body FROM records ORDER BY issued_at, record_id').fetchall()
+        return [json.loads(r[0]) for r in rows]
     def get_record(self, record_id):
         row=self.db.execute('SELECT body FROM records WHERE record_id=?',(record_id,)).fetchone(); return json.loads(row[0]) if row else None
     def records_for_subject(self, subject, at=None):

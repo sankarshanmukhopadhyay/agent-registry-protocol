@@ -24,3 +24,8 @@ The Agent Registry Protocol is the normative protocol layer for resolving agent 
 ARPA does not absorb companion-layer ownership. An A2A endpoint, transport authentication result or completed task does not replace ARPA authority, assurance, lifecycle, revocation or governance evidence.
 
 Companion implementations may adopt this protocol without transferring ownership of their transport, schema, governance, or execution models to this repository.
+
+
+## v0.9.3 A2A registry convergence
+
+See the [A2A Registry Integration Guide](a2a-registry-integration-guide.md) for publication, caller-visible discovery, resolve/snapshot, compatibility and authority-boundary semantics.

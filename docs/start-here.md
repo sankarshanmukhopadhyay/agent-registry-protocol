@@ -31,3 +31,8 @@ ARPA v0.9.2 is the current implementation and interoperability release. It prese
 ## Complete catalogue
 
 Use the [documentation catalogue](index.md) when you need the full specification, governance, implementation, conformance, interoperability and scenario surface.
+
+
+## v0.9.3 A2A registry convergence
+
+See the [A2A Registry Integration Guide](a2a-registry-integration-guide.md) for publication, caller-visible discovery, resolve/snapshot, compatibility and authority-boundary semantics.

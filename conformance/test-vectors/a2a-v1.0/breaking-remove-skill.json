@@ -1,0 +1,9 @@
+{
+  "case": "compatibility",
+  "removed": [
+    "skills:invoice.lookup"
+  ],
+  "added": [],
+  "disabled_capability": false,
+  "expected_classification": "breaking"
+}

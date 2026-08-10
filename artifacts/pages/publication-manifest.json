@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "source_count": 92,
+  "source_count": 94,
   "entries": [
     {
       "source": "AI_USAGE.md",
@@ -553,6 +553,18 @@
       "expected_output": "_site/pilot-kit/topologies/federated-pilot.html",
       "mode": "rendered-page",
       "title": "Federated pilot topology"
+    },
+    {
+      "source": "RELEASE_NOTES_v0.9.3.md",
+      "expected_output": "_site/RELEASE_NOTES_v0.9.3.html",
+      "mode": "rendered-page",
+      "title": "Release Notes v0.9.3"
+    },
+    {
+      "source": "docs/a2a-registry-integration-guide.md",
+      "expected_output": "_site/docs/a2a-registry-integration-guide.html",
+      "mode": "rendered-page",
+      "title": "A2A Registry Integration Guide"
     }
   ]
 }

@@ -1,0 +1,9 @@
+{
+  "case": "compatibility",
+  "removed": [
+    "interfaces:https"
+  ],
+  "added": [],
+  "disabled_capability": false,
+  "expected_classification": "breaking"
+}

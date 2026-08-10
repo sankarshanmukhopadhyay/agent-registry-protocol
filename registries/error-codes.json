@@ -1,6 +1,6 @@
 {
   "registry": "error-codes",
-  "version": "0.9.2",
+  "version": "0.9.3",
   "entries": [
     {
       "id": "ARPA-ID-NOT-FOUND",
@@ -80,6 +80,14 @@
     },
     {
       "id": "ARPA-A2A-ARTIFACT-DIGEST-MISSING",
+      "status": "active"
+    },
+    {
+      "id": "ARPA-A2A-PUBLICATION-URI-MISMATCH",
+      "status": "active"
+    },
+    {
+      "id": "ARPA-A2A-SNAPSHOT-MISSING",
       "status": "active"
     }
   ]

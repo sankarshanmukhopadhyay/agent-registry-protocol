@@ -45,3 +45,8 @@ The demonstration verifies protocol behavior across two separately configured fi
 ## Extending the harness
 
 An external implementation can replace either fixture by exporting the same exchange package documented in `interop/README.md`. Its report should identify implementation provenance, version, supported modules, profile claims, failed checks, and known limitations. An AI-generated or configuration-only variant does not count as an independent implementation.
+
+
+## v0.9.3 A2A registry convergence
+
+See the [A2A Registry Integration Guide](a2a-registry-integration-guide.md) for publication, caller-visible discovery, resolve/snapshot, compatibility and authority-boundary semantics.

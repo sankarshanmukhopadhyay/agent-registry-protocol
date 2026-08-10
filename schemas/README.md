@@ -18,3 +18,9 @@ Every envelope-based record composes `common/envelope.schema.json`. Valid and ta
 | 0.5.0 | 1.0.0 |
 
 A required-field or semantic change requires coordinated document, schema, example, vector and migration updates. Editorial changes do not require a schema-version bump.
+
+
+### v0.9.3 A2A registry interoperability
+
+- `a2a-publication-projection.schema.json` — derived registry publication/search projection; not an authoritative identity or authority record.
+- `a2a-card-compatibility-result.schema.json` — machine-readable compatibility classification for successive Agent Card representations.

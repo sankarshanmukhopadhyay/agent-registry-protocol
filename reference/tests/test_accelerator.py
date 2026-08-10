@@ -7,9 +7,9 @@ client=TestClient(app)
 ROOT=Path(__file__).resolve().parents[2]
 
 def test_accelerator_metadata_version():
-    assert client.get('/health').json()['version']=='0.9.2'
+    assert client.get('/health').json()['version']=='0.9.3'
     assert client.get('/registry').json()['arpa_version']=='0.9.0'
-    assert client.get('/registry').json()['implementation_release']=='0.9.2'
+    assert client.get('/registry').json()['implementation_release']=='0.9.3'
 
 def test_acme_fixture_lifecycle():
     fixture_dir=ROOT/'implementation-accelerator/fixtures/acme'
@@ -31,3 +31,11 @@ def test_allow_and_deny_requests_produce_receipts():
         result=client.post('/authority/evaluate',json=payload)
         assert result.status_code==200
         assert 'decision_receipt' in result.json()
+
+
+def test_publication_discovery_has_no_authority_implication():
+    result=client.get('/agents')
+    assert result.status_code==200
+    for item in result.json()['items']:
+        assert item['authority_implication'] is False
+        assert item['disclosure_class']=='public'

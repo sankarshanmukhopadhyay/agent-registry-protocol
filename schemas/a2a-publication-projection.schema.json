@@ -1,0 +1,113 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sankarshanmukhopadhyay.github.io/agent-registry-protocol/schemas/a2a-publication-projection.schema.json",
+  "title": "ARPA A2A Publication Projection",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "publication_id",
+    "agent_id",
+    "agent_card_uri",
+    "card_digest",
+    "observed_at",
+    "disclosure_class",
+    "lifecycle_status"
+  ],
+  "properties": {
+    "publication_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "agent_id": {
+      "type": "string",
+      "pattern": "^agentreg:"
+    },
+    "agent_card_uri": {
+      "type": "string",
+      "format": "uri"
+    },
+    "card_digest": {
+      "type": "string",
+      "pattern": "^[A-Fa-f0-9]{64}$"
+    },
+    "representation_version": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "snapshot_uri": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "uri"
+    },
+    "observed_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "valid_until": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "disclosure_class": {
+      "enum": [
+        "public",
+        "authenticated-extended",
+        "tenant-specific",
+        "private"
+      ]
+    },
+    "namespace": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "lifecycle_status": {
+      "type": "string"
+    },
+    "publisher": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "protocol_versions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "skills": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "capabilities": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "authority_implication": {
+      "const": false
+    },
+    "source_record_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    }
+  }
+}

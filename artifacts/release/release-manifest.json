@@ -1,9 +1,10 @@
 {
-  "release": "v0.9.2",
-  "release_date": "2026-07-30",
+  "release": "v0.9.3",
+  "release_date": "2026-08-10",
   "authoritative_specification": "spec/agent-registry-protocol-v0.9.0.md",
-  "implementation_release": "0.9.2",
-  "profile_release": "ARPA A2A v1.0",
+  "implementation_release": "0.9.3",
+  "profile_release": "ARPA A2A v1.0 registry-aligned revision",
+  "release_title": "A2A Registry Convergence & Publication Semantics",
   "artifacts": [
     {
       "path": "spec/agent-registry-protocol-v0.9.0.md",
@@ -11,7 +12,11 @@
     },
     {
       "path": "spec/profiles/arpa-a2a-v1.0-interoperability-profile.md",
-      "sha256": "62a75facb651df3a600f72f22f625e9d851c41d60199de10e8ff60bafcd3dc96"
+      "sha256": "bba13e358cf49a9b0c78fb6c58b536e1c446fe8f7703b21418bca9a264c0c2fa"
+    },
+    {
+      "path": "docs/a2a-registry-integration-guide.md",
+      "sha256": "f8f7423c0f56cdf4e90a5dc63573d6e6f68d31a8cdd4be9ecdca55d4e14655c3"
     },
     {
       "path": "docs/agent-card-integration-guide.md",
@@ -19,55 +24,95 @@
     },
     {
       "path": "mappings/a2a-v1.0-arpa-mapping.yaml",
-      "sha256": "f5926a80079afb588f091435c0efb9e2149e45a162a0560584d2f6a3b6825016"
+      "sha256": "02b1f01edd76a2a5360d2dac3e3e46ea92ef8c8da101cd9f07a151abf72603f1"
+    },
+    {
+      "path": "schemas/a2a-publication-projection.schema.json",
+      "sha256": "a22d77065297386fd5bed75256fbb680e473fbc30a89cf0a0f9b58d1cd77928a"
+    },
+    {
+      "path": "schemas/a2a-card-compatibility-result.schema.json",
+      "sha256": "7837fe8c03628384f8ccbe893e8647b04b6d37c2ce29ea932bf386831819c195"
     },
     {
       "path": "schemas/agent-description-reference.schema.json",
       "sha256": "13da5af8e8238b9fde985cfd6becfeeadae7d1cd438ce1d1b24e3ac641588dd1"
     },
     {
-      "path": "schemas/agent-card-arpa-extension.schema.json",
-      "sha256": "a4a83e1174c70e6b65a3093655c62915181ad4aa525968a196bb22f59cd5415c"
+      "path": "openapi/arpa-openapi.yaml",
+      "sha256": "76b5a55142cb523ed5cb720210dca922bb7de84664420ad22dfbd1a3bc960c76"
     },
     {
-      "path": "schemas/execution-receipt.schema.json",
-      "sha256": "cf828536037e17c972900b4dc32ee36658e0e3093cc4b0c054912115d1bfbbb4"
+      "path": "reference/app.py",
+      "sha256": "401a256c1c3cef45f5baa36050026bebca5db8135d23dd079effad93c35d8c16"
+    },
+    {
+      "path": "reference/storage.py",
+      "sha256": "910bb247940a2ea486d60be79b409560b863bf13226dd8ce63df0bdbb6f9c120"
     },
     {
       "path": "scripts/validate_a2a_interoperability.py",
-      "sha256": "3ce9cb9534036d568652acaaa76d49756f631e313c8b787da9a72dd4834a7744"
+      "sha256": "0e19c0828da2d883a2a70c5c3246d5755cf5c7bd0918bb75f343bc0b5f790c4f"
     },
     {
       "path": "conformance/test-vectors/a2a-v1.0/manifest.json",
-      "sha256": "ea879c931572fa762b07432f1697782d561dcf83d42dc0dcd9da53e9962fde32"
+      "sha256": "d28bceaf71bd7873695b7517eac51d5f27a4fd3d9236a654aeb7690b5256e70b"
     },
     {
-      "path": "RELEASE_NOTES_v0.9.2.md",
-      "sha256": "664a4d8ab9785cca54da99ddb7905f26668667c0797282e0692636f5097df9ed"
+      "path": "artifacts/interoperability/a2a-registry-report.json",
+      "sha256": "d7b2b1cc0e80e869362f59bba62ee087664c24fbd127c058a40d44257c78c0c0"
+    },
+    {
+      "path": "artifacts/interoperability/a2a-registry-evidence-bundle.json",
+      "sha256": "bf18fc7092ba9d66f24c467b6ba871512c999ae9fec06fc7ee00e9e2f440ceeb"
+    },
+    {
+      "path": "registries/error-codes.json",
+      "sha256": "058a85ef78c4b009fdae0c52d93df8f853f185457823e7a51d7de0857614defe"
+    },
+    {
+      "path": "RELEASE_NOTES_v0.9.3.md",
+      "sha256": "f394de2bbb5f4b9b2b98ebc79f2b7fc8099d49317b4477b9cff38d45f0c05a72"
+    },
+    {
+      "path": "README.md",
+      "sha256": "b1435f9fdd623d89a38007c8f385a1e18bdc64f34a4ebfc8797cf6e08f28b4b5"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "sha256": "fbc8f134199bd6f7f62192d4084193cbdf64a02694b47a78590d7988b1c5e3f9"
+    },
+    {
+      "path": "ROADMAP.md",
+      "sha256": "eaebd748cda48c21961b12998fc35581901b583d95f8299a17982d27c6221ea8"
+    },
+    {
+      "path": "VALIDATION_SUMMARY.md",
+      "sha256": "ebf014c182ca5c77d4ba829475d531496674484a46612a7579d766fd694f0c7e"
     },
     {
       "path": "docs/start-here.md",
-      "sha256": "0cf68f03725f2389a3047ada8cd12f34b1cdf0a0fb0f11a974586151cf2106ea"
+      "sha256": "c092cf4e2e60ec5a354f0d3d3634f20422e62fc841abbfcb4acf53ecce7b142d"
     },
     {
       "path": "docs/index.md",
-      "sha256": "9cdc423ccc39ec56ed689835676ac49c6138a83193130bb82649669ce3ee56a9"
+      "sha256": "e4e9641ee9ccf2721be903631be4e3fba019b9a5b71bf0c01ac783dc22c96342"
     },
     {
-      "path": "docs/conformance-guide.md",
-      "sha256": "e842adf35ae38dc63f574ee64b81756026d393749d961f2faf5944ed9b0519d9"
+      "path": "docs/interoperability.md",
+      "sha256": "4127722bde7dceeb9022c6006fcbe21bc00e551e6b601f5974338da1c31d7f69"
     },
     {
       "path": "docs/repository-positioning.md",
-      "sha256": "67424019a5e90c5b441575acf4bd8a1863c8281b2b684ae6522811c25cd69f4e"
-    },
-    {
-      "path": "scripts/validate_docs_links.py",
-      "sha256": "e23304f3926ead8a9e09b71945e3208be3d7271124b451ff4092d718b16f3bad"
+      "sha256": "96b7dfe4da2685af54077669b83366cb2055949e6e2ba24aa3de877be22c2555"
     },
     {
       "path": "docs/publication-map.yml",
-      "sha256": "f1ad998db93026667d8200229b9bd71eb5843efe5e2232fa95d5e50581d45d05"
+      "sha256": "4a207b29d84a673caf3d329059012a95f813e1c4ba4f2a08227ee8082a84ebb4"
+    },
+    {
+      "path": "CITATION.cff",
+      "sha256": "d9306acd2db3cd626ea3536284ac5929692887c8075a779dacfeaed6b2b95b33"
     },
     {
       "path": "Makefile",
@@ -76,18 +121,13 @@
   ],
   "assurance_boundary": [
     "Normative protocol baseline remains v0.9.0 Candidate Specification",
+    "A2A publication and discovery do not imply authority or permission to invoke",
     "A2A support is optional for ARPA-Core conformance",
     "Repository validation is not certification or production deployment assurance"
   ],
-  "documentation_commit": {
-    "title": "docs(ia): establish guided documentation architecture and publication assurance",
-    "normative_change": false,
-    "artifacts": [
-      "docs/start-here.md",
-      "docs/index.md",
-      "docs/conformance-guide.md",
-      "docs/repository-positioning.md",
-      "scripts/validate_docs_links.py"
-    ]
-  }
+  "federation_posture": "topology-neutral",
+  "evidence": [
+    "artifacts/interoperability/a2a-registry-report.json",
+    "artifacts/interoperability/a2a-registry-evidence-bundle.json"
+  ]
 }

@@ -1,0 +1,11 @@
+{
+  "case": "publication",
+  "publication": {
+    "agent_card_uri": "https://agents.example/card.json",
+    "source_uri": "https://agents.example/card.json",
+    "digest_match": true,
+    "disclosure_class": "public",
+    "snapshot_preserved": true,
+    "authority_implication": false
+  }
+}

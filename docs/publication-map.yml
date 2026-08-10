@@ -184,3 +184,7 @@ publication_sources:
   mode: rendered-page
 - path: pilot-kit/topologies/federated-pilot.md
   mode: rendered-page
+- path: RELEASE_NOTES_v0.9.3.md
+  mode: rendered-page
+- path: docs/a2a-registry-integration-guide.md
+  mode: rendered-page

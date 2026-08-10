@@ -8,7 +8,7 @@ parent: Protocol profiles
 # ARPA A2A v1.0 Interoperability Profile
 
 **Profile identifier:** `https://arpa.example/profiles/a2a/1.0`  
-**ARPA implementation release:** v0.9.2  
+**ARPA implementation release:** v0.9.3  
 **A2A protocol family:** 1.0  
 **Status:** Versioned interoperability profile over the ARPA v0.9.0 Candidate Specification
 
@@ -64,6 +64,49 @@ The normative machine-readable mapping is `mappings/a2a-v1.0-arpa-mapping.yaml`.
 | A2A extension | Extension registry entry and relying-party policy | Fail closed for unsupported required extensions affecting authority or evidence |
 | Task and context identifiers | Execution Receipt | Bind execution evidence to the A2A interaction |
 | Artifacts | Execution Receipt artifact evidence | Use cryptographic digests, not artifact names, as evidence anchors |
+
+
+## 5A. Registry publication model
+
+For A2A registry interoperability, ARPA distinguishes three layers:
+
+1. **Agent Card** — the portable A2A self-description controlled by the agent/provider;
+2. **Publication Projection** — registry-specific metadata used to publish, list, resolve and snapshot that description; and
+3. **Authorization Overlay** — caller-specific policy, entitlement, authority and governance decisions evaluated independently of publication.
+
+A conforming implementation MUST NOT modify portable Agent Card content in order to encode registry-local authorization. Discoverability, publication, listing and successful endpoint authentication MUST NOT imply permission to invoke the agent or authority to perform a consequential action.
+
+The machine-readable publication projection is `schemas/a2a-publication-projection.schema.json`. It is a projection over existing ARPA records and is not a new authoritative ARPA identity or authority record type.
+
+### 5A.1 Publication invariants
+
+A publication projection MUST:
+
+- preserve the exact publisher-supplied Agent Card URI;
+- bind the representation to a SHA-256 digest and observation time;
+- expose disclosure class and lifecycle state;
+- preserve a stable snapshot/reference when a representation is used in an authority or execution decision; and
+- explicitly assert that publication has no authority implication.
+
+A registry MUST NOT reconstruct a different Agent Card URI and represent it as the publisher-supplied canonical location.
+
+### 5A.2 Discovery, resolve and snapshot
+
+The base interoperability behavior is:
+
+- **list/search:** return only publication summaries visible to the caller;
+- **resolve:** retrieve the current publication/identity view for a selected agent;
+- **snapshot/reference:** preserve the exact representation used for audit and replay.
+
+Simple filtering SHOULD be expressed through structured query parameters on the ordinary listing operation. Vector search, semantic ranking, graph traversal and cross-registry ranking are optional implementation extensions and are not required for this profile.
+
+Unauthenticated callers see only public projections. Authenticated callers may see additional projections according to local policy. A separate `/entitled` resource is not required.
+
+## 5B. Agent Card evolution and compatibility
+
+Implementations that compare successive Agent Card representations SHOULD emit `schemas/a2a-card-compatibility-result.schema.json`. The baseline classifier used by this repository treats additions as compatible unless they narrow previously advertised behavior, and treats removal of skills, interfaces, security schemes, supported input/output modes, or disabling of previously available capabilities as breaking. Unknown changes are `indeterminate` and require local policy.
+
+Compatibility classification does not establish capability verification, authority, or safety.
 
 ## 6. Processing algorithm
 

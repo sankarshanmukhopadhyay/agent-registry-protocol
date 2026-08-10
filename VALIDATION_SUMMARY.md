@@ -64,3 +64,8 @@ Offline validation completed for the publication inventory, explicit front matte
 - Local Jekyll rendering was not executed in the build environment because Bundler was unavailable; GitHub Actions remains the authoritative Pages rendering gate.
 
 Passing these checks demonstrates repository-controlled reference behaviour only. It does not replace operator governance, security review, production hardening or independent conformance assessment.
+
+
+## v0.9.3 A2A registry convergence
+
+`make release-check` additionally validates A2A publication invariants, structured discovery semantics, immutable snapshot requirements, compatibility classification and non-implication of authority. Dedicated results are emitted under `artifacts/interoperability/a2a-registry-*.json`.

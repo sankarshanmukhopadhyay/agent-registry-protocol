@@ -1,0 +1,6 @@
+{
+  "case": "non-implication",
+  "signal": "discoverable",
+  "authority_decision": "indeterminate",
+  "invocation_allowed": false
+}

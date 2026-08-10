@@ -159,3 +159,8 @@ See [Protocol modules](protocol-modules.md) for the dependency table, profile ma
 ## Publication assurance
 
 - [GitHub Pages publication assurance](PUBLICATION_ASSURANCE.md)
+
+
+## v0.9.3 A2A registry convergence
+
+See the [A2A Registry Integration Guide](a2a-registry-integration-guide.md) for publication, caller-visible discovery, resolve/snapshot, compatibility and authority-boundary semantics.

@@ -1,0 +1,9 @@
+{
+  "case": "unsupported-required-extension",
+  "a2a": {
+    "required_extension": "https://example.org/ext/critical"
+  },
+  "arpa": {
+    "required_extensions_supported": false
+  }
+}

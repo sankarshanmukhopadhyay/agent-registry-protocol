@@ -1,56 +1,56 @@
-schema_version: "1.0.0"
-profile: "https://arpa.example/profiles/a2a/1.0"
+schema_version: 1.0.0
+profile: https://arpa.example/profiles/a2a/1.0
 source:
-  protocol: "A2A"
-  protocol_family: "1.0"
+  protocol: A2A
+  protocol_family: '1.0'
 claim_defaults:
   card_content: self_declared
 mappings:
-  - source_path: "$.name"
-    target_record: agent-core
-    target_path: "$.display_name"
-    claim_class: self_declared
-  - source_path: "$.description"
-    target_record: agent-description-reference
-    target_path: "$.description"
-    claim_class: self_declared
-  - source_path: "$.interfaces[*]"
-    target_record: service-endpoint
-    preserve:
-      - url
-      - protocolBinding
-      - protocolVersion
-  - source_path: "$.skills[*]"
-    target_record: capability-declaration
-    claim_class: self_declared
-    non_implications:
-      - capability_verification
-      - capability_authorization
-      - delegated_authority
-      - assurance
-      - operational_availability
-  - source_path: "$.securitySchemes"
-    target_record: service-endpoint
-    target_path: "$.authentication_requirements"
-    non_implications:
-      - authority
-      - delegation
-      - principal_consent
-  - source_path: "$.signatures[*]"
-    target_record: key-binding
-    target_path: "$.evidence"
-    non_implications:
-      - issuer_competence
-      - governance_recognition
-      - assurance
-  - source_path: "$.extensions[*]"
-    target_record: extension-processing-decision
-  - source_path: "A2A.taskId"
-    target_record: execution-receipt
-    target_path: "$.a2a.task_id"
-  - source_path: "A2A.contextId"
-    target_record: execution-receipt
-    target_path: "$.a2a.context_id"
+- source_path: $.name
+  target_record: agent-core
+  target_path: $.display_name
+  claim_class: self_declared
+- source_path: $.description
+  target_record: agent-description-reference
+  target_path: $.description
+  claim_class: self_declared
+- source_path: $.interfaces[*]
+  target_record: service-endpoint
+  preserve:
+  - url
+  - protocolBinding
+  - protocolVersion
+- source_path: $.skills[*]
+  target_record: capability-declaration
+  claim_class: self_declared
+  non_implications:
+  - capability_verification
+  - capability_authorization
+  - delegated_authority
+  - assurance
+  - operational_availability
+- source_path: $.securitySchemes
+  target_record: service-endpoint
+  target_path: $.authentication_requirements
+  non_implications:
+  - authority
+  - delegation
+  - principal_consent
+- source_path: $.signatures[*]
+  target_record: key-binding
+  target_path: $.evidence
+  non_implications:
+  - issuer_competence
+  - governance_recognition
+  - assurance
+- source_path: $.extensions[*]
+  target_record: extension-processing-decision
+- source_path: A2A.taskId
+  target_record: execution-receipt
+  target_path: $.a2a.task_id
+- source_path: A2A.contextId
+  target_record: execution-receipt
+  target_path: $.a2a.context_id
 precedence:
   authoritative_arpa_state_over_card: true
   cached_card_over_revocation: false
@@ -58,3 +58,31 @@ safe_failure:
   unsupported_required_extension: reject
   authority_indeterminate: reject_consequential_action
   digest_mismatch: reject
+registry_publication:
+  projection_schema: schemas/a2a-publication-projection.schema.json
+  portable_card_mutation: false
+  exact_source_uri_required: true
+  authority_implication: false
+  visibility: caller_policy_filtered
+  operations:
+  - list
+  - resolve
+  - snapshot
+card_compatibility:
+  profile: arpa-a2a-card-compatibility-1.0
+  compatible_additions:
+  - skills
+  - interfaces
+  - securitySchemes
+  - inputModes
+  - outputModes
+  - capabilities
+  breaking_removals:
+  - skills
+  - interfaces
+  - securitySchemes
+  - inputModes
+  - outputModes
+  breaking_changes:
+  - disable_existing_capability
+  unknown_change: indeterminate

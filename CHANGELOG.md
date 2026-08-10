@@ -6,6 +6,25 @@ nav_exclude: true
 
 # Changelog
 
+## [0.9.3] - 2026-08-10
+
+### Added
+- A2A publication projection schema separating Agent Card, publication metadata and authorization context.
+- Structured caller-visible `GET /agents` discovery contract.
+- Immutable snapshot/reference and exact source-URI invariants.
+- Agent Card compatibility result schema and executable compatibility classifier.
+- Twelve A2A registry assurance vectors and dedicated evidence artifacts.
+- A2A Registry Integration Guide with federation-neutral implementation guidance.
+
+### Changed
+- A2A profile now formalizes list/search, resolve and snapshot semantics.
+- Reference service and release metadata advance to implementation release v0.9.3.
+- Registry discovery explicitly carries no authority implication.
+
+### Assurance boundary
+- Publication, discoverability and endpoint authentication do not establish authority or permission to invoke.
+
+
 ## [0.9.2] - 2026-07-30
 
 ### Added

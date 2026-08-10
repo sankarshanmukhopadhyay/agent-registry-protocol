@@ -1,0 +1,6 @@
+{
+  "case": "non-implication",
+  "signal": "endpoint-authenticated",
+  "authority_decision": "indeterminate",
+  "invocation_allowed": false
+}

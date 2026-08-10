@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sankarshanmukhopadhyay.github.io/agent-registry-protocol/schemas/a2a-card-compatibility-result.schema.json",
+  "title": "ARPA A2A Agent Card Compatibility Result",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "previous_digest",
+    "current_digest",
+    "classification",
+    "changes",
+    "evaluated_at",
+    "profile"
+  ],
+  "properties": {
+    "previous_digest": {
+      "type": "string",
+      "pattern": "^[A-Fa-f0-9]{64}$"
+    },
+    "current_digest": {
+      "type": "string",
+      "pattern": "^[A-Fa-f0-9]{64}$"
+    },
+    "classification": {
+      "enum": [
+        "compatible",
+        "breaking",
+        "indeterminate"
+      ]
+    },
+    "changes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "kind",
+          "path"
+        ],
+        "properties": {
+          "kind": {
+            "type": "string"
+          },
+          "path": {
+            "type": "string"
+          },
+          "detail": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "evaluated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "profile": {
+      "const": "arpa-a2a-card-compatibility-1.0"
+    }
+  }
+}

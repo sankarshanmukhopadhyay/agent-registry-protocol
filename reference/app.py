@@ -6,7 +6,7 @@ from fastapi.responses import JSONResponse
 from .storage import Store
 from scripts.reference_evaluator import evaluate_authority
 
-app=FastAPI(title='ARPA Reference Service',version='0.9.2')
+app=FastAPI(title='ARPA Reference Service',version='0.9.3')
 store=Store(os.getenv('ARPA_DB',':memory:'))
 
 def now(): return datetime.now(timezone.utc).isoformat().replace('+00:00','Z')
@@ -17,11 +17,54 @@ def emit(subject,event_type,payload=None):
     event['sequence']=store.add_event(event); return event
 
 @app.get('/health')
-def health(): return {'status':'ok','version':'0.9.2'}
+def health(): return {'status':'ok','version':'0.9.3'}
 
 @app.get('/registry')
 def registry():
-    return {'registry_id':os.getenv('ARPA_REGISTRY_ID','registry:reference'),'name':os.getenv('ARPA_REGISTRY_NAME','ARPA Reference Registry'),'arpa_version':'0.9.0','implementation_release':'0.9.2','supported_modules':['ARPA-Core','ARPA-Relations','ARPA-Authority','ARPA-Evidence'],'supported_profiles':['A','C'],'authoritative_base_uri':os.getenv('ARPA_PUBLIC_BASE_URI','http://127.0.0.1:8000'),'conformance_declaration_uri':'http://127.0.0.1:8000/records/conformance-reference','event_retention_seconds':86400,'status_max_age_seconds':300}
+    return {'registry_id':os.getenv('ARPA_REGISTRY_ID','registry:reference'),'name':os.getenv('ARPA_REGISTRY_NAME','ARPA Reference Registry'),'arpa_version':'0.9.0','implementation_release':'0.9.3','supported_modules':['ARPA-Core','ARPA-Relations','ARPA-Authority','ARPA-Evidence'],'supported_profiles':['A','C'],'authoritative_base_uri':os.getenv('ARPA_PUBLIC_BASE_URI','http://127.0.0.1:8000'),'conformance_declaration_uri':'http://127.0.0.1:8000/records/conformance-reference','event_retention_seconds':86400,'status_max_age_seconds':300}
+
+
+@app.get('/agents')
+def list_agents(skill:str|None=None, capability:str|None=None, protocolVersion:str|None=None, namespace:str|None=None, disclosureClass:str|None=None, limit:int=Query(50,ge=1,le=200), cursor:str|None=None):
+    records=store.all_records()
+    cores={r.get('agent_id') or r.get('subject'):r for r in records if r.get('record_type')=='agent_core'}
+    descriptions={}
+    for r in records:
+        if r.get('record_type')=='agent-description-reference':
+            aid=r.get('agent_id') or r.get('subject')
+            descriptions.setdefault(aid,[]).append(r)
+    items=[]
+    for aid,core in sorted(cores.items()):
+        refs=descriptions.get(aid,[])
+        ref=refs[-1] if refs else None
+        disclosure=(ref or {}).get('disclosure_class','public')
+        if disclosureClass and disclosure!=disclosureClass: continue
+        if disclosure!='public': continue  # reference service has no caller auth context; fail closed
+        versions=(ref or {}).get('protocol_versions',[])
+        if protocolVersion and protocolVersion not in versions: continue
+        item={
+            'publication_id':(ref or {}).get('record_id',f'publication:{aid}'),
+            'agent_id':aid,
+            'agent_card_uri':(ref or {}).get('uri','https://invalid.example/agent-card'),
+            'card_digest':(ref or {}).get('digest','0'*64),
+            'representation_version':(ref or {}).get('representation_version'),
+            'snapshot_uri':None,
+            'observed_at':(ref or {}).get('retrieved_at') or core.get('issued_at') or now(),
+            'valid_until':(ref or {}).get('valid_until'),
+            'disclosure_class':disclosure,
+            'namespace':namespace,
+            'lifecycle_status':core.get('status','active'),
+            'publisher':core.get('issuer'),
+            'protocol_versions':versions,
+            'skills':[],
+            'capabilities':[],
+            'authority_implication':False,
+            'source_record_ids':[core.get('record_id')] + ([ref.get('record_id')] if ref else [])
+        }
+        if skill and skill not in item['skills']: continue
+        if capability and capability not in item['capabilities']: continue
+        items.append(item)
+    return {'items':items[:limit],'next_cursor':None}
 
 @app.post('/agents',status_code=201)
 def register_agent(record:dict):
@@ -75,7 +118,7 @@ def resolve_alias(alias:str,at:str|None=Query(None)):
 @app.post('/authority/evaluate')
 def authority_evaluate(payload:dict):
     decision,reasons=evaluate_authority(payload)
-    receipt={'record_id':str(uuid.uuid4()),'record_type':'decision-receipt','schema_version':'1.0.0','issuer':'pdp:reference','subject':payload.get('request',{}).get('agent','unknown'),'issued_at':now(),'effective_from':now(),'effective_until':None,'status':'issued','request_digest':'sha256:'+hashlib.sha256(json.dumps(payload,sort_keys=True,separators=(',',':')).encode()).hexdigest(),'decision':decision,'reason_codes':reasons,'evaluator':'pdp:reference','policy_version':'reference-0.9.2'}
+    receipt={'record_id':str(uuid.uuid4()),'record_type':'decision-receipt','schema_version':'1.0.0','issuer':'pdp:reference','subject':payload.get('request',{}).get('agent','unknown'),'issued_at':now(),'effective_from':now(),'effective_until':None,'status':'issued','request_digest':'sha256:'+hashlib.sha256(json.dumps(payload,sort_keys=True,separators=(',',':')).encode()).hexdigest(),'decision':decision,'reason_codes':reasons,'evaluator':'pdp:reference','policy_version':'reference-0.9.3'}
     store.put_record(receipt)
     return {'decision':decision,'reason_codes':reasons,'decision_receipt':receipt}
 
@@ -88,7 +131,7 @@ def reliance_evaluate(payload:dict):
 @app.get('/interoperability')
 def interoperability():
     return {
-        'arpa_version':'0.9.0','implementation_release':'0.9.2',
+        'arpa_version':'0.9.0','implementation_release':'0.9.3',
         'exchange_profile':'arpa-interoperability-0.5',
         'supports':['registry-metadata','canonical-resolution','scoped-recognition','event-replay','revocation-acknowledgement'],
         'evidence_format':'artifacts/interoperability/evidence-bundle.json',

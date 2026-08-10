@@ -1,102 +1,134 @@
 {
   "profile": "https://arpa.example/profiles/a2a/1.0",
-  "version": "1.1.0",
-  "vectors": [
+  "implementation_release": "0.9.3",
+  "generated_at": "2026-08-10T02:41:03.317962Z",
+  "passed": 18,
+  "total": 18,
+  "results": [
     {
       "id": "A2A-001",
       "file": "valid-public-card.json",
-      "expected": "accept"
+      "passed": true,
+      "decision": "accept",
+      "error": null
     },
     {
       "id": "A2A-002",
       "file": "valid-task-receipt.json",
-      "expected": "accept"
+      "passed": true,
+      "decision": "accept",
+      "error": null
     },
     {
       "id": "A2A-003",
       "file": "digest-mismatch.json",
-      "expected": "reject",
+      "passed": true,
+      "decision": "reject",
       "error": "ARPA-A2A-CARD-DIGEST-MISMATCH"
     },
     {
       "id": "A2A-004",
       "file": "unsupported-required-extension.json",
-      "expected": "reject",
+      "passed": true,
+      "decision": "reject",
       "error": "ARPA-A2A-REQUIRED-EXTENSION-UNSUPPORTED"
     },
     {
       "id": "A2A-005",
       "file": "status-conflict.json",
-      "expected": "reject",
+      "passed": true,
+      "decision": "reject",
       "error": "ARPA-A2A-CARD-STATUS-CONFLICT"
     },
     {
       "id": "A2A-006",
       "file": "missing-authority.json",
-      "expected": "reject",
+      "passed": true,
+      "decision": "reject",
       "error": "ARPA-A2A-TASK-AUTHORITY-MISSING"
     },
     {
       "id": "A2A-R-01",
       "file": "publication-public.json",
-      "expected": "accept"
+      "passed": true,
+      "decision": "accept",
+      "error": null
     },
     {
       "id": "A2A-R-02",
       "file": "publication-restricted-filtered.json",
-      "expected": "accept"
+      "passed": true,
+      "decision": "accept",
+      "error": null
     },
     {
       "id": "A2A-R-03",
       "file": "publication-uri-rewritten.json",
-      "expected": "reject",
+      "passed": true,
+      "decision": "reject",
       "error": "ARPA-A2A-PUBLICATION-URI-MISMATCH"
     },
     {
       "id": "A2A-R-04",
       "file": "publication-digest-bound.json",
-      "expected": "accept"
+      "passed": true,
+      "decision": "accept",
+      "error": null
     },
     {
       "id": "A2A-R-05",
       "file": "publication-snapshot-missing.json",
-      "expected": "reject",
+      "passed": true,
+      "decision": "reject",
       "error": "ARPA-A2A-SNAPSHOT-MISSING"
     },
     {
       "id": "A2A-R-06",
       "file": "compatible-add-skill.json",
-      "expected": "accept"
+      "passed": true,
+      "decision": "accept",
+      "error": null
     },
     {
       "id": "A2A-R-07",
       "file": "breaking-remove-skill.json",
-      "expected": "accept"
+      "passed": true,
+      "decision": "accept",
+      "error": null
     },
     {
       "id": "A2A-R-08",
       "file": "breaking-remove-interface.json",
-      "expected": "accept"
+      "passed": true,
+      "decision": "accept",
+      "error": null
     },
     {
       "id": "A2A-R-09",
       "file": "discovery-no-authority.json",
-      "expected": "accept"
+      "passed": true,
+      "decision": "accept",
+      "error": null
     },
     {
       "id": "A2A-R-10",
       "file": "auth-no-authority.json",
-      "expected": "accept"
+      "passed": true,
+      "decision": "accept",
+      "error": null
     },
     {
       "id": "A2A-R-11",
       "file": "revoked-overrides-card.json",
-      "expected": "accept"
+      "passed": true,
+      "decision": "accept",
+      "error": null
     },
     {
       "id": "A2A-R-12",
       "file": "unknown-required-extension.json",
-      "expected": "reject",
+      "passed": true,
+      "decision": "reject",
       "error": "ARPA-A2A-REQUIRED-EXTENSION-UNSUPPORTED"
     }
   ]
