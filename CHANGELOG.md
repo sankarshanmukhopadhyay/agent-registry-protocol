@@ -75,6 +75,9 @@ nav_exclude: true
 ## [Unreleased]
 
 ### Fixed
+- Corrected GitHub Pages licensing links so extensionless repository license/control files are resolved through their canonical GitHub source URLs rather than being rewritten as non-existent Jekyll pages.
+
+### Fixed
 - Linked all published historical release notes, Implementation Accelerator assets, pilot-readiness checklists, and the federated-pilot topology from the documentation catalogue so every generated page is reachable from the assured navigation roots.
 - Preserved strict documentation reachability validation rather than excluding published evidence and governance pages from the publication surface.
 

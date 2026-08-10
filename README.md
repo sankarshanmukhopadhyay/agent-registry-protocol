@@ -74,12 +74,12 @@ ARPA owns the authority, lifecycle, evidence, revocation, enforcement and federa
 
 ARPA uses **artifact-specific licensing** so that specification content and executable implementation artifacts have licenses suited to their use:
 
-- **Specification and human-readable content:** [CC BY 4.0](LICENSE-CONTENT)
-- **Code and executable/machine-readable artifacts:** [Apache License 2.0](LICENSE-CODE)
+- **Specification and human-readable content:** [CC BY 4.0](https://github.com/sankarshanmukhopadhyay/agent-registry-protocol/blob/main/LICENSE-CONTENT)
+- **Code and executable/machine-readable artifacts:** [Apache License 2.0](https://github.com/sankarshanmukhopadhyay/agent-registry-protocol/blob/main/LICENSE-CODE)
 
 Machine-readable schemas, OpenAPI/AsyncAPI contracts, validators, test vectors, fixtures, mappings, executable configuration and generated machine-readable evidence are treated as software artifacts under Apache-2.0 unless a file explicitly states otherwise. Normative and informative specification prose, documentation, diagrams, governance prose, narrative examples and release notes are content under CC-BY-4.0.
 
-See the repository [licensing map](LICENSE), [NOTICE](NOTICE), and machine-readable [artifact license policy](licensing/artifact-license-policy.json) for the deterministic classification rules.
+See the repository [licensing map](https://github.com/sankarshanmukhopadhyay/agent-registry-protocol/blob/main/LICENSE), [NOTICE](https://github.com/sankarshanmukhopadhyay/agent-registry-protocol/blob/main/NOTICE), and machine-readable [artifact license policy](licensing/artifact-license-policy.json) for the deterministic classification rules.
 
 ## Assurance boundary
 
