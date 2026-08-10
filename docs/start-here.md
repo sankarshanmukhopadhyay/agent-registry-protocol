@@ -26,7 +26,7 @@ ARPA has several entry points because evaluation, pilot deployment, conformance 
 - **Profile normative:** optional profiles define additional requirements only when an implementation claims that profile.
 - **Informative:** guides, scenarios and accelerator assets explain implementation and deployment without changing normative requirements.
 
-ARPA v0.9.2 is the current implementation and interoperability release. It preserves the v0.9.0 Candidate Specification as the normative baseline and adds implementation artefacts and optional profiles, including A2A v1.0 interoperability.
+ARPA v0.9.3 is the current implementation and interoperability release. It preserves the v0.9.0 Candidate Specification as the normative baseline and adds the A2A registry publication, discovery, resolve/snapshot, compatibility and assurance profile updates.
 
 ## Complete catalogue
 

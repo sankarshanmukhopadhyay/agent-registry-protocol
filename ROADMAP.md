@@ -6,7 +6,7 @@ nav_exclude: true
 
 # Roadmap
 
-## v0.9.2 — Candidate Specification (current)
+## v0.9.3 — Current implementation release
 
 - stable normative requirements and traceability;
 - independent implementation-path evidence;
@@ -20,7 +20,7 @@ nav_exclude: true
 Promotion requires external implementation experience, independently operated interoperability tests, resolution of Candidate Specification feedback, production deployment evidence for durable events and key management, security review, and confirmation that the normative surface no longer requires material change.
 
 
-## v0.9.3 completed — A2A registry convergence
+### v0.9.3 delivered — A2A registry convergence
 
 - [x] Publication projection and exact Agent Card URI invariant
 - [x] Structured caller-visible discovery

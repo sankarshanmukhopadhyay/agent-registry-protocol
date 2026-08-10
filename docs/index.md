@@ -22,7 +22,7 @@ This catalogue provides a stable GitHub Pages entry point for the complete norma
 | **Profile normative** | Defines additional requirements applicable only when the optional profile is claimed. |
 | **Informative** | Explains architecture, implementation, deployment, evidence or examples without changing normative requirements. |
 
-ARPA v0.9.2 is the current implementation and interoperability release. The v0.9.0 Candidate Specification remains the normative protocol baseline.
+ARPA v0.9.3 is the current implementation and interoperability release. The v0.9.0 Candidate Specification remains the normative protocol baseline.
 
 ## Protocol module map
 
@@ -149,6 +149,7 @@ See [Protocol modules](protocol-modules.md) for the dependency table, profile ma
 - [Code of Conduct](../CODE_OF_CONDUCT.md)
 - [AI usage](../AI_USAGE.md)
 - [Changelog](../CHANGELOG.md)
+- [v0.9.3 release notes](../RELEASE_NOTES_v0.9.3.md)
 - [v0.9.2 release notes](../RELEASE_NOTES_v0.9.2.md)
 - [Normative v0.9.0 release notes](../RELEASE_NOTES_v0.9.0.md)
 - [v0.9.1 implementation accelerator release notes](../RELEASE_NOTES_v0.9.1.md)

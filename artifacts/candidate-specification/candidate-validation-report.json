@@ -1,7 +1,7 @@
 {
   "report_version": "1.0",
   "release": "v0.9.0",
-  "generated_at": "2026-08-10T02:39:22.811467+00:00",
+  "generated_at": "2026-08-10T02:54:19.236426+00:00",
   "candidate_status": "Candidate Specification",
   "checks": [
     {
@@ -99,7 +99,7 @@
       "name": "networked-metadata-discovery",
       "passed": true,
       "evidence": {
-        "endpoint": "127.0.0.1:37605",
+        "endpoint": "127.0.0.1:35933",
         "metadata_digest": "sha256:b9e13f761ce356c756519f4492cf50233155443c18a1dcc6661960c9ba5449a5"
       }
     },

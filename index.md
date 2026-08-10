@@ -25,6 +25,7 @@ Use [Start Here](docs/start-here.md) to choose between architecture review, loca
 - [Review the protocol modules](docs/protocol-modules.md)
 - [Understand the reference implementation architecture](docs/reference-implementation-architecture.md)
 - [Review conformance and assurance](docs/conformance-guide.md)
+- [Read the v0.9.3 implementation release notes](RELEASE_NOTES_v0.9.3.md)
 - [Read the v0.9.2 implementation release notes](RELEASE_NOTES_v0.9.2.md)
 - [Read the normative v0.9.0 Candidate Specification release notes](RELEASE_NOTES_v0.9.0.md)
 
