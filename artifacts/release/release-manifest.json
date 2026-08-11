@@ -1,133 +1,134 @@
 {
-  "release": "v0.9.3",
-  "release_date": "2026-08-10",
+  "release": "v0.9.4",
+  "release_date": "2026-08-11",
   "authoritative_specification": "spec/agent-registry-protocol-v0.9.0.md",
-  "implementation_release": "0.9.3",
-  "profile_release": "ARPA A2A v1.0 registry-aligned revision",
-  "release_title": "A2A Registry Convergence & Publication Semantics",
+  "implementation_release": "0.9.4",
+  "profile_release": "ARPA historical authority resolution and governance alignment",
+  "release_title": "Historical Authority Resolution and Governance Alignment",
   "artifacts": [
     {
+      "path": "PROJECT-STATUS.yaml",
+      "sha256": "2495f320da21e397eeb796cb8d8c10a959592222185d941d8efd82e6cca3a119"
+    },
+    {
       "path": "spec/agent-registry-protocol-v0.9.0.md",
-      "sha256": "5de213950e0ab5b6be16c407a4a83ed40beeeeb5ff2950aa2454b8f4ac36e5d8"
+      "sha256": "9e03322b7b0ed9143d7ce9f35c911a084ac49cda8e2a6ff2515f1276773319b1"
     },
     {
-      "path": "spec/profiles/arpa-a2a-v1.0-interoperability-profile.md",
-      "sha256": "bba13e358cf49a9b0c78fb6c58b536e1c446fe8f7703b21418bca9a264c0c2fa"
+      "path": "docs/historical-authority-resolution.md",
+      "sha256": "4110362986dc8f3bbc19acdbfe28e8e6bced5f0800f6e1d77d0f400810410ca4"
     },
     {
-      "path": "docs/a2a-registry-integration-guide.md",
-      "sha256": "f8f7423c0f56cdf4e90a5dc63573d6e6f68d31a8cdd4be9ecdca55d4e14655c3"
+      "path": "docs/architecture/trqp-arpa-interoperability.md",
+      "sha256": "6ccdd62b2fdde37d61e81f0e15d8ab3c888c042266c08fd114e724e0acabd48a"
     },
     {
-      "path": "docs/agent-card-integration-guide.md",
-      "sha256": "9b23047160eded06a380c504bc49885144a016d3294102596b912f8864c5ff7e"
+      "path": "schemas/historical-resolution.schema.json",
+      "sha256": "5cdb26433ccac05ff60df9ce7c4b3008fdf5b281bc40dc05237cc519d4493145"
     },
     {
-      "path": "mappings/a2a-v1.0-arpa-mapping.yaml",
-      "sha256": "02b1f01edd76a2a5360d2dac3e3e46ea92ef8c8da101cd9f07a151abf72603f1"
+      "path": "schemas/project-status.schema.json",
+      "sha256": "17ed8480957f540744980a126d8bf0a64649aafb24820f3e4c43d6c8a157aff1"
     },
     {
-      "path": "schemas/a2a-publication-projection.schema.json",
-      "sha256": "a22d77065297386fd5bed75256fbb680e473fbc30a89cf0a0f9b58d1cd77928a"
+      "path": "registries/reconstruction-statuses.json",
+      "sha256": "b6aa8262635d38d027ba58ad80b275bc6cfc5e5e6859560ae3f0c87f9ee4acf9"
     },
     {
-      "path": "schemas/a2a-card-compatibility-result.schema.json",
-      "sha256": "7837fe8c03628384f8ccbe893e8647b04b6d37c2ce29ea932bf386831819c195"
-    },
-    {
-      "path": "schemas/agent-description-reference.schema.json",
-      "sha256": "13da5af8e8238b9fde985cfd6becfeeadae7d1cd438ce1d1b24e3ac641588dd1"
-    },
-    {
-      "path": "openapi/arpa-openapi.yaml",
-      "sha256": "76b5a55142cb523ed5cb720210dca922bb7de84664420ad22dfbd1a3bc960c76"
-    },
-    {
-      "path": "reference/app.py",
-      "sha256": "401a256c1c3cef45f5baa36050026bebca5db8135d23dd079effad93c35d8c16"
-    },
-    {
-      "path": "reference/storage.py",
-      "sha256": "910bb247940a2ea486d60be79b409560b863bf13226dd8ce63df0bdbb6f9c120"
-    },
-    {
-      "path": "scripts/validate_a2a_interoperability.py",
-      "sha256": "0e19c0828da2d883a2a70c5c3246d5755cf5c7bd0918bb75f343bc0b5f790c4f"
-    },
-    {
-      "path": "conformance/test-vectors/a2a-v1.0/manifest.json",
-      "sha256": "d28bceaf71bd7873695b7517eac51d5f27a4fd3d9236a654aeb7690b5256e70b"
-    },
-    {
-      "path": "artifacts/interoperability/a2a-registry-report.json",
-      "sha256": "d7b2b1cc0e80e869362f59bba62ee087664c24fbd127c058a40d44257c78c0c0"
-    },
-    {
-      "path": "artifacts/interoperability/a2a-registry-evidence-bundle.json",
-      "sha256": "bf18fc7092ba9d66f24c467b6ba871512c999ae9fec06fc7ee00e9e2f440ceeb"
+      "path": "registries/historical-effect-codes.json",
+      "sha256": "b8fb58fefc99019ea4c99bb9c55ccf788b7c35e746ac9053e44b6e96f54e6378"
     },
     {
       "path": "registries/error-codes.json",
-      "sha256": "058a85ef78c4b009fdae0c52d93df8f853f185457823e7a51d7de0857614defe"
+      "sha256": "d45d4f7d443f2bc2ad40c469e33248623829de0b8b38ded854bee721ff83588a"
     },
     {
-      "path": "RELEASE_NOTES_v0.9.3.md",
-      "sha256": "f394de2bbb5f4b9b2b98ebc79f2b7fc8099d49317b4477b9cff38d45f0c05a72"
+      "path": "registries/reason-codes.json",
+      "sha256": "f9cf34002d68da0f6d0836586d1c13504556b11b5cea94fd243df93b21d74303"
+    },
+    {
+      "path": "openapi/arpa-openapi.yaml",
+      "sha256": "3f77ebfc90b87f237e6cdc3bd0fdd395c15cbc730bb55d9cc16fe057055a432a"
+    },
+    {
+      "path": "reference/app.py",
+      "sha256": "af798f2f361c466abcc1bfdb2f6028f71d6abce15be76ea29fe6de395e41d4d7"
+    },
+    {
+      "path": "scripts/validate_historical_resolution.py",
+      "sha256": "da63932e98274de1875b274dbaf673ab3327948265f9d5d666f900d3f26dcb3a"
+    },
+    {
+      "path": "scripts/validate_repository.py",
+      "sha256": "227802ee3290455ca9bad319528c4249fe07a3779c69c780bb4d9e09dfda904f"
+    },
+    {
+      "path": "scripts/validate_candidate.py",
+      "sha256": "b0985821bede034d3c436fcc063490ef48c7ffc7a36d3b994a3b82e583129443"
+    },
+    {
+      "path": "conformance/test-vectors/historical/manifest.json",
+      "sha256": "cfb2665166fb01f6264b9e280b89e17043556ae065930b9c45d1956d7cad4694"
+    },
+    {
+      "path": "artifacts/historical-resolution/evidence-bundle.json",
+      "sha256": "2a57692b5931e0ae9385592ddee2c85502c1d143119a8fba7531b25c107b3a9d"
+    },
+    {
+      "path": "RELEASE_NOTES_v0.9.4.md",
+      "sha256": "970d64a1ef6e6fd661e58eac67abd71d2355ce1e9b84efb27585128c6ff4ffad"
     },
     {
       "path": "README.md",
-      "sha256": "b1435f9fdd623d89a38007c8f385a1e18bdc64f34a4ebfc8797cf6e08f28b4b5"
+      "sha256": "c33727aa3c9b09ca694cecd231c35a0ba23a3fc5d89f9f1199f76fedb9c7d1b7"
     },
     {
       "path": "CHANGELOG.md",
-      "sha256": "fbc8f134199bd6f7f62192d4084193cbdf64a02694b47a78590d7988b1c5e3f9"
+      "sha256": "33d5567219b50dbfd5154f450530ffadf72570853f5c48b3991e17c9783c3ffa"
     },
     {
       "path": "ROADMAP.md",
-      "sha256": "eaebd748cda48c21961b12998fc35581901b583d95f8299a17982d27c6221ea8"
+      "sha256": "a0cf0b7061d3844f75b044589706f6917fb87e69144332b68959f68e7cae1c8c"
     },
     {
-      "path": "VALIDATION_SUMMARY.md",
-      "sha256": "ebf014c182ca5c77d4ba829475d531496674484a46612a7579d766fd694f0c7e"
+      "path": "GOVERNANCE.md",
+      "sha256": "b0128ccbb1df7456816f19fd9484c44928b9a0c56d2d9be27e31dd40952470cd"
+    },
+    {
+      "path": "PORTFOLIO_STATUS.md",
+      "sha256": "11063ae281e1ac494a36e7f0592a1eb6d84b4ebcd71c9d0277eab6c0d1ff4e7e"
     },
     {
       "path": "docs/start-here.md",
-      "sha256": "c092cf4e2e60ec5a354f0d3d3634f20422e62fc841abbfcb4acf53ecce7b142d"
+      "sha256": "4b3426eb89d6460d1c07429f62ca3c793ae6c24a6006714b9e271cb9f4e32396"
     },
     {
       "path": "docs/index.md",
-      "sha256": "e4e9641ee9ccf2721be903631be4e3fba019b9a5b71bf0c01ac783dc22c96342"
-    },
-    {
-      "path": "docs/interoperability.md",
-      "sha256": "4127722bde7dceeb9022c6006fcbe21bc00e551e6b601f5974338da1c31d7f69"
-    },
-    {
-      "path": "docs/repository-positioning.md",
-      "sha256": "96b7dfe4da2685af54077669b83366cb2055949e6e2ba24aa3de877be22c2555"
+      "sha256": "de06874de756294e7556f209c681c6ace535983fac746c9dab27a8f3b2688112"
     },
     {
       "path": "docs/publication-map.yml",
-      "sha256": "4a207b29d84a673caf3d329059012a95f813e1c4ba4f2a08227ee8082a84ebb4"
+      "sha256": "b15071e4092d4e3fe9b2ff491d6f0b0018fdc5455204102c365bf77828783d29"
     },
     {
       "path": "CITATION.cff",
-      "sha256": "d9306acd2db3cd626ea3536284ac5929692887c8075a779dacfeaed6b2b95b33"
+      "sha256": "cff655c18a8e34d59889772a8b95478f2fc961e0675e39a629e1b603a5937943"
     },
     {
       "path": "Makefile",
-      "sha256": "bb381354c68ddc30b7787255e6fae4d21e3b09695247c1e388f00aaf6e2dbd40"
+      "sha256": "14a775bfb0c73d4ea03c3c535b4e85902294841401a8c01d13abaa66247f195d"
     }
   ],
   "assurance_boundary": [
-    "Normative protocol baseline remains v0.9.0 Candidate Specification",
-    "A2A publication and discovery do not imply authority or permission to invoke",
-    "A2A support is optional for ARPA-Core conformance",
+    "Normative protocol baseline remains the v0.9.0 Candidate Specification surface",
+    "Historical state and relying-party acceptance are separate decisions",
+    "ARPA does not acquire TRQP, A2A, legal-recognition, or certification authority",
     "Repository validation is not certification or production deployment assurance"
   ],
   "federation_posture": "topology-neutral",
   "evidence": [
-    "artifacts/interoperability/a2a-registry-report.json",
-    "artifacts/interoperability/a2a-registry-evidence-bundle.json"
+    "artifacts/candidate-specification/evidence-bundle.json",
+    "artifacts/interoperability/evidence-bundle.json",
+    "artifacts/historical-resolution/evidence-bundle.json"
   ]
 }

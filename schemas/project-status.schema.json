@@ -1,0 +1,146 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sankarshanmukhopadhyay.github.io/agent-registry-protocol/schemas/project-status.schema.json",
+  "title": "ARPA Portfolio Member Project Status Compatibility Schema",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "project",
+    "authority",
+    "evidence"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "project": {
+      "type": "object",
+      "required": [
+        "name",
+        "maturity",
+        "lifecycle",
+        "operational_status",
+        "specification_status",
+        "intended_use"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "maturity": {
+          "enum": [
+            "exploratory",
+            "working-draft",
+            "implementation-draft",
+            "candidate",
+            "pilot-ready",
+            "stable",
+            "maintenance",
+            "historical"
+          ]
+        },
+        "lifecycle": {
+          "enum": [
+            "active",
+            "maintenance",
+            "superseded",
+            "archived"
+          ]
+        },
+        "operational_status": {
+          "enum": [
+            "active-development",
+            "active-validation",
+            "pilot-use",
+            "stable-maintenance",
+            "upstream-tracking",
+            "dormant",
+            "superseded"
+          ]
+        },
+        "specification_status": {
+          "enum": [
+            "not-applicable",
+            "working-draft",
+            "community-draft",
+            "candidate-specification",
+            "stable-specification"
+          ]
+        },
+        "intended_use": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
+        },
+        "not_asserted": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "authority": {
+      "type": "object",
+      "required": [
+        "normative_scope"
+      ],
+      "properties": {
+        "normative_scope": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "does_not_own": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "delegation": {
+          "type": "string"
+        },
+        "revocation_or_supersession": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "evidence": {
+      "type": "object",
+      "required": [
+        "validation_commands"
+      ],
+      "properties": {
+        "validation_commands": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
+        },
+        "evidence_outputs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "known_limitations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true,
+  "description": "Compatibility snapshot of the portfolio PROJECT-STATUS.yaml contract used to validate this repository. Upstream authority remains with the sankarshanmukhopadhyay portfolio governance repository.",
+  "x-upstream-schema": "https://sankarshanmukhopadhyay.github.io/sankarshanmukhopadhyay/schemas/project-status.schema.json"
+}

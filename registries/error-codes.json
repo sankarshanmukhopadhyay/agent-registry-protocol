@@ -1,6 +1,6 @@
 {
   "registry": "error-codes",
-  "version": "0.9.3",
+  "version": "0.9.4",
   "entries": [
     {
       "id": "ARPA-ID-NOT-FOUND",
@@ -88,6 +88,18 @@
     },
     {
       "id": "ARPA-A2A-SNAPSHOT-MISSING",
+      "status": "active"
+    },
+    {
+      "id": "ARPA-HISTORICAL-EVIDENCE-UNAVAILABLE",
+      "status": "active"
+    },
+    {
+      "id": "ARPA-HISTORICAL-EVIDENCE-CONFLICT",
+      "status": "active"
+    },
+    {
+      "id": "ARPA-HISTORICAL-INTEGRITY-FAILURE",
       "status": "active"
     }
   ]

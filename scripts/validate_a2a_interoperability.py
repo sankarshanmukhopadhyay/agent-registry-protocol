@@ -77,9 +77,9 @@ for item in manifest['vectors']:
     else: errors.append(f"{item['id']}: expected {item['expected']} {item.get('error')}, got {decision} {error}")
 
 outdir=ROOT/'artifacts/interoperability'; outdir.mkdir(parents=True,exist_ok=True)
-report={'profile':mapping['profile'],'implementation_release':'0.9.3','generated_at':datetime.now(timezone.utc).isoformat().replace('+00:00','Z'),'passed':passed,'total':len(manifest['vectors']),'results':results}
+report={'profile':mapping['profile'],'implementation_release':'0.9.4','generated_at':datetime.now(timezone.utc).isoformat().replace('+00:00','Z'),'passed':passed,'total':len(manifest['vectors']),'results':results}
 (outdir/'a2a-registry-report.json').write_text(json.dumps(report,indent=2)+"\n")
-bundle={'type':'arpa-a2a-registry-evidence-bundle','implementation_release':'0.9.3','report':'artifacts/interoperability/a2a-registry-report.json','mapping':'mappings/a2a-v1.0-arpa-mapping.yaml','publication_schema':'schemas/a2a-publication-projection.schema.json','compatibility_schema':'schemas/a2a-card-compatibility-result.schema.json','vector_manifest':'conformance/test-vectors/a2a-v1.0/manifest.json','invariants':['exact-source-uri','caller-filtered-visibility','immutable-snapshot','discovery-not-authority','arpa-state-precedence']}
+bundle={'type':'arpa-a2a-registry-evidence-bundle','implementation_release':'0.9.4','report':'artifacts/interoperability/a2a-registry-report.json','mapping':'mappings/a2a-v1.0-arpa-mapping.yaml','publication_schema':'schemas/a2a-publication-projection.schema.json','compatibility_schema':'schemas/a2a-card-compatibility-result.schema.json','vector_manifest':'conformance/test-vectors/a2a-v1.0/manifest.json','invariants':['exact-source-uri','caller-filtered-visibility','immutable-snapshot','discovery-not-authority','arpa-state-precedence']}
 (outdir/'a2a-registry-evidence-bundle.json').write_text(json.dumps(bundle,indent=2)+"\n")
 
 print(f"validate_a2a_interoperability.py: {passed}/{len(manifest['vectors'])} OK")

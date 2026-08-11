@@ -1,0 +1,31 @@
+{
+  "registry": "historical-effect-codes",
+  "version": "0.9.4",
+  "entries": [
+    {
+      "id": "none",
+      "status": "active",
+      "description": "The later event does not alter the resolved historical state."
+    },
+    {
+      "id": "prospective",
+      "status": "active",
+      "description": "The event affects state from its effective time forward only."
+    },
+    {
+      "id": "retroactive",
+      "status": "active",
+      "description": "Governance explicitly declares an effect on state before the event effective time."
+    },
+    {
+      "id": "governance_defined",
+      "status": "active",
+      "description": "Historical effect depends on an identified governance rule that must be evaluated."
+    },
+    {
+      "id": "indeterminate",
+      "status": "active",
+      "description": "Historical effect cannot be determined from available evidence and governance rules."
+    }
+  ]
+}

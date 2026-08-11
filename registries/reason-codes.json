@@ -1,6 +1,6 @@
 {
   "registry": "reason-codes",
-  "version": "0.5.0",
+  "version": "0.9.4",
   "entries": [
     {
       "id": "identifier_never_issued",
@@ -48,6 +48,18 @@
     },
     {
       "id": "recognition_withdrawn",
+      "status": "active"
+    },
+    {
+      "id": "ARPA-HISTORICAL-CURRENT-STATE-DIFFERS",
+      "status": "active"
+    },
+    {
+      "id": "ARPA-HISTORICAL-RETROACTIVE-EFFECT",
+      "status": "active"
+    },
+    {
+      "id": "ARPA-HISTORICAL-RETENTION-BOUNDARY",
       "status": "active"
     }
   ]

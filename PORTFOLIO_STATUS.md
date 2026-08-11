@@ -6,15 +6,23 @@ nav_exclude: true
 
 # Portfolio Status
 
-| Attribute | Value |
-|---|---|
-| Portfolio tier | Flagship candidate |
-| Lifecycle | Active |
-| Stability | Interoperability draft |
-| Current release | v0.5.0 |
-| Primary artifact | Protocol specification, schemas, conformance assets, and reference implementation |
-| Validation | `make release-check` |
-| Evidence output | `artifacts/interoperability/evidence-bundle.json` |
-| Governance authority | Defined in `GOVERNANCE.md` |
+The portfolio repository owns inclusion and strategic tier. This repository owns the project status dimensions declared in [`PROJECT-STATUS.yaml`](PROJECT-STATUS.yaml).
 
-Promotion to a stable flagship requires external reproduction, at least two independent implementation reports, resolution of high-severity findings, and evidence that profile-specific interoperability can be reproduced outside the repository fixtures.
+| Attribute | Value | Authority |
+|---|---|---|
+| Portfolio disposition | Included | Portfolio repository |
+| Portfolio tier | Flagship | Portfolio repository |
+| Maturity | Pilot ready | `PROJECT-STATUS.yaml` |
+| Lifecycle | Active | `PROJECT-STATUS.yaml` |
+| Operational status | Active validation | `PROJECT-STATUS.yaml` |
+| Specification status | Community Draft | `PROJECT-STATUS.yaml` |
+| Current implementation release | v0.9.4 | Repository release history |
+| Normative specification surface | v0.9.0 Candidate Specification document | Repository specification |
+| Validation | `make release-check` and `make pages-check` | `PROJECT-STATUS.yaml` |
+| Candidate evidence | `artifacts/candidate-specification/evidence-bundle.json` | Repository validation |
+| Interoperability evidence | `artifacts/interoperability/evidence-bundle.json` | Repository validation |
+| Historical-resolution evidence | `artifacts/historical-resolution/evidence-bundle.json` | Repository validation |
+
+ARPA's machine-readable declaration intentionally does not assert formal standards status, certification, independent assurance, legal recognition, or production security approval.
+
+Promotion beyond the current maturity requires external reproduction, independent implementation evidence, resolution of high-severity findings, production experience for durable events and key management, and evidence that the normative surface no longer requires material change.

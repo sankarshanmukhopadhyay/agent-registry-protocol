@@ -188,3 +188,9 @@ publication_sources:
   mode: rendered-page
 - path: docs/a2a-registry-integration-guide.md
   mode: rendered-page
+- path: RELEASE_NOTES_v0.9.4.md
+  mode: rendered-page
+- path: docs/historical-authority-resolution.md
+  mode: rendered-page
+- path: examples/scenarios/historical-authority-resolution.md
+  mode: rendered-page

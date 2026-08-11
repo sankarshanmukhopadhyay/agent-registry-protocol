@@ -6,7 +6,7 @@ nav_exclude: true
 
 # Agent Registry Protocol
 
-[![Specification status](https://img.shields.io/badge/specification-v0.9.3%20A2A--registry-blue)](https://sankarshanmukhopadhyay.github.io/agent-registry-protocol/spec/agent-registry-protocol-v0.9.0.html)
+[![Specification status](https://img.shields.io/badge/specification-v0.9.4%20historical--resolution-blue)](https://sankarshanmukhopadhyay.github.io/agent-registry-protocol/spec/agent-registry-protocol-v0.9.0.html)
 [![Validation](https://github.com/sankarshanmukhopadhyay/agent-registry-protocol/actions/workflows/validate.yml/badge.svg)](https://github.com/sankarshanmukhopadhyay/agent-registry-protocol/actions/workflows/validate.yml)
 [![License: CC BY 4.0](https://img.shields.io/badge/spec-CC%20BY%204.0-lightgrey.svg)](https://github.com/sankarshanmukhopadhyay/agent-registry-protocol/blob/main/LICENSE-CONTENT)
 [![Code: Apache-2.0](https://img.shields.io/badge/code-Apache--2.0-lightgrey.svg)](https://github.com/sankarshanmukhopadhyay/agent-registry-protocol/blob/main/LICENSE-CODE)
@@ -20,15 +20,23 @@ nav_exclude: true
 | Attribute | Value |
 |---|---|
 | Portfolio tier | Flagship |
+| Maturity | Pilot ready |
 | Lifecycle | Active |
-| Stability | v0.9.3 A2A Registry Convergence over v0.9.0 Candidate Specification |
+| Operational status | Active validation |
+| Specification status | Community Draft |
+| Implementation release | v0.9.4 |
+| Normative baseline | v0.9.0 Candidate Specification surface |
 | Primary artifacts | Specification, schemas, API/event contracts, reference implementations, conformance and evidence |
 | Release gate | `make release-check` |
 | Candidate evidence | `artifacts/candidate-specification/evidence-bundle.json` |
-| Authority | Community draft governed by `GOVERNANCE.md` |
+| Authority | Member-owned status and scope in `PROJECT-STATUS.yaml`; process in `GOVERNANCE.md` |
 
-## What v0.9.3 delivers
+## What v0.9.4 delivers
 
+- deterministic historical authority resolution separating requested-time state from current state;
+- explicit reconstruction quality, selected-record provenance, later material events, historical-effect and retention semantics;
+- fifteen release-gated historical-resolution vectors with machine-readable evidence;
+- portfolio-aligned `PROJECT-STATUS.yaml` with executable status/authority validation;
 - A2A registry publication semantics separating portable Agent Cards, publication projections and authorization overlays;
 - structured caller-visible discovery, exact Agent Card URI preservation and immutable snapshot/reference semantics;
 - Agent Card compatibility classification and twelve additional registry-assurance vectors;
@@ -51,10 +59,11 @@ nav_exclude: true
 4. [Documentation home](docs/index.md)
 5. [Authoritative v0.9.0 Candidate Specification](https://sankarshanmukhopadhyay.github.io/agent-registry-protocol/spec/agent-registry-protocol-v0.9.0.html)
 6. [Candidate implementation guide](docs/candidate-specification-guide.md)
-7. [ARPA–TRQP interoperability architecture](docs/architecture/trqp-arpa-interoperability.md)
-8. [Migration from v0.5.0](docs/migration-v0.5.0-to-v0.9.0.md)
-9. [A2A Registry Integration Guide](docs/a2a-registry-integration-guide.md)
-10. [Known limitations](KNOWN_LIMITATIONS.md)
+7. [Historical Authority Resolution](docs/historical-authority-resolution.md)
+8. [ARPA–TRQP interoperability architecture](docs/architecture/trqp-arpa-interoperability.md)
+9. [Migration from v0.5.0](docs/migration-v0.5.0-to-v0.9.0.md)
+10. [A2A Registry Integration Guide](docs/a2a-registry-integration-guide.md)
+11. [Known limitations](KNOWN_LIMITATIONS.md)
 
 ## Validate and produce evidence
 
@@ -63,7 +72,7 @@ make setup
 make release-check
 ```
 
-The gate validates the complete schema and conformance surface, repository controls, service tests, v0.5.0 interoperability behavior, v0.9.0 candidate requirements, ARPA–TRQP mapping and vectors, independent adapter equivalence, loopback network discovery, durable event semantics and implementation reports.
+The gate validates the complete schema and conformance surface, repository controls, service tests, v0.5.0 interoperability behavior, v0.9.0 candidate requirements, ARPA–TRQP mapping and vectors, historical-resolution vectors and evidence, independent adapter equivalence, loopback network discovery, durable event semantics and implementation reports.
 
 ## ARPA and TRQP
 

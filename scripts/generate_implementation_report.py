@@ -25,7 +25,7 @@ report = {
     'report_version': '1.0.0',
     'generated_at': datetime.datetime.now(datetime.timezone.utc).isoformat(),
     'implementation': 'ARPA reference service',
-    'implementation_version': '0.9.3',
+    'implementation_version': '0.9.4',
     'arpa_version': '0.9.0',
     'modules': ['ARPA-Core', 'ARPA-Relations', 'ARPA-Authority', 'ARPA-Evidence'],
     'profile_claims': ['A', 'C-demonstration-only'],

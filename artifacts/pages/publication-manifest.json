@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "source_count": 94,
+  "source_count": 97,
   "entries": [
     {
       "source": "AI_USAGE.md",
@@ -565,6 +565,24 @@
       "expected_output": "_site/docs/a2a-registry-integration-guide.html",
       "mode": "rendered-page",
       "title": "A2A Registry Integration Guide"
+    },
+    {
+      "source": "RELEASE_NOTES_v0.9.4.md",
+      "expected_output": "_site/RELEASE_NOTES_v0.9.4.html",
+      "mode": "rendered-page",
+      "title": "Release Notes v0.9.4"
+    },
+    {
+      "source": "docs/historical-authority-resolution.md",
+      "expected_output": "_site/docs/historical-authority-resolution.html",
+      "mode": "rendered-page",
+      "title": "Historical Authority Resolution"
+    },
+    {
+      "source": "examples/scenarios/historical-authority-resolution.md",
+      "expected_output": "_site/examples/scenarios/historical-authority-resolution.html",
+      "mode": "rendered-page",
+      "title": "Historical authority resolution"
     }
   ]
 }

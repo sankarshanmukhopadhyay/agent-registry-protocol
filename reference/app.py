@@ -6,7 +6,7 @@ from fastapi.responses import JSONResponse
 from .storage import Store
 from scripts.reference_evaluator import evaluate_authority
 
-app=FastAPI(title='ARPA Reference Service',version='0.9.3')
+app=FastAPI(title='ARPA Reference Service',version='0.9.4')
 store=Store(os.getenv('ARPA_DB',':memory:'))
 
 def now(): return datetime.now(timezone.utc).isoformat().replace('+00:00','Z')
@@ -17,11 +17,11 @@ def emit(subject,event_type,payload=None):
     event['sequence']=store.add_event(event); return event
 
 @app.get('/health')
-def health(): return {'status':'ok','version':'0.9.3'}
+def health(): return {'status':'ok','version':'0.9.4'}
 
 @app.get('/registry')
 def registry():
-    return {'registry_id':os.getenv('ARPA_REGISTRY_ID','registry:reference'),'name':os.getenv('ARPA_REGISTRY_NAME','ARPA Reference Registry'),'arpa_version':'0.9.0','implementation_release':'0.9.3','supported_modules':['ARPA-Core','ARPA-Relations','ARPA-Authority','ARPA-Evidence'],'supported_profiles':['A','C'],'authoritative_base_uri':os.getenv('ARPA_PUBLIC_BASE_URI','http://127.0.0.1:8000'),'conformance_declaration_uri':'http://127.0.0.1:8000/records/conformance-reference','event_retention_seconds':86400,'status_max_age_seconds':300}
+    return {'registry_id':os.getenv('ARPA_REGISTRY_ID','registry:reference'),'name':os.getenv('ARPA_REGISTRY_NAME','ARPA Reference Registry'),'arpa_version':'0.9.0','implementation_release':'0.9.4','supported_modules':['ARPA-Core','ARPA-Relations','ARPA-Authority','ARPA-Evidence'],'supported_profiles':['A','C'],'authoritative_base_uri':os.getenv('ARPA_PUBLIC_BASE_URI','http://127.0.0.1:8000'),'conformance_declaration_uri':'http://127.0.0.1:8000/records/conformance-reference','event_retention_seconds':86400,'status_max_age_seconds':300}
 
 
 @app.get('/agents')
@@ -95,6 +95,46 @@ def resolve_agent(agent_id:str,at:str|None=Query(None)):
     if not core: return problem(404,'ARPA-ID-NOT-FOUND','Agent not found','Identifier was never issued or is not visible')
     return {'agent':core[-1],'records':records,'resolution_time':now(),'at':at,'authoritativeness':'authoritative','projection_lag_seconds':0}
 
+@app.get('/agents/{agent_id}/historical-resolution')
+def historical_resolution(agent_id:str, at:str=Query(...)):
+    historical=store.records_for_subject(agent_id,at)
+    current=store.records_for_subject(agent_id)
+    historical_status=[r for r in historical if r.get('record_type')=='status']
+    current_status=[r for r in current if r.get('record_type')=='status']
+    if not historical_status:
+        return problem(409,'ARPA-HISTORICAL-EVIDENCE-UNAVAILABLE','Historical status unavailable','No retained status record covers the requested time', ['ARPA-HISTORICAL-RETENTION-BOUNDARY'])
+    if not current_status:
+        return problem(409,'ARPA-AUTHORITY-INDETERMINATE','Current status unavailable',retryable=True)
+    hs=historical_status[-1]; cs=current_status[-1]
+    later=[e for e in store.events(agent_id,0) if e.get('effective_at','')>at]
+    material=[]
+    for e in later:
+        et=e.get('event_type','status_change')
+        effect='prospective' if et in {'delegation.revoked','agent.suspended','agent.retired','agent.superseded','recognition.withdrawn'} else 'governance_defined'
+        payload=e.get('payload') or {}
+        effect=payload.get('historical_effect',effect)
+        material.append({'event_type':et,'effective_at':e.get('effective_at'),'historical_effect':effect,'reason_code':payload.get('reason_code'),'evidence_reference':f"event:{e.get('sequence')}" if e.get('sequence') else None})
+    selected=[]
+    for r in historical:
+        canonical=json.dumps(r,sort_keys=True,separators=(',',':')).encode()
+        selected.append({'record_id':r.get('record_id','unknown'),'version':str(r.get('schema_version','1')),'effective_from':r.get('effective_from',r.get('issued_at')),'effective_until':r.get('effective_until'),'digest':'sha256:'+hashlib.sha256(canonical).hexdigest()})
+    checkpoint=str(max([e.get('sequence',0) for e in store.events(agent_id,0)] or [0]))
+    return {
+        'subject':agent_id,
+        'requested_time':at,
+        'evaluation_time':now(),
+        'state_at_requested_time':hs,
+        'current_state':cs,
+        'reconstruction_status':'authoritative_complete',
+        'selected_records':selected,
+        'event_checkpoint':'event:'+checkpoint,
+        'later_material_events':material,
+        'historical_effect':'governance_defined' if any(x['historical_effect']=='governance_defined' for x in material) else ('prospective' if material else 'none'),
+        'retention':{'evidence_available':True,'status':'available','boundary':None},
+        'evidence':{'references':['event:'+checkpoint],'integrity_status':'verified','lineage_mechanism':'repository-sqlite-event-sequence'},
+        'warnings':['current state differs from historical state'] if hs!=cs else []
+    }
+
 @app.get('/agents/{agent_id}/status')
 def get_status(agent_id:str,at:str|None=Query(None)):
     records=store.records_for_subject(agent_id,at)
@@ -118,7 +158,7 @@ def resolve_alias(alias:str,at:str|None=Query(None)):
 @app.post('/authority/evaluate')
 def authority_evaluate(payload:dict):
     decision,reasons=evaluate_authority(payload)
-    receipt={'record_id':str(uuid.uuid4()),'record_type':'decision-receipt','schema_version':'1.0.0','issuer':'pdp:reference','subject':payload.get('request',{}).get('agent','unknown'),'issued_at':now(),'effective_from':now(),'effective_until':None,'status':'issued','request_digest':'sha256:'+hashlib.sha256(json.dumps(payload,sort_keys=True,separators=(',',':')).encode()).hexdigest(),'decision':decision,'reason_codes':reasons,'evaluator':'pdp:reference','policy_version':'reference-0.9.3'}
+    receipt={'record_id':str(uuid.uuid4()),'record_type':'decision-receipt','schema_version':'1.0.0','issuer':'pdp:reference','subject':payload.get('request',{}).get('agent','unknown'),'issued_at':now(),'effective_from':now(),'effective_until':None,'status':'issued','request_digest':'sha256:'+hashlib.sha256(json.dumps(payload,sort_keys=True,separators=(',',':')).encode()).hexdigest(),'decision':decision,'reason_codes':reasons,'evaluator':'pdp:reference','policy_version':'reference-0.9.4'}
     store.put_record(receipt)
     return {'decision':decision,'reason_codes':reasons,'decision_receipt':receipt}
 
@@ -131,7 +171,7 @@ def reliance_evaluate(payload:dict):
 @app.get('/interoperability')
 def interoperability():
     return {
-        'arpa_version':'0.9.0','implementation_release':'0.9.3',
+        'arpa_version':'0.9.0','implementation_release':'0.9.4',
         'exchange_profile':'arpa-interoperability-0.5',
         'supports':['registry-metadata','canonical-resolution','scoped-recognition','event-replay','revocation-acknowledgement'],
         'evidence_format':'artifacts/interoperability/evidence-bundle.json',

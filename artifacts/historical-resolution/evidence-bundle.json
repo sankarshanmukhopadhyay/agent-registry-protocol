@@ -1,0 +1,98 @@
+{
+  "profile": "arpa-historical-resolution-0.1",
+  "version": "0.9.4",
+  "passed": true,
+  "vector_count": 15,
+  "results": [
+    {
+      "id": "HV-01-active-at-T-now-revoked",
+      "passed": true,
+      "reconstruction_status": "authoritative_complete",
+      "historical_effect": "prospective"
+    },
+    {
+      "id": "HV-02-suspended-at-T-now-active",
+      "passed": true,
+      "reconstruction_status": "authoritative_complete",
+      "historical_effect": "none"
+    },
+    {
+      "id": "HV-03-revoked-before-T",
+      "passed": true,
+      "reconstruction_status": "authoritative_complete",
+      "historical_effect": "prospective"
+    },
+    {
+      "id": "HV-04-revoked-after-T",
+      "passed": true,
+      "reconstruction_status": "authoritative_complete",
+      "historical_effect": "prospective"
+    },
+    {
+      "id": "HV-05-retroactive-revocation",
+      "passed": true,
+      "reconstruction_status": "authoritative_complete",
+      "historical_effect": "retroactive"
+    },
+    {
+      "id": "HV-06-compromise-after-T",
+      "passed": true,
+      "reconstruction_status": "authoritative_complete",
+      "historical_effect": "prospective"
+    },
+    {
+      "id": "HV-07-compromise-unknown-origin",
+      "passed": true,
+      "reconstruction_status": "reconstructed_partial",
+      "historical_effect": "indeterminate"
+    },
+    {
+      "id": "HV-08-superseded-record",
+      "passed": true,
+      "reconstruction_status": "reconstructed_complete",
+      "historical_effect": "prospective"
+    },
+    {
+      "id": "HV-09-missing-history",
+      "passed": true,
+      "reconstruction_status": "indeterminate",
+      "historical_effect": "indeterminate"
+    },
+    {
+      "id": "HV-10-conflicting-history",
+      "passed": true,
+      "reconstruction_status": "indeterminate",
+      "historical_effect": "indeterminate"
+    },
+    {
+      "id": "HV-11-retention-boundary",
+      "passed": true,
+      "reconstruction_status": "indeterminate",
+      "historical_effect": "indeterminate"
+    },
+    {
+      "id": "HV-12-current-state-not-substituted",
+      "passed": true,
+      "reconstruction_status": "authoritative_complete",
+      "historical_effect": "none"
+    },
+    {
+      "id": "HV-13-withdrawn-recognition-historical-valid",
+      "passed": true,
+      "reconstruction_status": "authoritative_complete",
+      "historical_effect": "prospective"
+    },
+    {
+      "id": "HV-14-withdrawn-recognition-current-invalid",
+      "passed": true,
+      "reconstruction_status": "authoritative_complete",
+      "historical_effect": "prospective"
+    },
+    {
+      "id": "HV-15-historical-evidence-integrity-failure",
+      "passed": true,
+      "reconstruction_status": "indeterminate",
+      "historical_effect": "indeterminate"
+    }
+  ]
+}

@@ -9,6 +9,7 @@ validate:
 	python3 scripts/validate_repository.py
 	python3 scripts/validate_licensing.py
 	python3 scripts/validate_candidate.py
+	python3 scripts/validate_historical_resolution.py
 	python3 scripts/validate_a2a_interoperability.py
 test:
 	python3 -m pytest -q

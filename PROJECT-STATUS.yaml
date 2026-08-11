@@ -1,0 +1,48 @@
+schema_version: "1.0"
+project:
+  name: agent-registry-protocol
+  maturity: pilot-ready
+  lifecycle: active
+  operational_status: active-validation
+  specification_status: community-draft
+  intended_use:
+    - implementation
+    - interoperability-testing
+    - pilot-evaluation
+  not_asserted:
+    - formal-standard
+    - production-certification
+    - independent-assurance
+    - production-security-approval
+authority:
+  normative_scope:
+    - agent-registry-protocol
+    - arpa-record-model
+    - arpa-lifecycle-semantics
+    - arpa-conformance-profiles
+  does_not_own:
+    - trqp
+    - a2a
+    - relying-party-policy
+    - legal-recognition
+    - certification
+  delegation: >-
+    Normative and project-status changes are approved through the maintainer-led,
+    review-driven process in GOVERNANCE.md. Controlled registry changes additionally
+    require an identified authority owner, interoperability analysis, security/privacy
+    review, migration impact assessment, and conformance vectors.
+  revocation_or_supersession: >-
+    Releases, protocol profiles, controlled identifiers, and project-status claims are
+    deprecated, superseded, or withdrawn through recorded governance changes while
+    preserving version history and evidence needed for historical resolution.
+evidence:
+  validation_commands:
+    - make release-check
+    - make pages-check
+  evidence_outputs:
+    - artifacts/candidate-specification/evidence-bundle.json
+    - artifacts/interoperability/evidence-bundle.json
+    - artifacts/historical-resolution/evidence-bundle.json
+  known_limitations:
+    - Independent external interoperability evidence remains incomplete.
+    - Repository-controlled evidence does not constitute certification or legal recognition.

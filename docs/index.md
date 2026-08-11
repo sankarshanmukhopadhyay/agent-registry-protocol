@@ -22,7 +22,7 @@ This catalogue provides a stable GitHub Pages entry point for the complete norma
 | **Profile normative** | Defines additional requirements applicable only when the optional profile is claimed. |
 | **Informative** | Explains architecture, implementation, deployment, evidence or examples without changing normative requirements. |
 
-ARPA v0.9.3 is the current implementation and interoperability release. The v0.9.0 Candidate Specification remains the normative protocol baseline.
+ARPA v0.9.4 is the current implementation, historical-resolution and interoperability release. The v0.9.0 Candidate Specification remains the normative protocol baseline.
 
 ## Protocol module map
 
@@ -115,6 +115,7 @@ See [Protocol modules](protocol-modules.md) for the dependency table, profile ma
 
 ## Interoperability and reference material
 
+- [Historical Authority Resolution](historical-authority-resolution.md)
 - [ARPA–TRQP interoperability architecture](architecture/trqp-arpa-interoperability.md)
 - [A2A v1.0 interoperability profile](../spec/profiles/arpa-a2a-v1.0-interoperability-profile.md)
 - [A2A Agent Card integration guide](agent-card-integration-guide.md)

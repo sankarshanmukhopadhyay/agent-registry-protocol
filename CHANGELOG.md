@@ -15,6 +15,23 @@ nav_exclude: true
 - Corrected `CITATION.cff` so the cited software implementation is identified as Apache-2.0 while documenting the separate CC-BY-4.0 content license.
 
 
+## [0.9.4] - 2026-08-11
+
+### Added
+- Machine-readable `PROJECT-STATUS.yaml` aligned with the portfolio member status contract.
+- Historical Authority Resolution response schema, reconstruction-status registry, and historical-effect registry.
+- Fifteen historical-resolution conformance vectors and release-gated evidence generation.
+- Historical Authority Resolution implementation and governance guide.
+
+### Changed
+- Point-in-time semantics now explicitly separate requested-time state, current state, later material events, retention status, and evidence lineage.
+- Revocation, compromise, supersession, and recognition withdrawal can declare prospective, retroactive, governance-defined, or indeterminate historical effect.
+- Repository validation now checks the portfolio status contract and historical-resolution artifacts.
+- ARPA–TRQP guidance now preserves requested-time versus evaluation-time semantics for projected historical queries.
+
+### Assurance boundary
+- Historical registry state is evidence for relying-party evaluation; it is not itself a legal or policy determination that a historical action must be accepted.
+
 ## [0.9.3] - 2026-08-10
 
 ### Added

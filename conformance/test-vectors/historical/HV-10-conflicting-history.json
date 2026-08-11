@@ -1,0 +1,65 @@
+{
+  "subject": "agentreg:example.org:agent-123",
+  "requested_time": "2026-07-15T10:00:00Z",
+  "evaluation_time": "2026-08-11T03:00:00Z",
+  "state_at_requested_time": {
+    "agent_id": "agentreg:example.org:agent-123",
+    "registration": "active",
+    "operation": "available",
+    "authority": "valid",
+    "assurance": "valid",
+    "security": "normal",
+    "effective_at": "2026-07-15T10:00:00Z",
+    "observed_at": "2026-07-15T10:00:00Z",
+    "valid_until": "2026-12-31T23:59:59Z",
+    "source": "registry.example.org"
+  },
+  "current_state": {
+    "agent_id": "agentreg:example.org:agent-123",
+    "registration": "active",
+    "operation": "available",
+    "authority": "valid",
+    "assurance": "valid",
+    "security": "normal",
+    "effective_at": "2026-07-18T09:30:00Z",
+    "observed_at": "2026-08-11T03:00:00Z",
+    "valid_until": "2026-12-31T23:59:59Z",
+    "source": "registry.example.org"
+  },
+  "reconstruction_status": "indeterminate",
+  "selected_records": [
+    {
+      "record_id": "authority-1",
+      "version": "1",
+      "effective_from": "2026-07-01T00:00:00Z",
+      "effective_until": null,
+      "digest": "sha256:example-authority-1"
+    }
+  ],
+  "event_checkpoint": "event:42",
+  "later_material_events": [
+    {
+      "event_type": "status_change",
+      "effective_at": "2026-07-18T09:30:00Z",
+      "historical_effect": "indeterminate",
+      "reason_code": null,
+      "evidence_reference": "evidence:event:42"
+    }
+  ],
+  "historical_effect": "indeterminate",
+  "retention": {
+    "evidence_available": true,
+    "status": "partial",
+    "boundary": null
+  },
+  "evidence": {
+    "references": [
+      "evidence:bundle:historical-1"
+    ],
+    "integrity_status": "partial",
+    "lineage_mechanism": "signed-event-chain"
+  },
+  "warnings": [
+    "conflicting authoritative historical evidence"
+  ]
+}

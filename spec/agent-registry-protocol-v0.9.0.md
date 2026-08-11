@@ -1672,7 +1672,7 @@ A registry MUST NOT reduce assurance to a universal boolean “trusted” field.
 
 # 20. Lifecycle and Status
 
-> **Candidate controls:** ARPA-CAND-005 and ARPA-CAND-006. Lifecycle state is time-dependent. Implementations MUST preserve effective timestamps and MUST distinguish registry publication of a state change from enforcement convergence.
+> **Candidate controls:** ARPA-CAND-005, ARPA-CAND-006, and ARPA-CAND-012. Lifecycle state is time-dependent. Implementations MUST preserve effective timestamps and MUST distinguish registry publication of a state change from enforcement convergence.
 
 ## 20.1 Registration States
 
@@ -1751,6 +1751,8 @@ Every material lifecycle transition MUST record:
 - whether appeal is available;
 - whether downstream notifications were emitted; and
 - whether enforcement acknowledgement is required.
+
+For a transition that may affect interpretation of earlier state, the event MUST classify its historical effect as one of `none`, `prospective`, `retroactive`, `governance_defined`, or `indeterminate`. A registry MUST NOT infer retroactive effect solely from a current `revoked`, `compromised`, `retired`, `superseded`, or withdrawn state. Retroactive effect requires an applicable governance rule or authoritative event declaration.
 
 ## 20.4 Transfer and Change of Control
 
@@ -1927,6 +1929,40 @@ A point-in-time response MUST disclose whether it is:
 - incomplete;
 - approximate; or
 - indeterminate.
+
+### 21.4.1 Historical Authority Resolution
+
+When `at` is earlier than the response evaluation time, the resolver MUST treat `at` as `requested_time` and MUST evaluate records according to the effective intervals, ordered events, applicable governance rules, and evidence available for that requested time.
+
+A conforming historical result MUST expose, directly or through an equivalent envelope:
+
+- `requested_time`;
+- `evaluation_time`;
+- `state_at_requested_time`;
+- `current_state`;
+- `reconstruction_status`;
+- the record identifiers, versions, effective intervals, and digests used for reconstruction;
+- an event checkpoint when available;
+- later material events relevant to interpretation;
+- `historical_effect`;
+- retention/evidence availability; and
+- evidence references and integrity status.
+
+`state_at_requested_time` and `current_state` are independent outputs. A registry MUST NOT substitute current state for historical state. When they differ, the difference MUST be visible to the caller.
+
+Later suspension, revocation, compromise, supersession, recognition withdrawal, governance correction, or integrity failure MUST be disclosed when material to interpretation of the historical result. Each such event MUST classify its historical effect using the controlled vocabulary in `registries/historical-effect-codes.json`.
+
+A later current-state transition does not, by itself, rewrite historical state. Retroactive effect MUST be grounded in an applicable governance rule or authoritative event declaration. Where that effect cannot be resolved, the historical result MUST be `indeterminate` or otherwise explicitly non-affirmative.
+
+A historical-resolution result establishes registry-resolved state and evidence. It MUST NOT be represented as a determination that a relying party is legally, contractually, fiduciary-wise, or operationally required to accept the historical action.
+
+### 21.4.2 Retention and integrity
+
+When the requested time is outside the available retention boundary, the registry MUST disclose that boundary and MUST NOT answer using current state as a substitute. Missing, conflicting, withheld, or integrity-failed evidence MUST be surfaced using a bounded reconstruction status.
+
+The records and material events used for historical reconstruction MUST have tamper-evident lineage. A profile MAY select the lineage mechanism, but the response MUST identify the evidence/integrity status and SHOULD identify the mechanism used.
+
+The machine-readable response contract is defined by `schemas/historical-resolution.schema.json`.
 
 ## 21.5 Query Response Envelope
 
@@ -2448,9 +2484,25 @@ When dimensions conflict, the most restrictive applicable status MUST govern exe
 
 ## 28.5 Point-in-Time Reconstruction
 
-A point-in-time query MUST evaluate records according to their effective intervals and the authoritative events known for the requested time.
+A point-in-time query MUST evaluate records according to their effective intervals, the authoritative event sequence, and the governance rules applicable to the requested time.
 
-The response MUST state whether reconstruction is:
+The processor MUST:
+
+1. parse and preserve the requested time separately from evaluation time;
+2. identify the authoritative subject and applicable namespace;
+3. select every record whose effective interval and scope may affect the requested state;
+4. validate record proof/integrity and issuer competence;
+5. replay or evaluate material lifecycle, relationship, authority, assurance, recognition, compromise, and supersession events through the requested time;
+6. apply applicable governance rules and precedence rules;
+7. derive `state_at_requested_time` without consulting current state as a substitute;
+8. independently resolve `current_state`;
+9. identify later material events after the requested time that can affect interpretation;
+10. classify the historical effect of those later events;
+11. record selected record versions/digests and an event checkpoint where available;
+12. evaluate retention and evidence-integrity status; and
+13. return a deterministic reconstruction classification.
+
+The response MUST classify reconstruction as one of:
 
 - `authoritative_complete`;
 - `authoritative_partial`;
@@ -2459,7 +2511,13 @@ The response MUST state whether reconstruction is:
 - `approximate`; or
 - `indeterminate`.
 
-A registry MUST NOT substitute current state for historical state without an explicit warning. Missing historical evidence MUST be surfaced rather than inferred as valid.
+A registry MUST NOT substitute current state for historical state. Missing historical evidence MUST be surfaced rather than inferred as valid. Conflicting authoritative history that cannot be resolved by a published precedence rule MUST result in `indeterminate`.
+
+Where a later event declares `retroactive` effect, the resolver MUST identify the governance basis and MUST expose the event as material to interpretation. Where later compromise has an unknown effective origin, or the governance effect cannot be determined, the historical result MUST NOT be upgraded to an unqualified affirmative state.
+
+An integrity failure in the evidence lineage MUST yield `indeterminate`, `authoritative_partial`, or `reconstructed_partial` according to the surviving evidence. It MUST NOT yield an unqualified `authoritative_complete` or `reconstructed_complete` result.
+
+Historical resolution and relying-party acceptance are separate decisions. An historical result such as active or recognized at time T is an input to relying-party policy and does not itself compel acceptance of an action performed at T.
 
 ## 28.6 Material Change Processing
 
@@ -3834,6 +3892,9 @@ conditional expired  suspended   superseded
 
 - [ ] Persistent non-reassignable agent identifiers
 - [ ] Historical resolution
+- [ ] Requested-time and current-state separation
+- [ ] Reconstruction-status classification
+- [ ] Historical evidence lineage and integrity status
 - [ ] Core record
 - [ ] Explicit operator or controller relationship
 - [ ] Lifecycle state machine

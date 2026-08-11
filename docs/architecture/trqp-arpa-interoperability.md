@@ -72,6 +72,14 @@ sequenceDiagram
 
 Recognition is explicit, scoped, non-transitive by default, and does not transfer authority. Technical federation does not imply governance recognition.
 
+## Historical/as-of projection
+
+ARPA v0.9.4 makes historical authority resolution explicit. When a TRQP-facing query carries a requested time, an ARPA projection SHOULD preserve the distinction between the requested historical time and the later evaluation time, resolve ARPA state at the requested time, and retain current-state/later-event context in ARPA evidence where the TRQP response surface cannot carry it directly.
+
+A projected affirmative historical result MUST NOT be interpreted as a claim that the subject remains authorized or recognized now. Likewise, a later revocation, compromise, supersession, or recognition withdrawal MUST NOT silently rewrite historical ARPA state unless an applicable governance rule or authoritative event declares retroactive effect.
+
+The projection adapter MUST disclose information loss where TRQP cannot carry ARPA's reconstruction status, selected record versions, later material events, retention boundary, or evidence-integrity status. ARPA and TRQP conformance remain independently declared.
+
 ## Lifecycle projection
 
 | ARPA state | Query class | Required interpretation |

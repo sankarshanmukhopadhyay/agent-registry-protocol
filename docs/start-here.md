@@ -26,13 +26,17 @@ ARPA has several entry points because evaluation, pilot deployment, conformance 
 - **Profile normative:** optional profiles define additional requirements only when an implementation claims that profile.
 - **Informative:** guides, scenarios and accelerator assets explain implementation and deployment without changing normative requirements.
 
-ARPA v0.9.3 is the current implementation and interoperability release. It preserves the v0.9.0 Candidate Specification as the normative baseline and adds the A2A registry publication, discovery, resolve/snapshot, compatibility and assurance profile updates.
+ARPA v0.9.4 is the current implementation and interoperability release. It preserves the v0.9.0 Candidate Specification as the normative baseline and adds deterministic historical authority resolution, executable project-status governance, and the A2A registry publication, discovery, resolve/snapshot, compatibility and assurance profile updates.
 
 ## Complete catalogue
 
 Use the [documentation catalogue](index.md) when you need the full specification, governance, implementation, conformance, interoperability and scenario surface.
 
 
-## v0.9.3 A2A registry convergence
+## v0.9.4 historical resolution and registry convergence
+
+See [Historical Authority Resolution](historical-authority-resolution.md) for deterministic as-of semantics, evidence lineage, retention handling, and later-event interpretation.
+
+## A2A registry convergence
 
 See the [A2A Registry Integration Guide](a2a-registry-integration-guide.md) for publication, caller-visible discovery, resolve/snapshot, compatibility and authority-boundary semantics.

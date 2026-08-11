@@ -1,0 +1,96 @@
+{
+  "profile": "arpa-historical-resolution-0.1",
+  "version": "0.9.4",
+  "vectors": [
+    {
+      "id": "HV-01-active-at-T-now-revoked",
+      "path": "HV-01-active-at-T-now-revoked.json",
+      "expected_reconstruction_status": "authoritative_complete",
+      "expected_historical_effect": "prospective"
+    },
+    {
+      "id": "HV-02-suspended-at-T-now-active",
+      "path": "HV-02-suspended-at-T-now-active.json",
+      "expected_reconstruction_status": "authoritative_complete",
+      "expected_historical_effect": "none"
+    },
+    {
+      "id": "HV-03-revoked-before-T",
+      "path": "HV-03-revoked-before-T.json",
+      "expected_reconstruction_status": "authoritative_complete",
+      "expected_historical_effect": "prospective"
+    },
+    {
+      "id": "HV-04-revoked-after-T",
+      "path": "HV-04-revoked-after-T.json",
+      "expected_reconstruction_status": "authoritative_complete",
+      "expected_historical_effect": "prospective"
+    },
+    {
+      "id": "HV-05-retroactive-revocation",
+      "path": "HV-05-retroactive-revocation.json",
+      "expected_reconstruction_status": "authoritative_complete",
+      "expected_historical_effect": "retroactive"
+    },
+    {
+      "id": "HV-06-compromise-after-T",
+      "path": "HV-06-compromise-after-T.json",
+      "expected_reconstruction_status": "authoritative_complete",
+      "expected_historical_effect": "prospective"
+    },
+    {
+      "id": "HV-07-compromise-unknown-origin",
+      "path": "HV-07-compromise-unknown-origin.json",
+      "expected_reconstruction_status": "reconstructed_partial",
+      "expected_historical_effect": "indeterminate"
+    },
+    {
+      "id": "HV-08-superseded-record",
+      "path": "HV-08-superseded-record.json",
+      "expected_reconstruction_status": "reconstructed_complete",
+      "expected_historical_effect": "prospective"
+    },
+    {
+      "id": "HV-09-missing-history",
+      "path": "HV-09-missing-history.json",
+      "expected_reconstruction_status": "indeterminate",
+      "expected_historical_effect": "indeterminate"
+    },
+    {
+      "id": "HV-10-conflicting-history",
+      "path": "HV-10-conflicting-history.json",
+      "expected_reconstruction_status": "indeterminate",
+      "expected_historical_effect": "indeterminate"
+    },
+    {
+      "id": "HV-11-retention-boundary",
+      "path": "HV-11-retention-boundary.json",
+      "expected_reconstruction_status": "indeterminate",
+      "expected_historical_effect": "indeterminate"
+    },
+    {
+      "id": "HV-12-current-state-not-substituted",
+      "path": "HV-12-current-state-not-substituted.json",
+      "expected_reconstruction_status": "authoritative_complete",
+      "expected_historical_effect": "none"
+    },
+    {
+      "id": "HV-13-withdrawn-recognition-historical-valid",
+      "path": "HV-13-withdrawn-recognition-historical-valid.json",
+      "expected_reconstruction_status": "authoritative_complete",
+      "expected_historical_effect": "prospective"
+    },
+    {
+      "id": "HV-14-withdrawn-recognition-current-invalid",
+      "path": "HV-14-withdrawn-recognition-current-invalid.json",
+      "expected_reconstruction_status": "authoritative_complete",
+      "expected_historical_effect": "prospective"
+    },
+    {
+      "id": "HV-15-historical-evidence-integrity-failure",
+      "path": "HV-15-historical-evidence-integrity-failure.json",
+      "expected_reconstruction_status": "indeterminate",
+      "expected_historical_effect": "indeterminate"
+    }
+  ]
+}

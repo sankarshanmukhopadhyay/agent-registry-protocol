@@ -2,7 +2,7 @@ from pathlib import Path
 import json, sys, yaml
 ROOT=Path(__file__).resolve().parents[1]
 errors=[]
-required=['spec/agent-registry-protocol-v0.9.0.md','docs/architecture/trqp-arpa-interoperability.md','mappings/trqp-arpa-query-projection.yaml','conformance/trqp-projection/manifest.json','independent_impl/projection.py']
+required=['spec/agent-registry-protocol-v0.9.0.md','docs/architecture/trqp-arpa-interoperability.md','mappings/trqp-arpa-query-projection.yaml','conformance/trqp-projection/manifest.json','independent_impl/projection.py','schemas/historical-resolution.schema.json','conformance/test-vectors/historical/manifest.json','docs/historical-authority-resolution.md']
 for r in required:
  if not (ROOT/r).exists(): errors.append('missing candidate artifact: '+r)
 m=yaml.safe_load((ROOT/'mappings/trqp-arpa-query-projection.yaml').read_text())
@@ -16,7 +16,9 @@ manifest=json.loads((ROOT/'conformance/trqp-projection/manifest.json').read_text
 if len(manifest['vectors'])<13: errors.append('insufficient TRQP projection vectors')
 for x in manifest['vectors']:
  if not (ROOT/'conformance/trqp-projection'/x['path']).exists(): errors.append('missing vector '+x['path'])
+historical_manifest=json.loads((ROOT/'conformance/test-vectors/historical/manifest.json').read_text())
+if len(historical_manifest.get('vectors',[])) < 15: errors.append('insufficient historical-resolution vectors')
 if errors:
  print('\n'.join(errors))
  sys.exit(1)
-print(f'validate_candidate.py: mapping complete; {len(manifest["vectors"])} projection vectors present')
+print(f'validate_candidate.py: mapping complete; {len(manifest["vectors"])} projection vectors and {len(historical_manifest["vectors"])} historical vectors present')

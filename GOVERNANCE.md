@@ -10,6 +10,14 @@ nav_exclude: true
 
 This document defines how the Agent Registry Protocol project develops from an initial community draft into an implementable and independently reviewable protocol proposal.
 
+## Repository authority and status contract
+
+`PROJECT-STATUS.yaml` is the authoritative repository-local declaration for maturity, lifecycle, operational status, specification status, intended use, normative scope, explicit non-authority boundaries, validation commands, evidence outputs, and known limitations. The portfolio repository independently owns portfolio disposition, strategic tier, and cross-repository presentation.
+
+This repository may define and approve ARPA protocol semantics, record models, lifecycle processing, controlled registries, profiles, conformance targets, and repository-produced evidence. It does **not** acquire authority over TRQP, A2A, relying-party policy, legal recognition, accreditation, certification, or other upstream/sibling standards merely by mapping to or interoperating with them.
+
+Maintainers may delegate review or change ownership within a documented issue, pull request, or governance record, but delegation is bounded by the delegated change scope and remains revocable by the repository governance process. Releases, status claims, protocol profiles, and controlled identifiers are deprecated, superseded, or withdrawn through recorded changes; historical versions and evidence are retained where needed for auditability and historical resolution.
+
 ## Decision model
 
 The project currently uses a maintainer-led, review-driven model. Maintainers are responsible for preserving architectural coherence, transparent issue resolution, and clear separation between accepted behavior, experimental proposals, and open questions.

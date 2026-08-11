@@ -1,7 +1,7 @@
 openapi: 3.1.0
 info:
   title: ARPA Protocol API
-  version: 0.9.0
+  version: 0.9.4
   description: Machine-readable contract for ARPA Core and optional modules. Registration,
     publication and discovery do not imply authority, assurance or trust.
 servers:
@@ -105,9 +105,30 @@ paths:
       operationId: resolveAgent
       responses:
         '200':
-          description: Current or point-in-time agent record
+          description: Current or point-in-time agent record. Historical callers may use the dedicated resolution endpoint for explicit requested-time/current-state provenance.
         '404':
           $ref: '#/components/responses/Problem'
+  /agents/{agent_id}/historical-resolution:
+    parameters:
+    - $ref: '#/components/parameters/AgentId'
+    - name: at
+      in: query
+      required: true
+      schema:
+        type: string
+        format: date-time
+    get:
+      operationId: resolveHistoricalAuthority
+      responses:
+        '200':
+          description: Deterministic historical authority resolution separating requested-time and current state
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/historical-resolution.schema.json
+        '404':
+          $ref: '#/components/responses/Problem'
+
   /agents/{agent_id}/status:
     parameters:
     - $ref: '#/components/parameters/AgentId'

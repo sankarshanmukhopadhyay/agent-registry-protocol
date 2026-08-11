@@ -1,0 +1,36 @@
+{
+  "registry": "reconstruction-statuses",
+  "version": "0.9.4",
+  "entries": [
+    {
+      "id": "authoritative_complete",
+      "status": "active",
+      "description": "Authoritative records and events completely cover the requested time."
+    },
+    {
+      "id": "authoritative_partial",
+      "status": "active",
+      "description": "Authoritative evidence exists but does not completely cover the requested time."
+    },
+    {
+      "id": "reconstructed_complete",
+      "status": "active",
+      "description": "A complete historical result was reconstructed from retained authoritative lineage."
+    },
+    {
+      "id": "reconstructed_partial",
+      "status": "active",
+      "description": "A partial historical result was reconstructed and material evidence is missing."
+    },
+    {
+      "id": "approximate",
+      "status": "active",
+      "description": "The result depends on bounded approximation explicitly disclosed to the caller."
+    },
+    {
+      "id": "indeterminate",
+      "status": "active",
+      "description": "The registry cannot deterministically resolve the requested historical state."
+    }
+  ]
+}

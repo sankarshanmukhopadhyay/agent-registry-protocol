@@ -6,6 +6,16 @@ nav_exclude: true
 
 # Roadmap
 
+## v0.9.4 — historical authority resolution and governance alignment
+
+- deterministic requested-time versus current-state resolution;
+- historical reconstruction quality and evidence lineage;
+- retroactive/prospective lifecycle-effect semantics;
+- retention and integrity failure handling;
+- machine-readable project status and authority boundaries;
+- release-gated historical-resolution conformance evidence.
+
+
 ## v0.9.3 — Current implementation release
 
 - stable normative requirements and traceability;
