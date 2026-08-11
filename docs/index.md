@@ -142,6 +142,7 @@ See [Protocol modules](protocol-modules.md) for the dependency table, profile ma
 - [Operator change](../examples/scenarios/operator-change.md)
 - [Public-service eligibility](../examples/scenarios/public-service-eligibility.md)
 - [Stale projection](../examples/scenarios/stale-projection.md)
+- [Historical authority resolution](../examples/scenarios/historical-authority-resolution.md)
 
 ## Project and release information
 
@@ -150,6 +151,7 @@ See [Protocol modules](protocol-modules.md) for the dependency table, profile ma
 - [Code of Conduct](../CODE_OF_CONDUCT.md)
 - [AI usage](../AI_USAGE.md)
 - [Changelog](../CHANGELOG.md)
+- [v0.9.4 release notes](../RELEASE_NOTES_v0.9.4.md)
 - [v0.9.3 release notes](../RELEASE_NOTES_v0.9.3.md)
 - [v0.9.2 release notes](../RELEASE_NOTES_v0.9.2.md)
 - [Normative v0.9.0 release notes](../RELEASE_NOTES_v0.9.0.md)
