@@ -223,12 +223,12 @@
     "Published page is unreachable from home/catalogue: docs/integrate/index.html",
     "Published page is unreachable from home/catalogue: docs/govern/index.html",
     "Published page is unreachable from home/catalogue: RELEASE_NOTES_v0.9.5.html",
-    "Start Here does not directly link required journey: docs/protocol-modules.html",
-    "Start Here does not directly link required journey: docs/quickstart.html",
-    "Start Here does not directly link required journey: docs/implementation-accelerator/01-15-minute-quickstart.html",
-    "Start Here does not directly link required journey: docs/candidate-specification-guide.html",
-    "Start Here does not directly link required journey: docs/conformance-guide.html",
-    "Start Here does not directly link required journey: spec/profiles/arpa-a2a-v1.0-interoperability-profile.html",
+    "Start Here does not directly link required journey: docs/understand/index.html",
+    "Start Here does not directly link required journey: docs/build/index.html",
+    "Start Here does not directly link required journey: docs/assure/index.html",
+    "Start Here does not directly link required journey: docs/operate/index.html",
+    "Start Here does not directly link required journey: docs/integrate/index.html",
+    "Start Here does not directly link required journey: docs/govern/index.html",
     "Normative/profile page missing from docs catalogue: spec/agent-registry-protocol-v0.9.0.html"
   ]
 }
