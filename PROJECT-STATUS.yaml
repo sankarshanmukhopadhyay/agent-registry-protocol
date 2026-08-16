@@ -43,6 +43,7 @@ evidence:
     - artifacts/candidate-specification/evidence-bundle.json
     - artifacts/interoperability/evidence-bundle.json
     - artifacts/historical-resolution/evidence-bundle.json
+    - artifacts/governance-assurance/evidence-bundle.json
   known_limitations:
     - Independent external interoperability evidence remains incomplete.
     - Repository-controlled evidence does not constitute certification or legal recognition.

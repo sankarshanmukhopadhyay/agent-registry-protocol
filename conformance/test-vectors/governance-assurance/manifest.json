@@ -1,0 +1,14 @@
+{
+  "suite": "arpa-governance-assurance-v1",
+  "description": "Negative and positive vectors for governance capture, privacy, revocation convergence, federation recognition and recovery controls identified by the 2026-08-16 RAHP audit.",
+  "vectors": [
+    "GA-01-threshold-admin-required.json",
+    "GA-02-single-admin-rejected.json",
+    "GA-03-revocation-incomplete.json",
+    "GA-04-revocation-converged.json",
+    "GA-05-federation-conflict.json",
+    "GA-06-recognition-withdrawn.json",
+    "GA-07-private-discovery-filtered.json",
+    "GA-08-compromise-restoration-dual-control.json"
+  ]
+}

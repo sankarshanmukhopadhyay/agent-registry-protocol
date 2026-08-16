@@ -1,0 +1,1 @@
+{"id":"GA-08","control":"compromise_restoration","input":{"prior_status":"confirmed_compromise","fresh_security_evidence":true,"approvals":["security-authority","independent-governance-authority"],"required_approvals":2},"expected":{"outcome":"allow_restoration"}}

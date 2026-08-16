@@ -1,0 +1,1 @@
+{"id":"GA-04","control":"revocation_convergence","input":{"required_enforcement_points":["pep-a","pep-b"],"acknowledged":["pep-a","pep-b"],"deadline_exceeded":false},"expected":{"outcome":"converged"}}

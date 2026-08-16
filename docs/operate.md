@@ -29,3 +29,8 @@ Use this path when moving from a conformant implementation to a governed registr
 - [Exit and revocation](../pilot-kit/checklists/exit-and-revocation.md)
 
 An operator should be able to show not only who may issue or change records, but also how that authority is scoped, revoked and evidenced.
+
+
+## RAHP-derived operational controls
+
+Operators should use the [governance and security assurance profile](governance-security-assurance.md) together with the [2026-08-16 RAHP audit](assurance/rahp-audit-2026-08-16.md) when designing administrative approval, privacy, revocation, recovery, federation and redress runbooks.

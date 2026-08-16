@@ -1,0 +1,1 @@
+{"id":"GA-03","control":"revocation_convergence","input":{"required_enforcement_points":["pep-a","pep-b","pep-c"],"acknowledged":["pep-a","pep-b"],"deadline_exceeded":true},"expected":{"outcome":"not_converged","reason":"ARPA-REVOCATION-NOT-CONVERGED"}}

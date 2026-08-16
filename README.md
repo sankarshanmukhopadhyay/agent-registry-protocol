@@ -41,6 +41,7 @@ nav_exclude: true
 - deterministic historical authority resolution separating requested-time state from current state;
 - explicit reconstruction quality, selected-record provenance, later material events, historical-effect and retention semantics;
 - fifteen release-gated historical-resolution vectors with machine-readable evidence;
+- eight release-gated governance/privacy assurance vectors covering administrative capture, revocation convergence, federation conflict, restricted discovery and compromise restoration;
 - portfolio-aligned `PROJECT-STATUS.yaml` with executable status/authority validation;
 - A2A registry publication semantics separating portable Agent Cards, publication projections and authorization overlays;
 - structured caller-visible discovery, exact Agent Card URI preservation and immutable snapshot/reference semantics;

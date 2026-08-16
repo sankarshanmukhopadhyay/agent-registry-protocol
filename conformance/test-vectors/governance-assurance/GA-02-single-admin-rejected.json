@@ -1,0 +1,1 @@
+{"id":"GA-02","control":"administrative_authorization","input":{"profile":"D","operation":"security_restoration_after_compromise","approvals":["governance-admin-1"],"required_approvals":2},"expected":{"outcome":"deny","reason":"ARPA-ADMIN-THRESHOLD-NOT-MET"}}

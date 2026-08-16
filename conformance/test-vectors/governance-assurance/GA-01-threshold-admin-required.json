@@ -1,0 +1,1 @@
+{"id":"GA-01","control":"administrative_authorization","input":{"profile":"C","operation":"change_accountable_entity","approvals":["governance-admin-1","independent-admin-2"],"required_approvals":2},"expected":{"outcome":"allow"}}

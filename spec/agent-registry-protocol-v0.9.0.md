@@ -2302,7 +2302,7 @@ A registry MUST NOT automatically infer transitive recognition unless explicitly
 
 ## 26.5 Conflicting Status
 
-Where recognized sources conflict, the relying policy MUST define precedence, aggregation, or indeterminate handling.
+Where recognized sources conflict, the relying policy MUST define precedence, aggregation, or indeterminate handling. If no applicable rule resolves the conflict, the evaluator MUST return `indeterminate` or a stricter non-affirmative outcome; it MUST NOT select the most permissive source or silently retain a previously affirmative result.
 
 ## 26.6 Federation Discovery
 
@@ -2364,7 +2364,7 @@ A registry MUST support appeal or correction processes for:
 
 ## 27.4 Due Process
 
-Governance profiles SHOULD specify:
+For Profile B, C, and D deployments, governance profiles MUST specify due-process handling for consequential suspension, revocation, restoration, control change, recognition withdrawal, and disputed execution. At minimum they MUST specify:
 
 - notice;
 - opportunity to respond;
@@ -2379,7 +2379,7 @@ Governance profiles SHOULD specify:
 
 ## 27.5 Redress Record
 
-A Redress Record SHOULD include:
+For Profile B, C, and D deployments, a Redress Record MUST be resolvable for consequential actions and lifecycle decisions. It MUST include:
 
 - affected subject;
 - complainant class;
@@ -2672,7 +2672,7 @@ At minimum, high-assurance profiles SHOULD separate:
 
 ## 29.3 Threshold Authorization
 
-The following operations SHOULD require threshold approval in high-assurance profiles:
+Profile C and D deployments MUST require threshold approval, dual control, or an equivalently independent multi-party authorization mechanism for the following high-impact administrative operations:
 
 - change of accountable entity;
 - ownership-like transfer;
@@ -2824,7 +2824,7 @@ A registry SHOULD support proofs or attestations of policy-relevant properties w
 
 ## 30.4 Pairwise and Scoped Identifiers
 
-Where correlation risk is material, a registry SHOULD support pairwise or context-scoped agent, principal, or relationship identifiers. A protected linkage MAY connect scoped identifiers to a canonical record for authorized audit or redress.
+Where correlation risk is material, a registry MUST support pairwise or context-scoped agent, principal, or relationship identifiers, or document an equivalent privacy control that prevents unnecessary cross-context linkage. A protected linkage MAY connect scoped identifiers to a canonical record for authorized audit or redress.
 
 ## 30.5 Confidential Authority Envelopes
 
@@ -2842,15 +2842,15 @@ Execution receipts SHOULD avoid embedding raw protected inputs or outputs. They 
 
 ## 30.7 Query Privacy
 
-Registries MUST consider that search and status queries can reveal intent, relationships, or investigations. Higher profiles SHOULD support authenticated queries, query minimization, private status checking, rate controls, and auditable access.
+Registries MUST consider that search and status queries can reveal intent, relationships, or investigations. Profile B, C, and D deployments MUST support authenticated or otherwise policy-bound queries for non-public data, query minimization, rate controls, and auditable access. Unauthenticated discovery MUST expose only records explicitly classified for public disclosure. Bulk enumeration, status probing, and search telemetry MUST be treated as privacy-sensitive access surfaces.
 
 ## 30.8 Correlation and Graph Reconstruction
 
-Persistent public relationship graphs can reveal organizational structure, beneficiaries, suppliers, or personal associations. Deployments SHOULD assess whether each relationship must be public, ecosystem-visible, pairwise, or confidential.
+Persistent public relationship graphs can reveal organizational structure, beneficiaries, suppliers, or personal associations. Deployments MUST assess whether each relationship must be public, ecosystem-visible, pairwise, or confidential, and MUST record the selected disclosure class in deployment policy when the relationship can reveal a natural person, beneficiary, commercially sensitive association, or security-relevant topology.
 
 ## 30.9 Data Subject and Affected-Party Rights
 
-Governance profiles SHOULD define rights to access, correction, annotation, restriction, and appeal. Correction MUST preserve necessary audit history without continuing to present incorrect data as current.
+Governance profiles for Profile B, C, and D deployments MUST define rights to access, correction, annotation, restriction, and appeal where records or decisions can materially affect a person or organization. Correction MUST preserve necessary audit history without continuing to present incorrect data as current.
 
 ## 30.10 Privacy Pattern Declaration
 

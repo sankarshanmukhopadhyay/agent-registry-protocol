@@ -1,0 +1,110 @@
+{
+  "suite": "arpa-governance-assurance-v1",
+  "implementation_release": "0.9.5+unreleased",
+  "generated_at": "2026-08-16T05:37:58.212012Z",
+  "passed": 8,
+  "total": 8,
+  "results": [
+    {
+      "id": "GA-01",
+      "file": "GA-01-threshold-admin-required.json",
+      "passed": true,
+      "expected": {
+        "outcome": "allow"
+      },
+      "actual": {
+        "outcome": "allow"
+      }
+    },
+    {
+      "id": "GA-02",
+      "file": "GA-02-single-admin-rejected.json",
+      "passed": true,
+      "expected": {
+        "outcome": "deny",
+        "reason": "ARPA-ADMIN-THRESHOLD-NOT-MET"
+      },
+      "actual": {
+        "outcome": "deny",
+        "reason": "ARPA-ADMIN-THRESHOLD-NOT-MET"
+      }
+    },
+    {
+      "id": "GA-03",
+      "file": "GA-03-revocation-incomplete.json",
+      "passed": true,
+      "expected": {
+        "outcome": "not_converged",
+        "reason": "ARPA-REVOCATION-NOT-CONVERGED"
+      },
+      "actual": {
+        "outcome": "not_converged",
+        "reason": "ARPA-REVOCATION-NOT-CONVERGED"
+      }
+    },
+    {
+      "id": "GA-04",
+      "file": "GA-04-revocation-converged.json",
+      "passed": true,
+      "expected": {
+        "outcome": "converged"
+      },
+      "actual": {
+        "outcome": "converged"
+      }
+    },
+    {
+      "id": "GA-05",
+      "file": "GA-05-federation-conflict.json",
+      "passed": true,
+      "expected": {
+        "outcome": "indeterminate",
+        "reason": "ARPA-CONFLICTING-STATUS"
+      },
+      "actual": {
+        "outcome": "indeterminate",
+        "reason": "ARPA-CONFLICTING-STATUS"
+      }
+    },
+    {
+      "id": "GA-06",
+      "file": "GA-06-recognition-withdrawn.json",
+      "passed": true,
+      "expected": {
+        "outcome": "deny",
+        "reason": "ARPA-FEDERATION-NOT-RECOGNIZED"
+      },
+      "actual": {
+        "outcome": "deny",
+        "reason": "ARPA-FEDERATION-NOT-RECOGNIZED"
+      }
+    },
+    {
+      "id": "GA-07",
+      "file": "GA-07-private-discovery-filtered.json",
+      "passed": true,
+      "expected": {
+        "visible_ids": [
+          "pub-1"
+        ]
+      },
+      "actual": {
+        "visible_ids": [
+          "pub-1"
+        ]
+      }
+    },
+    {
+      "id": "GA-08",
+      "file": "GA-08-compromise-restoration-dual-control.json",
+      "passed": true,
+      "expected": {
+        "outcome": "allow_restoration"
+      },
+      "actual": {
+        "outcome": "allow_restoration"
+      }
+    }
+  ],
+  "assurance_boundary": "Repository-owned control logic and fixtures; not independent certification or production operational evidence."
+}

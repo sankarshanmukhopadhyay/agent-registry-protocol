@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "source_count": 105,
+  "source_count": 107,
   "entries": [
     {
       "source": "AI_USAGE.md",
@@ -631,6 +631,18 @@
       "expected_output": "_site/RELEASE_NOTES_v0.9.5.html",
       "mode": "rendered-page",
       "title": "ARPA v0.9.5 Release Notes"
+    },
+    {
+      "source": "docs/governance-security-assurance.md",
+      "expected_output": "_site/docs/governance-security-assurance.html",
+      "mode": "rendered-page",
+      "title": "Governance and Security Assurance"
+    },
+    {
+      "source": "docs/assurance/rahp-audit-2026-08-16.md",
+      "expected_output": "_site/docs/assurance/rahp-audit-2026-08-16.html",
+      "mode": "rendered-page",
+      "title": "RAHP Audit \u2014 2026-08-16"
     }
   ]
 }

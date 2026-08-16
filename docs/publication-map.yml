@@ -210,3 +210,8 @@ publication_sources:
   mode: rendered-page
 - path: RELEASE_NOTES_v0.9.5.md
   mode: rendered-page
+
+- path: docs/governance-security-assurance.md
+  mode: rendered-page
+- path: docs/assurance/rahp-audit-2026-08-16.md
+  mode: rendered-page

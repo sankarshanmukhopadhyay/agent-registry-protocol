@@ -1,0 +1,1 @@
+{"id":"GA-06","control":"federation_recognition","input":{"recognition_current":false,"recognition_explicit":true,"source_statuses":["active"],"precedence_rule":"authoritative-source"},"expected":{"outcome":"deny","reason":"ARPA-FEDERATION-NOT-RECOGNIZED"}}

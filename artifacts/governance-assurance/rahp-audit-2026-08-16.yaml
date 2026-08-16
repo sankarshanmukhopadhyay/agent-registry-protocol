@@ -1,0 +1,111 @@
+audit:
+  id: ARPA-RAHP-2026-08-16
+  status: remediated-repository-scope
+  reviewed_on: 2026-08-16
+  target:
+    repository: sankarshanmukhopadhyay/agent-registry-protocol
+    implementation_release: v0.9.5
+    normative_baseline: v0.9.0 Candidate Specification
+    source_archive_sha256: 192d34182d5b5cdcea8b7d27fd9cde1cb9c730e7bd029d8edba5dd309fdc3ec6
+  method:
+    toolkit: RAHP Toolkit v1.0.0
+    engine_contract: rahp-engine-contract-v1
+    mode: combined
+    toolkit_archive_sha256: ad98f39f45dc96bc3dc8e7688c4b8e4756525aaa45a21be49fdc3aed894bc4a5
+  summary:
+    rahp_findings: 6
+    security_findings: 6
+    repository_findings_closed: 12
+    residual_deployment_assurance_items: 5
+    assessment: >-
+      ARPA already provides unusually strong separation of discovery, capability, authority, assurance,
+      lifecycle, federation and evidence semantics. The remaining material weaknesses were primarily
+      assurance-depth gaps: several governance/privacy controls were advisory or not backed by negative
+      executable vectors. This remediation makes the repository-level controls normative where appropriate
+      and adds release-gated machine-verifiable governance assurance.
+  rahp_findings:
+    - id: F-001
+      severity: high
+      title: High-impact registry administration was not uniformly protected against governance capture
+      risks: [RK-G01, RK-G02]
+      controls: [CT-45, CT-48]
+      guardrails: [GR-10, GR-16]
+      disposition: closed
+      remediation: Profile C/D high-impact administration now requires threshold, dual-control, or equivalent independent multi-party authorization; GA-01/GA-02 test it.
+    - id: F-002
+      severity: high
+      title: Consequential lifecycle decisions had an appeal requirement but incomplete normative due-process minimums
+      risks: [RK-CR01, RK-HX03]
+      controls: [CT-23, CT-44]
+      guardrails: [GR-08]
+      disposition: closed
+      remediation: Profile B-D governance must define notice, emergency exceptions, evidence standards, decision authority, time limits, restoration/correction and remedies; resolvable redress is mandatory.
+    - id: F-003
+      severity: high
+      title: Registry discovery and relationship graphs could create correlation and aggregation harms
+      risks: [RK-SC01, RK-ID05]
+      controls: [CT-17]
+      guardrails: [GR-06]
+      disposition: closed
+      remediation: Non-public discovery is policy-bound, public discovery is explicitly filtered, graph disclosure classification is mandatory for sensitive relationships, and GA-07 verifies unauthenticated filtering.
+    - id: F-004
+      severity: high
+      title: Revocation convergence was specified but lacked dedicated negative evidence for partial enforcement acknowledgement
+      risks: [RK-AI02, RK-CR02]
+      controls: [CT-31, CT-32]
+      guardrails: [GR-12]
+      disposition: closed
+      remediation: GA-03/GA-04 make incomplete versus complete enforcement acknowledgement machine-verifiable.
+    - id: F-005
+      severity: high
+      title: Federation conflict and recognition withdrawal semantics lacked dedicated fail-closed vectors
+      risks: [RK-CR03, RK-EX02]
+      controls: [CT-39, CT-48]
+      guardrails: [GR-16]
+      disposition: closed
+      remediation: Unresolved source conflicts are explicitly non-affirmative and GA-05/GA-06 cover conflict and withdrawal.
+    - id: F-006
+      severity: high
+      title: Recovery after compromise could be vulnerable to unilateral or weakly evidenced restoration
+      risks: [RK-NM02, RK-G02]
+      controls: [CT-22, CT-45]
+      guardrails: [GR-10]
+      disposition: closed
+      remediation: Compromise restoration is included in mandatory independent multi-party control and GA-08 requires fresh security evidence plus independent approvals.
+  security_findings:
+    - id: SEC-ARPA-001
+      severity: critical
+      title: Compromised administrator could perform a high-impact authority or recovery mutation
+      disposition: closed
+      evidence: [GA-01, GA-02]
+    - id: SEC-ARPA-002
+      severity: high
+      title: Public discovery could be abused to enumerate restricted operational relationships
+      disposition: closed
+      evidence: [GA-07]
+    - id: SEC-ARPA-003
+      severity: high
+      title: A revocation could be incorrectly reported as complete while an enforcement point remains active
+      disposition: closed
+      evidence: [GA-03, GA-04]
+    - id: SEC-ARPA-004
+      severity: high
+      title: Conflicting federation sources could be resolved permissively without an explicit precedence rule
+      disposition: closed
+      evidence: [GA-05]
+    - id: SEC-ARPA-005
+      severity: high
+      title: Withdrawn recognition could remain usable through stale affirmative state
+      disposition: closed
+      evidence: [GA-06]
+    - id: SEC-ARPA-006
+      severity: critical
+      title: Recovery path could restore authority after compromise without fresh evidence and independent authorization
+      disposition: closed
+      evidence: [GA-08]
+  residual_deployment_assurance:
+    - Independent external implementation and operator evidence remains required.
+    - Production key custody and multi-party authorization mechanisms are deployment responsibilities.
+    - Production federation, network partitions and heterogeneous enforcement acknowledgement remain unproven by loopback tests.
+    - Legal sufficiency, accessibility and timeliness of redress require accountable governance review.
+    - Privacy controls require deployment-specific data-flow, threat and retention assessment.

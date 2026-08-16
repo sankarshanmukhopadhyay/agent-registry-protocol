@@ -1,0 +1,1 @@
+{"id":"GA-05","control":"federation_recognition","input":{"recognition_current":true,"recognition_explicit":true,"source_statuses":["active","revoked"],"precedence_rule":null},"expected":{"outcome":"indeterminate","reason":"ARPA-CONFLICTING-STATUS"}}

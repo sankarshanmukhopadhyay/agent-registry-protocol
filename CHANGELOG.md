@@ -103,6 +103,13 @@ nav_exclude: true
 
 ## [Unreleased]
 
+### Security and governance assurance
+- Completed a full combined RAHP + security-hardening audit against RAHP Toolkit v1.0.0.
+- Strengthened Profile C/D high-impact administrative authorization, Profile B-D due-process/redress requirements, discovery privacy, sensitive relationship disclosure and federation conflict handling.
+- Added eight release-gated governance-assurance vectors covering administrative capture, revocation convergence, federation conflict/withdrawal, restricted discovery and compromise restoration.
+- Added machine-readable and human-readable audit evidence under `artifacts/governance-assurance/` and `docs/assurance/`.
+
+
 ### Fixed
 - Corrected GitHub Pages licensing links so extensionless repository license/control files are resolved through their canonical GitHub source URLs rather than being rewritten as non-existent Jekyll pages.
 

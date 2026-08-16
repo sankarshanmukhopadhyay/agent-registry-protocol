@@ -16,3 +16,5 @@ ARPA v0.9.0 is a Candidate Specification, not a stable v1.0 release.
 - The ARPA–TRQP projection is informative and does not claim approval by, or conformance certification from, the TRQP project.
 - TRQP response details may not preserve all ARPA delegation, condition, evidence, redress or enforcement information.
 - Legal recognition, regulated-sector compliance, production availability and operational SLAs remain deployment responsibilities.
+
+- The repository governance-assurance vectors verify declared semantics, not production separation of administrative duties, real multi-party key custody, independent appeal operation, or deployment-specific privacy controls.

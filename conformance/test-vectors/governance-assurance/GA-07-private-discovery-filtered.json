@@ -1,0 +1,1 @@
+{"id":"GA-07","control":"discovery_disclosure","input":{"caller_class":"unauthenticated","records":[{"id":"pub-1","disclosure_class":"public"},{"id":"priv-1","disclosure_class":"private"},{"id":"tenant-1","disclosure_class":"tenant-specific"}]},"expected":{"visible_ids":["pub-1"]}}
