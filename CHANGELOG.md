@@ -13,6 +13,11 @@ nav_exclude: true
 - Added machine-readable TypeScript implementation and conformance reports.
 - Added Python↔TypeScript outcome-equivalence evidence and CI gating.
 - Documented the implementation-independence boundary and the continued requirement for external v1.0 implementation evidence.
+- Added TypeScript effective-time selection and historical-resolution reliance semantics across all 15 v0.9.4 historical vectors.
+- Added fail-closed retention and historical-evidence-integrity handling.
+- Added deterministic decision-receipt generation with request digests and evidence/governance references.
+- Added event continuity and checkpoint validation primitives.
+- Expanded cross-runtime assurance from 12 deterministic vectors to 27 deterministic + historical equivalence checks.
 
 
 ## Unreleased

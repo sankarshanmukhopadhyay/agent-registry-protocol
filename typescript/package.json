@@ -1,16 +1,16 @@
 {
   "name": "arpa-typescript-implementation",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
-  "description": "Independent TypeScript implementation track for ARPA v0.9.4 normative artifacts and conformance vectors.",
+  "description": "Independent TypeScript implementation track for ARPA v0.9.4 conformance, historical resolution and authority evidence.",
   "type": "module",
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "test": "npm run build && node --test dist/tests/*.test.js",
     "conformance": "npm run build && node dist/src/conformance.js",
-    "validate:examples": "npm run build && node dist/src/validate-examples.js",
-    "release-check": "npm run typecheck && npm test && npm run validate:examples && npm run conformance"
+    "release-check": "npm run typecheck && npm test && npm run conformance && npm run historical",
+    "historical": "npm run build && node dist/src/historical-conformance.js"
   },
   "engines": {
     "node": ">=20"

@@ -36,7 +36,7 @@ const report = {
   report_type: "arpa-typescript-conformance-report",
   arpa_baseline: "0.9.4",
   implementation: "arpa-typescript",
-  implementation_version: "0.1.0",
+  implementation_version: "0.2.0",
   runtime: `node ${process.version}`,
   independence_statement: "Behavioral logic is implemented from ARPA normative requirements and shared conformance vectors; it is not imported from or executed through the Python reference implementation.",
   supported_profiles: [...new Set(results.filter((r) => r.passed).map((r) => r.profile))].sort(),
@@ -56,9 +56,9 @@ const implementationReport = {
   report_version: "1.0.0",
   generated_at: new Date().toISOString(),
   implementation: "ARPA TypeScript implementation track",
-  implementation_version: "0.1.0",
+  implementation_version: "0.2.0",
   arpa_version: "0.9.4-baseline",
-  modules: ["ARPA-Core", "ARPA-Authority"],
+  modules: ["ARPA-Core", "ARPA-Authority", "Historical Resolution", "Decision Receipts", "Event Continuity"],
   profile_claims: ["A-conformance-vector", "B-deterministic-subset", "C-deterministic-subset", "D-deterministic-subset"],
   checks: [
     { name: "shared-conformance-vectors", passed: report.vectors.failed === 0, output: `${report.vectors.passed}/${report.vectors.total} passed` },
@@ -66,10 +66,11 @@ const implementationReport = {
   ],
   passed: report.vectors.failed === 0,
   known_limitations: [
-    "No production persistence or HTTP service in v0.1.0",
+    "No production persistence or HTTP service in v0.2.0",
     "No proof verification, issuer-competence resolution or production federation",
     "Repository ownership does not constitute external independent implementation evidence",
-    "Authority evaluation is limited to the deterministic semantics exercised by shared vectors"
+    "Authority evaluation remains bounded to deterministic semantics exercised by shared vectors",
+    "Historical resolution is a repository-artifact and reliance implementation; network retrieval remains deferred"
   ]
 };
 fs.writeFileSync(path.join(repositoryRoot, "artifacts/typescript/implementation-report.json"), JSON.stringify(implementationReport, null, 2) + "\n");

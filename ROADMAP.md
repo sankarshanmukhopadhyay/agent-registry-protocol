@@ -27,13 +27,15 @@ nav_exclude: true
 
 ## v0.9.5 — TypeScript implementation and cross-runtime assurance
 
-- establish an independent TypeScript implementation track against the v0.9.4 normative baseline;
-- consume normative schemas, registries and conformance vectors without duplicating protocol definitions;
-- implement deterministic ARPA-Core resolution and ARPA-Authority semantics independently from Python behavior code;
-- compare Python and TypeScript outcomes as a release-gated cross-runtime assurance check;
-- emit machine-readable TypeScript implementation, conformance and equivalence evidence;
-- use cross-runtime divergence as a specification-ambiguity signal before v1.0;
-- expand incrementally toward historical resolution, decision receipts, events, HTTP/client surfaces and network interoperability.
+- [x] establish an independent TypeScript implementation track against the v0.9.4 normative baseline;
+- [x] consume normative schemas, registries and conformance vectors without duplicating protocol definitions;
+- [x] implement deterministic ARPA-Core resolution and ARPA-Authority semantics independently from Python behavior code;
+- [x] implement effective-time/historical-resolution reliance semantics, decision receipts and event continuity;
+- [x] compare Python and TypeScript deterministic and historical outcomes as a release-gated cross-runtime assurance check;
+- [x] emit machine-readable TypeScript implementation, conformance, historical-resolution and equivalence evidence;
+- [x] use cross-runtime divergence as a specification-ambiguity signal before v1.0;
+- [ ] add thin HTTP/client surfaces and Python↔TypeScript network interoperability;
+- [ ] add A2A publication/compatibility adapters after the core network surface is stable.
 
 The repository-owned TypeScript track is implementation-diversity evidence, but it MUST NOT be represented as external organisational independence for the v1.0 gate.
 

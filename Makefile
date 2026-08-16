@@ -23,7 +23,7 @@ report:
 	python3 scripts/generate_implementation_report.py
 
 typescript-check:
-	cd typescript && npm install --ignore-scripts --no-audit --no-fund && npm run release-check
+	cd typescript && (if [ -x node_modules/.bin/tsc ] || command -v tsc >/dev/null 2>&1; then npm run release-check; else npm install --ignore-scripts --no-audit --no-fund && npm run release-check; fi)
 
 cross-runtime:
 	python3 scripts/validate_typescript_interoperability.py

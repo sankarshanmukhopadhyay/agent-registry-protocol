@@ -15,14 +15,19 @@ Behavioral code MUST NOT import, execute or mechanically translate `../reference
 
 ## Current milestone
 
-The v0.1.0 track provides:
+The v0.2.0 track provides:
 
 - canonical identifier-resolution outcomes;
 - deterministic authority evaluation for the pure §28.2 semantics covered by Profiles B-D vectors;
 - fail-closed status, scope, expiry, prohibition, limit and approval handling;
 - direct schema and registry catalog consumption;
 - execution of the shared conformance corpus;
-- machine-readable TypeScript conformance evidence.
+- machine-readable TypeScript conformance evidence;
+- effective-time record selection and historical-resolution reliance semantics;
+- fail-closed retention and historical-evidence integrity handling;
+- deterministic decision-receipt generation with request digests and evidence references;
+- event-stream continuity checks and checkpoint reporting;
+- 15-vector historical-resolution evidence alongside the shared Profile A-D corpus.
 
 It intentionally does not claim production federation, proof verification, key custody, issuer competence resolution, persistence or external independent-operation evidence.
 
@@ -33,7 +38,7 @@ npm install
 npm run release-check
 ```
 
-The conformance report is written to `../artifacts/typescript/conformance-report.json`.
+Reports are written under `../artifacts/typescript/`, including `conformance-report.json`, `historical-resolution-report.json`, `implementation-report.json`, and `cross-runtime-report.json`.
 
 ## Governance invariant
 

@@ -20,7 +20,7 @@ A disagreement between the runtimes is therefore treated as one of three things 
 
 This makes implementation divergence a pre-v1.0 assurance signal rather than merely a software integration failure.
 
-## Current v0.1.0 scope
+## Current v0.2.0 scope
 
 The first milestone implements the deterministic surface required to exercise the existing shared test vectors:
 
@@ -52,6 +52,7 @@ produces:
 ```text
 artifacts/typescript/conformance-report.json
 artifacts/typescript/implementation-report.json
+artifacts/typescript/historical-resolution-report.json
 artifacts/typescript/cross-runtime-report.json
 ```
 
@@ -81,9 +82,9 @@ The Python implementation and TypeScript implementation do not import behavioura
 
 The TypeScript track should expand in bounded increments:
 
-1. current deterministic conformance surface;
-2. canonical and historical resolution APIs;
-3. decision receipts and event handling;
+1. **delivered:** deterministic conformance surface;
+2. **delivered:** effective-time and historical-resolution reliance semantics;
+3. **delivered:** decision receipts and event continuity primitives;
 4. a thin HTTP implementation over protocol services;
 5. a TypeScript client package;
 6. Python-to-TypeScript and TypeScript-to-Python network interoperability;

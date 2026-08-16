@@ -1,12 +1,15 @@
 {
   "report_version": "1.0.0",
-  "generated_at": "2026-08-16T04:59:24.241Z",
+  "generated_at": "2026-08-16T05:08:39.047Z",
   "implementation": "ARPA TypeScript implementation track",
-  "implementation_version": "0.1.0",
+  "implementation_version": "0.2.0",
   "arpa_version": "0.9.4-baseline",
   "modules": [
     "ARPA-Core",
-    "ARPA-Authority"
+    "ARPA-Authority",
+    "Historical Resolution",
+    "Decision Receipts",
+    "Event Continuity"
   ],
   "profile_claims": [
     "A-conformance-vector",
@@ -28,9 +31,10 @@
   ],
   "passed": true,
   "known_limitations": [
-    "No production persistence or HTTP service in v0.1.0",
+    "No production persistence or HTTP service in v0.2.0",
     "No proof verification, issuer-competence resolution or production federation",
     "Repository ownership does not constitute external independent implementation evidence",
-    "Authority evaluation is limited to the deterministic semantics exercised by shared vectors"
+    "Authority evaluation remains bounded to deterministic semantics exercised by shared vectors",
+    "Historical resolution is a repository-artifact and reliance implementation; network retrieval remains deferred"
   ]
 }
