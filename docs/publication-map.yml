@@ -86,6 +86,8 @@ publication_sources:
   mode: rendered-page
 - path: docs/reference-implementation-architecture.md
   mode: rendered-page
+- path: docs/typescript-implementation.md
+  mode: rendered-page
 - path: docs/release-policy.md
   mode: rendered-page
 - path: docs/repository-positioning.md

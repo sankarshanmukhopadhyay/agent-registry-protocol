@@ -22,3 +22,7 @@ Every implementation publishes a Conformance Declaration identifying supported m
 ## Fail behaviour
 
 Discovery MAY return stale projections with warnings where policy permits. Authority evaluation MUST return `indeterminate` or `deny` when current status, authority, required assurance or proof validity cannot be established. Missing evidence MUST NOT become an affirmative result.
+
+## Runtime implementation selection
+
+The Python reference service demonstrates the stateful registry and API architecture. The repository also carries an [independent TypeScript implementation track](typescript-implementation.md) whose first purpose is cross-runtime conformance assurance. Implementers SHOULD choose a runtime according to deployment needs, but conformance claims are determined by supported ARPA modules and profiles rather than implementation language.

@@ -50,3 +50,9 @@ An external implementation can replace either fixture by exporting the same exch
 ## v0.9.3 A2A registry convergence
 
 See the [A2A Registry Integration Guide](a2a-registry-integration-guide.md) for publication, caller-visible discovery, resolve/snapshot, compatibility and authority-boundary semantics.
+
+## v0.9.5 cross-runtime assurance track
+
+The repository now includes a TypeScript implementation track rooted in the v0.9.4 normative baseline. `make cross-runtime` compares independently produced Python and TypeScript outcomes over the shared conformance vectors and writes `artifacts/typescript/cross-runtime-report.json`.
+
+This is stronger than a second configuration of the same implementation because the behavior code is independently implemented. It is still repository-owned and therefore does not satisfy the v1.0 requirement for an externally operated independent implementation. See the [TypeScript Implementation Track](typescript-implementation.md).

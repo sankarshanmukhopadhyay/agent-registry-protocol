@@ -1,4 +1,4 @@
-.PHONY: pilot-up pilot-down pilot-seed pilot-check pilot-reset setup validate test interop candidate run report pages-manifest pages-build pages-validate docs-links pages-check release-check package clean
+.PHONY: pilot-up pilot-down pilot-seed pilot-check pilot-reset setup validate test interop candidate run report typescript-check cross-runtime pages-manifest pages-build pages-validate docs-links pages-check release-check release-check-all package clean
 setup:
 	python3 -m pip install -r scripts/requirements.txt
 validate:
@@ -22,6 +22,12 @@ run:
 report:
 	python3 scripts/generate_implementation_report.py
 
+typescript-check:
+	cd typescript && npm install --ignore-scripts --no-audit --no-fund && npm run release-check
+
+cross-runtime:
+	python3 scripts/validate_typescript_interoperability.py
+
 pages-manifest:
 	python3 scripts/build_publication_manifest.py
 pages-build:
@@ -32,9 +38,10 @@ docs-links:
 	python3 scripts/validate_docs_links.py --baseurl "/agent-registry-protocol"
 pages-check: pages-manifest pages-build pages-validate docs-links
 release-check: validate test interop candidate report
-package: release-check
+release-check-all: release-check typescript-check cross-runtime
+package: release-check-all
 clean:
-	rm -rf .pytest_cache __pycache__ reference/__pycache__ scripts/__pycache__ independent_impl/__pycache__
+	rm -rf .pytest_cache __pycache__ reference/__pycache__ scripts/__pycache__ independent_impl/__pycache__ typescript/dist typescript/node_modules
 
 
 pilot-up:

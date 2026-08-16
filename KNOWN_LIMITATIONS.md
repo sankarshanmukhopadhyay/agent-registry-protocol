@@ -8,7 +8,8 @@ nav_exclude: true
 
 ARPA v0.9.0 is a Candidate Specification, not a stable v1.0 release.
 
-- The two implementation paths are separately structured but maintained in the same repository; external independent implementation evidence remains required for v1.0.
+- The Python, independent projection and TypeScript implementation paths are separately structured but maintained in the same repository; external independently operated implementation evidence remains required for v1.0.
+- The TypeScript v0.1.0 track covers the deterministic shared conformance-vector surface only; it does not yet provide the stateful HTTP service, production persistence, proof verification, issuer-competence resolution or federation behavior of a complete deployment.
 - Network federation is demonstrated over loopback endpoints, not a production multi-operator deployment.
 - Durable event behavior is demonstrated with SQLite semantics, not a production message broker or multi-region system.
 - Proof and key-management artifacts define integration boundaries and fixtures, not certified custody or formal cryptographic assurance.

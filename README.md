@@ -27,7 +27,7 @@ nav_exclude: true
 | Implementation release | v0.9.4 |
 | Normative baseline | v0.9.0 Candidate Specification surface |
 | Primary artifacts | Specification, schemas, API/event contracts, reference implementations, conformance and evidence |
-| Release gate | `make release-check` |
+| Release gate | `make release-check-all` |
 | Candidate evidence | `artifacts/candidate-specification/evidence-bundle.json` |
 | Authority | Member-owned status and scope in `PROJECT-STATUS.yaml`; process in `GOVERNANCE.md` |
 
@@ -63,16 +63,21 @@ nav_exclude: true
 8. [ARPA–TRQP interoperability architecture](docs/architecture/trqp-arpa-interoperability.md)
 9. [Migration from v0.5.0](docs/migration-v0.5.0-to-v0.9.0.md)
 10. [A2A Registry Integration Guide](docs/a2a-registry-integration-guide.md)
-11. [Known limitations](KNOWN_LIMITATIONS.md)
+11. [TypeScript implementation track](docs/typescript-implementation.md)
+12. [Known limitations](KNOWN_LIMITATIONS.md)
 
 ## Validate and produce evidence
 
 ```bash
 make setup
-make release-check
+make release-check-all
 ```
 
-The gate validates the complete schema and conformance surface, repository controls, service tests, v0.5.0 interoperability behavior, v0.9.0 candidate requirements, ARPA–TRQP mapping and vectors, historical-resolution vectors and evidence, independent adapter equivalence, loopback network discovery, durable event semantics and implementation reports.
+The full gate validates the complete Python release surface plus the TypeScript implementation track and Python↔TypeScript conformance equivalence evidence. The current released implementation remains v0.9.4; the TypeScript work is a v0.9.5 development track against that baseline.
+
+## Development toward v0.9.5
+
+The repository now includes an [independent TypeScript implementation track](docs/typescript-implementation.md) rooted in the v0.9.4 normative baseline. It independently implements the deterministic resolution and authority semantics exercised by the shared Profiles A–D vectors and emits machine-readable cross-runtime evidence. This repository-owned implementation diversity improves pre-v1.0 assurance but does not substitute for external organisational independence.
 
 ## ARPA and TRQP
 

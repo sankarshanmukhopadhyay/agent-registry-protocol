@@ -1,0 +1,102 @@
+{
+  "report_type": "arpa-cross-runtime-conformance",
+  "arpa_baseline": "0.9.4",
+  "implementations": [
+    "ARPA Python reference evaluator",
+    "ARPA TypeScript v0.1.0"
+  ],
+  "independence_boundary": "Implementations share normative artifacts and vectors but not behavioral implementation code.",
+  "total": 12,
+  "equivalent": 12,
+  "passed": true,
+  "comparisons": [
+    {
+      "vector_id": "TV-A-01",
+      "expected": "active_record",
+      "python": "active_record",
+      "typescript": "active_record",
+      "equivalent": true
+    },
+    {
+      "vector_id": "TV-A-02",
+      "expected": "not_found",
+      "python": "not_found",
+      "typescript": "not_found",
+      "equivalent": true
+    },
+    {
+      "vector_id": "TV-A-03",
+      "expected": "terminal_record",
+      "python": "terminal_record",
+      "typescript": "terminal_record",
+      "equivalent": true
+    },
+    {
+      "vector_id": "TV-B-01",
+      "expected": "allow",
+      "python": "allow",
+      "typescript": "allow",
+      "equivalent": true
+    },
+    {
+      "vector_id": "TV-B-02",
+      "expected": "deny",
+      "python": "deny",
+      "typescript": "deny",
+      "equivalent": true
+    },
+    {
+      "vector_id": "TV-B-03",
+      "expected": "indeterminate",
+      "python": "indeterminate",
+      "typescript": "indeterminate",
+      "equivalent": true
+    },
+    {
+      "vector_id": "TV-C-01",
+      "expected": "allow",
+      "python": "allow",
+      "typescript": "allow",
+      "equivalent": true
+    },
+    {
+      "vector_id": "TV-C-02",
+      "expected": "allow_with_conditions",
+      "python": "allow_with_conditions",
+      "typescript": "allow_with_conditions",
+      "equivalent": true
+    },
+    {
+      "vector_id": "TV-C-03",
+      "expected": "deny",
+      "python": "deny",
+      "typescript": "deny",
+      "equivalent": true
+    },
+    {
+      "vector_id": "TV-D-01",
+      "expected": "allow",
+      "python": "allow",
+      "typescript": "allow",
+      "equivalent": true
+    },
+    {
+      "vector_id": "TV-D-02",
+      "expected": "deny",
+      "python": "deny",
+      "typescript": "deny",
+      "equivalent": true
+    },
+    {
+      "vector_id": "TV-D-03",
+      "expected": "deny",
+      "python": "deny",
+      "typescript": "deny",
+      "equivalent": true
+    }
+  ],
+  "limitations": [
+    "Repository-owned TypeScript code is not evidence of external organisational independence.",
+    "Comparison covers the deterministic shared conformance-vector surface only."
+  ]
+}

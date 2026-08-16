@@ -6,6 +6,15 @@ nav_exclude: true
 
 # Changelog
 
+## Unreleased — v0.9.5 TypeScript implementation assurance
+
+- Added an independent TypeScript implementation track against the v0.9.4 baseline.
+- Added direct schema/registry catalog consumption and all 12 shared Profile A–D conformance vectors.
+- Added machine-readable TypeScript implementation and conformance reports.
+- Added Python↔TypeScript outcome-equivalence evidence and CI gating.
+- Documented the implementation-independence boundary and the continued requirement for external v1.0 implementation evidence.
+
+
 ## Unreleased
 
 ### Repository governance

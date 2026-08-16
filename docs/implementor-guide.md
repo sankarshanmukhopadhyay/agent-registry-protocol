@@ -22,3 +22,7 @@ The registry operator may administer records but is not automatically competent 
 ## Evidence
 
 Every conformance run should emit a dated machine-readable report containing implementation version, supported modules, test-vector results, limitations and artifact digests.
+
+## Independent implementation guidance
+
+A second implementation SHOULD consume the repository's normative schemas, registries and conformance vectors directly, but SHOULD implement behavioral semantics from the specification rather than translating the reference implementation. This preserves implementation diversity and makes divergent outcomes useful evidence of possible specification ambiguity. See the [TypeScript Implementation Track](typescript-implementation.md).

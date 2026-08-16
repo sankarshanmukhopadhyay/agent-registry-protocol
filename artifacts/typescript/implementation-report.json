@@ -1,0 +1,36 @@
+{
+  "report_version": "1.0.0",
+  "generated_at": "2026-08-16T04:59:24.241Z",
+  "implementation": "ARPA TypeScript implementation track",
+  "implementation_version": "0.1.0",
+  "arpa_version": "0.9.4-baseline",
+  "modules": [
+    "ARPA-Core",
+    "ARPA-Authority"
+  ],
+  "profile_claims": [
+    "A-conformance-vector",
+    "B-deterministic-subset",
+    "C-deterministic-subset",
+    "D-deterministic-subset"
+  ],
+  "checks": [
+    {
+      "name": "shared-conformance-vectors",
+      "passed": true,
+      "output": "12/12 passed"
+    },
+    {
+      "name": "normative-artifact-consumption",
+      "passed": true,
+      "output": "Schemas and registries are read from repository sources at runtime."
+    }
+  ],
+  "passed": true,
+  "known_limitations": [
+    "No production persistence or HTTP service in v0.1.0",
+    "No proof verification, issuer-competence resolution or production federation",
+    "Repository ownership does not constitute external independent implementation evidence",
+    "Authority evaluation is limited to the deterministic semantics exercised by shared vectors"
+  ]
+}

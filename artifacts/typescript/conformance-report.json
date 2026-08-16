@@ -1,0 +1,142 @@
+{
+  "report_type": "arpa-typescript-conformance-report",
+  "arpa_baseline": "0.9.4",
+  "implementation": "arpa-typescript",
+  "implementation_version": "0.1.0",
+  "runtime": "node v22.16.0",
+  "independence_statement": "Behavioral logic is implemented from ARPA normative requirements and shared conformance vectors; it is not imported from or executed through the Python reference implementation.",
+  "supported_profiles": [
+    "A",
+    "B",
+    "C",
+    "D"
+  ],
+  "vectors": {
+    "total": 12,
+    "passed": 12,
+    "failed": 0
+  },
+  "results": [
+    {
+      "vector_id": "TV-A-01",
+      "profile": "A",
+      "expected": "active_record",
+      "actual": "active_record",
+      "passed": true,
+      "reason_codes": [
+        "identifier_known_and_active"
+      ]
+    },
+    {
+      "vector_id": "TV-A-02",
+      "profile": "A",
+      "expected": "not_found",
+      "actual": "not_found",
+      "passed": true,
+      "reason_codes": [
+        "identifier_never_issued"
+      ]
+    },
+    {
+      "vector_id": "TV-A-03",
+      "profile": "A",
+      "expected": "terminal_record",
+      "actual": "terminal_record",
+      "passed": true,
+      "reason_codes": [
+        "identifier_known_but_terminal"
+      ]
+    },
+    {
+      "vector_id": "TV-B-01",
+      "profile": "B",
+      "expected": "allow",
+      "actual": "allow",
+      "passed": true,
+      "reason_codes": [
+        "within_scope"
+      ]
+    },
+    {
+      "vector_id": "TV-B-02",
+      "profile": "B",
+      "expected": "deny",
+      "actual": "deny",
+      "passed": true,
+      "reason_codes": [
+        "registration_status_suspended_does_not_permit_action"
+      ]
+    },
+    {
+      "vector_id": "TV-B-03",
+      "profile": "B",
+      "expected": "indeterminate",
+      "actual": "indeterminate",
+      "passed": true,
+      "reason_codes": [
+        "status_older_than_policy_max_age"
+      ]
+    },
+    {
+      "vector_id": "TV-C-01",
+      "profile": "C",
+      "expected": "allow",
+      "actual": "allow",
+      "passed": true,
+      "reason_codes": [
+        "within_scope"
+      ]
+    },
+    {
+      "vector_id": "TV-C-02",
+      "profile": "C",
+      "expected": "allow_with_conditions",
+      "actual": "allow_with_conditions",
+      "passed": true,
+      "reason_codes": [
+        "within_scope",
+        "approval_required"
+      ]
+    },
+    {
+      "vector_id": "TV-C-03",
+      "profile": "C",
+      "expected": "deny",
+      "actual": "deny",
+      "passed": true,
+      "reason_codes": [
+        "amount_exceeds_per_transaction_limit"
+      ]
+    },
+    {
+      "vector_id": "TV-D-01",
+      "profile": "D",
+      "expected": "allow",
+      "actual": "allow",
+      "passed": true,
+      "reason_codes": [
+        "within_scope"
+      ]
+    },
+    {
+      "vector_id": "TV-D-02",
+      "profile": "D",
+      "expected": "deny",
+      "actual": "deny",
+      "passed": true,
+      "reason_codes": [
+        "action_matches_mandatory_prohibition"
+      ]
+    },
+    {
+      "vector_id": "TV-D-03",
+      "profile": "D",
+      "expected": "deny",
+      "actual": "deny",
+      "passed": true,
+      "reason_codes": [
+        "authority_expired"
+      ]
+    }
+  ]
+}

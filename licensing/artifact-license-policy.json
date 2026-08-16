@@ -32,9 +32,45 @@
     }
   },
   "path_guidance": [
-    {"paths": ["spec/**/*.md", "docs/**/*.md", "*.md"], "license": "CC-BY-4.0"},
-    {"paths": ["reference/**", "scripts/**", "tests/**", "independent_impl/**", "interop/**"], "license": "Apache-2.0"},
-    {"paths": ["schemas/**", "openapi/**", "asyncapi/**", "conformance/test-vectors/**", "mappings/**", "registries/**"], "license": "Apache-2.0"},
-    {"paths": ["artifacts/**/*.json", "implementation-accelerator/**", "pilot-kit/**/*.json", "pilot-kit/**/*.yaml", "pilot-kit/**/*.yml"], "license": "Apache-2.0"}
+    {
+      "paths": [
+        "spec/**/*.md",
+        "docs/**/*.md",
+        "*.md"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "paths": [
+        "reference/**",
+        "scripts/**",
+        "tests/**",
+        "independent_impl/**",
+        "interop/**",
+        "typescript/**"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "paths": [
+        "schemas/**",
+        "openapi/**",
+        "asyncapi/**",
+        "conformance/test-vectors/**",
+        "mappings/**",
+        "registries/**"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "paths": [
+        "artifacts/**/*.json",
+        "implementation-accelerator/**",
+        "pilot-kit/**/*.json",
+        "pilot-kit/**/*.yaml",
+        "pilot-kit/**/*.yml"
+      ],
+      "license": "Apache-2.0"
+    }
   ]
 }
