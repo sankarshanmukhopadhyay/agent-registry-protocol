@@ -69,3 +69,16 @@ Passing these checks demonstrates repository-controlled reference behaviour only
 ## v0.9.3 A2A registry convergence
 
 `make release-check` additionally validates A2A publication invariants, structured discovery semantics, immutable snapshot requirements, compatibility classification and non-implication of authority. Dedicated results are emitted under `artifacts/interoperability/a2a-registry-*.json`.
+
+## v0.9.5 TypeScript and information-architecture validation
+
+- TypeScript unit tests: 13/13 passed.
+- Shared TypeScript conformance vectors: 12/12 passed.
+- TypeScript historical-resolution vectors: 15/15 passed.
+- TypeScript A2A adapter checks: 5/5 passed.
+- Python↔TypeScript deterministic + historical equivalence: 27/27 passed.
+- Python↔TypeScript loopback HTTP interoperability: 7/7 passed.
+- Repository release gate: `make release-check-all`.
+- Documentation navigation is organized around six task-oriented journey hubs while retaining existing document URLs.
+
+The local execution environment did not expose a working Bundler/Jekyll executable, so the GitHub Pages build remains enforced by the repository Pages workflow. Repository-level Markdown link validation and publication-manifest generation are included in CI.

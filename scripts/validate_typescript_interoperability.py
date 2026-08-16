@@ -80,7 +80,7 @@ def main() -> int:
     report = {
         "report_type": "arpa-cross-runtime-conformance",
         "arpa_baseline": "0.9.4",
-        "implementations": ["ARPA Python reference/evidence path", "ARPA TypeScript v0.2.0"],
+        "implementations": ["ARPA Python reference/evidence path", "ARPA TypeScript v0.3.0"],
         "independence_boundary": "Implementations share normative artifacts and vectors but not behavioral implementation code.",
         "surfaces": {
             "deterministic_conformance": {"total": len(deterministic), "equivalent": deterministic_passed, "comparisons": deterministic},
@@ -92,7 +92,7 @@ def main() -> int:
         "limitations": [
             "Repository-owned TypeScript code is not evidence of external organisational independence.",
             "Historical comparison proves equivalent interpretation of the bounded v0.9.4 vector corpus; it is not yet network retrieval interoperability.",
-            "HTTP/client and network-level cross-runtime interoperability remain Commit 3 scope.",
+            "Network-level interoperability is reported separately in artifacts/typescript/network-interoperability-report.json.",
         ],
     }
     OUT.parent.mkdir(parents=True, exist_ok=True)

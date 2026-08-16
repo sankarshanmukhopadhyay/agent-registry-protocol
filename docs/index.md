@@ -1,8 +1,8 @@
 ---
 layout: default
-title: Documentation
+title: "Documentation catalogue"
 nav_exclude: false
-nav_order: 3
+nav_order: 9
 has_children: false
 permalink: /docs/
 document_status: informative
@@ -12,7 +12,7 @@ document_status: informative
 
 This catalogue provides a stable GitHub Pages entry point for the complete normative specification, implementation guidance, governance material, conformance profiles, interoperability artefacts, and worked scenarios maintained in this repository.
 
-> New to ARPA? Use [Start Here](start-here.md) to select the correct journey, evidence target and assurance boundary.
+> New to ARPA? Use [Start Here](start-here.md). This page is the exhaustive catalogue; the six journey pages provide the preferred reading order.
 
 ## Document status
 
@@ -22,7 +22,7 @@ This catalogue provides a stable GitHub Pages entry point for the complete norma
 | **Profile normative** | Defines additional requirements applicable only when the optional profile is claimed. |
 | **Informative** | Explains architecture, implementation, deployment, evidence or examples without changing normative requirements. |
 
-ARPA v0.9.4 is the current implementation, historical-resolution and interoperability release. The v0.9.0 Candidate Specification remains the normative protocol baseline.
+ARPA v0.9.5 is the current implementation and cross-runtime interoperability release; v0.9.4 remains the historical-resolution baseline consumed by the TypeScript track. The v0.9.0 Candidate Specification remains the normative protocol baseline.
 
 ## Protocol module map
 
@@ -153,6 +153,7 @@ See [Protocol modules](protocol-modules.md) for the dependency table, profile ma
 - [Code of Conduct](../CODE_OF_CONDUCT.md)
 - [AI usage](../AI_USAGE.md)
 - [Changelog](../CHANGELOG.md)
+- [v0.9.5 release notes](../RELEASE_NOTES_v0.9.5.md)
 - [v0.9.4 release notes](../RELEASE_NOTES_v0.9.4.md)
 - [v0.9.3 release notes](../RELEASE_NOTES_v0.9.3.md)
 - [v0.9.2 release notes](../RELEASE_NOTES_v0.9.2.md)

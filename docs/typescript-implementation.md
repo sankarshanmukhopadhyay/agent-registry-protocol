@@ -1,94 +1,103 @@
 ---
 layout: default
-title: "TypeScript Implementation Track"
+title: "TypeScript Implementation"
 nav_exclude: true
+document_status: informative
 ---
 
-# TypeScript Implementation Track
+# TypeScript implementation
 
-ARPA v0.9.4 introduces the baseline used by a second runtime implementation track under `typescript/`. The purpose of the track is implementation portability and specification assurance, not a rewrite of the Python reference service.
+ARPA v0.9.5 adds a second runtime implementation under `typescript/`. Its purpose is implementation portability, developer adoption and specification assurance, not a line-by-line rewrite of the Python reference service.
 
-## Assurance objective
+## Independence rule
 
-The TypeScript implementation is expected to reach the same externally observable outcomes as the normative ARPA requirements while remaining behaviorally independent of the Python implementation. Both runtimes may share schemas, registries and conformance vectors because those are protocol artifacts. They must not share evaluator implementation code.
+The TypeScript implementation consumes shared protocol artifacts — schemas, registries, profiles and conformance vectors — while implementing behavioural logic independently. It does not import or execute the Python authority evaluator.
 
-A disagreement between the runtimes is therefore treated as one of three things until resolved:
+A Python/TypeScript disagreement is therefore treated as a possible implementation defect, vector defect or specification ambiguity until resolved.
 
-1. an implementation defect;
-2. a conformance-vector defect; or
-3. a specification ambiguity requiring normative clarification.
+## v0.3.0 implementation surface
 
-This makes implementation divergence a pre-v1.0 assurance signal rather than merely a software integration failure.
+The TypeScript package currently provides:
 
-## Current v0.2.0 scope
+- Profile A identifier-resolution semantics;
+- deterministic Profiles B–D authority evaluation;
+- effective-time and historical-resolution reliance semantics;
+- fail-closed retention and evidence-integrity handling;
+- schema-shaped authority decision receipts and request digests;
+- event continuity/checkpoint primitives;
+- a thin Node.js HTTP service;
+- an `ArpaClient` capable of consuming both the Python and TypeScript registry surfaces;
+- an in-memory record/event store for development and interoperability tests;
+- A2A publication projection helpers that preserve exact Agent Card URI/digest provenance;
+- conservative Agent Card compatibility classification;
+- machine-readable deterministic, historical, A2A and network interoperability evidence.
 
-The first milestone implements the deterministic surface required to exercise the existing shared test vectors:
+## Developer use
 
-- Profile A identifier-resolution outcomes;
-- Profiles B-D deterministic authority evaluation;
-- registration, operational and security status gating;
-- status freshness;
-- authority effective-time and expiry checks;
-- action, resource and jurisdiction scope checks;
-- mandatory prohibitions;
-- quantitative limits;
-- conditional approval outcomes;
-- direct loading of governed schemas and registries;
-- machine-readable implementation and conformance reports.
+```bash
+cd typescript
+npm install
+npm run release-check
+```
 
-The implementation deliberately does **not** claim production proof verification, issuer-competence resolution, key custody, persistence, federation or organisational independence.
+Run the development HTTP service:
+
+```bash
+npm run network-server
+```
+
+A local consumer can import the package surface:
+
+```ts
+import { ArpaClient } from "arpa-typescript-implementation";
+
+const arpa = new ArpaClient("http://127.0.0.1:8000");
+const registry = await arpa.registry();
+const agent = await arpa.resolveAgent("agentreg:example.org:agent-123");
+```
+
+The package remains repository-private in v0.9.5; the API shape is usable locally but is not yet an npm stability commitment.
 
 ## Evidence
-
-Running:
 
 ```bash
 make typescript-check
 make cross-runtime
+make network-interop
 ```
 
 produces:
 
 ```text
 artifacts/typescript/conformance-report.json
-artifacts/typescript/implementation-report.json
 artifacts/typescript/historical-resolution-report.json
+artifacts/typescript/a2a-adapter-report.json
+artifacts/typescript/implementation-report.json
 artifacts/typescript/cross-runtime-report.json
+artifacts/typescript/network-interoperability-report.json
 ```
 
-The cross-runtime report compares Python and TypeScript outcomes for the same test vectors. A passing comparison proves outcome equivalence over that bounded surface only. It does not by itself satisfy the v1.0 external independent-implementation requirement.
+The network harness proves bounded loopback HTTP interoperability in both directions, including use of the TypeScript client against the Python registry. Both implementations remain repository-controlled, so this is not external organisational independence.
 
-## Implementation boundary
+## Architecture
 
 ```mermaid
-flowchart TD
-  N[Normative ARPA specification] --> S[JSON Schemas]
-  N --> R[Governed Registries]
-  N --> V[Conformance Vectors]
-  S --> P[Python reference implementation]
-  R --> P
-  V --> P
-  S --> T[TypeScript implementation]
-  R --> T
-  V --> T
-  P --> C[Cross-runtime outcome comparator]
-  T --> C
-  C --> E[Machine-readable assurance evidence]
+flowchart LR
+  N[Normative ARPA artifacts] --> P[Python reference]
+  N --> T[TypeScript core]
+  T --> H[Thin HTTP server]
+  T --> C[ArpaClient]
+  T --> A[A2A adapters]
+  P <-->|HTTP interoperability| C
+  H <-->|HTTP interoperability| C
+  P --> E[Cross-runtime evidence]
+  T --> E
 ```
 
-The Python implementation and TypeScript implementation do not import behavioural code from one another.
+## Governance invariant
 
-## Planned progression
+Discovery, registration, Agent Card publication, endpoint authentication and successful resolution do **not** imply authority. The TypeScript APIs and A2A projection helpers preserve this non-implication explicitly.
 
-The TypeScript track should expand in bounded increments:
+## Deferred production concerns
 
-1. **delivered:** deterministic conformance surface;
-2. **delivered:** effective-time and historical-resolution reliance semantics;
-3. **delivered:** decision receipts and event continuity primitives;
-4. a thin HTTP implementation over protocol services;
-5. a TypeScript client package;
-6. Python-to-TypeScript and TypeScript-to-Python network interoperability;
-7. A2A publication and compatibility adapters;
-8. external implementation participation before v1.0 promotion.
-
-Every expansion should add machine-verifiable conformance evidence before adding convenience APIs.
+v0.9.5 does not claim production persistence, proof verification, key custody, issuer-competence resolution, distributed federation, package API stability or external certification. Those remain deployment or post-Candidate work rather than hidden assumptions in the development server.

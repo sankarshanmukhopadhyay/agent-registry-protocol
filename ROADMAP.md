@@ -16,7 +16,7 @@ nav_exclude: true
 - release-gated historical-resolution conformance evidence.
 
 
-## v0.9.3 — Current implementation release
+## v0.9.3 — Prior implementation release
 
 - stable normative requirements and traceability;
 - independent implementation-path evidence;
@@ -34,8 +34,8 @@ nav_exclude: true
 - [x] compare Python and TypeScript deterministic and historical outcomes as a release-gated cross-runtime assurance check;
 - [x] emit machine-readable TypeScript implementation, conformance, historical-resolution and equivalence evidence;
 - [x] use cross-runtime divergence as a specification-ambiguity signal before v1.0;
-- [ ] add thin HTTP/client surfaces and Python↔TypeScript network interoperability;
-- [ ] add A2A publication/compatibility adapters after the core network surface is stable.
+- [x] add thin HTTP/client surfaces and Python↔TypeScript network interoperability;
+- [x] add A2A publication/compatibility adapters after the core network surface is stable.
 
 The repository-owned TypeScript track is implementation-diversity evidence, but it MUST NOT be represented as external organisational independence for the v1.0 gate.
 

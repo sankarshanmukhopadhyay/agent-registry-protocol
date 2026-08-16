@@ -1,6 +1,6 @@
 {
   "type": "arpa-a2a-registry-evidence-bundle",
-  "implementation_release": "0.9.4",
+  "implementation_release": "0.9.5",
   "report": "artifacts/interoperability/a2a-registry-report.json",
   "mapping": "mappings/a2a-v1.0-arpa-mapping.yaml",
   "publication_schema": "schemas/a2a-publication-projection.schema.json",

@@ -33,7 +33,7 @@ const report = {
   report_type: "arpa-typescript-historical-resolution-report",
   arpa_baseline: manifest.version,
   implementation: "arpa-typescript",
-  implementation_version: "0.2.0",
+  implementation_version: "0.3.0",
   independence_statement: "Historical reliance logic is implemented from ARPA v0.9.4 historical-resolution requirements and fixtures without importing Python behavioural code.",
   vectors: { total: results.length, passed: results.filter((r) => r.passed).length, failed: results.filter((r) => !r.passed).length },
   results

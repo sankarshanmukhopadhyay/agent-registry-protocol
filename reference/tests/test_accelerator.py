@@ -9,7 +9,7 @@ ROOT=Path(__file__).resolve().parents[2]
 def test_accelerator_metadata_version():
     assert client.get('/health').json()['version']=='0.9.4'
     assert client.get('/registry').json()['arpa_version']=='0.9.0'
-    assert client.get('/registry').json()['implementation_release']=='0.9.4'
+    assert client.get('/registry').json()['implementation_release']=='0.9.5'
 
 def test_acme_fixture_lifecycle():
     fixture_dir=ROOT/'implementation-accelerator/fixtures/acme'

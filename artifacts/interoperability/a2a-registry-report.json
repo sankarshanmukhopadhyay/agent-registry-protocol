@@ -1,7 +1,7 @@
 {
   "profile": "https://arpa.example/profiles/a2a/1.0",
-  "implementation_release": "0.9.4",
-  "generated_at": "2026-08-16T05:08:24.438310Z",
+  "implementation_release": "0.9.5",
+  "generated_at": "2026-08-16T05:17:08.107488Z",
   "passed": 18,
   "total": 18,
   "results": [

@@ -6,7 +6,7 @@ from fastapi.responses import JSONResponse
 from .storage import Store
 from scripts.reference_evaluator import evaluate_authority
 
-app=FastAPI(title='ARPA Reference Service',version='0.9.4')
+app=FastAPI(title='ARPA Reference Service',version='0.9.5')
 store=Store(os.getenv('ARPA_DB',':memory:'))
 
 def now(): return datetime.now(timezone.utc).isoformat().replace('+00:00','Z')
@@ -21,7 +21,7 @@ def health(): return {'status':'ok','version':'0.9.4'}
 
 @app.get('/registry')
 def registry():
-    return {'registry_id':os.getenv('ARPA_REGISTRY_ID','registry:reference'),'name':os.getenv('ARPA_REGISTRY_NAME','ARPA Reference Registry'),'arpa_version':'0.9.0','implementation_release':'0.9.4','supported_modules':['ARPA-Core','ARPA-Relations','ARPA-Authority','ARPA-Evidence'],'supported_profiles':['A','C'],'authoritative_base_uri':os.getenv('ARPA_PUBLIC_BASE_URI','http://127.0.0.1:8000'),'conformance_declaration_uri':'http://127.0.0.1:8000/records/conformance-reference','event_retention_seconds':86400,'status_max_age_seconds':300}
+    return {'registry_id':os.getenv('ARPA_REGISTRY_ID','registry:reference'),'name':os.getenv('ARPA_REGISTRY_NAME','ARPA Reference Registry'),'arpa_version':'0.9.0','implementation_release':'0.9.5','supported_modules':['ARPA-Core','ARPA-Relations','ARPA-Authority','ARPA-Evidence'],'supported_profiles':['A','C'],'authoritative_base_uri':os.getenv('ARPA_PUBLIC_BASE_URI','http://127.0.0.1:8000'),'conformance_declaration_uri':'http://127.0.0.1:8000/records/conformance-reference','event_retention_seconds':86400,'status_max_age_seconds':300}
 
 
 @app.get('/agents')
@@ -171,7 +171,7 @@ def reliance_evaluate(payload:dict):
 @app.get('/interoperability')
 def interoperability():
     return {
-        'arpa_version':'0.9.0','implementation_release':'0.9.4',
+        'arpa_version':'0.9.0','implementation_release':'0.9.5',
         'exchange_profile':'arpa-interoperability-0.5',
         'supports':['registry-metadata','canonical-resolution','scoped-recognition','event-replay','revocation-acknowledgement'],
         'evidence_format':'artifacts/interoperability/evidence-bundle.json',

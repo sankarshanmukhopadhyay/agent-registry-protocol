@@ -2,7 +2,7 @@
   "report_type": "arpa-typescript-conformance-report",
   "arpa_baseline": "0.9.4",
   "implementation": "arpa-typescript",
-  "implementation_version": "0.2.0",
+  "implementation_version": "0.3.0",
   "runtime": "node v22.16.0",
   "independence_statement": "Behavioral logic is implemented from ARPA normative requirements and shared conformance vectors; it is not imported from or executed through the Python reference implementation.",
   "supported_profiles": [

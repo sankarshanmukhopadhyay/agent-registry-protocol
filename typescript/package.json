@@ -1,21 +1,29 @@
 {
   "name": "arpa-typescript-implementation",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "private": true,
-  "description": "Independent TypeScript implementation track for ARPA v0.9.4 conformance, historical resolution and authority evidence.",
+  "description": "Independent TypeScript implementation track for ARPA v0.9.4 conformance, historical resolution, HTTP consumption and cross-runtime interoperability.",
   "type": "module",
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "test": "npm run build && node --test dist/tests/*.test.js",
     "conformance": "npm run build && node dist/src/conformance.js",
-    "release-check": "npm run typecheck && npm test && npm run conformance && npm run historical",
-    "historical": "npm run build && node dist/src/historical-conformance.js"
+    "release-check": "npm run typecheck && npm test && npm run conformance && npm run historical && npm run a2a",
+    "historical": "npm run build && node dist/src/historical-conformance.js",
+    "network-server": "npm run build && node dist/src/server.js",
+    "a2a": "npm run build && node dist/src/a2a-conformance.js"
   },
   "engines": {
     "node": ">=20"
   },
   "devDependencies": {
     "typescript": "5.8.3"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/src/index.d.ts",
+      "default": "./dist/src/index.js"
+    }
   }
 }

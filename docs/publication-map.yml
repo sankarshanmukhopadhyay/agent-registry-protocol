@@ -196,3 +196,17 @@ publication_sources:
   mode: rendered-page
 - path: examples/scenarios/historical-authority-resolution.md
   mode: rendered-page
+- path: docs/understand.md
+  mode: rendered-page
+- path: docs/build.md
+  mode: rendered-page
+- path: docs/assure.md
+  mode: rendered-page
+- path: docs/operate.md
+  mode: rendered-page
+- path: docs/integrate.md
+  mode: rendered-page
+- path: docs/govern.md
+  mode: rendered-page
+- path: RELEASE_NOTES_v0.9.5.md
+  mode: rendered-page

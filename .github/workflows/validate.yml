@@ -28,6 +28,8 @@ jobs:
         run: make typescript-check
       - name: Compare Python and TypeScript conformance outcomes
         run: make cross-runtime
+      - name: Run Python-TypeScript network interoperability
+        run: make network-interop
       - name: Upload interoperability evidence
         uses: actions/upload-artifact@v5
         with:

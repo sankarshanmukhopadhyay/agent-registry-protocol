@@ -17,17 +17,16 @@ Use [Start Here](docs/start-here.md) to choose between architecture review, loca
 
 ## Direct entry points
 
-- [Open Start Here](docs/start-here.md)
-- [Run the 15-minute pilot quickstart](docs/implementation-accelerator/01-15-minute-quickstart.md)
-- [Browse the complete documentation catalogue](docs/index.md)
-- [Read the Candidate Specification v0.9.0](spec/agent-registry-protocol-v0.9.0.md)
-- [Follow the candidate specification guide](docs/candidate-specification-guide.md)
-- [Review the protocol modules](docs/protocol-modules.md)
-- [Understand the reference implementation architecture](docs/reference-implementation-architecture.md)
-- [Review conformance and assurance](docs/conformance-guide.md)
-- [Read the v0.9.3 implementation release notes](RELEASE_NOTES_v0.9.3.md)
-- [Read the v0.9.2 implementation release notes](RELEASE_NOTES_v0.9.2.md)
-- [Read the normative v0.9.0 Candidate Specification release notes](RELEASE_NOTES_v0.9.0.md)
+- [Start Here](docs/start-here.md)
+- [Understand ARPA](docs/understand.md)
+- [Build ARPA](docs/build.md)
+- [Assure & Conform](docs/assure.md)
+- [Operate ARPA](docs/operate.md)
+- [Integrate & Interoperate](docs/integrate.md)
+- [Govern & Contribute](docs/govern.md)
+- [Documentation catalogue](docs/index.md)
+- [Candidate Specification v0.9.0](spec/agent-registry-protocol-v0.9.0.md)
+- [Current v0.9.5 release notes](RELEASE_NOTES_v0.9.5.md)
 
 ## Publication scope
 

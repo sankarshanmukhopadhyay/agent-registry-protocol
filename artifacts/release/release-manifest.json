@@ -1,134 +1,142 @@
 {
-  "release": "v0.9.4",
-  "release_date": "2026-08-11",
+  "release": "v0.9.5",
+  "release_date": "2026-08-16",
   "authoritative_specification": "spec/agent-registry-protocol-v0.9.0.md",
-  "implementation_release": "0.9.4",
-  "profile_release": "ARPA historical authority resolution and governance alignment",
-  "release_title": "Historical Authority Resolution and Governance Alignment",
+  "implementation_release": "0.9.5",
+  "release_title": "TypeScript Implementation and Cross-Runtime Assurance",
   "artifacts": [
     {
-      "path": "PROJECT-STATUS.yaml",
-      "sha256": "2495f320da21e397eeb796cb8d8c10a959592222185d941d8efd82e6cca3a119"
-    },
-    {
-      "path": "spec/agent-registry-protocol-v0.9.0.md",
-      "sha256": "9e03322b7b0ed9143d7ce9f35c911a084ac49cda8e2a6ff2515f1276773319b1"
-    },
-    {
-      "path": "docs/historical-authority-resolution.md",
-      "sha256": "4110362986dc8f3bbc19acdbfe28e8e6bced5f0800f6e1d77d0f400810410ca4"
-    },
-    {
-      "path": "docs/architecture/trqp-arpa-interoperability.md",
-      "sha256": "6ccdd62b2fdde37d61e81f0e15d8ab3c888c042266c08fd114e724e0acabd48a"
-    },
-    {
-      "path": "schemas/historical-resolution.schema.json",
-      "sha256": "5cdb26433ccac05ff60df9ce7c4b3008fdf5b281bc40dc05237cc519d4493145"
-    },
-    {
-      "path": "schemas/project-status.schema.json",
-      "sha256": "17ed8480957f540744980a126d8bf0a64649aafb24820f3e4c43d6c8a157aff1"
-    },
-    {
-      "path": "registries/reconstruction-statuses.json",
-      "sha256": "b6aa8262635d38d027ba58ad80b275bc6cfc5e5e6859560ae3f0c87f9ee4acf9"
-    },
-    {
-      "path": "registries/historical-effect-codes.json",
-      "sha256": "b8fb58fefc99019ea4c99bb9c55ccf788b7c35e746ac9053e44b6e96f54e6378"
-    },
-    {
-      "path": "registries/error-codes.json",
-      "sha256": "d45d4f7d443f2bc2ad40c469e33248623829de0b8b38ded854bee721ff83588a"
-    },
-    {
-      "path": "registries/reason-codes.json",
-      "sha256": "f9cf34002d68da0f6d0836586d1c13504556b11b5cea94fd243df93b21d74303"
-    },
-    {
-      "path": "openapi/arpa-openapi.yaml",
-      "sha256": "3f77ebfc90b87f237e6cdc3bd0fdd395c15cbc730bb55d9cc16fe057055a432a"
-    },
-    {
-      "path": "reference/app.py",
-      "sha256": "af798f2f361c466abcc1bfdb2f6028f71d6abce15be76ea29fe6de395e41d4d7"
-    },
-    {
-      "path": "scripts/validate_historical_resolution.py",
-      "sha256": "da63932e98274de1875b274dbaf673ab3327948265f9d5d666f900d3f26dcb3a"
-    },
-    {
-      "path": "scripts/validate_repository.py",
-      "sha256": "227802ee3290455ca9bad319528c4249fe07a3779c69c780bb4d9e09dfda904f"
-    },
-    {
-      "path": "scripts/validate_candidate.py",
-      "sha256": "b0985821bede034d3c436fcc063490ef48c7ffc7a36d3b994a3b82e583129443"
-    },
-    {
-      "path": "conformance/test-vectors/historical/manifest.json",
-      "sha256": "cfb2665166fb01f6264b9e280b89e17043556ae065930b9c45d1956d7cad4694"
-    },
-    {
-      "path": "artifacts/historical-resolution/evidence-bundle.json",
-      "sha256": "2a57692b5931e0ae9385592ddee2c85502c1d143119a8fba7531b25c107b3a9d"
-    },
-    {
-      "path": "RELEASE_NOTES_v0.9.4.md",
-      "sha256": "970d64a1ef6e6fd661e58eac67abd71d2355ce1e9b84efb27585128c6ff4ffad"
-    },
-    {
       "path": "README.md",
-      "sha256": "c33727aa3c9b09ca694cecd231c35a0ba23a3fc5d89f9f1199f76fedb9c7d1b7"
+      "sha256": "55ad04682e625f60a07046e622a46925e2c89eee4ac26ce4a3f58fd82271adfc"
     },
     {
-      "path": "CHANGELOG.md",
-      "sha256": "33d5567219b50dbfd5154f450530ffadf72570853f5c48b3991e17c9783c3ffa"
+      "path": "RELEASE_NOTES_v0.9.5.md",
+      "sha256": "e28c4f1cc8eabccf0cd7c542e81980e2285f54e884e11740d9fa53114f31206f"
     },
     {
       "path": "ROADMAP.md",
-      "sha256": "a0cf0b7061d3844f75b044589706f6917fb87e69144332b68959f68e7cae1c8c"
+      "sha256": "e6bcb6e492d3c625424c98d92bd2c88bcabd1e807314f8bddfe8c7fe50832eea"
     },
     {
-      "path": "GOVERNANCE.md",
-      "sha256": "b0128ccbb1df7456816f19fd9484c44928b9a0c56d2d9be27e31dd40952470cd"
+      "path": "CHANGELOG.md",
+      "sha256": "6867c71c9d973b66276106cdc8e28a484458dfb6ff80d256a1fe6142f32ffffc"
     },
     {
-      "path": "PORTFOLIO_STATUS.md",
-      "sha256": "11063ae281e1ac494a36e7f0592a1eb6d84b4ebcd71c9d0277eab6c0d1ff4e7e"
-    },
-    {
-      "path": "docs/start-here.md",
-      "sha256": "4b3426eb89d6460d1c07429f62ca3c793ae6c24a6006714b9e271cb9f4e32396"
-    },
-    {
-      "path": "docs/index.md",
-      "sha256": "de06874de756294e7556f209c681c6ace535983fac746c9dab27a8f3b2688112"
-    },
-    {
-      "path": "docs/publication-map.yml",
-      "sha256": "b15071e4092d4e3fe9b2ff491d6f0b0018fdc5455204102c365bf77828783d29"
-    },
-    {
-      "path": "CITATION.cff",
-      "sha256": "cff655c18a8e34d59889772a8b95478f2fc961e0675e39a629e1b603a5937943"
+      "path": "KNOWN_LIMITATIONS.md",
+      "sha256": "a827d3916f5acde415a36f547dd742753b88ed27c73bb67a648ea1cb34144fd3"
     },
     {
       "path": "Makefile",
-      "sha256": "14a775bfb0c73d4ea03c3c535b4e85902294841401a8c01d13abaa66247f195d"
+      "sha256": "5438d712ef2f6169806781617d9594f76074709dfe3aec0cf91a1e4ef1503795"
+    },
+    {
+      "path": ".github/workflows/validate.yml",
+      "sha256": "67e32ba588899b86b99c467a496e477a9af9ccb5ed00e9038449ecd6874fde6e"
+    },
+    {
+      "path": "docs/start-here.md",
+      "sha256": "207a63485f128b0e3653509e93ce059c738b11dbaf6fa42ad5aee04c41ef1550"
+    },
+    {
+      "path": "docs/understand.md",
+      "sha256": "b6a113bf93098904dc1f516a8065a3a131beac9049bd2e8b750ba535223109d3"
+    },
+    {
+      "path": "docs/build.md",
+      "sha256": "ae9cc35be5b5c79f96d4294356a98a930c4cf681cd9cef408e50ba54912831c6"
+    },
+    {
+      "path": "docs/assure.md",
+      "sha256": "6ab4be7a6f37078fbae2bf17b2ab55fb8e6217a9a0e963751ac47ee000a90a53"
+    },
+    {
+      "path": "docs/operate.md",
+      "sha256": "520c094bfb69a3aad88b9b37e635b62126bcda1732e4fa4c8e4e96a9d3b8fa53"
+    },
+    {
+      "path": "docs/integrate.md",
+      "sha256": "b9dcdf7913c1e14097ecdcb29960593004dc719917271616aa559b1aa606314d"
+    },
+    {
+      "path": "docs/govern.md",
+      "sha256": "406db487203d419b630b985e8c2ad538602e5b330a9fbb16b2c25cb2b30fdabf"
+    },
+    {
+      "path": "docs/index.md",
+      "sha256": "c30595a537aa689b123ffe0875b92b3940b0291f0032547606ec50a25866e2e0"
+    },
+    {
+      "path": "docs/typescript-implementation.md",
+      "sha256": "4bd837e8ede9bf02507a0f2ae889abfc9c24c38ed4ff5a7da056bd425275e4a1"
+    },
+    {
+      "path": "typescript/package.json",
+      "sha256": "0c54b21952c2b8006bf700bbd33f650874a5fff51e0cc9bd0dca08156d01a6f7"
+    },
+    {
+      "path": "typescript/src/index.ts",
+      "sha256": "2b1013732b95f13a6b7867092fec4ca3429b5355c7f4a9356d8bb9fe9e2aae2c"
+    },
+    {
+      "path": "typescript/src/server.ts",
+      "sha256": "adb427adc7ab0ca2e6bf828a431dda8bb86cdc54543b96201c7ec7f0e959ed63"
+    },
+    {
+      "path": "typescript/src/client.ts",
+      "sha256": "0772d58ed972562787bdf97989b774c0094a3ac89f973743aead6093d885a5b9"
+    },
+    {
+      "path": "typescript/src/a2a.ts",
+      "sha256": "0ece643d8c6f0f8d32e345e95ef27980560500af42641d966044623c27083cd4"
+    },
+    {
+      "path": "typescript/src/a2a-conformance.ts",
+      "sha256": "cd27b68eff3b45841748c2effa7d253fc9f068942e78bf539371d4d511f7c3bb"
+    },
+    {
+      "path": "typescript/tests/http-a2a.test.ts",
+      "sha256": "d14b5fb8ed6abacc79505fb83a9f3f8579e731ef0f1eda65c0be79b5f40abe1d"
+    },
+    {
+      "path": "scripts/run_typescript_network_interop.py",
+      "sha256": "0b5c99846dfab0498d85b4c0a2b95166dca62e97c16bdcd1a531396dbe7f4263"
+    },
+    {
+      "path": "scripts/validate_typescript_interoperability.py",
+      "sha256": "aa7b41b71969ac1094261575ab3057e2e4eb1d0b1f462b1b7bb3e0629b965bc9"
+    },
+    {
+      "path": "artifacts/typescript/conformance-report.json",
+      "sha256": "925ddad536f0a216beb212ca9466db9d3cff7dcda268ed4ef541670fabfb7e31"
+    },
+    {
+      "path": "artifacts/typescript/historical-resolution-report.json",
+      "sha256": "56029e1de9a9f6365e0568eacd81569a5281f5d7d63e9e20f30d1c980b8c287f"
+    },
+    {
+      "path": "artifacts/typescript/a2a-adapter-report.json",
+      "sha256": "aeecffa86e5e61fb75cefe1d6c4f0ccb58ce771d38914149c607aeeb372f3ed2"
+    },
+    {
+      "path": "artifacts/typescript/cross-runtime-report.json",
+      "sha256": "6fb7968ddcad88a9eac378ff024cc5cbd2f7b920849b06e03faf7ecdf45bcd38"
+    },
+    {
+      "path": "artifacts/typescript/network-interoperability-report.json",
+      "sha256": "08432f9702b9aade4f58e2d6c590b9c57269c3df531dd7a262388034992fdac0"
     }
   ],
   "assurance_boundary": [
-    "Normative protocol baseline remains the v0.9.0 Candidate Specification surface",
-    "Historical state and relying-party acceptance are separate decisions",
-    "ARPA does not acquire TRQP, A2A, legal-recognition, or certification authority",
-    "Repository validation is not certification or production deployment assurance"
+    "Normative protocol baseline remains the v0.9.0 Candidate Specification",
+    "TypeScript and Python implementations are repository-controlled and do not constitute external organisational independence",
+    "TypeScript HTTP service uses in-memory persistence and is not production deployment assurance",
+    "A2A publication and discovery do not imply authority"
   ],
-  "federation_posture": "topology-neutral",
   "evidence": [
-    "artifacts/candidate-specification/evidence-bundle.json",
-    "artifacts/interoperability/evidence-bundle.json",
-    "artifacts/historical-resolution/evidence-bundle.json"
+    "artifacts/typescript/conformance-report.json",
+    "artifacts/typescript/historical-resolution-report.json",
+    "artifacts/typescript/a2a-adapter-report.json",
+    "artifacts/typescript/cross-runtime-report.json",
+    "artifacts/typescript/network-interoperability-report.json"
   ]
 }

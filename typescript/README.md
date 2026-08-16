@@ -1,45 +1,37 @@
-# ARPA TypeScript implementation track
+# ARPA TypeScript implementation
 
-This directory contains an **independent TypeScript interpretation** of the ARPA v0.9.4 protocol surface. It exists to improve implementation portability, interoperability evidence and pre-v1.0 specification assurance. It is not a line-by-line port of the Python reference service.
+This directory contains an **independent TypeScript interpretation** of the ARPA protocol, released as the TypeScript v0.3.0 track within ARPA v0.9.5. It improves implementation portability and cross-runtime assurance without sharing behavioural code with the Python reference evaluator.
 
-## Independence rule
-
-TypeScript code consumes the normative repository artifacts directly:
-
-- `../schemas/` for JSON Schema definitions;
-- `../registries/` for governed code registries;
-- `../conformance/test-vectors/` for observable protocol outcomes;
-- the normative specification for behavioural requirements.
-
-Behavioral code MUST NOT import, execute or mechanically translate `../reference/` or `../scripts/reference_evaluator.py`. Agreement between the Python and TypeScript implementations is evidence; shared implementation logic would weaken that evidence.
-
-## Current milestone
-
-The v0.2.0 track provides:
-
-- canonical identifier-resolution outcomes;
-- deterministic authority evaluation for the pure §28.2 semantics covered by Profiles B-D vectors;
-- fail-closed status, scope, expiry, prohibition, limit and approval handling;
-- direct schema and registry catalog consumption;
-- execution of the shared conformance corpus;
-- machine-readable TypeScript conformance evidence;
-- effective-time record selection and historical-resolution reliance semantics;
-- fail-closed retention and historical-evidence integrity handling;
-- deterministic decision-receipt generation with request digests and evidence references;
-- event-stream continuity checks and checkpoint reporting;
-- 15-vector historical-resolution evidence alongside the shared Profile A-D corpus.
-
-It intentionally does not claim production federation, proof verification, key custody, issuer competence resolution, persistence or external independent-operation evidence.
-
-## Development
+## Use
 
 ```bash
 npm install
 npm run release-check
 ```
 
-Reports are written under `../artifacts/typescript/`, including `conformance-report.json`, `historical-resolution-report.json`, `implementation-report.json`, and `cross-runtime-report.json`.
+Start the development HTTP service:
 
-## Governance invariant
+```bash
+npm run network-server
+```
 
-Discovery, registration or successful resolution MUST NOT be interpreted as authority. `Profile A` authority evaluation is therefore explicitly `not_applicable`.
+The exported local package surface includes `ArpaClient`, the thin server, authority/resolution functions, historical-resolution helpers, decision receipts, event continuity, A2A adapters and the in-memory development store.
+
+## Protocol sources
+
+The implementation consumes repository-owned normative/machine-verifiable sources directly:
+
+- `../schemas/` — JSON Schema contracts;
+- `../registries/` — governed code registries;
+- `../conformance/test-vectors/` — observable protocol outcomes;
+- `../spec/agent-registry-protocol-v0.9.0.md` — normative protocol requirements.
+
+Behavioral code MUST NOT import or mechanically translate `../reference/` or `../scripts/reference_evaluator.py`.
+
+## Evidence
+
+Reports under `../artifacts/typescript/` cover deterministic vectors, historical resolution, A2A adapters, same-corpus cross-runtime equivalence and HTTP network interoperability.
+
+## Assurance boundary
+
+Discovery and A2A publication never imply authority. The server is development-grade and uses in-memory persistence. Repository ownership of both runtimes does not constitute the externally independent implementation evidence required for v1.0.

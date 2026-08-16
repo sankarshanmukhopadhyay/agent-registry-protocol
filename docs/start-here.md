@@ -9,34 +9,29 @@ permalink: /docs/start-here/
 
 # Start here
 
-ARPA has several entry points because evaluation, pilot deployment, conformance review and protocol integration produce different evidence. Choose the journey that matches the decision you need to make.
+ARPA is easier to navigate when you begin with the **decision you need to make**, not with the repository directory structure.
 
-| Objective | Entry point | Primary commands or artefacts | Evidence produced | Status |
-|---|---|---|---|---|
-| Understand the protocol architecture | [Protocol modules](protocol-modules.md) | Module and dependency model | Explicit scope and non-implication rules | Informative |
-| Validate and run the reference service locally | [Quickstart](quickstart.md) | `make setup`, `make validate`, `make test`, `make run` | Schema, vector, test and service results | Informative |
-| Stand up a pilot registry | [15-minute quickstart](implementation-accelerator/01-15-minute-quickstart.md) | `make pilot-up`, `make pilot-seed`, `make pilot-check` | Pilot-readiness report and decision evidence | Informative |
-| Prepare a repository release | [Candidate Specification implementation guide](candidate-specification-guide.md) | `make setup`, `make release-check` | Complete repository release-gate evidence | Informative process |
-| Claim implementation conformance | [Conformance Guide](conformance-guide.md) | Declaration, report and profile evidence | Reviewable conformance package | Profile-dependent |
-| Integrate A2A Agent Cards and tasks | [ARPA A2A v1.0 Interoperability Profile](../spec/profiles/arpa-a2a-v1.0-interoperability-profile.md) | Mapping, schemas and test vectors | A2A interoperability evidence | Optional profile normative |
+## Choose your journey
 
-## Status and version boundary
+| You need to… | Go to | Primary outcome |
+|---|---|---|
+| Understand ARPA's trust and authority model | [1. Understand ARPA](understand.md) | Correct conceptual boundaries and module selection |
+| Implement or evaluate code | [2. Build ARPA](build.md) | Working protocol implementation |
+| Test a conformance or release claim | [3. Assure & Conform](assure.md) | Machine-verifiable assurance evidence |
+| Deploy or govern a registry | [4. Operate ARPA](operate.md) | Operational controls and readiness evidence |
+| Connect A2A, TRQP or another system | [5. Integrate & Interoperate](integrate.md) | Explicit protocol-boundary mapping |
+| Contribute, release or review governance | [6. Govern & Contribute](govern.md) | Reviewable change-control and repository evidence |
 
-- **Normative:** the [ARPA Candidate Specification v0.9.0](../spec/agent-registry-protocol-v0.9.0.md) defines the core protocol requirements.
-- **Profile normative:** optional profiles define additional requirements only when an implementation claims that profile.
-- **Informative:** guides, scenarios and accelerator assets explain implementation and deployment without changing normative requirements.
+## Version boundary
 
-ARPA v0.9.4 is the current implementation and interoperability release. It preserves the v0.9.0 Candidate Specification as the normative baseline and adds deterministic historical authority resolution, executable project-status governance, and the A2A registry publication, discovery, resolve/snapshot, compatibility and assurance profile updates.
+- **Normative baseline:** [ARPA Candidate Specification v0.9.0](../spec/agent-registry-protocol-v0.9.0.md).
+- **Current implementation release:** v0.9.5.
+- **Normative protocol baseline:** v0.9.0 Candidate Specification; the TypeScript implementation consumes the v0.9.4 historical-resolution and conformance artifacts as part of the v0.9.5 assurance surface.
 
-## Complete catalogue
+Guides and implementation code do not silently redefine normative requirements. Optional profiles become normative only when that profile is claimed.
 
-Use the [documentation catalogue](index.md) when you need the full specification, governance, implementation, conformance, interoperability and scenario surface.
+## Developer shortcut
 
+If you are here to build something, start with [Build ARPA](build.md), then run `make release-check-all` and review the evidence described in [Assure & Conform](assure.md).
 
-## v0.9.4 historical resolution and registry convergence
-
-See [Historical Authority Resolution](historical-authority-resolution.md) for deterministic as-of semantics, evidence lineage, retention handling, and later-event interpretation.
-
-## A2A registry convergence
-
-See the [A2A Registry Integration Guide](a2a-registry-integration-guide.md) for publication, caller-visible discovery, resolve/snapshot, compatibility and authority-boundary semantics.
+For every rendered document and historical release note, use the [Documentation catalogue](index.md).

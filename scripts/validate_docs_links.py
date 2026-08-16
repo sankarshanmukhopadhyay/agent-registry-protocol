@@ -76,12 +76,11 @@ def main() -> int:
     for p in unreachable: errors.append(f'Published page is unreachable from home/catalogue: {p.relative_to(site)}')
     for p in too_deep: errors.append(f'Published page exceeds {args.max_hops} navigation hops: {p.relative_to(site)} (depth {depths[p]})')
 
-    # Curated journey links must be direct from Start Here.
+    # Task-oriented journey hubs must be direct from Start Here.
     curated=[
-      site/'docs/protocol-modules.html', site/'docs/quickstart.html',
-      site/'docs/implementation-accelerator/01-15-minute-quickstart.html',
-      site/'docs/candidate-specification-guide.html', site/'docs/conformance-guide.html',
-      site/'spec/profiles/arpa-a2a-v1.0-interoperability-profile.html'
+      site/'docs/understand/index.html', site/'docs/build/index.html',
+      site/'docs/assure/index.html', site/'docs/operate/index.html',
+      site/'docs/integrate/index.html', site/'docs/govern/index.html'
     ]
     direct=graph.get(start,set())
     for p in map(Path.resolve,curated):

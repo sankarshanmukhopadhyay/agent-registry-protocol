@@ -6,28 +6,26 @@ nav_exclude: true
 
 # Changelog
 
-## Unreleased — v0.9.5 TypeScript implementation assurance
+## [0.9.5] - 2026-08-16
 
-- Added an independent TypeScript implementation track against the v0.9.4 baseline.
-- Added direct schema/registry catalog consumption and all 12 shared Profile A–D conformance vectors.
-- Added machine-readable TypeScript implementation and conformance reports.
-- Added Python↔TypeScript outcome-equivalence evidence and CI gating.
-- Documented the implementation-independence boundary and the continued requirement for external v1.0 implementation evidence.
-- Added TypeScript effective-time selection and historical-resolution reliance semantics across all 15 v0.9.4 historical vectors.
-- Added fail-closed retention and historical-evidence-integrity handling.
-- Added deterministic decision-receipt generation with request digests and evidence/governance references.
-- Added event continuity and checkpoint validation primitives.
-- Expanded cross-runtime assurance from 12 deterministic vectors to 27 deterministic + historical equivalence checks.
+### Added
+- Independent TypeScript v0.3.0 implementation track consuming shared schemas, registries and conformance vectors without importing Python behavioural code.
+- Effective-time and historical-resolution reliance semantics across all 15 v0.9.4 historical vectors.
+- Decision receipts, event continuity, thin Node.js HTTP service, reusable `ArpaClient` and in-memory development store.
+- A2A publication projection and conservative Agent Card compatibility adapters.
+- Machine-readable TypeScript deterministic, historical, A2A, cross-runtime and network-interoperability evidence.
+- Task-oriented GitHub Pages journeys: Understand, Build, Assure, Operate, Integrate and Govern.
 
+### Changed
+- Expanded Python↔TypeScript assurance from 12 deterministic vectors to 27 deterministic + historical equivalence checks.
+- Added 7/7 loopback HTTP interoperability checks, including TypeScript-client consumption of the Python registry.
+- `make release-check-all` now gates network interoperability in addition to repository and TypeScript validation.
+- Clarified artifact-specific licensing: human-readable specification/documentation is CC-BY-4.0; code and executable/machine-readable artifacts are Apache-2.0.
+- Updated repository citation and implementation metadata to v0.9.5 while retaining the v0.9.0 Candidate Specification as the normative baseline.
 
-## Unreleased
-
-### Repository governance
-
-- Clarified artifact-specific licensing: human-readable specification and documentation content is CC-BY-4.0; code and executable/machine-readable artifacts are Apache-2.0.
-- Added `LICENSE-CONTENT`, a root licensing map, a machine-readable artifact classification policy, and licensing validation in the release gate.
-- Corrected `CITATION.cff` so the cited software implementation is identified as Apache-2.0 while documenting the separate CC-BY-4.0 content license.
-
+### Assurance boundary
+- Both runtime implementations remain repository-controlled; external independently operated implementation evidence is still required for v1.0.
+- The TypeScript HTTP server uses in-memory persistence and is not a production registry deployment.
 
 ## [0.9.4] - 2026-08-11
 

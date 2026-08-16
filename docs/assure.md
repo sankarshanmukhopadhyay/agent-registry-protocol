@@ -1,0 +1,38 @@
+---
+layout: default
+title: "3. Assure & Conform"
+nav_exclude: false
+nav_order: 5
+permalink: /docs/assure/
+document_status: informative
+---
+
+# Assure and conform
+
+ARPA treats conformance as an evidence-producing activity. A claim should identify the protocol/profile surface tested, the implementation under test, the evidence retained and the assurance boundary.
+
+## Core assurance path
+
+1. [Conformance overview](../conformance/README.md)
+2. [Conformance Guide](conformance-guide.md)
+3. Select [Profile A](../conformance/profiles/profile-a.md), [B](../conformance/profiles/profile-b.md), [C](../conformance/profiles/profile-c.md) or [D](../conformance/profiles/profile-d.md)
+4. Run the repository gate:
+
+```bash
+make release-check-all
+```
+
+5. Review generated evidence under `artifacts/` and implementation reports under `conformance/reports/`.
+
+## Current cross-runtime evidence
+
+The v0.9.5 development track adds two distinct assurance layers:
+
+- **same-corpus equivalence:** Python and TypeScript independently evaluate shared deterministic and historical vectors;
+- **network interoperability:** the implementations exchange ARPA data and decisions across their HTTP boundaries.
+
+Repository-controlled implementation diversity is useful pre-v1.0 evidence, but it does **not** satisfy the requirement for externally independent implementation evidence.
+
+## Evidence is not authority
+
+Passing a conformance test does not establish legal authority, production security, issuer competence or governance recognition beyond the declared test scope.

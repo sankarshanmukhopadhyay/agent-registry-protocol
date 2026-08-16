@@ -1,0 +1,33 @@
+{
+  "report_type": "arpa-typescript-a2a-adapter-report",
+  "arpa_baseline": "0.9.4",
+  "implementation_version": "0.3.0",
+  "checks": [
+    {
+      "name": "exact-agent-card-uri-preserved",
+      "passed": true
+    },
+    {
+      "name": "publication-does-not-imply-authority",
+      "passed": true
+    },
+    {
+      "name": "source-record-provenance-retained",
+      "passed": true
+    },
+    {
+      "name": "additive-card-change-compatible",
+      "passed": true
+    },
+    {
+      "name": "removed-card-skill-breaking",
+      "passed": true
+    }
+  ],
+  "summary": {
+    "total": 5,
+    "passed": 5,
+    "failed": 0
+  },
+  "assurance_boundary": "A2A publication and compatibility helpers preserve ARPA non-implication rules; they do not establish authority, capability verification or governance recognition."
+}

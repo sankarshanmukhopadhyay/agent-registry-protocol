@@ -16,7 +16,7 @@ The portfolio repository owns inclusion and strategic tier. This repository owns
 | Lifecycle | Active | `PROJECT-STATUS.yaml` |
 | Operational status | Active validation | `PROJECT-STATUS.yaml` |
 | Specification status | Community Draft | `PROJECT-STATUS.yaml` |
-| Current implementation release | v0.9.4 | Repository release history |
+| Current implementation release | v0.9.5 | Repository release history |
 | Normative specification surface | v0.9.0 Candidate Specification document | Repository specification |
 | Validation | `make release-check` and `make pages-check` | `PROJECT-STATUS.yaml` |
 | Candidate evidence | `artifacts/candidate-specification/evidence-bundle.json` | Repository validation |

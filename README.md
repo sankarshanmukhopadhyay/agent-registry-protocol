@@ -6,7 +6,7 @@ nav_exclude: true
 
 # Agent Registry Protocol
 
-[![Specification status](https://img.shields.io/badge/specification-v0.9.4%20historical--resolution-blue)](https://sankarshanmukhopadhyay.github.io/agent-registry-protocol/spec/agent-registry-protocol-v0.9.0.html)
+[![Specification status](https://img.shields.io/badge/implementation-v0.9.5%20cross--runtime-blue)](https://sankarshanmukhopadhyay.github.io/agent-registry-protocol/spec/agent-registry-protocol-v0.9.0.html)
 [![Validation](https://github.com/sankarshanmukhopadhyay/agent-registry-protocol/actions/workflows/validate.yml/badge.svg)](https://github.com/sankarshanmukhopadhyay/agent-registry-protocol/actions/workflows/validate.yml)
 [![License: CC BY 4.0](https://img.shields.io/badge/spec-CC%20BY%204.0-lightgrey.svg)](https://github.com/sankarshanmukhopadhyay/agent-registry-protocol/blob/main/LICENSE-CONTENT)
 [![Code: Apache-2.0](https://img.shields.io/badge/code-Apache--2.0-lightgrey.svg)](https://github.com/sankarshanmukhopadhyay/agent-registry-protocol/blob/main/LICENSE-CODE)
@@ -24,15 +24,20 @@ nav_exclude: true
 | Lifecycle | Active |
 | Operational status | Active validation |
 | Specification status | Community Draft |
-| Implementation release | v0.9.4 |
+| Implementation release | v0.9.5 |
 | Normative baseline | v0.9.0 Candidate Specification surface |
 | Primary artifacts | Specification, schemas, API/event contracts, reference implementations, conformance and evidence |
 | Release gate | `make release-check-all` |
 | Candidate evidence | `artifacts/candidate-specification/evidence-bundle.json` |
 | Authority | Member-owned status and scope in `PROJECT-STATUS.yaml`; process in `GOVERNANCE.md` |
 
-## What v0.9.4 delivers
+## What v0.9.5 delivers
 
+- an independent TypeScript v0.3.0 implementation track over shared normative artifacts;
+- 27/27 Python↔TypeScript deterministic and historical outcome-equivalence checks;
+- a thin TypeScript HTTP service, reusable `ArpaClient`, and 7/7 network interoperability checks;
+- A2A publication/compatibility adapters with explicit discovery-is-not-authority semantics;
+- a task-oriented documentation architecture organized around Understand, Build, Assure, Operate, Integrate, and Govern;
 - deterministic historical authority resolution separating requested-time state from current state;
 - explicit reconstruction quality, selected-record provenance, later material events, historical-effect and retention semantics;
 - fifteen release-gated historical-resolution vectors with machine-readable evidence;
@@ -53,18 +58,16 @@ nav_exclude: true
 
 ## Start here
 
-1. [Choose the correct journey in Start Here](docs/start-here.md)
-2. [Run the 15-minute implementation quickstart](docs/implementation-accelerator/01-15-minute-quickstart.md)
-3. [Implementation Accelerator](docs/implementation-accelerator/index.md)
-4. [Documentation home](docs/index.md)
-5. [Authoritative v0.9.0 Candidate Specification](https://sankarshanmukhopadhyay.github.io/agent-registry-protocol/spec/agent-registry-protocol-v0.9.0.html)
-6. [Candidate implementation guide](docs/candidate-specification-guide.md)
-7. [Historical Authority Resolution](docs/historical-authority-resolution.md)
-8. [ARPA–TRQP interoperability architecture](docs/architecture/trqp-arpa-interoperability.md)
-9. [Migration from v0.5.0](docs/migration-v0.5.0-to-v0.9.0.md)
-10. [A2A Registry Integration Guide](docs/a2a-registry-integration-guide.md)
-11. [TypeScript implementation track](docs/typescript-implementation.md)
-12. [Known limitations](KNOWN_LIMITATIONS.md)
+Choose the path that matches the decision you need to make:
+
+- [Understand ARPA](docs/understand.md) — concepts, modules and non-implication rules.
+- [Build ARPA](docs/build.md) — implementation paths, machine-readable artifacts and developer quickstarts.
+- [Assure & Conform](docs/assure.md) — profiles, release gates and evidence.
+- [Operate ARPA](docs/operate.md) — deployment, governance, security, privacy and lifecycle operations.
+- [Integrate & Interoperate](docs/integrate.md) — A2A, TRQP and cross-runtime integration.
+- [Govern & Contribute](docs/govern.md) — change control, releases and repository governance.
+
+Use [Start Here](docs/start-here.md) for the decision router or the [documentation catalogue](docs/index.md) for the complete rendered surface.
 
 ## Validate and produce evidence
 
@@ -73,11 +76,11 @@ make setup
 make release-check-all
 ```
 
-The full gate validates the complete Python release surface plus the TypeScript implementation track and Python↔TypeScript conformance equivalence evidence. The current released implementation remains v0.9.4; the TypeScript work is a v0.9.5 development track against that baseline.
+The full gate validates the Python release surface, TypeScript conformance and historical semantics, A2A adapters, same-corpus Python↔TypeScript equivalence, and loopback HTTP network interoperability.
 
-## Development toward v0.9.5
+## TypeScript and cross-runtime assurance
 
-The repository now includes an [independent TypeScript implementation track](docs/typescript-implementation.md) rooted in the v0.9.4 normative baseline. It independently implements the deterministic resolution and authority semantics exercised by the shared Profiles A–D vectors and emits machine-readable cross-runtime evidence. This repository-owned implementation diversity improves pre-v1.0 assurance but does not substitute for external organisational independence.
+The [TypeScript implementation](docs/typescript-implementation.md) independently implements the supported ARPA semantics, exposes a development HTTP/client surface, and emits deterministic, historical, A2A and network interoperability evidence. Repository-owned implementation diversity improves pre-v1.0 assurance but does not substitute for externally operated independent implementation evidence.
 
 ## ARPA and TRQP
 

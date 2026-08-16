@@ -1,0 +1,48 @@
+{
+  "report_type": "arpa-typescript-network-interoperability-report",
+  "arpa_baseline": "0.9.4",
+  "typescript_implementation_version": "0.3.0",
+  "transport": "HTTP loopback",
+  "checks": [
+    {
+      "name": "both-services-healthy",
+      "passed": true
+    },
+    {
+      "name": "a2a-discovery-non-authority",
+      "passed": true
+    },
+    {
+      "name": "canonical-resolution-over-http",
+      "passed": true
+    },
+    {
+      "name": "authority-decision-over-http",
+      "passed": true,
+      "python": "allow",
+      "typescript": "allow"
+    },
+    {
+      "name": "decision-receipts-over-http",
+      "passed": true
+    },
+    {
+      "name": "typescript-client-to-python-registry",
+      "passed": true
+    },
+    {
+      "name": "typescript-client-to-typescript-registry",
+      "passed": true
+    }
+  ],
+  "summary": {
+    "total": 7,
+    "passed": 7,
+    "failed": 0
+  },
+  "assurance_boundary": [
+    "Both services are repository-controlled implementations.",
+    "Loopback HTTP interoperability is implementation evidence, not external certification or organisational independence.",
+    "Production persistence, key custody, cryptographic proof verification and federation remain outside this harness."
+  ]
+}
