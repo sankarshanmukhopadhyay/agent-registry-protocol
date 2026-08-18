@@ -215,3 +215,5 @@ publication_sources:
   mode: rendered-page
 - path: docs/assurance/rahp-audit-2026-08-16.md
   mode: rendered-page
+- path: ietf/index.md
+  mode: rendered-page

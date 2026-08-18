@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "source_count": 107,
+  "source_count": 108,
   "entries": [
     {
       "source": "AI_USAGE.md",
@@ -643,6 +643,12 @@
       "expected_output": "_site/docs/assurance/rahp-audit-2026-08-16.html",
       "mode": "rendered-page",
       "title": "RAHP Audit \u2014 2026-08-16"
+    },
+    {
+      "source": "ietf/index.md",
+      "expected_output": "_site/ietf/index.html",
+      "mode": "rendered-page",
+      "title": "IETF Internet-Draft Track"
     }
   ]
 }

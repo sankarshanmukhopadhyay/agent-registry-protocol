@@ -61,7 +61,7 @@ nav_exclude: true
 
 ARPA now maintains a deliberately separate IETF authoring surface for the protocol core. The initial individual-draft series is **`draft-sankarshan-agent-registry-protocol`**. It does not replace the ARPA Candidate Specification or reuse ARPA semantic-version numbers.
 
-- [IETF authoring and submission guide](ietf/README.md)
+- [IETF authoring and submission guide](ietf/)
 - [Protocol extraction map](ietf/PROTOCOL_EXTRACTION.md)
 - [`-00` submission checklist](ietf/SUBMISSION_CHECKLIST.md)
 - [Internet-Draft source](ietf/draft-sankarshan-agent-registry-protocol.md)

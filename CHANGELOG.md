@@ -8,6 +8,9 @@ nav_exclude: true
 
 ## Unreleased
 
+### Fixed
+- Added a canonical rendered `/ietf/` landing page and publication-manifest entry so GitHub Pages validation no longer emits unresolved `ietf/README.md` links.
+
 ### IETF Internet-Draft preparation
 - Added a dedicated `ietf/` authoring surface for `draft-sankarshan-agent-registry-protocol-00` without replacing the ARPA Candidate Specification.
 - Extracted the interoperable protocol core covering identifiers, relationships, bounded delegated authority, lifecycle/status, HTTP registration and resolution, historical resolution, events, errors, extensibility, security and privacy.

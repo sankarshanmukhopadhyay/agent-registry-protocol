@@ -16,7 +16,7 @@ This catalogue provides a stable GitHub Pages entry point for the complete norma
 
 ## IETF standards track preparation
 
-- [IETF Internet-Draft authoring track](../ietf/README.md)
+- [IETF Internet-Draft authoring track](../ietf/)
 - [ARPA → IETF protocol extraction map](../ietf/PROTOCOL_EXTRACTION.md)
 - [`draft-sankarshan-agent-registry-protocol-00` source](../ietf/draft-sankarshan-agent-registry-protocol.md)
 - [`-00` submission checklist](../ietf/SUBMISSION_CHECKLIST.md)
