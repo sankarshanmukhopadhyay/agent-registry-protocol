@@ -57,6 +57,17 @@ nav_exclude: true
 - an informative ARPA–TRQP governed query-projection profile with architecture guidance, mappings and 13 positive/negative vectors;
 - flagship documentation, CI, GitHub Pages, contribution controls and AI-use governance.
 
+## IETF Internet-Draft track
+
+ARPA now maintains a deliberately separate IETF authoring surface for the protocol core. The initial individual-draft series is **`draft-sankarshan-agent-registry-protocol`**. It does not replace the ARPA Candidate Specification or reuse ARPA semantic-version numbers.
+
+- [IETF authoring and submission guide](ietf/README.md)
+- [Protocol extraction map](ietf/PROTOCOL_EXTRACTION.md)
+- [`-00` submission checklist](ietf/SUBMISSION_CHECKLIST.md)
+- [Internet-Draft source](ietf/draft-sankarshan-agent-registry-protocol.md)
+
+Build and validate the draft with `make ietf-setup` followed by `make ietf-check`. The IETF source is prepared as a prospective IETF Contribution; existing ARPA artifact-specific licensing remains unchanged.
+
 ## Start here
 
 Choose the path that matches the decision you need to make:

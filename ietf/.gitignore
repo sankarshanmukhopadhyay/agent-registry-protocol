@@ -1,0 +1,5 @@
+generated/*.xml
+generated/*.txt
+generated/*.html
+generated/*.pdf
+!generated/.gitkeep

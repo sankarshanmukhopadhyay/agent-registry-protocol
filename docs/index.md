@@ -14,6 +14,15 @@ This catalogue provides a stable GitHub Pages entry point for the complete norma
 
 > New to ARPA? Use [Start Here](start-here.md). This page is the exhaustive catalogue; the six journey pages provide the preferred reading order.
 
+## IETF standards track preparation
+
+- [IETF Internet-Draft authoring track](../ietf/README.md)
+- [ARPA → IETF protocol extraction map](../ietf/PROTOCOL_EXTRACTION.md)
+- [`draft-sankarshan-agent-registry-protocol-00` source](../ietf/draft-sankarshan-agent-registry-protocol.md)
+- [`-00` submission checklist](../ietf/SUBMISSION_CHECKLIST.md)
+
+The IETF track is a protocol extraction and prospective contribution surface; it does not replace the project Candidate Specification or imply IETF adoption.
+
 ## Document status
 
 | Status | Meaning |

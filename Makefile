@@ -1,4 +1,4 @@
-.PHONY: pilot-up pilot-down pilot-seed pilot-check pilot-reset setup validate test interop candidate run report typescript-check cross-runtime network-interop pages-manifest pages-build pages-validate docs-links pages-check release-check release-check-all package clean
+.PHONY: pilot-up pilot-down pilot-seed pilot-check pilot-reset setup validate test interop candidate run report typescript-check cross-runtime network-interop ietf-setup ietf-repo-check ietf-build ietf-lint ietf-check pages-manifest pages-build pages-validate docs-links pages-check release-check release-check-all package clean
 setup:
 	python3 -m pip install -r scripts/requirements.txt
 validate:
@@ -14,6 +14,7 @@ validate:
 	python3 scripts/validate_historical_resolution.py
 	python3 scripts/validate_a2a_interoperability.py
 	python3 scripts/validate_governance_assurance.py
+	python3 scripts/validate_ietf_draft.py
 test:
 	python3 -m pytest -q
 interop:
@@ -35,6 +36,24 @@ network-interop:
 	cd typescript && npm run build
 	python3 scripts/run_typescript_network_interop.py
 
+ietf-setup:
+	gem install kramdown-rfc --no-document
+	python3 -m pip install -r ietf/requirements.txt
+
+ietf-repo-check:
+	python3 scripts/validate_ietf_draft.py
+
+ietf-build: ietf-repo-check
+	scripts/build_ietf_draft.sh
+
+ietf-lint: ietf-build
+	@if command -v rfclint >/dev/null 2>&1; then rfclint ietf/generated/draft-sankarshan-agent-registry-protocol-00.xml; else echo "rfclint unavailable; xml2rfc build validation completed"; fi
+
+ietf-check: ietf-lint
+	@grep -q "draft-sankarshan-agent-registry-protocol-00" ietf/generated/draft-sankarshan-agent-registry-protocol-00.txt
+	@grep -q "Security Considerations" ietf/generated/draft-sankarshan-agent-registry-protocol-00.txt
+	@grep -q "IANA Considerations" ietf/generated/draft-sankarshan-agent-registry-protocol-00.txt
+
 pages-manifest:
 	python3 scripts/build_publication_manifest.py
 pages-build:
@@ -49,6 +68,7 @@ release-check-all: release-check typescript-check cross-runtime network-interop
 package: release-check-all
 clean:
 	rm -rf .pytest_cache __pycache__ reference/__pycache__ scripts/__pycache__ independent_impl/__pycache__ typescript/dist typescript/node_modules
+	rm -f ietf/generated/*.xml ietf/generated/*.txt ietf/generated/*.html ietf/generated/*.pdf
 
 
 pilot-up:

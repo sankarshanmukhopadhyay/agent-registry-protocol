@@ -35,3 +35,13 @@ Guides and implementation code do not silently redefine normative requirements. 
 If you are here to build something, start with [Build ARPA](build.md), then run `make release-check-all` and review the evidence described in [Assure & Conform](assure.md).
 
 For every rendered document and historical release note, use the [Documentation catalogue](index.md).
+
+## Standards engagement
+
+ARPA maintains a separate IETF Internet-Draft authoring track for the interoperable protocol core. The initial individual-draft candidate is `draft-sankarshan-agent-registry-protocol-00`. It is not yet an IETF work item and does not replace the ARPA Candidate Specification.
+
+- [IETF authoring track](../ietf/README.md)
+- [Protocol extraction map](../ietf/PROTOCOL_EXTRACTION.md)
+- [`-00` submission checklist](../ietf/SUBMISSION_CHECKLIST.md)
+
+Use this path when reviewing ARPA for IETF submission, protocol-scope reduction, IANA requirements, or overlap with existing IETF work.

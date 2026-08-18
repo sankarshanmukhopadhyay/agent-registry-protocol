@@ -18,3 +18,7 @@ ARPA v0.9.0 is a Candidate Specification, not a stable v1.0 release.
 - Legal recognition, regulated-sector compliance, production availability and operational SLAs remain deployment responsibilities.
 
 - The repository governance-assurance vectors verify declared semantics, not production separation of administrative duties, real multi-party key custody, independent appeal operation, or deployment-specific privacy controls.
+## IETF Internet-Draft track
+
+The `ietf/` draft is an **unsubmitted individual Internet-Draft candidate**. It is not an IETF work item, does not imply working-group adoption, and does not represent IETF consensus. The `-00` source intentionally leaves final IANA requests and active-working-group dependency positioning open for community review. Durable author contact metadata must also be added before Datatracker submission.
+

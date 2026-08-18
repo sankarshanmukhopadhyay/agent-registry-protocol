@@ -1,0 +1,47 @@
+name: IETF Internet-Draft
+
+on:
+  push:
+    paths:
+      - "ietf/**"
+      - "scripts/build_ietf_draft.sh"
+      - "scripts/validate_ietf_draft.py"
+      - "Makefile"
+      - ".github/workflows/ietf-draft.yml"
+  pull_request:
+    paths:
+      - "ietf/**"
+      - "scripts/build_ietf_draft.sh"
+      - "scripts/validate_ietf_draft.py"
+      - "Makefile"
+      - ".github/workflows/ietf-draft.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build-and-validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: ietf/requirements.txt
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3"
+      - name: Install IETF authoring dependencies
+        run: make ietf-setup
+      - name: Build and validate Internet-Draft
+        run: make ietf-check
+      - name: Upload rendered Internet-Draft
+        uses: actions/upload-artifact@v5
+        with:
+          name: draft-sankarshan-agent-registry-protocol-00
+          path: |
+            ietf/generated/draft-sankarshan-agent-registry-protocol-00.xml
+            ietf/generated/draft-sankarshan-agent-registry-protocol-00.txt
+            ietf/generated/draft-sankarshan-agent-registry-protocol-00.html

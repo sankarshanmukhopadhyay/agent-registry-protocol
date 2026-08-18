@@ -8,6 +8,15 @@ nav_exclude: true
 
 ## Unreleased
 
+### IETF Internet-Draft preparation
+- Added a dedicated `ietf/` authoring surface for `draft-sankarshan-agent-registry-protocol-00` without replacing the ARPA Candidate Specification.
+- Extracted the interoperable protocol core covering identifiers, relationships, bounded delegated authority, lifecycle/status, HTTP registration and resolution, historical resolution, events, errors, extensibility, security and privacy.
+- Added an explicit ARPA-to-IETF protocol extraction map and `-00` submission checklist.
+- Added Markdown-to-RFCXML v3, plaintext and HTML build tooling plus repository-local validation.
+- Added a dedicated GitHub Actions workflow that publishes rendered I-D artifacts for review.
+- Separated Internet-Draft revisioning and IETF contribution terms from ARPA project semantic versions and artifact licensing.
+- Left prospective IANA registrations intentionally unresolved pending IETF community review rather than pre-allocating protocol namespaces.
+
 ### Candidate specification hardening
 - Distinguished revocation publication, propagation and enforcement convergence; convergence now requires applicable enforcement acknowledgements.
 - Added a normative lifecycle transition registry with explicit ordinary, containment, restoration, terminal and governance-reversal paths.
