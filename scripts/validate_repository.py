@@ -10,6 +10,10 @@ for path in list(ROOT.glob('*.md'))+list((ROOT/'docs').glob('*.md')):
     text=path.read_text()
     for target in re.findall(r'\[[^\]]+\]\(([^)]+)\)',text):
         if target.startswith(('http://','https://','#','mailto:')): continue
+        # Jekyll/Liquid URLs are resolved during publication rendering, not
+        # against the repository filesystem. Publication validators verify
+        # their rendered targets after Jekyll has applied baseurl semantics.
+        if '{{' in target and '}}' in target: continue
         clean=target.split('#')[0]
         if clean and not (path.parent/clean).resolve().exists(): errors.append(f'{path.relative_to(ROOT)}: broken local link {target}')
 # Federated portfolio member status contract: validate the controlled values and repository-owned authority/evidence fields.

@@ -38,7 +38,7 @@ Project governance, conformance programmes, A2A/TRQP profiles, deployment guidan
 - [Internet-Draft source](draft-sankarshan-agent-registry-protocol.html)
 - [Protocol extraction and provenance map](PROTOCOL_EXTRACTION.html)
 - [Submission-readiness checklist](SUBMISSION_CHECKLIST.html)
-- [Repository authoring guide](README.html)
+- [Repository authoring guide](https://github.com/sankarshanmukhopadhyay/agent-registry-protocol/blob/main/ietf/README.md)
 
 The Internet-Draft revision series is independent of ARPA semantic versions. The initial submission candidate is revision `-00`; later IETF revisions increment independently from ARPA project releases.
 

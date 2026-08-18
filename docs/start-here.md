@@ -40,8 +40,8 @@ For every rendered document and historical release note, use the [Documentation 
 
 ARPA maintains a separate IETF Internet-Draft authoring track for the interoperable protocol core. The initial individual-draft candidate is `draft-sankarshan-agent-registry-protocol-00`. It is not yet an IETF work item and does not replace the ARPA Candidate Specification.
 
-- [IETF authoring track](../ietf/)
-- [Protocol extraction map](../ietf/PROTOCOL_EXTRACTION.md)
-- [`-00` submission checklist](../ietf/SUBMISSION_CHECKLIST.md)
+- [IETF authoring track]({{ '/ietf/' | relative_url }})
+- [Protocol extraction map](https://github.com/sankarshanmukhopadhyay/agent-registry-protocol/blob/main/ietf/PROTOCOL_EXTRACTION.md)
+- [`-00` submission checklist](https://github.com/sankarshanmukhopadhyay/agent-registry-protocol/blob/main/ietf/SUBMISSION_CHECKLIST.md)
 
 Use this path when reviewing ARPA for IETF submission, protocol-scope reduction, IANA requirements, or overlap with existing IETF work.

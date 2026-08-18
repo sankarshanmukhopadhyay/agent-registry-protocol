@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "generated_html_pages": 0,
-  "manifest_html_pages": 105,
+  "manifest_html_pages": 108,
   "reachable_manifest_pages": 0,
   "unreachable_pages": [
     "AI_USAGE.html",
@@ -108,7 +108,10 @@
     "docs/operate/index.html",
     "docs/integrate/index.html",
     "docs/govern/index.html",
-    "RELEASE_NOTES_v0.9.5.html"
+    "RELEASE_NOTES_v0.9.5.html",
+    "docs/governance-security-assurance.html",
+    "docs/assurance/rahp-audit-2026-08-16.html",
+    "ietf/index.html"
   ],
   "pages_beyond_max_hops": [],
   "max_hops": 4,
@@ -223,6 +226,9 @@
     "Published page is unreachable from home/catalogue: docs/integrate/index.html",
     "Published page is unreachable from home/catalogue: docs/govern/index.html",
     "Published page is unreachable from home/catalogue: RELEASE_NOTES_v0.9.5.html",
+    "Published page is unreachable from home/catalogue: docs/governance-security-assurance.html",
+    "Published page is unreachable from home/catalogue: docs/assurance/rahp-audit-2026-08-16.html",
+    "Published page is unreachable from home/catalogue: ietf/index.html",
     "Start Here does not directly link required journey: docs/understand/index.html",
     "Start Here does not directly link required journey: docs/build/index.html",
     "Start Here does not directly link required journey: docs/assure/index.html",

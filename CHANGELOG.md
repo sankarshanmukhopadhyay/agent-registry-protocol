@@ -8,6 +8,10 @@ nav_exclude: true
 
 ## Unreleased
 
+### IETF publication-path hardening
+- Corrected the IETF landing-page navigation to use Jekyll `relative_url` semantics, preventing nested-page links from resolving under `/docs/ietf/`.
+- Kept repository-only IETF authoring guidance linked to its GitHub source rather than to a non-rendered `README.html`.
+
 ### Fixed
 - Added a canonical rendered `/ietf/` landing page and publication-manifest entry so GitHub Pages validation no longer emits unresolved `ietf/README.md` links.
 

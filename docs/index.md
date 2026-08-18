@@ -16,10 +16,10 @@ This catalogue provides a stable GitHub Pages entry point for the complete norma
 
 ## IETF standards track preparation
 
-- [IETF Internet-Draft authoring track](../ietf/)
-- [ARPA → IETF protocol extraction map](../ietf/PROTOCOL_EXTRACTION.md)
-- [`draft-sankarshan-agent-registry-protocol-00` source](../ietf/draft-sankarshan-agent-registry-protocol.md)
-- [`-00` submission checklist](../ietf/SUBMISSION_CHECKLIST.md)
+- [IETF Internet-Draft authoring track]({{ '/ietf/' | relative_url }})
+- [ARPA → IETF protocol extraction map](https://github.com/sankarshanmukhopadhyay/agent-registry-protocol/blob/main/ietf/PROTOCOL_EXTRACTION.md)
+- [`draft-sankarshan-agent-registry-protocol-00` source](https://github.com/sankarshanmukhopadhyay/agent-registry-protocol/blob/main/ietf/draft-sankarshan-agent-registry-protocol.md)
+- [`-00` submission checklist](https://github.com/sankarshanmukhopadhyay/agent-registry-protocol/blob/main/ietf/SUBMISSION_CHECKLIST.md)
 
 The IETF track is a protocol extraction and prospective contribution surface; it does not replace the project Candidate Specification or imply IETF adoption.
 
