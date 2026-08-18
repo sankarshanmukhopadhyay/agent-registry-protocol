@@ -1,0 +1,244 @@
+{
+  "registry": "lifecycle-transitions",
+  "version": "0.9.0",
+  "governing_specification": "ARPA Candidate Specification v0.9.0",
+  "entries": [
+    {
+      "id": "provisioned-to-pending_assurance",
+      "from": "provisioned",
+      "to": "pending_assurance",
+      "class": "ordinary",
+      "required_authority": "registration_authority"
+    },
+    {
+      "id": "provisioned-to-active",
+      "from": "provisioned",
+      "to": "active",
+      "class": "ordinary",
+      "required_authority": "registration_authority",
+      "preconditions": [
+        "profile_admission_conditions_satisfied"
+      ]
+    },
+    {
+      "id": "pending_assurance-to-active",
+      "from": "pending_assurance",
+      "to": "active",
+      "class": "ordinary",
+      "required_authority": "registration_authority",
+      "preconditions": [
+        "required_assurance_satisfied"
+      ]
+    },
+    {
+      "id": "pending_assurance-to-restricted",
+      "from": "pending_assurance",
+      "to": "restricted",
+      "class": "ordinary",
+      "required_authority": "governance_authority"
+    },
+    {
+      "id": "active-to-restricted",
+      "from": "active",
+      "to": "restricted",
+      "class": "ordinary",
+      "required_authority": "status_authority"
+    },
+    {
+      "id": "active-to-suspended",
+      "from": "active",
+      "to": "suspended",
+      "class": "containment",
+      "required_authority": "status_authority"
+    },
+    {
+      "id": "active-to-quarantined",
+      "from": "active",
+      "to": "quarantined",
+      "class": "containment",
+      "required_authority": "security_authority"
+    },
+    {
+      "id": "active-to-compromised",
+      "from": "active",
+      "to": "compromised",
+      "class": "containment",
+      "required_authority": "security_authority"
+    },
+    {
+      "id": "active-to-under_investigation",
+      "from": "active",
+      "to": "under_investigation",
+      "class": "review",
+      "required_authority": "governance_authority"
+    },
+    {
+      "id": "restricted-to-active",
+      "from": "restricted",
+      "to": "active",
+      "class": "restoration",
+      "required_authority": "status_authority",
+      "preconditions": [
+        "restoration_basis_recorded"
+      ]
+    },
+    {
+      "id": "restricted-to-suspended",
+      "from": "restricted",
+      "to": "suspended",
+      "class": "containment",
+      "required_authority": "status_authority"
+    },
+    {
+      "id": "suspended-to-restricted",
+      "from": "suspended",
+      "to": "restricted",
+      "class": "restoration",
+      "required_authority": "governance_authority",
+      "preconditions": [
+        "review_complete",
+        "restoration_basis_recorded"
+      ]
+    },
+    {
+      "id": "suspended-to-active",
+      "from": "suspended",
+      "to": "active",
+      "class": "restoration",
+      "required_authority": "governance_authority",
+      "preconditions": [
+        "review_complete",
+        "restoration_basis_recorded"
+      ]
+    },
+    {
+      "id": "suspended-to-revoked",
+      "from": "suspended",
+      "to": "revoked",
+      "class": "terminal",
+      "required_authority": "governance_authority"
+    },
+    {
+      "id": "quarantined-to-suspended",
+      "from": "quarantined",
+      "to": "suspended",
+      "class": "review",
+      "required_authority": "security_authority"
+    },
+    {
+      "id": "quarantined-to-restricted",
+      "from": "quarantined",
+      "to": "restricted",
+      "class": "restoration",
+      "required_authority": "security_authority",
+      "preconditions": [
+        "security_recovery_evidence"
+      ]
+    },
+    {
+      "id": "compromised-to-quarantined",
+      "from": "compromised",
+      "to": "quarantined",
+      "class": "recovery",
+      "required_authority": "security_authority"
+    },
+    {
+      "id": "compromised-to-restricted",
+      "from": "compromised",
+      "to": "restricted",
+      "class": "restoration",
+      "required_authority": "security_authority",
+      "preconditions": [
+        "security_recovery_evidence",
+        "key_or_runtime_remediation_complete"
+      ]
+    },
+    {
+      "id": "under_investigation-to-active",
+      "from": "under_investigation",
+      "to": "active",
+      "class": "restoration",
+      "required_authority": "governance_authority",
+      "preconditions": [
+        "investigation_closed"
+      ]
+    },
+    {
+      "id": "under_investigation-to-restricted",
+      "from": "under_investigation",
+      "to": "restricted",
+      "class": "review",
+      "required_authority": "governance_authority"
+    },
+    {
+      "id": "under_investigation-to-suspended",
+      "from": "under_investigation",
+      "to": "suspended",
+      "class": "containment",
+      "required_authority": "governance_authority"
+    },
+    {
+      "id": "under_investigation-to-revoked",
+      "from": "under_investigation",
+      "to": "revoked",
+      "class": "terminal",
+      "required_authority": "governance_authority"
+    },
+    {
+      "id": "active-to-retired",
+      "from": "active",
+      "to": "retired",
+      "class": "terminal",
+      "required_authority": "controller_or_governance_authority"
+    },
+    {
+      "id": "restricted-to-retired",
+      "from": "restricted",
+      "to": "retired",
+      "class": "terminal",
+      "required_authority": "controller_or_governance_authority"
+    },
+    {
+      "id": "active-to-superseded",
+      "from": "active",
+      "to": "superseded",
+      "class": "terminal",
+      "required_authority": "controller_or_governance_authority",
+      "preconditions": [
+        "successor_reference_present"
+      ]
+    },
+    {
+      "id": "restricted-to-superseded",
+      "from": "restricted",
+      "to": "superseded",
+      "class": "terminal",
+      "required_authority": "controller_or_governance_authority",
+      "preconditions": [
+        "successor_reference_present"
+      ]
+    },
+    {
+      "id": "revoked-to-restricted-governance-reversal",
+      "from": "revoked",
+      "to": "restricted",
+      "class": "governance_reversal",
+      "required_authority": "appeal_or_governance_authority",
+      "preconditions": [
+        "reversal_decision_recorded",
+        "prior_terminal_event_preserved"
+      ]
+    },
+    {
+      "id": "revoked-to-active-governance-reversal",
+      "from": "revoked",
+      "to": "active",
+      "class": "governance_reversal",
+      "required_authority": "appeal_or_governance_authority",
+      "preconditions": [
+        "reversal_decision_recorded",
+        "prior_terminal_event_preserved"
+      ]
+    }
+  ]
+}

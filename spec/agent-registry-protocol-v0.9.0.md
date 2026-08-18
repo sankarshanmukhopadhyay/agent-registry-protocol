@@ -104,6 +104,8 @@ The following requirement identifiers anchor the Candidate Specification. Detail
 
 Every objectively testable normative requirement MUST map to at least one test or inspection procedure and an expected evidence output. Machine-readable artifacts MUST identify their specification version and governing authority. Extensions MUST use a registered namespace, declare version and authority, and MUST NOT redefine a core field or weaken a fail-safe requirement.
 
+The machine-readable normative requirement catalogue is published at `registries/normative-requirements.json`. Each captured BCP 14 clause has a stable content-derived requirement identifier, specification section, verification procedure, and expected evidence output. `scripts/validate_normative_requirements.py` MUST fail when the catalogue is stale, duplicate, or no longer covers the normative Candidate Specification text. Requirement identifiers change only when the normative clause itself changes materially.
+
 ## Table of Contents
 
 ### Part I: Context and Requirements
@@ -1252,7 +1254,7 @@ Downstream delegation handling is applied
 Acknowledgements and unresolved targets are recorded
 ```
 
-A delegated-authority profile MUST define which enforcement targets are in scope and the maximum time within which revocation is expected to become effective.
+A delegated-authority profile MUST define which enforcement targets are in scope and the maximum time within which revocation is expected to become effective. Publication of a revocation and expiry of a propagation target do not, by themselves, establish enforcement convergence. A revocation is `published` when the authoritative record and event are committed, `propagating` while applicable enforcement targets remain unacknowledged, and `converged` only when every applicable enforcement target has acknowledged application or has been removed from scope by an authorized governance decision. Unresolved targets MUST remain visible and MUST prevent a `converged` claim.
 
 ## 14.5 Appeal and Restoration Flow
 
@@ -1494,10 +1496,11 @@ Where an authority has been delegated further, the system MUST define whether re
 
 Delegated authority profiles MUST define integration with policy enforcement points.
 
-A registry MUST NOT claim effective revocation unless it can demonstrate either:
+A registry MUST distinguish revocation publication, propagation, and enforcement convergence.
 
-- acknowledgement from relevant enforcement points; or
-- a clearly disclosed maximum revocation propagation time.
+A registry MUST NOT claim `converged` revocation unless every applicable enforcement target has emitted an authenticated acknowledgement that the revocation was applied, or an authorized governance decision has explicitly removed that target from scope. A maximum revocation propagation time is an operational objective and MUST NOT be used as evidence of convergence.
+
+If the propagation target expires before convergence, the registry MUST expose a non-converged state, identify unresolved enforcement targets, and apply the profile's fail-safe behavior.
 
 ---
 
@@ -1753,6 +1756,8 @@ Every material lifecycle transition MUST record:
 - whether enforcement acknowledgement is required.
 
 For a transition that may affect interpretation of earlier state, the event MUST classify its historical effect as one of `none`, `prospective`, `retroactive`, `governance_defined`, or `indeterminate`. A registry MUST NOT infer retroactive effect solely from a current `revoked`, `compromised`, `retired`, `superseded`, or withdrawn state. Retroactive effect requires an applicable governance rule or authoritative event declaration.
+
+Transition legality is governed by `registries/lifecycle-transitions.json`. A conforming implementation MUST reject a lifecycle transition that is absent from that registry or whose declared preconditions are not satisfied. `revoked`, `retired`, and `superseded` are terminal for ordinary administrative processing; any exceptional reversal MUST use a transition explicitly marked `governance_reversal`, identify the competent authority and governance basis, preserve the prior terminal event, and produce a new restoration or correction event. Implementations MUST NOT recreate historical continuity by deleting or rewriting the prior transition.
 
 ## 20.4 Transfer and Change of Control
 
@@ -2192,7 +2197,7 @@ Consumers MUST be able to deduplicate events using `event_id`.
 
 ## 24.7 Enforcement Acknowledgement
 
-High-assurance profiles SHOULD support acknowledgement events from enforcement points.
+Delegated-authority and high-assurance profiles MUST support authenticated acknowledgement events from applicable enforcement points. An acknowledgement MUST identify the revocation or status event, the enforcement surface, the applied time, the outcome, any partial failure, and the authenticated issuer. Absence of a required acknowledgement MUST keep the revocation in a non-converged state.
 
 ---
 
@@ -2201,6 +2206,8 @@ High-assurance profiles SHOULD support acknowledgement events from enforcement p
 ## 25.1 Applicability
 
 Execution evidence is REQUIRED for accountable, delegated-authority, and high-assurance profiles for actions classified as consequential.
+
+For Profiles B, C, and D, the deployment MUST publish a machine-readable consequential-action classification policy. The policy MUST identify the action classes or decision rules treated as consequential, the risk basis for the classification, the policy identifier and version, and the evidence obligations triggered by the classification. An implementation MUST NOT avoid profile evidence, redress, or enforcement requirements by leaving a materially rights-affecting, asset-controlling, identity-affecting, safety-critical, irreversible, transaction-submitting, or protected-data action unclassified. The conformance declaration MUST identify the applicable classification policy.
 
 ## 25.2 Execution Receipt Contents
 
@@ -2551,6 +2558,8 @@ On revocation, the processor MUST:
 
 A downstream delegation MUST NOT remain affirmatively active when its required parent authority is revoked. It MUST become revoked, suspended, or indeterminate according to declared cascade semantics.
 
+After notification, the processor MUST track each applicable enforcement target as `pending`, `acknowledged`, `failed`, or `removed_from_scope`. The processor MUST NOT report `converged` until no target remains `pending` or `failed`. Expiry of a propagation target MUST produce an operational failure or escalation signal; it MUST NOT convert a non-converged revocation into a converged one.
+
 ## 28.8 Conflict Processing
 
 When recognized sources conflict, the evaluator MUST apply a published precedence or aggregation policy. If no applicable rule resolves the conflict, the result MUST be `indeterminate`.
@@ -2700,7 +2709,7 @@ Intent SHOULD disclose:
 
 ## 29.5 Revocation Propagation
 
-A conformance profile MUST define maximum acceptable propagation time from authoritative revocation to enforcement.
+A conformance profile MUST define maximum acceptable propagation time from authoritative revocation to enforcement and MUST define the evidence required to establish enforcement convergence. Profiles C and D MUST require authenticated enforcement acknowledgements for applicable enforcement targets. Missing acknowledgements after the propagation target expires MUST be treated as a revocation-propagation failure and MUST NOT be interpreted as convergence.
 
 ## 29.6 Stale Data
 
@@ -2983,7 +2992,7 @@ A registry SHOULD publish signed checkpoints or equivalent integrity commitments
 
 Every response and record MUST identify the supported specification or schema version.
 
-The record envelope's `schema_version` (§13.1) identifies the version of the per-record-type JSON Schema under `schemas/` and follows its own semantic-versioning track, independent of this document's `Version` header (§ front matter). The two tracks are related as follows: a document major or minor version MAY be released without changing any `schema_version` (editorial or non-normative change); a `schema_version` MAY advance independently of the document version only for schema-level corrections that do not alter normative record semantics (for example, tightening a pattern already implied by prose). Any change to a record's required fields or field semantics MUST be reflected in both the document's Change Log (Appendix H) and a corresponding `schema_version` bump, and the mapping between document version and the `schema_version` values it corresponds to MUST be recorded in `schemas/README.md`. As of document version 0.5.0, the corresponding schema track is `1.0.0` (see `schemas/README.md`).
+The record envelope's `schema_version` (§13.1) identifies the version of the per-record-type JSON Schema under `schemas/` and follows its own semantic-versioning track, independent of this document's `Version` header (§ front matter). The two tracks are related as follows: a document major or minor version MAY be released without changing any `schema_version` (editorial or non-normative change); a `schema_version` MAY advance independently of the document version only for schema-level corrections that do not alter normative record semantics (for example, tightening a pattern already implied by prose). Any change to a record's required fields or field semantics MUST be reflected in both the document's Change Log (Appendix H) and a corresponding `schema_version` bump, and the mapping between document version and the `schema_version` values it corresponds to MUST be recorded in `schemas/README.md`. The Candidate Specification v0.9.0 uses the `1.0.0` record schema track unless an individual schema declares a later compatible schema version; the authoritative mapping is maintained in `schemas/README.md` and validated by the repository conformance checks.
 
 ## 33.2 Backward Compatibility
 
@@ -3261,7 +3270,7 @@ Registries MUST validate:
 
 ## 36.7 Fail-Safe Defaults
 
-When authority, status, assurance, or governance state is indeterminate, higher-risk profiles SHOULD fail closed.
+An implementation MUST NOT produce `allow` or `allow_with_conditions` when any authority, status, assurance, recognition, or governance input required by the applicable profile is stale, unavailable, conflicting, unsupported, unverifiable, or indeterminate, unless the governing relying-party policy explicitly classifies that input as non-material for the requested action. Profiles C and D MUST treat unresolved material inputs as `deny` or `indeterminate`; they MUST NOT fail open.
 
 ## 36.8 Observability
 

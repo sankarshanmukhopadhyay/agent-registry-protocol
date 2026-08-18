@@ -6,6 +6,8 @@ validate:
 	python3 scripts/validate_test_vectors.py
 	python3 scripts/validate_extended_vectors.py
 	python3 scripts/validate_artifacts.py
+	python3 scripts/validate_normative_requirements.py
+	python3 scripts/validate_candidate_hardening.py
 	python3 scripts/validate_repository.py
 	python3 scripts/validate_licensing.py
 	python3 scripts/validate_candidate.py

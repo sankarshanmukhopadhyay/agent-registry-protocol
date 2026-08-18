@@ -36,5 +36,5 @@ All of Profile B, plus:
 - [ ] Cascade revocation — `authority-envelope.schema.json#revocation.cascade` is schema-validated for presence and enum membership; end-to-end cascade behavior requires a stateful registry and is out of scope for static test vectors
 - [x] Approval conditions — `TV-C-02`
 - [x] Quantitative limits — `TV-C-01`, `TV-C-03`
-- [ ] Revocation propagation target — governance/SLA-level (§39.5), not schema-testable
-- [ ] Enforcement acknowledgement — deployment-specific, not schema-testable
+- [x] Revocation propagation target — declared in the conformance declaration and separated from convergence evidence (`schemas/conformance-declaration.schema.json`, `schemas/revocation-convergence.schema.json`)
+- [x] Enforcement acknowledgement — required for Profile C/D convergence claims; validator rejects acknowledgement-free convergence (`scripts/validate_candidate_hardening.py`)

@@ -6,6 +6,16 @@ nav_exclude: true
 
 # Changelog
 
+## Unreleased
+
+### Candidate specification hardening
+- Distinguished revocation publication, propagation and enforcement convergence; convergence now requires applicable enforcement acknowledgements.
+- Added a normative lifecycle transition registry with explicit ordinary, containment, restoration, terminal and governance-reversal paths.
+- Added machine-readable normative requirement traceability and validation evidence.
+- Made fail-safe authority outcomes deterministic for stale, conflicting, unavailable or unverifiable material inputs.
+- Required Profiles B-D to declare a consequential-action classification policy and Profiles C-D to declare acknowledgement-based revocation convergence.
+- Corrected v0.9.0 Candidate-to-schema version mapping and added release-gated consistency checks.
+
 ## [0.9.5] - 2026-08-16
 
 ### Added

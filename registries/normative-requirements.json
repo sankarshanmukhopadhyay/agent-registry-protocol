@@ -1,0 +1,2080 @@
+{
+  "registry": "normative-requirements",
+  "version": "0.9.0",
+  "source": "spec/agent-registry-protocol-v0.9.0.md",
+  "id_policy": "content-derived; changes only when the normative clause changes",
+  "entries": [
+    {
+      "id": "ARPA-NORM-CTRL-1FDCAF9F66",
+      "section": "Status of This Memo",
+      "requirement": "The key words **MUST**, **MUST NOT**, **REQUIRED**, **SHALL**, **SHALL NOT**, **SHOULD**, **SHOULD NOT**, **RECOMMENDED**, **NOT RECOMMENDED**, **MAY**, and **OPTIONAL** in this document are to be interpreted as described in [BCP 14](https://www.rfc-editor.org/info/bcp14) (RFC 2119, RFC 8174) when, and only when, they appear in all capitals, as shown here. Use of these terms does not imply IETF process or endorsement; they are adopted here solely as a precise, widely understood requirements vocabulary.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-CTRL-E785099E60",
+      "section": "Candidate Specification Control",
+      "requirement": "This document is the sole authoritative prose specification for ARPA v0.9.0. Schemas, controlled registries, OpenAPI and AsyncAPI descriptions, conformance vectors, implementation reports, and evidence bundles are subordinate machine-readable artifacts. Where an inconsistency is found, implementations MUST fail safely, record the conflict, and open a specification defect rather than infer an affirmative authority decision.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-CTRL-925E650E95",
+      "section": "Conformance targets",
+      "requirement": "An implementation MUST declare each target it claims, the profiles and versions implemented, its known deviations, and the evidence supporting the claim. Conformance to one target MUST NOT be presented as conformance to another.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-CTRL-7F4921CAA6",
+      "section": "Artifact authority and traceability",
+      "requirement": "Every objectively testable normative requirement MUST map to at least one test or inspection procedure and an expected evidence output. Machine-readable artifacts MUST identify their specification version and governing authority. Extensions MUST use a registered namespace, declare version and authority, and MUST NOT redefine a core field or weaken a fail-safe requirement.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-CTRL-22A5644369",
+      "section": "Artifact authority and traceability",
+      "requirement": "The machine-readable normative requirement catalogue is published at `registries/normative-requirements.json`. Each captured BCP 14 clause has a stable content-derived requirement identifier, specification section, verification procedure, and expected evidence output. `scripts/validate_normative_requirements.py` MUST fail when the catalogue is stale, duplicate, or no longer covers the normative Candidate Specification text. Requirement identifiers change only when the normative clause itself changes materially.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-2-2-DBE3A58829",
+      "section": "2.2 The Four Registry Questions",
+      "requirement": "A registry intended for delegated action MUST be capable of supporting four distinct classes of resolution:",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-2-4-1A4918E9BF",
+      "section": "2.4 Registry Role in the Control Loop",
+      "requirement": "A registry that publishes authority but cannot communicate status changes to enforcement surfaces MAY conform only to lower profiles. It MUST NOT claim conformance to a delegated-authority or high-assurance profile unless the profile's enforcement and revocation requirements are met.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-3-2-599A029858",
+      "section": "3.2 Out of Scope",
+      "requirement": "Implementations MAY use distributed ledgers, transparency logs, conventional databases, content-addressed stores, confidential computing systems, federated databases, or combinations thereof, provided that the conformance and security requirements of this specification are met.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-4-12-64846AEA15",
+      "section": "4.12 End-to-End Delegated Action Flow",
+      "requirement": "A conforming implementation MAY combine steps, but it MUST preserve the semantic distinctions and evidence required by its declared profile.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-5-2-6A2D5CD8E1",
+      "section": "5.2 Functional Requirements",
+      "requirement": "A conforming registry MUST provide authoritative resolution of agent identity and lifecycle status. Higher profiles MUST additionally provide structured relationships, versions, deployments, assurance, authority, evidence, and redress as defined later in this document.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-5-2-D823640113",
+      "section": "5.2 Functional Requirements",
+      "requirement": "The registry MUST distinguish statements that are self-declared from statements independently verified or issued by an authorized third party. A query response MUST permit a relying party to identify the issuer and scope of each material claim.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-5-3-C4227DAC1C",
+      "section": "5.3 Interoperability Requirements",
+      "requirement": "A deployment claiming federation support MUST publish an interoperability declaration covering all five dimensions. Exchanging valid JSON is not sufficient evidence of registry interoperability.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-5-4-FB9682CFE0",
+      "section": "5.4 Reviewability Requirements",
+      "requirement": "A circulation-ready registry profile SHOULD document:",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-5-5-A92356CCB7",
+      "section": "5.5 Fail-Closed and Fail-Open Behavior",
+      "requirement": "Each profile and deployment MUST declare which operations fail closed, fail open, or enter an indeterminate state when required information is unavailable.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-5-5-001C65200B",
+      "section": "5.5 Fail-Closed and Fail-Open Behavior",
+      "requirement": "High-risk authority decisions SHOULD fail closed when current authority, security status, or required assurance cannot be established. Discovery and low-risk informational use MAY continue with warnings when policy permits.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-5-5-9C6E216EA4",
+      "section": "5.5 Fail-Closed and Fail-Open Behavior",
+      "requirement": "An implementation MUST NOT convert missing evidence into an affirmative decision merely to preserve availability.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-6-1-0BEF50C193",
+      "section": "6.1 Identity Is Not Authority",
+      "requirement": "A valid agent identifier MUST NOT be treated as authorization to perform an action.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-6-3-B9962F8303",
+      "section": "6.3 Capability Is Not Permission",
+      "requirement": "An agent\u2019s technical ability, declared capability, verified competence, and delegated permission MUST be modeled as separate concepts.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-6-4-6CB7B54841",
+      "section": "6.4 Authority Is Contextual",
+      "requirement": "Authority MUST be evaluated against the relevant principal, action, resource, purpose, time, jurisdiction, limits, prohibitions, approvals, and delegation chain.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-6-5-0FFA1BA33B",
+      "section": "6.5 Delegation Is Not Ownership",
+      "requirement": "Transfer of an agent identifier, software artifact, or registry record MUST NOT silently transfer outstanding delegations.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-6-6-3B4803DD38",
+      "section": "6.6 Revocation Must Reach Enforcement Surfaces",
+      "requirement": "Registry status changes MUST be capable of propagating to operational enforcement systems. A registry status flag without a defined enforcement path is insufficient for high-assurance use.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-6-7-2C312427A0",
+      "section": "6.7 Assurance Is Bound to What Was Evaluated",
+      "requirement": "Assurance MUST be bound to the relevant agent version, artifact, deployment profile, policy bundle, and evaluation scope.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-6-8-968002B4AE",
+      "section": "6.8 Consequential Action Must Be Reconstructable",
+      "requirement": "For actions within a conformance profile that requires evidence, the system MUST support reconstruction of the identity, authority, policy, approvals, evidence, and outcome that applied at the time of execution.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-6-9-37562AE1F2",
+      "section": "6.9 Registry Decisions Must Be Contestable",
+      "requirement": "A conforming registry MUST provide governed mechanisms to correct, appeal, suspend, restore, and annotate registry decisions.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-6-10-583F81DFD1",
+      "section": "6.10 Derived State Must Disclose Freshness",
+      "requirement": "Indexes, caches, replicas, and aggregators MUST communicate source provenance and freshness.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-6-11-EF152E750D",
+      "section": "6.11 Federation Must Be Explicit",
+      "requirement": "Trust or recognition between registries, authorities, assurance providers, and governance frameworks MUST be explicitly represented. It MUST NOT be inferred solely from technical interoperability.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-6-12-0C0FC6A758",
+      "section": "6.12 Privacy by Resolution",
+      "requirement": "A registry SHOULD reveal only the minimum information required for a relying decision. Confidential evidence and delegation terms SHOULD be resolved through authorized access or selective disclosure rather than broad publication.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-9-2-0D58133981",
+      "section": "9.2 Issuer Competence",
+      "requirement": "A record is not acceptable solely because its proof verifies. The relying party MUST also determine whether the issuer was authorized or recognized to issue that record type for the relevant subject and scope.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-9-3-25E7B29341",
+      "section": "9.3 Trust Chains and Authority Chains",
+      "requirement": "Implementations MUST validate both where applicable.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-9-4-924C891D54",
+      "section": "9.4 Projection Boundary",
+      "requirement": "Indexes and caches are untrusted for finality unless the relying policy explicitly accepts their freshness and proof model. A projection MAY support discovery, but consequential decisions MUST satisfy the profile's authoritative status requirements.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-9-5-671C3B0106",
+      "section": "9.5 Enforcement Boundary",
+      "requirement": "A registry record does not itself prevent execution. The Policy Enforcement Point is responsible for applying decisions to keys, sessions, APIs, tools, data, or transaction channels. High-assurance claims about revocation MUST include evidence of propagation or a disclosed maximum propagation interval.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-9-6-80ADA0CB18",
+      "section": "9.6 Governance Boundary",
+      "requirement": "Technical interoperability does not establish recognition. A relying domain decides which governance authorities, assurance providers, registries, and status decisions it accepts. Recognition MUST be represented explicitly and evaluated as part of reliance.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-10-1-5DD8867AB5",
+      "section": "10.1 Logical Planes",
+      "requirement": "A conforming implementation MUST support the following logical planes, whether implemented as separate services or integrated components:",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-10-2-CB090F4E9A",
+      "section": "10.2 Separation of Concerns",
+      "requirement": "Implementations MUST NOT use a single undifferentiated \u201cowner\u201d field as the exclusive representation of all relationships.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-10-2-D39A89F1C0",
+      "section": "10.2 Separation of Concerns",
+      "requirement": "Implementations MUST distinguish at minimum:",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-10-3-DB8B6400C7",
+      "section": "10.3 Authoritative and Derived Data",
+      "requirement": "An implementation MAY maintain different systems for authoritative state, discovery indexes, evidence storage, and operational telemetry.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-10-3-867C2F2EA3",
+      "section": "10.3 Authoritative and Derived Data",
+      "requirement": "Every query response derived from non-authoritative data MUST include sufficient provenance to identify:",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-10-4-81EE647443",
+      "section": "10.4 Public and Confidential Data",
+      "requirement": "The architecture MUST support both public and access-controlled records.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-10-4-4F97D43C80",
+      "section": "10.4 Public and Confidential Data",
+      "requirement": "The registry MUST NOT require publication of confidential delegation terms, personal data, proprietary model details, sensitive operational telemetry, or protected evidence.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-10-4-69C2B8CAF9",
+      "section": "10.4 Public and Confidential Data",
+      "requirement": "Where data is withheld, the registry SHOULD publish:",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-11-FE420E953D",
+      "section": "11. Roles and Responsibilities",
+      "requirement": "A conforming registry deployment MAY combine roles, but role boundaries MUST remain explicit.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-12-1-9A27D34EF0",
+      "section": "12.1 Agent Identifier Properties",
+      "requirement": "An agent identifier MUST be:",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-12-2-7EC39BA3E2",
+      "section": "12.2 Identifier Syntax",
+      "requirement": "`registry-namespace` SHOULD be a DNS domain name or an equivalent registry-assigned namespace under the issuing Registration Authority's policy. `agent-local-id` MUST be unique within `registry-namespace` and MUST NOT be reassigned after retirement or revocation (\u00a712.1). Implementations MAY support other identifier schemes. A conformance profile MUST declare supported identifier schemes. Registration of `agentreg` as a permanent URI scheme is an Open Issue (\u00a740.1) and IANA Consideration (\u00a741); until registered, the scheme MUST be treated as provisional and MUST NOT be assumed collision-free with any future IANA-registered scheme of the same name.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-12-3-59FD9C9F0F",
+      "section": "12.3 Version Identifier",
+      "requirement": "Each materially distinct agent version MUST have a version identifier.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-12-3-741C6915CA",
+      "section": "12.3 Version Identifier",
+      "requirement": "A version identifier SHOULD include or resolve to:",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-12-4-1A121B3006",
+      "section": "12.4 Deployment Identifier",
+      "requirement": "Each deployment in an accountable or higher conformance profile MUST have a unique deployment identifier.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-12-5-53C2612DF8",
+      "section": "12.5 Runtime Identifier",
+      "requirement": "High-assurance deployments MUST support runtime identities capable of being cryptographically bound to workload attestations or equivalent integrity evidence.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-12-6-92B9C99A8E",
+      "section": "12.6 Identifier Resolution",
+      "requirement": "Resolution MUST return one of:",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-12-6-EC0C5C7D2D",
+      "section": "12.6 Identifier Resolution",
+      "requirement": "A registry MUST NOT return `not_found` for a known retired, revoked, burned, or superseded identifier.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-13-1-E49D25CE55",
+      "section": "13.1 Record Envelope",
+      "requirement": "Every record defined by this specification MUST use a common envelope.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-13-2-5C490FDDFE",
+      "section": "13.2 Canonicalization",
+      "requirement": "A conforming implementation MUST define a deterministic serialization or canonicalization method for records that are signed, hashed, or committed.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-13-2-43005ABCDD",
+      "section": "13.2 Canonicalization",
+      "requirement": "Unless a conformance profile declares an alternative, implementations MUST use [JSON Canonicalization Scheme (JCS), RFC 8785](https://www.rfc-editor.org/rfc/rfc8785) as the default canonicalization method for JSON-encoded records prior to hashing or signing. A profile MAY declare an alternative canonicalization method (for example, a CBOR deterministic encoding under [RFC 8949](https://www.rfc-editor.org/rfc/rfc8949) \u00a74.2, or a JSON-LD/RDF dataset canonicalization) provided the method is deterministic, is identified in the record's `proof.type`, and is declared in the profile's conformance statement (\u00a735.5).",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-13-3-90DEDBF719",
+      "section": "13.3 Agent Core Record",
+      "requirement": "The Agent Core Record MUST include:",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-13-4-3798EDCFB4",
+      "section": "13.4 Relationship Record",
+      "requirement": "A Relationship Record MUST express:",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-13-4-5D32E61164",
+      "section": "13.4 Relationship Record",
+      "requirement": "Supported base relationship types SHOULD include:",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-13-5-2FECCFA1FD",
+      "section": "13.5 Key Binding Record",
+      "requirement": "A Key Binding Record MUST include:",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-13-5-9CFA584398",
+      "section": "13.5 Key Binding Record",
+      "requirement": "Key uses MUST be separated, including where applicable:",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-13-6-7FA4F21E77",
+      "section": "13.6 Service Endpoint Record",
+      "requirement": "A Service Endpoint Record MUST include:",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-13-7-121025D4C4",
+      "section": "13.7 Description Record",
+      "requirement": "A Description Record MAY include:",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-13-7-E4B088D687",
+      "section": "13.7 Description Record",
+      "requirement": "A Description Record MUST NOT be treated as evidence that its claims are true.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-13-8-BA9F246F34",
+      "section": "13.8 Metadata Extensions",
+      "requirement": "Extensions MUST use governed namespaces.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-13-8-ECCA615613",
+      "section": "13.8 Metadata Extensions",
+      "requirement": "An extension MUST declare:",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-13-8-29DD3EAE68",
+      "section": "13.8 Metadata Extensions",
+      "requirement": "A relying party MUST reject a record containing an unknown critical extension.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-14-1-CC9E7F8F91",
+      "section": "14.1 Separation of Resolution, Decision, and Enforcement",
+      "requirement": "These functions MAY be implemented in one product, but their semantics MUST remain distinguishable. A resolver response is not automatically an authorization decision, and an authorization decision is not evidence that enforcement occurred.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-14-2-835C3E70C8",
+      "section": "14.2 Registration Flow",
+      "requirement": "A registry MUST NOT enter `active` state until the profile's required admission conditions are satisfied.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-14-3-485F46714D",
+      "section": "14.3 Delegated Action Flow",
+      "requirement": "The PEP MUST validate that the decision receipt applies to the same agent, deployment, action, resource, and material context presented at execution time.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-14-4-B95C44E869",
+      "section": "14.4 Revocation Flow",
+      "requirement": "A delegated-authority profile MUST define which enforcement targets are in scope and the maximum time within which revocation is expected to become effective. Publication of a revocation and expiry of a propagation target do not, by themselves, establish enforcement convergence. A revocation is `published` when the authoritative record and event are committed, `propagating` while applicable enforcement targets remain unacknowledged, and `converged` only when every applicable enforcement target has acknowledged application or has been removed from scope by an authorized governance decision. Unresolved targets MUST remain visible and MUST prevent a `converged` claim.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-14-5-C62694DBDF",
+      "section": "14.5 Appeal and Restoration Flow",
+      "requirement": "Restoration MUST NOT erase the historical suspension, revocation, or investigation. It creates a new effective state and preserves the basis for both decisions.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-14-6-F3F9628322",
+      "section": "14.6 Enforcement Acknowledgement",
+      "requirement": "Where required by profile, an enforcement point MUST emit an acknowledgement identifying:",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-15-1-7FF8272699",
+      "section": "15.1 Registration Request",
+      "requirement": "A registration request MUST identify the requested namespace, proposed controller, agent class, initial description, governance domain, and proof that the requester is authorized under the applicable registration policy.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-15-2-039CFADCF9",
+      "section": "15.2 Admission Processing",
+      "requirement": "The Registration Authority MUST validate uniqueness, namespace policy, controller authorization, required relationship records, prohibited impersonation, and any profile-specific evidence. It MUST record the policy version used for admission.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-15-3-73B07D1394",
+      "section": "15.3 Initial State",
+      "requirement": "A newly created identifier SHOULD enter `provisioned` or `pending_assurance`. It MUST NOT enter `active` until all mandatory profile and governance conditions are satisfied.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-15-4-F03183759B",
+      "section": "15.4 Registration Evidence",
+      "requirement": "The registration event MUST contain or resolve to the request digest, issuer, controller, governing policy, effective time, initial state, and proof.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-15-5-2134939DA4",
+      "section": "15.5 Duplicate and Deceptive Registration",
+      "requirement": "Registries MUST define procedures for detecting and resolving duplicate, confusing, or deceptive identifiers and names. Human-readable names MUST NOT be assumed unique.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-16-1-A084B151EB",
+      "section": "16.1 Version Record",
+      "requirement": "A Version Record MUST identify the logical agent, version identifier, predecessor, artifact digest, release time, declared capability set, policy bundle, material dependencies, and material-change classification.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-16-2-3BB40B7943",
+      "section": "16.2 Deployment Record",
+      "requirement": "Profiles B through D MUST represent each consequential deployment separately. A Deployment Record MUST identify the agent version, deployer, operator, environment or profile, runtime identity method, service endpoints, jurisdiction, status references, and creation time.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-16-3-330B7368D2",
+      "section": "16.3 Version-to-Deployment Binding",
+      "requirement": "An operational deployment MUST reference exactly one current agent version at a time. A version transition MUST produce an event and update affected assurance and authority applicability.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-16-4-AD83DA1998",
+      "section": "16.4 Runtime Substitution",
+      "requirement": "A deployment MUST NOT claim the assurance or authority of a registered version if the executing artifact, model configuration, policy bundle, or critical tool set materially differs from the bound version.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-16-5-3F43558FD7",
+      "section": "16.5 Rollback",
+      "requirement": "A rollback to an earlier version MUST be treated as a new deployment transition. The registry MUST reevaluate assurance validity, known vulnerabilities, authority applicability, and policy compatibility.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-17-1-907E1D24A7",
+      "section": "17.1 Typed Relationships",
+      "requirement": "Relationships MUST be represented as first-class records with issuer, scope, validity, status, and governance basis. A free-text description of a relationship is insufficient for normative processing.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-17-2-1F513F31C6",
+      "section": "17.2 Relationship Authority",
+      "requirement": "The registry MUST define which role may create, modify, or terminate each relationship type. An operator MUST NOT appoint a new accountable entity unless explicitly authorized to do so.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-17-3-0929F82711",
+      "section": "17.3 Multiple Relationships",
+      "requirement": "An agent MAY have multiple operators, controllers, principals, beneficiaries, or accountable entities. Each record MUST define scope so that a relying party can determine which relationship applies to the requested action or deployment.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-17-4-60B504A01F",
+      "section": "17.4 Change and Termination",
+      "requirement": "A relationship change MUST produce an event and trigger impact analysis for linked delegations, assurance claims, deployments, evidence access, and governance recognition.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-18-0E1E4106C2",
+      "section": "18. Delegation and Authority",
+      "requirement": "> **Candidate controls:** ARPA-CAND-001, ARPA-CAND-002, ARPA-CAND-006. Delegation evaluation MUST compute the intersection of all applicable scopes, conditions, prohibitions, validity intervals, and lifecycle states. Circular, expired, suspended, revoked, or unverifiable links MUST NOT yield affirmative authority.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-18-1-7D818E9D05",
+      "section": "18.1 General Requirement",
+      "requirement": "An agent registry supporting consequential action MUST support machine-readable delegation records.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-18-2-FE39591287",
+      "section": "18.2 Authority Envelope",
+      "requirement": "An Authority Envelope MUST include:",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-18-3-1645627548",
+      "section": "18.3 Delegation Modes",
+      "requirement": "Supported modes MUST include:",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-18-4-56BA32425F",
+      "section": "18.4 Delegation Narrowing",
+      "requirement": "A downstream delegation MUST NOT exceed the upstream authority from which it derives.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-18-4-BAE4E8F008",
+      "section": "18.4 Delegation Narrowing",
+      "requirement": "A conforming authority evaluator MUST verify:",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-18-5-2BA39A2562",
+      "section": "18.5 Authority Evaluation",
+      "requirement": "An authority evaluation request SHOULD include:",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-18-5-8E06A5DB5F",
+      "section": "18.5 Authority Evaluation",
+      "requirement": "The result MUST be one of:",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-18-5-2303F4FE2E",
+      "section": "18.5 Authority Evaluation",
+      "requirement": "An `allow_with_conditions` result MUST enumerate all required conditions.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-18-6-48A8B1F9A3",
+      "section": "18.6 Decision Receipt",
+      "requirement": "Every authority evaluation in accountable or higher profiles MUST produce a Decision Receipt containing:",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-18-7-75E2B7FF27",
+      "section": "18.7 Revocation",
+      "requirement": "Authority revocation MUST specify:",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-18-8-A559D2DD98",
+      "section": "18.8 Cascade Revocation",
+      "requirement": "Where an authority has been delegated further, the system MUST define whether revocation:",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-18-9-571A846A92",
+      "section": "18.9 Runtime Enforcement",
+      "requirement": "Delegated authority profiles MUST define integration with policy enforcement points.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-18-9-82B274A257",
+      "section": "18.9 Runtime Enforcement",
+      "requirement": "A registry MUST distinguish revocation publication, propagation, and enforcement convergence.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-18-9-9F1EEEF191",
+      "section": "18.9 Runtime Enforcement",
+      "requirement": "A registry MUST NOT claim `converged` revocation unless every applicable enforcement target has emitted an authenticated acknowledgement that the revocation was applied, or an authorized governance decision has explicitly removed that target from scope. A maximum revocation propagation time is an operational objective and MUST NOT be used as evidence of convergence.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-18-9-0D140AE58A",
+      "section": "18.9 Runtime Enforcement",
+      "requirement": "If the propagation target expires before convergence, the registry MUST expose a non-converged state, identify unresolved enforcement targets, and apply the profile's fail-safe behavior.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-19-1-DD3C4D3D3B",
+      "section": "19.1 Capability Types",
+      "requirement": "The registry MUST distinguish:",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-19-2-3A2FEB02B5",
+      "section": "19.2 Capability Declaration",
+      "requirement": "A declaration SHOULD include:",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-19-3-2DC4E97EBE",
+      "section": "19.3 Capability Verification",
+      "requirement": "A verification record MUST include:",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-19-4-EE90C2A534",
+      "section": "19.4 Capability Authorization",
+      "requirement": "Capability authorization MUST be represented through authority or policy records, not solely through the description record.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-19-5-7C94B55E34",
+      "section": "19.5 Risk Classification",
+      "requirement": "Registries SHOULD classify capabilities by risk, such as:",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-19-5-8EA378321D",
+      "section": "19.5 Risk Classification",
+      "requirement": "Higher-risk classes SHOULD trigger stronger conformance requirements.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-19-6-2EBAFB5755",
+      "section": "19.6 Capability Drift",
+      "requirement": "A material change to capabilities MUST trigger:",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-19-7-A279494DCA",
+      "section": "19.7 Assurance Object",
+      "requirement": "An Assurance Claim MUST include:",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-19-8-D85EC55E2A",
+      "section": "19.8 Assurance Profiles",
+      "requirement": "A registry MAY support multiple assurance profiles.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-19-8-A316305FA8",
+      "section": "19.8 Assurance Profiles",
+      "requirement": "Each profile MUST define:",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-19-9-1B1AC5777F",
+      "section": "19.9 Binding Requirements",
+      "requirement": "An assurance claim MUST be bound to all material elements that were evaluated, including as applicable:",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-19-10-6CC7E4CB32",
+      "section": "19.10 Material Change",
+      "requirement": "A profile MUST define material change.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-19-10-A33C5BA68D",
+      "section": "19.10 Material Change",
+      "requirement": "Examples SHOULD include:",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-19-11-4E00797CF8",
+      "section": "19.11 Assurance Status",
+      "requirement": "Supported assurance states MUST include:",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-19-12-9D80FC4231",
+      "section": "19.12 No Universal Trust Flag",
+      "requirement": "A registry MUST NOT reduce assurance to a universal boolean \u201ctrusted\u201d field.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-20-CD496878C2",
+      "section": "20. Lifecycle and Status",
+      "requirement": "> **Candidate controls:** ARPA-CAND-005, ARPA-CAND-006, and ARPA-CAND-012. Lifecycle state is time-dependent. Implementations MUST preserve effective timestamps and MUST distinguish registry publication of a state change from enforcement convergence.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-20-1-A434B000DB",
+      "section": "20.1 Registration States",
+      "requirement": "A conforming registry MUST support at least:",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-CTRL-F54680D603",
+      "section": "under_investigation",
+      "requirement": "A formal review is active. This status alone MUST NOT imply guilt or compromise.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-20-3-35D5B9E76A",
+      "section": "20.3 Transition Requirements",
+      "requirement": "Every material lifecycle transition MUST record:",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-20-3-E19CF281A1",
+      "section": "20.3 Transition Requirements",
+      "requirement": "For a transition that may affect interpretation of earlier state, the event MUST classify its historical effect as one of `none`, `prospective`, `retroactive`, `governance_defined`, or `indeterminate`. A registry MUST NOT infer retroactive effect solely from a current `revoked`, `compromised`, `retired`, `superseded`, or withdrawn state. Retroactive effect requires an applicable governance rule or authoritative event declaration.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-20-3-AD5B6FEA6D",
+      "section": "20.3 Transition Requirements",
+      "requirement": "Transition legality is governed by `registries/lifecycle-transitions.json`. A conforming implementation MUST reject a lifecycle transition that is absent from that registry or whose declared preconditions are not satisfied. `revoked`, `retired`, and `superseded` are terminal for ordinary administrative processing; any exceptional reversal MUST use a transition explicitly marked `governance_reversal`, identify the competent authority and governance basis, preserve the prior terminal event, and produce a new restoration or correction event. Implementations MUST NOT recreate historical continuity by deleting or rewriting the prior transition.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-20-4-7CEDAEF339",
+      "section": "20.4 Transfer and Change of Control",
+      "requirement": "A change in controller, operator, accountable entity, or ownership-like relationship MUST NOT automatically transfer:",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-20-4-9F093146B1",
+      "section": "20.4 Transfer and Change of Control",
+      "requirement": "Each affected record MUST define whether it:",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-20-5-6B623E6091",
+      "section": "20.5 Retirement",
+      "requirement": "Retirement MUST preserve:",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-20-6-114E78AD4B",
+      "section": "20.6 Supersession",
+      "requirement": "A superseded agent MUST resolve to:",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-20-7-B655C0565C",
+      "section": "20.7 Multi-Dimensional Status",
+      "requirement": "A status response MUST distinguish at minimum:",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-20-8-31885F7D51",
+      "section": "20.8 Operational States",
+      "requirement": "Supported operational states SHOULD include:",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-20-9-275ED4E43F",
+      "section": "20.9 Security States",
+      "requirement": "Supported security states SHOULD include:",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-20-10-134198DC0A",
+      "section": "20.10 Runtime Attestation",
+      "requirement": "High-assurance profiles MUST support evidence that the currently executing workload corresponds to the registered deployment or an approved equivalent.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-20-11-028A91CA94",
+      "section": "20.11 Freshness",
+      "requirement": "Operational and security status responses MUST include:",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-20-12-88081867E3",
+      "section": "20.12 Emergency Suspension",
+      "requirement": "A conforming registry SHOULD support a rapid emergency suspension process distinct from final revocation.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-20-12-21BC07E84F",
+      "section": "20.12 Emergency Suspension",
+      "requirement": "Emergency suspension SHOULD:",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-21-1-0A75E32D6F",
+      "section": "21.1 Transport",
+      "requirement": "Implementations MUST provide at least one machine-readable query interface over a secure transport.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-21-1-A5E301FD3B",
+      "section": "21.1 Transport",
+      "requirement": "HTTP-based deployments SHOULD use:",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-21-3-C7B29AB293",
+      "section": "21.3 Core Endpoints",
+      "requirement": "A conforming HTTP implementation SHOULD provide:",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-21-4-0E14B54603",
+      "section": "21.4 Point-in-Time Queries",
+      "requirement": "All core state queries MUST support a point-in-time parameter.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-21-4-EB941DAE07",
+      "section": "21.4 Point-in-Time Queries",
+      "requirement": "A point-in-time response MUST disclose whether it is:",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-21-4-1-25F719C600",
+      "section": "21.4.1 Historical Authority Resolution",
+      "requirement": "When `at` is earlier than the response evaluation time, the resolver MUST treat `at` as `requested_time` and MUST evaluate records according to the effective intervals, ordered events, applicable governance rules, and evidence available for that requested time.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-21-4-1-6779981834",
+      "section": "21.4.1 Historical Authority Resolution",
+      "requirement": "A conforming historical result MUST expose, directly or through an equivalent envelope:",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-21-4-1-4ECA6F8741",
+      "section": "21.4.1 Historical Authority Resolution",
+      "requirement": "`state_at_requested_time` and `current_state` are independent outputs. A registry MUST NOT substitute current state for historical state. When they differ, the difference MUST be visible to the caller.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-21-4-1-84E9FBD554",
+      "section": "21.4.1 Historical Authority Resolution",
+      "requirement": "Later suspension, revocation, compromise, supersession, recognition withdrawal, governance correction, or integrity failure MUST be disclosed when material to interpretation of the historical result. Each such event MUST classify its historical effect using the controlled vocabulary in `registries/historical-effect-codes.json`.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-21-4-1-EBA6136486",
+      "section": "21.4.1 Historical Authority Resolution",
+      "requirement": "A later current-state transition does not, by itself, rewrite historical state. Retroactive effect MUST be grounded in an applicable governance rule or authoritative event declaration. Where that effect cannot be resolved, the historical result MUST be `indeterminate` or otherwise explicitly non-affirmative.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-21-4-1-EC64ED73FA",
+      "section": "21.4.1 Historical Authority Resolution",
+      "requirement": "A historical-resolution result establishes registry-resolved state and evidence. It MUST NOT be represented as a determination that a relying party is legally, contractually, fiduciary-wise, or operationally required to accept the historical action.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-21-4-2-71EC269105",
+      "section": "21.4.2 Retention and integrity",
+      "requirement": "When the requested time is outside the available retention boundary, the registry MUST disclose that boundary and MUST NOT answer using current state as a substitute. Missing, conflicting, withheld, or integrity-failed evidence MUST be surfaced using a bounded reconstruction status.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-21-4-2-3721E03B90",
+      "section": "21.4.2 Retention and integrity",
+      "requirement": "The records and material events used for historical reconstruction MUST have tamper-evident lineage. A profile MAY select the lineage mechanism, but the response MUST identify the evidence/integrity status and SHOULD identify the mechanism used.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-21-5-BA7E0CA9A1",
+      "section": "21.5 Query Response Envelope",
+      "requirement": "Every response MUST include:",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-21-6-9322C2254D",
+      "section": "21.6 Reliability Metadata",
+      "requirement": "A response used for consequential reliance MUST include:",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-21-7-87C12B1D4B",
+      "section": "21.7 Discovery Search",
+      "requirement": "Discovery MUST support structured filters.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-21-7-50D4FC84EC",
+      "section": "21.7 Discovery Search",
+      "requirement": "Supported filter classes SHOULD include:",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-21-7-61B6DD3BDF",
+      "section": "21.7 Discovery Search",
+      "requirement": "Search results MUST NOT imply authorization or suitability.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-21-8-76DF2C071A",
+      "section": "21.8 Reliance Evaluation",
+      "requirement": "A reliance request SHOULD include:",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-21-8-0CE5A8392B",
+      "section": "21.8 Reliance Evaluation",
+      "requirement": "The result MUST include:",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-21-9-68F19BA950",
+      "section": "21.9 Query Authorization",
+      "requirement": "Registries MUST support access-control policy for protected records.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-21-9-027FEBAD07",
+      "section": "21.9 Query Authorization",
+      "requirement": "A denied response SHOULD disclose only what policy permits.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-21-10-628F1DC0BC",
+      "section": "21.10 Cache Control",
+      "requirement": "Responses MUST specify cacheability and maximum age.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-21-10-0D76601508",
+      "section": "21.10 Cache Control",
+      "requirement": "High-risk authority or security queries SHOULD be non-cacheable or short-lived unless protected by signed status objects.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-22-A253293DF6",
+      "section": "22. Authority Evaluation",
+      "requirement": "Authority evaluation determines whether a particular action is within a valid delegation and applicable policy. Implementations MUST expose the request, response, and Decision Receipt semantics defined in Sections 18, 21, 25, and 28.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-22-1-8E28FE42EC",
+      "section": "22.1 Inputs",
+      "requirement": "The evaluator MUST accept sufficient context to identify the agent, principal, action, resource, purpose, time, deployment, jurisdiction, quantitative values, approval state, and relying policy.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-22-2-F25EFB50A7",
+      "section": "22.2 Output",
+      "requirement": "The decision MUST be `allow`, `allow_with_conditions`, `deny`, `indeterminate`, or `not_applicable`. Conditions and reason codes MUST be explicit.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-22-3-FDD7A2F9E8",
+      "section": "22.3 Processing",
+      "requirement": "The evaluator MUST follow Section 28.2. A deployment MUST NOT claim interoperable authority evaluation if it omits delegation-lineage validation, status freshness, or issuer-competence checks required by its profile.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-23-1-28EEC13FD7",
+      "section": "23.1 Request",
+      "requirement": "A request SHOULD identify the intended action, required assurance, accepted governance authorities and assurance providers, maximum status age, jurisdiction, runtime-attestation requirement, incident policy, privacy constraints, and local policy identifier.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-23-2-F25D0E102E",
+      "section": "23.2 Response",
+      "requirement": "The response MUST be `satisfied`, `not_satisfied`, or `indeterminate` and MUST enumerate supporting evidence, unmet conditions, warnings, freshness, and the evaluated policy version.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-23-3-F88D14328A",
+      "section": "23.3 Processing",
+      "requirement": "The evaluator MUST follow Section 28.3 and produce a Decision Receipt when required by profile.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-24-1-B437DFFA44",
+      "section": "24.1 Event Requirements",
+      "requirement": "Every material state change MUST produce an event.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-24-2-0D2D3E9ABD",
+      "section": "24.2 Event Types",
+      "requirement": "Base event types SHOULD include:",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-24-4-9C8D49F341",
+      "section": "24.4 Ordering",
+      "requirement": "Events MUST include a per-subject or per-registry ordering mechanism.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-24-5-D4EC606686",
+      "section": "24.5 Replay",
+      "requirement": "Subscribers MUST be able to request replay from a checkpoint, event identifier, or timestamp.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-24-6-0D7B1B7B3B",
+      "section": "24.6 Delivery Semantics",
+      "requirement": "A registry MUST declare whether event delivery is:",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-24-6-CF2F87D916",
+      "section": "24.6 Delivery Semantics",
+      "requirement": "Consumers MUST be able to deduplicate events using `event_id`.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-24-7-8E188468C7",
+      "section": "24.7 Enforcement Acknowledgement",
+      "requirement": "Delegated-authority and high-assurance profiles MUST support authenticated acknowledgement events from applicable enforcement points. An acknowledgement MUST identify the revocation or status event, the enforcement surface, the applied time, the outcome, any partial failure, and the authenticated issuer. Absence of a required acknowledgement MUST keep the revocation in a non-converged state.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-25-1-801EC75D46",
+      "section": "25.1 Applicability",
+      "requirement": "Execution evidence is REQUIRED for accountable, delegated-authority, and high-assurance profiles for actions classified as consequential.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-25-1-0B8DEC6BDC",
+      "section": "25.1 Applicability",
+      "requirement": "For Profiles B, C, and D, the deployment MUST publish a machine-readable consequential-action classification policy. The policy MUST identify the action classes or decision rules treated as consequential, the risk basis for the classification, the policy identifier and version, and the evidence obligations triggered by the classification. An implementation MUST NOT avoid profile evidence, redress, or enforcement requirements by leaving a materially rights-affecting, asset-controlling, identity-affecting, safety-critical, irreversible, transaction-submitting, or protected-data action unclassified. The conformance declaration MUST identify the applicable classification policy.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-25-2-84A693F652",
+      "section": "25.2 Execution Receipt Contents",
+      "requirement": "An Execution Receipt MUST include, as applicable:",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-25-3-075FABC72F",
+      "section": "25.3 Confidentiality",
+      "requirement": "Receipts MAY omit confidential payloads while retaining digests, references, or selectively disclosable evidence.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-25-4-3E19A8484A",
+      "section": "25.4 Non-Repudiation and Attribution",
+      "requirement": "A receipt SHOULD support verification that:",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-25-5-62EB48CBD7",
+      "section": "25.5 Failure Receipts",
+      "requirement": "Failed and denied actions SHOULD produce receipts when they are relevant to audit, abuse detection, or dispute resolution.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-25-6-2960C57E45",
+      "section": "25.6 Retention",
+      "requirement": "Governance profiles MUST define retention periods for receipts and supporting evidence.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-26-E5D4D82C6B",
+      "section": "26. Federation and Recognition",
+      "requirement": "> **Candidate controls:** ARPA-CAND-003 and ARPA-CAND-004. Recognition is an explicit, scoped, time-bound governance statement. Federation is a technical exchange relationship and MUST NOT be interpreted as recognition, transitive trust, or transfer of authority.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-26-1-B95DEB1FA4",
+      "section": "26.1 Federation Principle",
+      "requirement": "Registries MAY interoperate technically without mutually recognizing each other\u2019s records.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-26-1-AC99739970",
+      "section": "26.1 Federation Principle",
+      "requirement": "Recognition MUST be explicit.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-26-2-41FB780C70",
+      "section": "26.2 Recognition Record",
+      "requirement": "A Recognition Record MUST specify:",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-26-3-A201DB4824",
+      "section": "26.3 Partial Recognition",
+      "requirement": "Recognition MAY be partial.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-26-4-63571DB692",
+      "section": "26.4 Recognition Chains",
+      "requirement": "A registry MUST NOT automatically infer transitive recognition unless explicitly authorized.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-26-5-B4A1C66C45",
+      "section": "26.5 Conflicting Status",
+      "requirement": "Where recognized sources conflict, the relying policy MUST define precedence, aggregation, or indeterminate handling. If no applicable rule resolves the conflict, the evaluator MUST return `indeterminate` or a stricter non-affirmative outcome; it MUST NOT select the most permissive source or silently retain a previously affirmative result.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-26-6-83A8CA6AD0",
+      "section": "26.6 Federation Discovery",
+      "requirement": "A federation SHOULD publish:",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-27-1-8F08EF1677",
+      "section": "27.1 Governance Metadata",
+      "requirement": "A conforming registry MUST publish or resolve:",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-27-2-742585CC4B",
+      "section": "27.2 Reason Codes",
+      "requirement": "Lifecycle and enforcement actions MUST use structured reason codes.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-27-2-D15F1C31EC",
+      "section": "27.2 Reason Codes",
+      "requirement": "Free-text explanation MAY supplement but MUST NOT replace structured reason codes.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-27-3-1B6E7EF1E2",
+      "section": "27.3 Appeal",
+      "requirement": "A registry MUST support appeal or correction processes for:",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-27-4-9D65D1C5FA",
+      "section": "27.4 Due Process",
+      "requirement": "For Profile B, C, and D deployments, governance profiles MUST specify due-process handling for consequential suspension, revocation, restoration, control change, recognition withdrawal, and disputed execution. At minimum they MUST specify:",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-27-5-6CA194E2ED",
+      "section": "27.5 Redress Record",
+      "requirement": "For Profile B, C, and D deployments, a Redress Record MUST be resolvable for consequential actions and lifecycle decisions. It MUST include:",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-27-6-D0DCA21646",
+      "section": "27.6 Essential Service Continuity",
+      "requirement": "High-assurance public-service profiles SHOULD define fallback or continuity arrangements when suspension of an agent could deny access to essential services.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-28-1-F6C03D96E1",
+      "section": "28.1 General Evaluation Rules",
+      "requirement": "An evaluator MUST:",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-28-1-124A5B1808",
+      "section": "28.1 General Evaluation Rules",
+      "requirement": "An evaluator MUST NOT silently ignore an unknown critical extension, invalid proof, unresolved required status, or unrecognized issuer.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-28-2-BE0070B052",
+      "section": "28.2 Authority Evaluation Algorithm",
+      "requirement": "A conforming authority evaluator MUST perform the following steps or an equivalent process preserving the same semantics:",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-28-2-51AD7C15A6",
+      "section": "28.2 Authority Evaluation Algorithm",
+      "requirement": "A failed mandatory prohibition check MUST result in `deny`. Missing required current status or conflicting authoritative evidence SHOULD result in `indeterminate` unless policy explicitly requires denial.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-28-3-66DCBEE788",
+      "section": "28.3 Reliance Evaluation Algorithm",
+      "requirement": "A reliance evaluator MUST determine whether the candidate agent satisfies the relying party's conditions independently of whether a particular delegation exists. It MUST evaluate, as applicable:",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-28-3-131AEE3C21",
+      "section": "28.3 Reliance Evaluation Algorithm",
+      "requirement": "The result MUST enumerate unmet or indeterminate conditions. It MUST NOT return a generic `trusted` boolean.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-28-4-3C458C63A8",
+      "section": "28.4 Status Precedence",
+      "requirement": "Status dimensions MUST remain separately visible. For execution gating, the following default precedence SHOULD apply unless a profile defines a stricter rule:",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-28-4-80E4DA2B7E",
+      "section": "28.4 Status Precedence",
+      "requirement": "An `under_investigation` state does not by itself imply compromise. The governing profile MUST define whether it triggers monitoring, restriction, suspension, or no automatic execution effect.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-28-4-A199B59828",
+      "section": "28.4 Status Precedence",
+      "requirement": "When dimensions conflict, the most restrictive applicable status MUST govern execution. The response MUST preserve all source statuses and explain the precedence rule used.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-28-5-D3F57ED162",
+      "section": "28.5 Point-in-Time Reconstruction",
+      "requirement": "A point-in-time query MUST evaluate records according to their effective intervals, the authoritative event sequence, and the governance rules applicable to the requested time.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-28-5-149CAB5DFE",
+      "section": "28.5 Point-in-Time Reconstruction",
+      "requirement": "The processor MUST:",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-28-5-68ED937FA6",
+      "section": "28.5 Point-in-Time Reconstruction",
+      "requirement": "The response MUST classify reconstruction as one of:",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-28-5-A7628FAE77",
+      "section": "28.5 Point-in-Time Reconstruction",
+      "requirement": "A registry MUST NOT substitute current state for historical state. Missing historical evidence MUST be surfaced rather than inferred as valid. Conflicting authoritative history that cannot be resolved by a published precedence rule MUST result in `indeterminate`.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-28-5-E3F539112E",
+      "section": "28.5 Point-in-Time Reconstruction",
+      "requirement": "Where a later event declares `retroactive` effect, the resolver MUST identify the governance basis and MUST expose the event as material to interpretation. Where later compromise has an unknown effective origin, or the governance effect cannot be determined, the historical result MUST NOT be upgraded to an unqualified affirmative state.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-28-5-7AFD1FB639",
+      "section": "28.5 Point-in-Time Reconstruction",
+      "requirement": "An integrity failure in the evidence lineage MUST yield `indeterminate`, `authoritative_partial`, or `reconstructed_partial` according to the surviving evidence. It MUST NOT yield an unqualified `authoritative_complete` or `reconstructed_complete` result.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-28-6-083D69D501",
+      "section": "28.6 Material Change Processing",
+      "requirement": "When a material change occurs, the registry MUST determine which linked records are affected. The result for each assurance claim, delegation, relationship, endpoint, and deployment MUST be one of:",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-28-6-D188B4A970",
+      "section": "28.6 Material Change Processing",
+      "requirement": "The change event MUST identify the applicable transition policy.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-28-7-164884A081",
+      "section": "28.7 Revocation and Cascade Processing",
+      "requirement": "On revocation, the processor MUST:",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-28-7-2BFD78710C",
+      "section": "28.7 Revocation and Cascade Processing",
+      "requirement": "A downstream delegation MUST NOT remain affirmatively active when its required parent authority is revoked. It MUST become revoked, suspended, or indeterminate according to declared cascade semantics.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-28-7-D613686289",
+      "section": "28.7 Revocation and Cascade Processing",
+      "requirement": "After notification, the processor MUST track each applicable enforcement target as `pending`, `acknowledged`, `failed`, or `removed_from_scope`. The processor MUST NOT report `converged` until no target remains `pending` or `failed`. Expiry of a propagation target MUST produce an operational failure or escalation signal; it MUST NOT convert a non-converged revocation into a converged one.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-28-8-060C6856F6",
+      "section": "28.8 Conflict Processing",
+      "requirement": "When recognized sources conflict, the evaluator MUST apply a published precedence or aggregation policy. If no applicable rule resolves the conflict, the result MUST be `indeterminate`.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-28-8-83B2D69C76",
+      "section": "28.8 Conflict Processing",
+      "requirement": "The evaluator MUST include:",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-28-9-084FD41A8C",
+      "section": "28.9 Decision Validity and Reuse",
+      "requirement": "A Decision Receipt MUST have a bounded validity period. A PEP MUST reject reuse when any material input differs, including agent, deployment, action, resource, amount, purpose, approval state, or relevant status checkpoint.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-28-9-7712EC6459",
+      "section": "28.9 Decision Validity and Reuse",
+      "requirement": "A status or revocation event affecting the decision MAY invalidate the receipt before its scheduled expiry. Profiles MUST define how invalidation is communicated.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-29-B8931DB4B9",
+      "section": "29. Security Architecture",
+      "requirement": "> **Candidate control:** ARPA-CAND-008. Cryptographic proof establishes only the claims supported by the proof and trust configuration. It MUST NOT, by itself, establish current authority, assurance, governance recognition, or acceptable reliance.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-29-1-8E3ADE7AEC",
+      "section": "29.1 Threat Model",
+      "requirement": "Implementations MUST consider at least:",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-29-2-BB7B3548E8",
+      "section": "29.2 Key Separation",
+      "requirement": "High-impact administrative functions MUST use separated keys or authorization roles.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-29-2-DF47F68C22",
+      "section": "29.2 Key Separation",
+      "requirement": "At minimum, high-assurance profiles SHOULD separate:",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-29-3-25D07EE266",
+      "section": "29.3 Threshold Authorization",
+      "requirement": "Profile C and D deployments MUST require threshold approval, dual control, or an equivalently independent multi-party authorization mechanism for the following high-impact administrative operations:",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-29-4-5C773629C7",
+      "section": "29.4 Transaction Intent",
+      "requirement": "Administrative interfaces MUST present human- or machine-verifiable transaction intent before authorization.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-29-4-8ECFFB18FD",
+      "section": "29.4 Transaction Intent",
+      "requirement": "Intent SHOULD disclose:",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-29-5-A8052C0348",
+      "section": "29.5 Revocation Propagation",
+      "requirement": "A conformance profile MUST define maximum acceptable propagation time from authoritative revocation to enforcement and MUST define the evidence required to establish enforcement convergence. Profiles C and D MUST require authenticated enforcement acknowledgements for applicable enforcement targets. Missing acknowledgements after the propagation target expires MUST be treated as a revocation-propagation failure and MUST NOT be interpreted as convergence.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-29-6-44141A0C22",
+      "section": "29.6 Stale Data",
+      "requirement": "A relying party MUST be able to enforce maximum age for:",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-29-7-D443C1A362",
+      "section": "29.7 Endpoint Security",
+      "requirement": "Registries MUST:",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-29-8-4EB5858726",
+      "section": "29.8 Schema Security",
+      "requirement": "Unknown critical extensions MUST cause processing failure.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-29-8-5F19C8551F",
+      "section": "29.8 Schema Security",
+      "requirement": "Registries SHOULD maintain:",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-29-9-2DC55BB632",
+      "section": "29.9 Equivocation",
+      "requirement": "A registry MUST prevent or detect the presentation of conflicting authoritative state to different relying parties.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-29-9-25596F12AF",
+      "section": "29.9 Equivocation",
+      "requirement": "Suitable mechanisms MAY include:",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-29-10-87C1A5044B",
+      "section": "29.10 Recovery",
+      "requirement": "Recovery procedures MUST be documented and auditable.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-29-10-4BE0FC165E",
+      "section": "29.10 Recovery",
+      "requirement": "A recovery event MUST NOT silently erase compromise history.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-29-11-8915D0C872",
+      "section": "29.11 Dependency Security",
+      "requirement": "Assurance and operational profiles SHOULD disclose material dependencies, including:",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-29-12-AE8D429548",
+      "section": "29.12 Denial of Service",
+      "requirement": "Registries SHOULD support:",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-30-1-1E184E2859",
+      "section": "30.1 Privacy Objective",
+      "requirement": "The registry MUST support reliable decisions without requiring universal publication of identity, relationship, delegation, telemetry, or evidence data. Privacy is therefore an architectural property of resolution, access, and disclosure, not merely a notice or retention policy.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-30-2-A2AC531D07",
+      "section": "30.2 Public Pointer, Protected Record",
+      "requirement": "A public record MAY reveal only:",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-30-2-3AC5DD8428",
+      "section": "30.2 Public Pointer, Protected Record",
+      "requirement": "The full record MAY remain protected. The resolver MUST distinguish \u201crecord exists but access is restricted\u201d from \u201crecord not found\u201d where policy permits.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-30-3-BF7209F6FF",
+      "section": "30.3 Selective Attribute Disclosure",
+      "requirement": "A registry SHOULD support proofs or attestations of policy-relevant properties without disclosing the complete source record. Examples include:",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-30-4-84F5ACE057",
+      "section": "30.4 Pairwise and Scoped Identifiers",
+      "requirement": "Where correlation risk is material, a registry MUST support pairwise or context-scoped agent, principal, or relationship identifiers, or document an equivalent privacy control that prevents unnecessary cross-context linkage. A protected linkage MAY connect scoped identifiers to a canonical record for authorized audit or redress.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-30-5-F6CEAB6FDF",
+      "section": "30.5 Confidential Authority Envelopes",
+      "requirement": "An authority envelope MAY contain commercially sensitive or personal terms. A conforming implementation MAY provide a derived authorization proof or decision receipt rather than disclose the complete envelope, provided that the relying party can verify:",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-30-6-67CF9CE791",
+      "section": "30.6 Confidential Execution Evidence",
+      "requirement": "Execution receipts SHOULD avoid embedding raw protected inputs or outputs. They SHOULD use digests, encrypted references, scoped evidence packages, and access-control policies appropriate to the action.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-30-7-984D7BFFBE",
+      "section": "30.7 Query Privacy",
+      "requirement": "Registries MUST consider that search and status queries can reveal intent, relationships, or investigations. Profile B, C, and D deployments MUST support authenticated or otherwise policy-bound queries for non-public data, query minimization, rate controls, and auditable access. Unauthenticated discovery MUST expose only records explicitly classified for public disclosure. Bulk enumeration, status probing, and search telemetry MUST be treated as privacy-sensitive access surfaces.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-30-8-396321328F",
+      "section": "30.8 Correlation and Graph Reconstruction",
+      "requirement": "Persistent public relationship graphs can reveal organizational structure, beneficiaries, suppliers, or personal associations. Deployments MUST assess whether each relationship must be public, ecosystem-visible, pairwise, or confidential, and MUST record the selected disclosure class in deployment policy when the relationship can reveal a natural person, beneficiary, commercially sensitive association, or security-relevant topology.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-30-9-14561BF0D6",
+      "section": "30.9 Data Subject and Affected-Party Rights",
+      "requirement": "Governance profiles for Profile B, C, and D deployments MUST define rights to access, correction, annotation, restriction, and appeal where records or decisions can materially affect a person or organization. Correction MUST preserve necessary audit history without continuing to present incorrect data as current.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-30-10-F413B25A8B",
+      "section": "30.10 Privacy Pattern Declaration",
+      "requirement": "A conforming deployment SHOULD publish which privacy patterns it supports:",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-31-1-6E111CA8D6",
+      "section": "31.1 Federated Architecture",
+      "requirement": "A scalable deployment SHOULD use federated registries with globally resolvable identifiers and locally governed participation.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-31-2-4A1B563B70",
+      "section": "31.2 Tiered Storage",
+      "requirement": "Implementations SHOULD use storage appropriate to data type:",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-31-3-9885E1660E",
+      "section": "31.3 Read Scalability",
+      "requirement": "Read traffic MAY be served through replicated projections if freshness and provenance requirements are met.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-31-4-A977BAF4BC",
+      "section": "31.4 Write Serialization",
+      "requirement": "Implementations MUST define conflict resolution and serialization rules for concurrent updates.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-31-5-865D8E09E1",
+      "section": "31.5 Partition Behavior",
+      "requirement": "A deployment MUST document behavior during network partition, including:",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-31-5-1C7762C822",
+      "section": "31.5 Partition Behavior",
+      "requirement": "High-assurance profiles SHOULD fail closed for stale or unavailable authority status.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-31-6-96BE338B4A",
+      "section": "31.6 Pagination",
+      "requirement": "List and search endpoints MUST use bounded pagination.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-31-7-E097E7F868",
+      "section": "31.7 Bulk Status",
+      "requirement": "Registries SHOULD support bulk status resolution for large relying systems.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-31-8-304F076DFE",
+      "section": "31.8 Event Scalability",
+      "requirement": "Event systems SHOULD support:",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-32-1-88206075B4",
+      "section": "32.1 Audit Log",
+      "requirement": "A registry MUST maintain tamper-evident audit records for:",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-32-2-CA9AFC717B",
+      "section": "32.2 Transparency",
+      "requirement": "Public or ecosystem-level transparency SHOULD include:",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-32-3-8CC812B40B",
+      "section": "32.3 Confidential Audit",
+      "requirement": "Sensitive details MAY be restricted, but independent auditors SHOULD be able to verify required controls.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-32-4-30343594EB",
+      "section": "32.4 Checkpoints",
+      "requirement": "A registry SHOULD publish signed checkpoints or equivalent integrity commitments.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-33-1-936DC64D8D",
+      "section": "33.1 Specification Version",
+      "requirement": "Every response and record MUST identify the supported specification or schema version.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-33-1-26285EBA32",
+      "section": "33.1 Specification Version",
+      "requirement": "The record envelope's `schema_version` (\u00a713.1) identifies the version of the per-record-type JSON Schema under `schemas/` and follows its own semantic-versioning track, independent of this document's `Version` header (\u00a7 front matter). The two tracks are related as follows: a document major or minor version MAY be released without changing any `schema_version` (editorial or non-normative change); a `schema_version` MAY advance independently of the document version only for schema-level corrections that do not alter normative record semantics (for example, tightening a pattern already implied by prose). Any change to a record's required fields or field semantics MUST be reflected in both the document's Change Log (Appendix H) and a corresponding `schema_version` bump, and the mapping between document version and the `schema_version` values it corresponds to MUST be recorded in `schemas/README.md`. The Candidate Specification v0.9.0 uses the `1.0.0` record schema track unless an individual schema declares a later compatible schema version; the authoritative mapping is maintained in `schemas/README.md` and validated by the repository conformance checks.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-33-2-F6DB5D87C3",
+      "section": "33.2 Backward Compatibility",
+      "requirement": "Minor versions SHOULD preserve backward compatibility.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-33-2-2C41DFE36A",
+      "section": "33.2 Backward Compatibility",
+      "requirement": "Material semantic changes MUST require a new major version.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-33-3-59BDC0E7F1",
+      "section": "33.3 Deprecation",
+      "requirement": "Deprecated fields or endpoints MUST have:",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-33-4-8B4132BECE",
+      "section": "33.4 Extension Registry",
+      "requirement": "Communities SHOULD maintain extension registries identifying:",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-33-5-EEBCCE5906",
+      "section": "33.5 Unknown Fields",
+      "requirement": "Unknown non-critical fields MAY be ignored but MUST be preserved where records are relayed or reserialized, unless prohibited by policy.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-34-2-DFF104867F",
+      "section": "34.2 Base Error Codes",
+      "requirement": "Implementations SHOULD support:",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-34-3-FE6DC587CE",
+      "section": "34.3 HTTP Status Code Mapping",
+      "requirement": "Implementations exposing an HTTP transport MUST map `ARPA-*` error codes to HTTP status codes as follows. A profile MAY use a different transport, in which case it MUST publish an equivalent mapping.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-34-3-91A37D48F5",
+      "section": "34.3 HTTP Status Code Mapping",
+      "requirement": "A `retryable: true` error SHOULD be paired with a `Retry-After` header where the status is 429 or 503.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-34-4-28E15A8B6A",
+      "section": "34.4 Indeterminate Results",
+      "requirement": "An indeterminate result MUST explain which required inputs, records, or verifications were unavailable or conflicting.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-35-5-170B976F9C",
+      "section": "35.5 Profile Declaration",
+      "requirement": "A registry MUST publicly declare:",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-36-0517B1323D",
+      "section": "36. Conformance Requirements",
+      "requirement": "> **Candidate controls:** ARPA-CAND-009 and ARPA-CAND-010. Each implementation MUST publish a capability declaration, conformance targets, deviations, evidence references, and the exact specification and profile versions evaluated.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-36-1-BB5477A572",
+      "section": "36.1 Minimum Components",
+      "requirement": "A conforming deployment MUST provide:",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-36-3-04B9E0536E",
+      "section": "36.3 Administrative API",
+      "requirement": "Administrative operations MUST be authenticated, authorized, audited, and policy-constrained.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-36-4-37A86F94D9",
+      "section": "36.4 Idempotency",
+      "requirement": "Create and update operations SHOULD support idempotency keys.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-36-5-175101EE7B",
+      "section": "36.5 Optimistic Concurrency",
+      "requirement": "Updates SHOULD require an expected version, sequence, or checkpoint to prevent lost updates.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-36-6-CB012C22BA",
+      "section": "36.6 Validation",
+      "requirement": "Registries MUST validate:",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-36-7-3662670DF7",
+      "section": "36.7 Fail-Safe Defaults",
+      "requirement": "An implementation MUST NOT produce `allow` or `allow_with_conditions` when any authority, status, assurance, recognition, or governance input required by the applicable profile is stale, unavailable, conflicting, unsupported, unverifiable, or indeterminate, unless the governing relying-party policy explicitly classifies that input as non-material for the requested action. Profiles C and D MUST treat unresolved material inputs as `deny` or `indeterminate`; they MUST NOT fail open.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-36-8-508D490EFD",
+      "section": "36.8 Observability",
+      "requirement": "Registry operators MUST monitor:",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-37-1-918788C175",
+      "section": "37.1 Required Test Categories",
+      "requirement": "A conformance suite MUST include positive and negative tests for:",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-37-2-F2E8110084",
+      "section": "37.2 Interoperability Matrix",
+      "requirement": "Implementors SHOULD test resolver-to-resolver, resolver-to-PDP, PDP-to-PEP, registry-to-index, registry-to-event-subscriber, and registry-to-federation-peer behavior.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-37-3-89D5792107",
+      "section": "37.3 Determinism",
+      "requirement": "Given the same authenticated records, context, and policy version, conforming evaluators SHOULD produce the same decision and reason-code set. Differences caused by local policy MUST be explicitly attributable to the policy identifier.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-37-4-6E6E312069",
+      "section": "37.4 Test Fixtures",
+      "requirement": "Test fixtures SHOULD include complete record graphs rather than isolated JSON objects. At minimum, a fixture for delegated action should include an agent, version, deployment, relationships, assurance, parent and child delegations, status, policy, and expected decision receipt.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-38-4-E9C505B680",
+      "section": "38.4 Federated Domain Registries",
+      "requirement": "Domain-specific registries retain local governance and exchange records through explicit recognition. This is the RECOMMENDED pattern for cross-sector or cross-jurisdiction deployment because global resolution does not require global governance.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-39-1-6CFEF9B352",
+      "section": "39.1 Recommended Service Decomposition",
+      "requirement": "A production deployment SHOULD consider separate services for:",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-39-2-4C1B605293",
+      "section": "39.2 Deployment Modes",
+      "requirement": "Supported modes MAY include:",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-39-3-F10C0D71C7",
+      "section": "39.3 Registry Operator Separation",
+      "requirement": "High-assurance deployments SHOULD separate the registry operator from at least one of:",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-39-4-BD4A469CAD",
+      "section": "39.4 Operational Runbooks",
+      "requirement": "Operators MUST maintain runbooks for:",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-39-5-8DF9D6D46D",
+      "section": "39.5 Service-Level Objectives",
+      "requirement": "Registries SHOULD publish objectives for:",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-39-6-D837AC6AA5",
+      "section": "39.6 Testing",
+      "requirement": "Implementations MUST test:",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-39A-CDFA709894",
+      "section": "39A.1 Layering",
+      "requirement": "ARPA conformance does not imply TRQP conformance. TRQP conformance does not imply ARPA conformance. Projection support MUST be separately versioned and declared under ARPA-CAND-011.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-39A-3678BB12BA",
+      "section": "39A.2 Projection safety",
+      "requirement": "A projection adapter MUST preserve action, resource, context, validity, recognition scope, prohibitions, and evidence provenance. It MUST NOT broaden delegated or recognized scope, infer transitive recognition, equate technical federation with governance recognition, or convert missing, stale, conflicting, suspended, revoked, expired, or unavailable authority into an affirmative result.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-39A-A7F6862CF3",
+      "section": "39A.3 Lifecycle ownership",
+      "requirement": "ARPA owns the operations and evidence through which authority state changes. A TRQP projection queries the resulting state; it is not an ARPA lifecycle API and does not add write operations to TRQP. Discovery metadata for a projection endpoint is an optional ARPA interoperability declaration and MUST NOT be presented as a mandatory registry-of-registries mechanism.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-42-1-B9AC991406",
+      "section": "42.1 Composable modules",
+      "requirement": "ARPA defines `ARPA-Core`, `ARPA-Relations`, `ARPA-Assurance`, `ARPA-Authority`, `ARPA-Evidence`, and `ARPA-Federation`. A conforming deployment MUST declare supported modules. Support for a lower module MUST NOT be interpreted as support for a higher module. The normative dependency and non-implication rules are specified in `docs/protocol-modules.md`.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-42-2-FBB48C76B8",
+      "section": "42.2 Core implementation profile",
+      "requirement": "A Profile A implementation MUST satisfy `spec/profiles/arpa-core-identity-discovery-profile.md`. It MAY omit authority, assurance, evidence and federation operations, but MUST return `ARPA-OP-NOT-SUPPORTED` rather than an affirmative or ambiguous result.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-42-3-CE136665C5",
+      "section": "42.3 Machine-readable contracts",
+      "requirement": "The JSON Schemas, controlled registries, OpenAPI contract, event contract and conformance vectors in this repository are normative implementation artifacts for v0.5.0. Where prose and a machine-readable artifact conflict, an implementation MUST report the conflict; neither form silently overrides the other until corrected through governance.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-42-4-BDE754CDBC",
+      "section": "42.4 External descriptions",
+      "requirement": "External Agent Cards and equivalent descriptions are discovery inputs. Their claims are self-declared unless independently verified. Capability description MUST NOT become capability authorization or delegated authority by import.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    },
+    {
+      "id": "ARPA-NORM-42-5-00038018F6",
+      "section": "42.5 Conformance evidence",
+      "requirement": "Conformance claims MUST identify protocol, semantic, cryptographic, operational, governance and enforcement dimensions. An implementation report MUST state unsupported dimensions and known limitations.",
+      "verification_procedure": "scripts/validate_normative_requirements.py",
+      "expected_evidence": "artifacts/conformance/normative-requirements-validation.json"
+    }
+  ]
+}

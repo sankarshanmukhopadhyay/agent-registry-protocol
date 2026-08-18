@@ -6,7 +6,7 @@ nav_exclude: true
 
 # JSON Schemas
 
-ARPA v0.5.0 publishes JSON Schema 2020-12 contracts for 20 envelope-based record families plus standalone Agent Card extension and Registry Metadata contracts. The record schema track remains `1.0.0`.
+ARPA Candidate Specification v0.9.0 publishes JSON Schema 2020-12 contracts for the record families and standalone interoperability/evidence artifacts under this directory. The core record schema track remains `1.0.0`; implementation releases v0.9.1–v0.9.5 continue to consume the v0.9.0 Candidate normative baseline.
 
 Every envelope-based record composes `common/envelope.schema.json`. Valid and targeted invalid examples are under `examples/`; `scripts/validate_examples.py` resolves local references and validates expected outcomes.
 
@@ -16,6 +16,8 @@ Every envelope-based record composes `common/envelope.schema.json`. Valid and ta
 |---|---|
 | 0.3.0 | 1.0.0 |
 | 0.5.0 | 1.0.0 |
+| 0.9.0 Candidate | 1.0.0 |
+| 0.9.1–0.9.5 implementation releases | 1.0.0 (v0.9.0 Candidate baseline) |
 
 A required-field or semantic change requires coordinated document, schema, example, vector and migration updates. Editorial changes do not require a schema-version bump.
 

@@ -2,7 +2,7 @@ from pathlib import Path
 import json, sys, yaml
 ROOT=Path(__file__).resolve().parents[1]
 errors=[]
-required=['spec/agent-registry-protocol-v0.9.0.md','docs/architecture/trqp-arpa-interoperability.md','mappings/trqp-arpa-query-projection.yaml','conformance/trqp-projection/manifest.json','independent_impl/projection.py','schemas/historical-resolution.schema.json','conformance/test-vectors/historical/manifest.json','docs/historical-authority-resolution.md']
+required=['spec/agent-registry-protocol-v0.9.0.md','docs/architecture/trqp-arpa-interoperability.md','mappings/trqp-arpa-query-projection.yaml','conformance/trqp-projection/manifest.json','independent_impl/projection.py','schemas/historical-resolution.schema.json','conformance/test-vectors/historical/manifest.json','docs/historical-authority-resolution.md','registries/lifecycle-transitions.json','registries/revocation-convergence-statuses.json','registries/normative-requirements.json','schemas/revocation-convergence.schema.json']
 for r in required:
  if not (ROOT/r).exists(): errors.append('missing candidate artifact: '+r)
 m=yaml.safe_load((ROOT/'mappings/trqp-arpa-query-projection.yaml').read_text())

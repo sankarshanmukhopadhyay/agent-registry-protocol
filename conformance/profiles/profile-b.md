@@ -33,10 +33,12 @@ All of Profile A, plus:
 - [x] Version records — `schemas/agent-version.schema.json`
 - [x] Deployment identifiers — `schemas/deployment.schema.json`
 - [x] Accountability relationships — `relationship.schema.json#relationship_type` = `accountable_to`
-- [ ] Structured capability records — capability declaration (§19.2) is currently prose-only; no dedicated schema yet (tracked in `schemas/README.md` "Not yet scheduled")
+- [x] Structured capability records — `schemas/capability-declaration.schema.json` and `schemas/capability-verification.schema.json`
 - [x] Assurance claims — `schemas/assurance-claim.schema.json`
 - [x] Incident states — `status.schema.json#security` enum (§20.9)
 - [x] Point-in-time queries — `TV-B-03` (freshness), spec §28.5
 - [x] Execution receipts — `schemas/execution-receipt.schema.json`
 - [x] Event subscriptions — `schemas/event.schema.json`
-- [ ] Redress metadata — see `schemas/governance.schema.json#redress_process`; a dedicated Redress Record schema is not yet published (spec §27.5 marks fields SHOULD, not MUST)
+- [x] Redress metadata — `schemas/governance.schema.json#redress_process` and `schemas/redress-record.schema.json`
+
+- [x] Consequential-action classification policy — required for Profile B-D conformance declarations by `schemas/conformance-declaration.schema.json`

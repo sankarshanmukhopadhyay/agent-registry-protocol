@@ -1,0 +1,93 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sankarshanmukhopadhyay.github.io/agent-registry-protocol/schemas/revocation-convergence.schema.json",
+  "title": "ARPA Revocation Convergence Evidence",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "revocation_event_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "enum": [
+        "published",
+        "propagating",
+        "converged",
+        "propagation_failed",
+        "indeterminate"
+      ]
+    },
+    "propagation_target_seconds": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "applicable_targets": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "acknowledged_targets": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "failed_targets": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "removed_from_scope": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "evaluated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "evidence_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "revocation_event_id",
+    "status",
+    "propagation_target_seconds",
+    "applicable_targets",
+    "acknowledged_targets",
+    "failed_targets",
+    "removed_from_scope",
+    "evaluated_at",
+    "evidence_refs"
+  ],
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "const": "converged"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "failed_targets": {
+            "maxItems": 0
+          }
+        }
+      }
+    }
+  ]
+}

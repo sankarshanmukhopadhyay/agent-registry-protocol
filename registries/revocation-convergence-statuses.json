@@ -1,0 +1,31 @@
+{
+  "registry": "revocation-convergence-statuses",
+  "version": "0.9.0",
+  "entries": [
+    {
+      "id": "published",
+      "status": "active",
+      "affirmative_convergence": false
+    },
+    {
+      "id": "propagating",
+      "status": "active",
+      "affirmative_convergence": false
+    },
+    {
+      "id": "converged",
+      "status": "active",
+      "affirmative_convergence": true
+    },
+    {
+      "id": "propagation_failed",
+      "status": "active",
+      "affirmative_convergence": false
+    },
+    {
+      "id": "indeterminate",
+      "status": "active",
+      "affirmative_convergence": false
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "status": "pass",
+  "lifecycle_transitions": 28,
+  "normative_requirements": 296,
+  "checks": [
+    "lifecycle-transition-legality",
+    "terminal-state-governance-reversal",
+    "revocation-convergence-acknowledgements",
+    "profile-consequential-action-policy",
+    "profile-cd-acknowledgement-policy"
+  ]
+}
