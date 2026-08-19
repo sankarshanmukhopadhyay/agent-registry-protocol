@@ -99,6 +99,12 @@ The [TypeScript implementation](docs/typescript-implementation.md) independently
 ARPA owns the authority, lifecycle, evidence, revocation, enforcement and federation control plane. TRQP is treated as an external, minimal read-only query interface. The optional v0.9.0 projection demonstrates how selected ARPA authorization and recognition state can be exposed without merging the protocols or implying cross-protocol conformance.
 
 
+## Public specification review
+
+The ARPA Candidate Specification is open for public review. Readers, implementers, standards practitioners, security and privacy reviewers, and other interested parties can use the repository's **Specification feedback** issue form to report ambiguities, governance or authority concerns, interoperability gaps, lifecycle problems, security/privacy risks, conformance issues, missing cases, or editorial improvements.
+
+[Open a specification feedback issue](https://github.com/sankarshanmukhopadhyay/agent-registry-protocol/issues/new?template=specification_feedback.yml) or see [CONTRIBUTING.md](CONTRIBUTING.md) for review and contribution expectations.
+
 ## Licensing
 
 ARPA uses **artifact-specific licensing** so that specification content and executable implementation artifacts have licenses suited to their use:

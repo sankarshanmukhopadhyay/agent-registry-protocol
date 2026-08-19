@@ -1,0 +1,106 @@
+name: Specification feedback
+description: Review the ARPA Candidate Specification and report an ambiguity, concern, gap, or proposed improvement.
+title: "[Specification]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for reviewing the Agent Registry Protocol (ARPA) Candidate Specification.
+
+        Use this form for specification-level feedback, including normative ambiguity,
+        interoperability concerns, governance or authority gaps, security or privacy risks,
+        implementability problems, missing cases, or editorial improvements.
+
+        You do not need to provide a complete solution. Please identify the affected text
+        and explain the issue clearly enough for maintainers and other reviewers to assess it.
+
+  - type: input
+    id: specification-version
+    attributes:
+      label: Specification version or revision
+      description: Identify the version, commit, rendered publication, or draft you reviewed.
+      placeholder: "v0.9.0 Candidate Specification, commit SHA, or publication URL"
+    validations:
+      required: true
+
+  - type: input
+    id: section
+    attributes:
+      label: Section or requirement
+      description: Cite the section number, heading, requirement identifier, schema, or other precise location if possible.
+      placeholder: "Section 8.3, requirement ARPA-..., or spec URL with fragment"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: feedback-type
+    attributes:
+      label: Feedback type
+      description: Select the category that best describes the issue.
+      options:
+        - Normative requirement or ambiguity
+        - Architecture or protocol semantics
+        - Authority, delegation, recognition, or governance
+        - Lifecycle, suspension, revocation, or historical state
+        - Interoperability or independent implementation
+        - Security or abuse resistance
+        - Privacy or data minimization
+        - Conformance, assurance, or testability
+        - Schema, API, event, or registry alignment
+        - Missing use case, edge case, or failure mode
+        - Editorial clarity or terminology
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: issue
+    attributes:
+      label: Issue or observation
+      description: Explain what is unclear, incorrect, incomplete, unsafe, difficult to implement, or otherwise worth changing.
+      placeholder: |
+        Describe the issue in concrete terms. Where relevant, distinguish the specification text from your interpretation of its consequences.
+    validations:
+      required: true
+
+  - type: textarea
+    id: impact
+    attributes:
+      label: Why this matters
+      description: Describe the practical impact on implementers, operators, relying parties, affected people, interoperability, governance, or assurance.
+      placeholder: |
+        What could fail, diverge, become ambiguous, or produce an unintended outcome if this remains unchanged?
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence, example, or reproduction
+      description: Provide an implementation example, scenario, trace, test result, standards reference, or other evidence if available.
+      placeholder: |
+        Links, examples, message flows, test vectors, comparison specifications, or a minimal scenario are welcome.
+
+  - type: textarea
+    id: proposed-resolution
+    attributes:
+      label: Proposed resolution
+      description: Optional. Suggest revised text, a new requirement, a test, an example, or another way to address the issue.
+      placeholder: |
+        A proposed solution is helpful but is not required to submit specification feedback.
+
+  - type: textarea
+    id: compatibility
+    attributes:
+      label: Compatibility or migration considerations
+      description: Optional. Note whether the change could affect existing implementations, schemas, profiles, or published evidence.
+
+  - type: checkboxes
+    id: review-declaration
+    attributes:
+      label: Review declaration
+      options:
+        - label: I have identified the affected specification text or surface as precisely as I reasonably can.
+          required: true
+        - label: I understand that opening an issue does not imply acceptance of the proposal or a formal standards-body decision.
+          required: true

@@ -12,6 +12,12 @@ Thank you for helping develop the Agent Registry Protocol.
 
 Contributions should improve implementability, interoperability, security, privacy, governance clarity, or reviewability. The project values concrete failure modes, precise requirements, testable behavior, and explicit trade-offs over broad aspirational language.
 
+## Public specification review
+
+The Candidate Specification is open to public review. If you identify a normative ambiguity, interoperability problem, governance or authority gap, lifecycle concern, security or privacy risk, conformance issue, missing edge case, or editorial problem, open a **Specification feedback** issue using the repository issue form.
+
+Reviewers do not need to propose a complete solution. A useful issue identifies the affected specification text, explains the concern and its impact, and includes evidence or an example where available. Specification feedback is an input to project governance; opening an issue does not by itself modify the normative baseline.
+
 ## Before opening a pull request
 
 For substantive protocol changes, open an issue first. Describe:
