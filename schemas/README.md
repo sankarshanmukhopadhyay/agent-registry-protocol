@@ -30,3 +30,4 @@ A required-field or semantic change requires coordinated document, schema, examp
 - `historical-resolution.schema.json` — requested-time/current-state historical authority resolution with evidence provenance.
 
 - `project-status.schema.json` — repository-local compatibility snapshot of the portfolio member status contract; upstream governance retains authority.
+- `operational-resilience-declaration.schema.json` — cross-cutting production resilience declaration for failure domains, retry ownership, failover, event isolation, dependency amplification and sustained-load progress.

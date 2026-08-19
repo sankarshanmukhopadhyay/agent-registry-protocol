@@ -1,0 +1,1 @@
+{"id":"OR-FAIL-02","control":"recovery_hysteresis","input":{"single_healthy_observation":true,"stabilization_criterion_met":false},"expected":{"outcome":"remain_recovering"}}

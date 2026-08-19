@@ -1,0 +1,1 @@
+{"id":"OR-DEP-01","control":"dependency_amplification","input":{"concurrent_equivalent_misses":100,"upstream_requests":2,"declared_max_amplification":5,"freshness_bound_preserved":true},"expected":{"outcome":"allow"}}

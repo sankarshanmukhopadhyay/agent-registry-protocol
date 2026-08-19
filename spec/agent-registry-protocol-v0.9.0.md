@@ -3288,6 +3288,74 @@ Registry operators MUST monitor:
 - abnormal update patterns; and
 - federation failures.
 
+
+## 36.9 Operational Resilience Assurance
+
+Operational resilience is a cross-cutting conformance property and does not define a new Profile A-D tier. A deployment that makes a production or operational-conformance claim MUST publish an Operational Resilience Declaration identifying the applicable failure domains, controls, bounds, verification procedures, evidence references, and known limitations. The declaration MUST conform to `schemas/operational-resilience-declaration.schema.json`.
+
+The requirements in this section constrain observable safety properties. They do not mandate a particular service mesh, queue, cache, retry library, load balancer, database, or deployment platform.
+
+### 36.9.1 Failure domains and retry ownership
+
+A deployment MUST identify the failure domains in which protocol operations can be retried, including application, client library, gateway or proxy, registry service, federation hop, event transport, and downstream dependency layers where those layers are present.
+
+For each failure domain, the deployment MUST identify a retry owner and MUST enforce an aggregate retry budget. Multiple components MUST NOT independently retry the same consequential operation unless they participate in and enforce the same aggregate retry budget.
+
+Retries of the same consequential create, update, delegation, revocation, suspension, recognition, recovery, or administrative operation MUST preserve a stable operation identity and, where idempotency is supported, the same idempotency identity across retrying intermediaries.
+
+A retry policy MUST declare the maximum attempt count or equivalent work bound, maximum retry horizon, retryable failure classes, treatment of server retry hints, and terminal-failure behaviour. Clients and intermediaries SHOULD honor `Retry-After` when supplied for retryable `429` or `503` outcomes.
+
+### 36.9.2 Partial outage, failover, and recovery
+
+A deployment using failover MUST declare endpoint health states and the criteria governing transitions between healthy, degraded, unavailable, and recovering states. A recovering endpoint MUST NOT be restored to unrestricted traffic solely on the basis of a single successful health observation when doing so can create oscillation or overload.
+
+Failover behaviour MUST bound fan-out and MUST remain within the aggregate retry budgets defined by Section 36.9.1. During reduced capacity, an operator MUST provide admission control, load shedding, or an equivalent bounded-work mechanism sufficient to prevent surviving endpoints from being driven into cascading failure.
+
+Rejected, deferred, or shed consequential work MUST be observable. Recovery criteria MUST include a stabilization or hysteresis condition sufficient to prevent repeated traffic oscillation between unhealthy and recovering paths.
+
+### 36.9.3 Event isolation and acknowledgement safety
+
+An event-capable deployment MUST declare the scope within which ordering is guaranteed. Ordering semantics MUST NOT create an indefinite dependency between consequentially unrelated authority-state changes.
+
+A malformed, poison, or repeatedly failing event MUST be isolatable or quarantinable such that it cannot indefinitely prevent unrelated revocation, suspension, recognition, recovery, or other authority-state events from progressing.
+
+Where loss of an event could affect effective authority, revocation, suspension, recognition, or recovery state, upstream acknowledgement MUST occur only after the event has crossed a declared durable-handoff boundary from which processing is recoverable after consumer or process failure.
+
+Skipped, quarantined, or dead-lettered consequential events MUST be observable and MUST have a documented recovery or disposition path.
+
+### 36.9.4 Dependency amplification and cache safety
+
+A deployment that caches authoritative lookup or resolution results MUST bound amplification caused by concurrent cache misses. Request coalescing, bounded concurrency, batching, replicated state, admission control, or another mechanism MAY be used to satisfy this requirement.
+
+Dependency retries MUST use bounded backoff and SHOULD include desynchronization or jitter where synchronized clients could otherwise create a retry wave.
+
+Negative caching MAY be used only where the deployment can demonstrate that the cached negative outcome does not conceal a material state transition. Resilience caching MUST NOT extend authority, revocation, suspension, recognition, assurance, or lifecycle information beyond its applicable freshness, validity, or policy boundary.
+
+Deployments serving synchronized fleets SHOULD desynchronize cache expiry or refresh activity where common expiration points could create a thundering-herd condition.
+
+### 36.9.5 Sustained-load progress and fairness
+
+Sustained load from one principal, tenant, federation peer, operation class, or failure domain MUST NOT indefinitely prevent consequential control-plane operations from making progress.
+
+A deployment MUST define and test a mechanism that preserves bounded progress for revocation, suspension, recovery, incident containment, authority-state updates, and other locally designated safety-critical operations during query or discovery saturation.
+
+### 36.9.6 Required assurance evidence
+
+An operational-resilience evidence bundle MUST identify, at minimum:
+
+- the failure-domain map;
+- retry owners and aggregate retry budgets;
+- retry horizon and server-hint handling;
+- health-state transition and recovery criteria;
+- failover and reduced-capacity controls;
+- event ordering scope, quarantine behaviour, and durable acknowledgement boundary;
+- dependency amplification controls and cache-freshness constraints;
+- sustained-load progress controls;
+- the conformance vectors executed; and
+- known limitations or deployment-specific exclusions.
+
+The repository conformance suite defines portable vectors for lost responses, nested retries, partial outages, recovery flapping, event head-of-line isolation, durable acknowledgement, dependency amplification, and safety-critical progress under load. Passing these repository fixtures demonstrates conformance to the modeled scenarios only; it MUST NOT be represented as proof of production resilience or independent certification.
+
 ---
 
 # 37. Test Vectors and Interoperability Testing

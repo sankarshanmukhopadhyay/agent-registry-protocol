@@ -1,0 +1,25 @@
+{
+  "artifact": "failure-domain-map",
+  "status": "reference-example",
+  "assurance_boundary": "Illustrative deployment declaration; values are not protocol-wide constants.",
+  "failure_domains": [
+    {
+      "id": "registry-query",
+      "components": ["client", "gateway", "registry"],
+      "retry_owner": "client",
+      "aggregate_retry_budget": 3,
+      "maximum_retry_horizon_ms": 10000,
+      "stable_operation_identity": true
+    },
+    {
+      "id": "authority-event-delivery",
+      "components": ["publisher", "event-transport", "enforcement-point"],
+      "retry_owner": "event-transport",
+      "aggregate_retry_budget": 5,
+      "maximum_retry_horizon_ms": 30000,
+      "stable_operation_identity": true,
+      "acknowledgement_boundary": "durable-event-store",
+      "ordering_scope": "authority-envelope"
+    }
+  ]
+}

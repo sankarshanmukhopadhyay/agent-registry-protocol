@@ -1,0 +1,87 @@
+{
+  "schema_version": "1.0.0",
+  "issuer": "registry:example.org",
+  "issued_at": "2026-08-19T00:00:00Z",
+  "effective_from": "2026-08-19T00:00:00Z",
+  "effective_until": null,
+  "status": "active",
+  "proof": {},
+  "record_id": "operational-resilience-reference",
+  "record_type": "operational-resilience-declaration",
+  "subject": "registry:reference",
+  "implementation_name": "ARPA Reference Deployment",
+  "implementation_version": "0.9.5+unreleased",
+  "arpa_version": "0.9.0",
+  "failure_domains": [
+    {
+      "id": "registry-query",
+      "components": [
+        "client",
+        "gateway",
+        "registry"
+      ],
+      "retry_owner": "client",
+      "aggregate_retry_budget": 3,
+      "maximum_retry_horizon_ms": 10000,
+      "stable_operation_identity": false
+    },
+    {
+      "id": "authority-event-delivery",
+      "components": [
+        "publisher",
+        "event-transport",
+        "enforcement-point"
+      ],
+      "retry_owner": "event-transport",
+      "aggregate_retry_budget": 5,
+      "maximum_retry_horizon_ms": 30000,
+      "stable_operation_identity": true
+    }
+  ],
+  "failover": {
+    "health_states": [
+      "healthy",
+      "degraded",
+      "unavailable",
+      "recovering"
+    ],
+    "stabilization_criterion": "three consecutive healthy observations while capacity remains below the declared recovery threshold",
+    "fanout_bounded": true,
+    "reduced_capacity_control": "admission-control",
+    "shed_work_observable": true
+  },
+  "events": {
+    "ordering_scope": "authority-envelope",
+    "poison_event_isolation": true,
+    "durable_ack_boundary": "durable-event-store",
+    "quarantine_observable": true,
+    "recovery_path": "operator-visible quarantine replay after correction"
+  },
+  "dependency_protection": {
+    "concurrent_miss_amplification_bounded": true,
+    "strategy": "single-flight-or-equivalent-bounded-concurrency",
+    "bounded_backoff": true,
+    "desynchronization": true,
+    "negative_cache_policy": "disabled for mutable authority state; short-lived only for dependency unavailable responses where freshness boundaries are preserved",
+    "freshness_bound_preserved": true
+  },
+  "load_progress": {
+    "safety_critical_progress_preserved": true,
+    "protected_operation_classes": [
+      "revocation",
+      "suspension",
+      "recovery",
+      "authority-state-update"
+    ],
+    "mechanism": "reserved control-plane capacity and admission control"
+  },
+  "_violation": "Nested retries do not share an aggregate retry budget.",
+  "resilience_evidence": {
+    "failure_domain_map": "artifacts/operational-resilience/failure-domain-map.json",
+    "test_report": "artifacts/operational-resilience/evidence-bundle.json",
+    "last_tested": "2026-08-19T00:00:00Z",
+    "known_limitations": [
+      "Repository fixtures are modeled assurance evidence and not production certification"
+    ]
+  }
+}

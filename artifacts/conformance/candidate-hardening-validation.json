@@ -1,7 +1,7 @@
 {
   "status": "pass",
   "lifecycle_transitions": 28,
-  "normative_requirements": 296,
+  "normative_requirements": 316,
   "checks": [
     "lifecycle-transition-legality",
     "terminal-state-governance-reversal",

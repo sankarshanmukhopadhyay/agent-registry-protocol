@@ -1,0 +1,1 @@
+{"id":"OR-EVT-02","control":"ack_order","input":{"consequential":true,"durable_handoff_complete":false,"ack_requested":true},"expected":{"outcome":"withhold_ack","reason":"ARPA-RESILIENCE-DURABLE-HANDOFF-INCOMPLETE"}}

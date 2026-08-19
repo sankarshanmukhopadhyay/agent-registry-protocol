@@ -1,0 +1,1 @@
+{"id":"OR-FAIL-01","control":"failover_safety","input":{"surviving_capacity_pct":50,"offered_load_pct":100,"admission_control":true,"fanout_bounded":true,"retry_budget_enforced":true},"expected":{"outcome":"bounded_degradation"}}

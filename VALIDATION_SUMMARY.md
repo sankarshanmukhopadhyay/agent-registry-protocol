@@ -16,9 +16,10 @@ make release-check
 
 | Surface | Result |
 |---|---:|
-| Valid and invalid schema examples | 44/44 passed |
+| Valid and invalid schema examples | 46/46 passed |
 | Profile conformance vectors | 12/12 passed |
 | Extended governance vectors | 14/14 passed |
+| Operational resilience vectors | 8/8 passed |
 | Reference-service tests | 5/5 passed |
 | v0.5-derived interoperability checks updated for v0.9.0 | 7/7 passed |
 | ARPA–TRQP projection vectors and candidate checks | 15/15 passed |
@@ -34,6 +35,7 @@ make release-check
 - `artifacts/candidate-specification/requirements.json`
 - `artifacts/interoperability/interoperability-report.json`
 - `artifacts/interoperability/evidence-bundle.json`
+- `artifacts/operational-resilience/evidence-bundle.json`
 - `artifacts/release/compatibility-matrix.json`
 - `conformance/reports/reference-implementation-report.json`
 
@@ -82,3 +84,9 @@ Passing these checks demonstrates repository-controlled reference behaviour only
 - Documentation navigation is organized around six task-oriented journey hubs while retaining existing document URLs.
 
 The local execution environment did not expose a working Bundler/Jekyll executable, so the GitHub Pages build remains enforced by the repository Pages workflow. Repository-level Markdown link validation and publication-manifest generation are included in CI.
+
+## Operational resilience assurance hardening
+
+The unreleased hardening increment adds cross-cutting operational resilience requirements in Candidate Specification §36.9 and a machine-readable Operational Resilience Declaration. The repository suite validates 8/8 modeled vectors covering retry budgets, partial outage, recovery hysteresis, poison-event isolation, durable acknowledgement order, dependency amplification, and safety-critical progress under query saturation. The normative-requirements registry now contains 316 synchronized requirements.
+
+These fixtures demonstrate repository-owned modeled assurance only. Deployment-specific failure injection, capacity testing, observability evidence and independent assurance remain operator responsibilities.

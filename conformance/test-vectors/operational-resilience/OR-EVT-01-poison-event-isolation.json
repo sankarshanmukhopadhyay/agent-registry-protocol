@@ -1,0 +1,1 @@
+{"id":"OR-EVT-01","control":"event_isolation","input":{"poison_event":"evt-101","unrelated_consequential_event":"evt-102","quarantine_supported":true,"ordering_scope":"authority-envelope"},"expected":{"outcome":"progress","quarantined":["evt-101"],"processable":["evt-102"]}}

@@ -1,0 +1,1 @@
+{"id":"OR-RETRY-02","control":"retry_safety","input":{"consequential":true,"attempts":6,"aggregate_budget":3,"stable_operation_identity":true,"idempotency_identity_preserved":true},"expected":{"outcome":"deny","reason":"ARPA-RESILIENCE-RETRY-BUDGET-EXCEEDED"}}

@@ -1,0 +1,14 @@
+{
+  "suite": "arpa-operational-resilience-v1",
+  "description": "Portable modeled assurance vectors addressing RAHP issue #19 resilience gaps without prescribing a specific infrastructure implementation.",
+  "vectors": [
+    "OR-RETRY-01-lost-response.json",
+    "OR-RETRY-02-nested-retry-budget.json",
+    "OR-FAIL-01-partial-outage.json",
+    "OR-FAIL-02-recovery-flapping.json",
+    "OR-EVT-01-poison-event-isolation.json",
+    "OR-EVT-02-durable-ack-order.json",
+    "OR-DEP-01-concurrent-cache-miss.json",
+    "OR-LOAD-01-revocation-under-query-saturation.json"
+  ]
+}

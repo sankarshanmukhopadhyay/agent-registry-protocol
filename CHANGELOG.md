@@ -6,6 +6,12 @@ nav_exclude: true
 
 # Changelog
 
+### Operational resilience assurance (unreleased)
+
+- Added cross-cutting normative resilience requirements for retry ownership, aggregate retry budgets, partial-outage failover, stabilized recovery, event isolation, durable acknowledgement, dependency amplification, cache freshness, and sustained-load progress.
+- Added a machine-readable Operational Resilience Declaration, modeled conformance vectors, validator, and evidence bundle addressing review-required gaps from `rahp-toolkit#19`.
+- Kept infrastructure mechanisms deployment-neutral: ARPA constrains observable safety outcomes rather than mandating specific retry, cache, queue, service-mesh, or timer implementations.
+
 ## Unreleased
 
 ### IETF publication-path hardening

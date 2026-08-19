@@ -1,0 +1,1 @@
+{"id":"OR-LOAD-01","control":"load_progress","input":{"query_saturated":true,"operation":"revocation","safety_critical":true,"reserved_or_prioritized_capacity":true,"progress_observed":true},"expected":{"outcome":"allow"}}

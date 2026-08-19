@@ -1,0 +1,251 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sankarshanmukhopadhyay.github.io/agent-registry-protocol/schemas/operational-resilience-declaration.schema.json",
+  "title": "ARPA Operational Resilience Declaration",
+  "description": "Machine-readable declaration of cross-cutting operational resilience controls and assurance evidence for an ARPA deployment.",
+  "allOf": [
+    {
+      "$ref": "common/envelope.schema.json"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "record_type": {
+          "const": "operational-resilience-declaration"
+        },
+        "implementation_name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "implementation_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "arpa_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "failure_domains": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "components": {
+                "type": "array",
+                "minItems": 1,
+                "uniqueItems": true,
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "retry_owner": {
+                "type": "string",
+                "minLength": 1
+              },
+              "aggregate_retry_budget": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "maximum_retry_horizon_ms": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "stable_operation_identity": {
+                "const": true
+              }
+            },
+            "required": [
+              "id",
+              "components",
+              "retry_owner",
+              "aggregate_retry_budget",
+              "maximum_retry_horizon_ms",
+              "stable_operation_identity"
+            ]
+          }
+        },
+        "failover": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "health_states": {
+              "type": "array",
+              "minItems": 4,
+              "uniqueItems": true,
+              "items": {
+                "enum": [
+                  "healthy",
+                  "degraded",
+                  "unavailable",
+                  "recovering"
+                ]
+              }
+            },
+            "stabilization_criterion": {
+              "type": "string",
+              "minLength": 1
+            },
+            "fanout_bounded": {
+              "const": true
+            },
+            "reduced_capacity_control": {
+              "type": "string",
+              "minLength": 1
+            },
+            "shed_work_observable": {
+              "const": true
+            }
+          },
+          "required": [
+            "health_states",
+            "stabilization_criterion",
+            "fanout_bounded",
+            "reduced_capacity_control",
+            "shed_work_observable"
+          ]
+        },
+        "events": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "ordering_scope": {
+              "type": "string",
+              "minLength": 1
+            },
+            "poison_event_isolation": {
+              "const": true
+            },
+            "durable_ack_boundary": {
+              "type": "string",
+              "minLength": 1
+            },
+            "quarantine_observable": {
+              "const": true
+            },
+            "recovery_path": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "ordering_scope",
+            "poison_event_isolation",
+            "durable_ack_boundary",
+            "quarantine_observable",
+            "recovery_path"
+          ]
+        },
+        "dependency_protection": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "concurrent_miss_amplification_bounded": {
+              "const": true
+            },
+            "strategy": {
+              "type": "string",
+              "minLength": 1
+            },
+            "bounded_backoff": {
+              "const": true
+            },
+            "desynchronization": {
+              "type": "boolean"
+            },
+            "negative_cache_policy": {
+              "type": "string",
+              "minLength": 1
+            },
+            "freshness_bound_preserved": {
+              "const": true
+            }
+          },
+          "required": [
+            "concurrent_miss_amplification_bounded",
+            "strategy",
+            "bounded_backoff",
+            "desynchronization",
+            "negative_cache_policy",
+            "freshness_bound_preserved"
+          ]
+        },
+        "load_progress": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "safety_critical_progress_preserved": {
+              "const": true
+            },
+            "protected_operation_classes": {
+              "type": "array",
+              "minItems": 1,
+              "uniqueItems": true,
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "mechanism": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "safety_critical_progress_preserved",
+            "protected_operation_classes",
+            "mechanism"
+          ]
+        },
+        "resilience_evidence": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "failure_domain_map": {
+              "type": "string",
+              "minLength": 1
+            },
+            "test_report": {
+              "type": "string",
+              "minLength": 1
+            },
+            "last_tested": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "known_limitations": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "required": [
+            "failure_domain_map",
+            "test_report",
+            "last_tested",
+            "known_limitations"
+          ]
+        }
+      },
+      "required": [
+        "record_type",
+        "implementation_name",
+        "implementation_version",
+        "arpa_version",
+        "failure_domains",
+        "failover",
+        "events",
+        "dependency_protection",
+        "load_progress",
+        "resilience_evidence"
+      ]
+    }
+  ]
+}

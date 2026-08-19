@@ -123,6 +123,7 @@ See [Protocol modules](protocol-modules.md) for the dependency table, profile ma
 - [TRQP projection conformance](../conformance/trqp-projection/README.md)
 - [Validation summary](../VALIDATION_SUMMARY.md)
 - [Governance and security assurance](governance-security-assurance.md)
+- [Operational resilience assurance](operational-resilience.md)
 - [RAHP audit — 2026-08-16](assurance/rahp-audit-2026-08-16.md)
 
 ## Interoperability and reference material

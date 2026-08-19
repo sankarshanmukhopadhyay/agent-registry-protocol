@@ -1,0 +1,116 @@
+{
+  "suite": "arpa-operational-resilience-v1",
+  "implementation_release": "0.9.5+unreleased",
+  "generated_at": "2026-08-19T13:49:07.869637Z",
+  "passed": 8,
+  "total": 8,
+  "results": [
+    {
+      "id": "OR-RETRY-01",
+      "file": "OR-RETRY-01-lost-response.json",
+      "passed": true,
+      "expected": {
+        "outcome": "allow",
+        "side_effects_max": 1
+      },
+      "actual": {
+        "outcome": "allow",
+        "side_effects_max": 1
+      }
+    },
+    {
+      "id": "OR-RETRY-02",
+      "file": "OR-RETRY-02-nested-retry-budget.json",
+      "passed": true,
+      "expected": {
+        "outcome": "deny",
+        "reason": "ARPA-RESILIENCE-RETRY-BUDGET-EXCEEDED"
+      },
+      "actual": {
+        "outcome": "deny",
+        "reason": "ARPA-RESILIENCE-RETRY-BUDGET-EXCEEDED"
+      }
+    },
+    {
+      "id": "OR-FAIL-01",
+      "file": "OR-FAIL-01-partial-outage.json",
+      "passed": true,
+      "expected": {
+        "outcome": "bounded_degradation"
+      },
+      "actual": {
+        "outcome": "bounded_degradation"
+      }
+    },
+    {
+      "id": "OR-FAIL-02",
+      "file": "OR-FAIL-02-recovery-flapping.json",
+      "passed": true,
+      "expected": {
+        "outcome": "remain_recovering"
+      },
+      "actual": {
+        "outcome": "remain_recovering"
+      }
+    },
+    {
+      "id": "OR-EVT-01",
+      "file": "OR-EVT-01-poison-event-isolation.json",
+      "passed": true,
+      "expected": {
+        "outcome": "progress",
+        "quarantined": [
+          "evt-101"
+        ],
+        "processable": [
+          "evt-102"
+        ]
+      },
+      "actual": {
+        "outcome": "progress",
+        "quarantined": [
+          "evt-101"
+        ],
+        "processable": [
+          "evt-102"
+        ]
+      }
+    },
+    {
+      "id": "OR-EVT-02",
+      "file": "OR-EVT-02-durable-ack-order.json",
+      "passed": true,
+      "expected": {
+        "outcome": "withhold_ack",
+        "reason": "ARPA-RESILIENCE-DURABLE-HANDOFF-INCOMPLETE"
+      },
+      "actual": {
+        "outcome": "withhold_ack",
+        "reason": "ARPA-RESILIENCE-DURABLE-HANDOFF-INCOMPLETE"
+      }
+    },
+    {
+      "id": "OR-DEP-01",
+      "file": "OR-DEP-01-concurrent-cache-miss.json",
+      "passed": true,
+      "expected": {
+        "outcome": "allow"
+      },
+      "actual": {
+        "outcome": "allow"
+      }
+    },
+    {
+      "id": "OR-LOAD-01",
+      "file": "OR-LOAD-01-revocation-under-query-saturation.json",
+      "passed": true,
+      "expected": {
+        "outcome": "allow"
+      },
+      "actual": {
+        "outcome": "allow"
+      }
+    }
+  ],
+  "assurance_boundary": "Modeled repository assurance for declared resilience outcomes; not production load certification, infrastructure certification, or independent assurance."
+}
