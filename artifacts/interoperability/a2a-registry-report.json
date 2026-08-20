@@ -1,9 +1,9 @@
 {
   "profile": "https://arpa.example/profiles/a2a/1.0",
   "implementation_release": "0.9.5",
-  "generated_at": "2026-08-16T05:26:07.077051Z",
-  "passed": 18,
-  "total": 18,
+  "generated_at": "2026-08-20T04:36:42.580997Z",
+  "passed": 24,
+  "total": 24,
   "results": [
     {
       "id": "A2A-001",
@@ -130,6 +130,48 @@
       "passed": true,
       "decision": "reject",
       "error": "ARPA-A2A-REQUIRED-EXTENSION-UNSUPPORTED"
+    },
+    {
+      "id": "A2A-AC-01",
+      "file": "actor-chain-valid-authority.json",
+      "passed": true,
+      "decision": "accept",
+      "error": null
+    },
+    {
+      "id": "A2A-AC-02",
+      "file": "actor-chain-fabricated-monotone.json",
+      "passed": true,
+      "decision": "accept",
+      "error": null
+    },
+    {
+      "id": "A2A-AC-03",
+      "file": "actor-chain-scope-escalation.json",
+      "passed": true,
+      "decision": "accept",
+      "error": null
+    },
+    {
+      "id": "A2A-AC-04",
+      "file": "actor-chain-invalid-evidence.json",
+      "passed": true,
+      "decision": "accept",
+      "error": null
+    },
+    {
+      "id": "A2A-AC-05",
+      "file": "actor-chain-revoked-authority.json",
+      "passed": true,
+      "decision": "accept",
+      "error": null
+    },
+    {
+      "id": "A2A-AC-06",
+      "file": "actor-chain-context-unbound.json",
+      "passed": true,
+      "decision": "accept",
+      "error": null
     }
   ]
 }

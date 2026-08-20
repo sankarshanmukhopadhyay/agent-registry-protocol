@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://arpa.example/schemas/a2a-actor-chain-evaluation.schema.json",
+  "title": "ARPA A2A Actor Chain Evaluation",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "lineage_well_formed",
+    "evidence_resolution",
+    "authority_decision",
+    "effect_admission"
+  ],
+  "properties": {
+    "lineage_well_formed": {
+      "type": "boolean"
+    },
+    "evidence_resolution": {
+      "type": "string",
+      "enum": [
+        "not-supplied",
+        "resolvable",
+        "unresolvable",
+        "invalid"
+      ]
+    },
+    "authority_decision": {
+      "type": "string",
+      "enum": [
+        "permit",
+        "deny",
+        "indeterminate",
+        "revoked",
+        "expired",
+        "not-evaluated"
+      ]
+    },
+    "effect_admission": {
+      "type": "string",
+      "enum": [
+        "permit",
+        "deny"
+      ]
+    },
+    "received_chain_digest": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "forwarded_chain_digest": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "mutation_detected": {
+      "type": "boolean"
+    },
+    "context_binding": {
+      "type": "string",
+      "enum": [
+        "present",
+        "missing",
+        "not-applicable"
+      ]
+    },
+    "privacy_minimization_reviewed": {
+      "type": "boolean"
+    },
+    "notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

@@ -19,7 +19,7 @@ if mapping.get('safe_failure',{}).get('authority_indeterminate')!='reject_conseq
 pub=mapping.get('registry_publication',{})
 if not pub.get('exact_source_uri_required') or pub.get('authority_implication') is not False: errors.append('publication invariants missing')
 
-for schema_name in ['a2a-publication-projection.schema.json','a2a-card-compatibility-result.schema.json']:
+for schema_name in ['a2a-publication-projection.schema.json','a2a-card-compatibility-result.schema.json','a2a-actor-chain-evaluation.schema.json']:
     schema=json.loads((ROOT/'schemas'/schema_name).read_text())
     Draft202012Validator.check_schema(schema)
 
@@ -32,8 +32,26 @@ def compatibility(v):
     if any(x.startswith(breaking_prefixes) for x in removed) or v.get('disabled_capability'): return 'breaking'
     return 'compatible'
 
+def evaluate_actor_chain(v):
+    actors=v.get('actor_chain',{}).get('actors',[])
+    well_formed=True
+    for previous,current in zip(actors,actors[1:]):
+        if not set(current.get('scopes',[])).issubset(set(previous.get('scopes',[]))):
+            well_formed=False
+            break
+    evidence=v.get('evidence_resolution','not-supplied')
+    authority=v.get('authority_decision','not-evaluated')
+    context=v.get('context_binding','not-applicable')
+    effect='permit' if (well_formed and evidence=='resolvable' and authority=='permit' and context!='missing') else 'deny'
+    result={'lineage_well_formed':well_formed,'evidence_resolution':evidence,'authority_decision':authority,'effect_admission':effect}
+    expected=v.get('expected_evaluation')
+    return result, (expected is None or result==expected)
+
 def evaluate(v):
     case=v['case']
+    if case=='actor-chain':
+        _,ok=evaluate_actor_chain(v)
+        return ('accept',None) if ok else ('reject','ARPA-STATE-TRANSITION-INVALID')
     if case=='digest-mismatch' and not v['arpa']['digest_match']: return 'reject','ARPA-A2A-CARD-DIGEST-MISMATCH'
     if case=='unsupported-required-extension' and not v['arpa']['required_extensions_supported']: return 'reject','ARPA-A2A-REQUIRED-EXTENSION-UNSUPPORTED'
     if case=='status-conflict' and v['arpa']['agent_status']!='active': return 'reject','ARPA-A2A-CARD-STATUS-CONFLICT'
@@ -79,7 +97,7 @@ for item in manifest['vectors']:
 outdir=ROOT/'artifacts/interoperability'; outdir.mkdir(parents=True,exist_ok=True)
 report={'profile':mapping['profile'],'implementation_release':'0.9.5','generated_at':datetime.now(timezone.utc).isoformat().replace('+00:00','Z'),'passed':passed,'total':len(manifest['vectors']),'results':results}
 (outdir/'a2a-registry-report.json').write_text(json.dumps(report,indent=2)+"\n")
-bundle={'type':'arpa-a2a-registry-evidence-bundle','implementation_release':'0.9.5','report':'artifacts/interoperability/a2a-registry-report.json','mapping':'mappings/a2a-v1.0-arpa-mapping.yaml','publication_schema':'schemas/a2a-publication-projection.schema.json','compatibility_schema':'schemas/a2a-card-compatibility-result.schema.json','vector_manifest':'conformance/test-vectors/a2a-v1.0/manifest.json','invariants':['exact-source-uri','caller-filtered-visibility','immutable-snapshot','discovery-not-authority','arpa-state-precedence']}
+bundle={'type':'arpa-a2a-registry-evidence-bundle','implementation_release':'0.9.5','report':'artifacts/interoperability/a2a-registry-report.json','mapping':'mappings/a2a-v1.0-arpa-mapping.yaml','publication_schema':'schemas/a2a-publication-projection.schema.json','compatibility_schema':'schemas/a2a-card-compatibility-result.schema.json','vector_manifest':'conformance/test-vectors/a2a-v1.0/manifest.json','invariants':['exact-source-uri','caller-filtered-visibility','immutable-snapshot','discovery-not-authority','arpa-state-precedence','actor-chain-is-attribution-not-authority','monotonic-narrowing-is-well-formedness-only','evidence-state-separation','context-bound-evidence-reference']}
 (outdir/'a2a-registry-evidence-bundle.json').write_text(json.dumps(bundle,indent=2)+"\n")
 
 print(f"validate_a2a_interoperability.py: {passed}/{len(manifest['vectors'])} OK")

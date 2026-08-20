@@ -1,0 +1,27 @@
+{
+  "case": "actor-chain",
+  "actor_chain": {
+    "origin": {
+      "iss": "https://id.example",
+      "sub": "user:alice"
+    },
+    "actors": [
+      {
+        "iss": "https://agents.example",
+        "sub": "worker",
+        "scopes": [
+          "repo:read"
+        ]
+      }
+    ]
+  },
+  "evidence_resolution": "resolvable",
+  "authority_decision": "revoked",
+  "context_binding": "present",
+  "expected_evaluation": {
+    "lineage_well_formed": true,
+    "evidence_resolution": "resolvable",
+    "authority_decision": "revoked",
+    "effect_admission": "deny"
+  }
+}

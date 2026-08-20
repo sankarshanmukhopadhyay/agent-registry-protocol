@@ -86,3 +86,27 @@ card_compatibility:
   breaking_changes:
   - disable_existing_capability
   unknown_change: indeterminate
+actor_chain_extension:
+  status: informative-proposal-tracking
+  upstream_reference: a2aproject/A2A#2028
+  reviewed_on: '2026-08-20'
+  authority_implication: false
+  well_formedness_does_not_imply_authority: true
+  append_only_required_when_processed: true
+  identity_key: issuer-and-subject
+  evidence_reference:
+    resolution: independent
+    missing: unknown-not-denial
+    unresolvable: distinct-from-denial
+    invalid: distinct-from-unresolvable
+    context_binding_required: true
+  outcomes:
+  - well-formed
+  - malformed
+  - evidence-missing
+  - evidence-unresolvable
+  - evidence-invalid
+  - authority-revoked
+  - authority-expired
+  - authority-denied
+  - authority-permit

@@ -1,6 +1,6 @@
 {
   "profile": "https://arpa.example/profiles/a2a/1.0",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "vectors": [
     {
       "id": "A2A-001",
@@ -98,6 +98,36 @@
       "file": "unknown-required-extension.json",
       "expected": "reject",
       "error": "ARPA-A2A-REQUIRED-EXTENSION-UNSUPPORTED"
+    },
+    {
+      "id": "A2A-AC-01",
+      "file": "actor-chain-valid-authority.json",
+      "expected": "accept"
+    },
+    {
+      "id": "A2A-AC-02",
+      "file": "actor-chain-fabricated-monotone.json",
+      "expected": "accept"
+    },
+    {
+      "id": "A2A-AC-03",
+      "file": "actor-chain-scope-escalation.json",
+      "expected": "accept"
+    },
+    {
+      "id": "A2A-AC-04",
+      "file": "actor-chain-invalid-evidence.json",
+      "expected": "accept"
+    },
+    {
+      "id": "A2A-AC-05",
+      "file": "actor-chain-revoked-authority.json",
+      "expected": "accept"
+    },
+    {
+      "id": "A2A-AC-06",
+      "file": "actor-chain-context-unbound.json",
+      "expected": "accept"
     }
   ]
 }

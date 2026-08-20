@@ -1,0 +1,35 @@
+{
+  "case": "actor-chain",
+  "actor_chain": {
+    "origin": {
+      "iss": "https://id.example",
+      "sub": "user:alice"
+    },
+    "actors": [
+      {
+        "iss": "https://agents.example",
+        "sub": "coordinator",
+        "scopes": [
+          "repo:read"
+        ]
+      },
+      {
+        "iss": "https://agents.example",
+        "sub": "worker",
+        "scopes": [
+          "repo:read",
+          "ci:trigger"
+        ]
+      }
+    ]
+  },
+  "evidence_resolution": "resolvable",
+  "authority_decision": "not-evaluated",
+  "context_binding": "present",
+  "expected_evaluation": {
+    "lineage_well_formed": false,
+    "evidence_resolution": "resolvable",
+    "authority_decision": "not-evaluated",
+    "effect_admission": "deny"
+  }
+}

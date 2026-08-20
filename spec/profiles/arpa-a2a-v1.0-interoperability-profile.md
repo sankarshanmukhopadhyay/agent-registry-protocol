@@ -8,7 +8,7 @@ parent: Protocol profiles
 # ARPA A2A v1.0 Interoperability Profile
 
 **Profile identifier:** `https://arpa.example/profiles/a2a/1.0`  
-**ARPA implementation release:** v0.9.3  
+**ARPA implementation release:** v0.9.5  
 **A2A protocol family:** 1.0  
 **Status:** Versioned interoperability profile over the ARPA v0.9.0 Candidate Specification
 
@@ -107,6 +107,29 @@ Unauthenticated callers see only public projections. Authenticated callers may s
 Implementations that compare successive Agent Card representations SHOULD emit `schemas/a2a-card-compatibility-result.schema.json`. The baseline classifier used by this repository treats additions as compatible unless they narrow previously advertised behavior, and treats removal of skills, interfaces, security schemes, supported input/output modes, or disabling of previously available capabilities as breaking. Unknown changes are `indeterminate` and require local policy.
 
 Compatibility classification does not establish capability verification, authority, or safety.
+
+## 5C. Proposed actor-chain extension handling
+
+A2A issue `a2aproject/A2A#2028` proposes an optional payload-level actor chain for on-behalf-of attribution. ARPA tracks this proposal as an **informative interoperability input** only. Until adopted upstream, implementations MUST NOT represent these fields as normative A2A v1.0 requirements.
+
+When an implementation chooses to process such a chain, it MUST preserve four independent properties:
+
+1. **Attribution:** who the payload reports as the origin and intervening actors;
+2. **Well-formedness:** whether reported per-hop scopes narrow monotonically and the chain obeys append-only processing rules;
+3. **Evidence resolution:** whether independently referenced grant evidence is missing, resolvable, unresolvable, or invalid; and
+4. **Authority:** the ARPA/rp-policy decision after current scope, delegation, lifecycle and revocation evaluation.
+
+A well-formed chain MUST NOT be treated as evidence that any grant occurred. Caller-supplied lineage metadata MUST NOT populate or substitute for an ARPA Authority Envelope.
+
+A processing implementation SHOULD identify an actor by an issuer-and-subject pair where the upstream representation supports it. Bare subject strings MUST NOT be assumed globally unique.
+
+If append-only lineage is claimed, a delegating actor MUST append its own hop and MUST NOT modify earlier hops. A receiver that needs mutation detection SHOULD retain the received representation or digest before forwarding because a verifier given only a rewritten forwarded chain cannot reconstruct the earlier bytes.
+
+Evidence references SHOULD be content-bound and MUST be context/domain-bound when cross-context replay would change the authority meaning. Missing evidence is an unknown/unavailable state, not evidence that no grant occurred. Resolved but invalid evidence MUST fail before lifecycle or authorization semantics are evaluated and MUST remain distinguishable from `unresolvable` and `authority-denied`.
+
+Actor-chain disclosure SHOULD be minimized. A relying implementation SHOULD NOT require durable identities for every upstream actor when a less correlating proof can establish the necessary authority property.
+
+The machine-readable handling rules are in `mappings/a2a-v1.0-arpa-mapping.yaml`, and conformance examples are under `conformance/test-vectors/a2a-v1.0/`.
 
 ## 6. Processing algorithm
 

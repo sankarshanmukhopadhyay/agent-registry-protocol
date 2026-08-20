@@ -54,3 +54,8 @@ ARPA v0.9.3 does not mandate centralized catalogs, a federation-of-catalogs arch
 ## Evidence produced
 
 The release gate checks exact URI preservation, visibility filtering, immutable snapshots, compatibility classification and non-implication of authority. Results are written to `artifacts/interoperability/a2a-registry-report.json` and `artifacts/interoperability/a2a-registry-evidence-bundle.json`.
+
+
+## Actor-chain attribution
+
+A2A issue #2028 is tracked as an informative proposal. If a deployment carries actor-chain metadata, preserve it as attribution/audit input and resolve authority independently through ARPA. A monotone chain is only internally consistent; it is not proof of grant. Keep missing, unresolvable, invalid, revoked/expired, and denied states distinct, and bind evidence references to context where replay could alter meaning.

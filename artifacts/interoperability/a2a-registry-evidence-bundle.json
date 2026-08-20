@@ -11,6 +11,10 @@
     "caller-filtered-visibility",
     "immutable-snapshot",
     "discovery-not-authority",
-    "arpa-state-precedence"
+    "arpa-state-precedence",
+    "actor-chain-is-attribution-not-authority",
+    "monotonic-narrowing-is-well-formedness-only",
+    "evidence-state-separation",
+    "context-bound-evidence-reference"
   ]
 }
