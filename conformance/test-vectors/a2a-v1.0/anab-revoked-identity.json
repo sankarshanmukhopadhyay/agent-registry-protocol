@@ -1,0 +1,1 @@
+{"case":"anab-assurance","card":{"name":"Payments Agent"},"anab":{"version":"0.10.0","agent_name":"Payments Agent","freshness":"fresh","identity_status":"revoked","declaration_digest_match":true,"card_binding_valid":true,"delegation_required":true},"interaction":{"consequential":true},"expected":"reject"}

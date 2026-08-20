@@ -1,0 +1,1 @@
+{"case":"anab-assurance","card":{"name":"Example Research Agent"},"anab":{"version":"0.10.0","agent_name":"Example Research Agent","freshness":"fresh","identity_status":"verified","declaration_digest_match":true,"card_binding_valid":true,"delegation_required":true},"interaction":{"consequential":true},"expected":"accept"}
