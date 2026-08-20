@@ -17,6 +17,7 @@ project:
 authority:
   normative_scope:
     - agent-registry-protocol
+  implementation_scope:
     - arpa-record-model
     - arpa-lifecycle-semantics
     - arpa-conformance-profiles
