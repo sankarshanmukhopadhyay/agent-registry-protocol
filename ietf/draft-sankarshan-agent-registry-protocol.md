@@ -312,7 +312,9 @@ A registry metadata response SHOULD contain:
   "protocol_version": "1",
   "issuer": "https://registry.example",
   "api_base": "https://registry.example/api",
-  "supported_record_types": ["agent", "relationship", "authority", "status"],
+  "supported_record_types": [
+    "agent", "relationship", "authority", "status"
+  ],
   "historical_resolution": true,
   "events_endpoint": "https://registry.example/events"
 }
@@ -513,7 +515,7 @@ OAuth 2.0 {{RFC6749}} can convey authorization grants and access tokens. ARPA ad
 
 HTTP Message Signatures {{RFC9421}} can authenticate signed HTTP messages. ARPA does not define a competing HTTP signature mechanism.
 
-Well-known URIs {{RFC8615}} can provide discovery of registry metadata if the corresponding IANA registration is made.
+Well-known URIs {{RFC8615}} can provide discovery of registry metadata if the corresponding IANA registration is made. OAuth 2.0 Authorization Server Metadata {{RFC8414}} establishes precedent for a well-known-URI-based metadata document with a similar structure and update model; the ARPA registry metadata response follows a comparable pattern without asserting equivalence to OAuth server metadata.
 
 Future revisions are expected to document relationships with current IETF workload identity, secure credential, attestation, and supply-chain transparency work after community review.
 
