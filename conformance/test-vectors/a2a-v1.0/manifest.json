@@ -1,6 +1,6 @@
 {
   "profile": "https://arpa.example/profiles/a2a/1.0",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "vectors": [
     {
       "id": "A2A-001",
@@ -128,6 +128,29 @@
       "id": "A2A-AC-06",
       "file": "actor-chain-context-unbound.json",
       "expected": "accept"
+    },
+    {
+      "id": "A2A-ANAB-01",
+      "file": "anab-valid-assurance.json",
+      "expected": "accept"
+    },
+    {
+      "id": "A2A-ANAB-02",
+      "file": "anab-name-mismatch.json",
+      "expected": "reject",
+      "error": "ARPA-A2A-CARD-CONTEXT-MISMATCH"
+    },
+    {
+      "id": "A2A-ANAB-03",
+      "file": "anab-stale-assurance.json",
+      "expected": "reject",
+      "error": "ARPA-STATUS-STALE"
+    },
+    {
+      "id": "A2A-ANAB-04",
+      "file": "anab-revoked-identity.json",
+      "expected": "reject",
+      "error": "ARPA-A2A-CARD-STATUS-CONFLICT"
     }
   ]
 }

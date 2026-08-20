@@ -110,3 +110,14 @@ actor_chain_extension:
   - authority-expired
   - authority-denied
   - authority-permit
+anab_description_extension:
+  status: experimental-assurance-input
+  extension_uri: https://trustoverip.github.io/dtgwg-agent-names-tf/extensions/anab-description/v1
+  baseline: ANAB v0.10.0
+  result_schema: schemas/a2a-anab-assurance-result.schema.json
+  name_consistency_required: true
+  declaration_digest_required_for_verified_claim: true
+  card_binding_required_for_verified_claim: true
+  freshness_and_revocation_evaluated_separately: true
+  authority_implication: false
+  consequential_action_requires_separate_delegation: true

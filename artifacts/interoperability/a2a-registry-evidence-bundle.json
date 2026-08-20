@@ -5,6 +5,7 @@
   "mapping": "mappings/a2a-v1.0-arpa-mapping.yaml",
   "publication_schema": "schemas/a2a-publication-projection.schema.json",
   "compatibility_schema": "schemas/a2a-card-compatibility-result.schema.json",
+  "anab_assurance_schema": "schemas/a2a-anab-assurance-result.schema.json",
   "vector_manifest": "conformance/test-vectors/a2a-v1.0/manifest.json",
   "invariants": [
     "exact-source-uri",
@@ -15,6 +16,8 @@
     "actor-chain-is-attribution-not-authority",
     "monotonic-narrowing-is-well-formedness-only",
     "evidence-state-separation",
-    "context-bound-evidence-reference"
+    "context-bound-evidence-reference",
+    "name-assurance-is-not-authority",
+    "assurance-freshness-and-status"
   ]
 }

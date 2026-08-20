@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sankarshanmukhopadhyay.github.io/agent-registry-protocol/schemas/a2a-anab-assurance-result.schema.json",
+  "title": "ARPA A2A ANAB Assurance Evaluation Result",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["card_digest", "extension_uri", "anab_version", "name_consistent", "freshness", "identity_status", "authority_implication", "decision", "evaluated_at"],
+  "properties": {
+    "card_digest": {"type": "string", "pattern": "^[A-Fa-f0-9]{64}$"},
+    "extension_uri": {"const": "https://trustoverip.github.io/dtgwg-agent-names-tf/extensions/anab-description/v1"},
+    "anab_version": {"type": "string"},
+    "name_consistent": {"type": "boolean"},
+    "freshness": {"enum": ["fresh", "stale", "unknown"]},
+    "identity_status": {"enum": ["self_asserted", "verified", "revoked", "suspended", "unknown"]},
+    "authority_implication": {"const": false},
+    "decision": {"enum": ["assurance-input-accepted", "assurance-input-rejected", "not-present"]},
+    "error": {"type": ["string", "null"]},
+    "evaluated_at": {"type": "string", "format": "date-time"}
+  }
+}

@@ -1,9 +1,9 @@
 {
   "profile": "https://arpa.example/profiles/a2a/1.0",
   "implementation_release": "0.9.5",
-  "generated_at": "2026-08-20T04:36:42.580997Z",
-  "passed": 24,
-  "total": 24,
+  "generated_at": "2026-08-20T09:52:51.101396Z",
+  "passed": 28,
+  "total": 28,
   "results": [
     {
       "id": "A2A-001",
@@ -172,6 +172,34 @@
       "passed": true,
       "decision": "accept",
       "error": null
+    },
+    {
+      "id": "A2A-ANAB-01",
+      "file": "anab-valid-assurance.json",
+      "passed": true,
+      "decision": "accept",
+      "error": null
+    },
+    {
+      "id": "A2A-ANAB-02",
+      "file": "anab-name-mismatch.json",
+      "passed": true,
+      "decision": "reject",
+      "error": "ARPA-A2A-CARD-CONTEXT-MISMATCH"
+    },
+    {
+      "id": "A2A-ANAB-03",
+      "file": "anab-stale-assurance.json",
+      "passed": true,
+      "decision": "reject",
+      "error": "ARPA-STATUS-STALE"
+    },
+    {
+      "id": "A2A-ANAB-04",
+      "file": "anab-revoked-identity.json",
+      "passed": true,
+      "decision": "reject",
+      "error": "ARPA-A2A-CARD-STATUS-CONFLICT"
     }
   ]
 }

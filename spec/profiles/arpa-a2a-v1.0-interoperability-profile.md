@@ -131,6 +131,12 @@ Actor-chain disclosure SHOULD be minimized. A relying implementation SHOULD NOT 
 
 The machine-readable handling rules are in `mappings/a2a-v1.0-arpa-mapping.yaml`, and conformance examples are under `conformance/test-vectors/a2a-v1.0/`.
 
+## 5D. Experimental ANAB description assurance
+
+When an Agent Card carries the ANAB description extension, ARPA MAY evaluate it as an assurance input using `schemas/a2a-anab-assurance-result.schema.json`. The evaluation MUST keep the Agent Card name consistent with the ANAB name, enforce freshness and identity lifecycle state, and validate declaration/card-binding evidence before accepting a `verified` claim. An accepted ANAB input improves naming and operator-binding evidence only; it MUST NOT create an ARPA Authority Envelope or authorize an A2A task. Consequential interaction still requires independently resolved delegation and an affirmative authority decision.
+
+The repository vectors `A2A-ANAB-01` through `A2A-ANAB-04` exercise valid, name-mismatched, stale, and revoked inputs. This integration is experimental and does not make ANAB normative for ARPA-Core.
+
 ## 6. Processing algorithm
 
 Before initiating a consequential A2A task, a conforming relying implementation MUST:

@@ -19,7 +19,7 @@ if mapping.get('safe_failure',{}).get('authority_indeterminate')!='reject_conseq
 pub=mapping.get('registry_publication',{})
 if not pub.get('exact_source_uri_required') or pub.get('authority_implication') is not False: errors.append('publication invariants missing')
 
-for schema_name in ['a2a-publication-projection.schema.json','a2a-card-compatibility-result.schema.json','a2a-actor-chain-evaluation.schema.json']:
+for schema_name in ['a2a-publication-projection.schema.json','a2a-card-compatibility-result.schema.json','a2a-actor-chain-evaluation.schema.json','a2a-anab-assurance-result.schema.json']:
     schema=json.loads((ROOT/'schemas'/schema_name).read_text())
     Draft202012Validator.check_schema(schema)
 
@@ -49,6 +49,14 @@ def evaluate_actor_chain(v):
 
 def evaluate(v):
     case=v['case']
+    if case=='anab-assurance':
+        a=v['anab']; card=v['card']; interaction=v.get('interaction',{})
+        if a.get('agent_name')!=card.get('name'): return 'reject','ARPA-A2A-CARD-CONTEXT-MISMATCH'
+        if a.get('freshness')!='fresh': return 'reject','ARPA-STATUS-STALE'
+        if a.get('identity_status') in ('revoked','suspended'): return 'reject','ARPA-A2A-CARD-STATUS-CONFLICT'
+        if not a.get('declaration_digest_match') or not a.get('card_binding_valid'): return 'reject','ARPA-PROOF-INVALID'
+        if interaction.get('consequential') and not a.get('delegation_required'): return 'reject','ARPA-A2A-TASK-AUTHORITY-MISSING'
+        return 'accept',None
     if case=='actor-chain':
         _,ok=evaluate_actor_chain(v)
         return ('accept',None) if ok else ('reject','ARPA-STATE-TRANSITION-INVALID')
@@ -97,7 +105,7 @@ for item in manifest['vectors']:
 outdir=ROOT/'artifacts/interoperability'; outdir.mkdir(parents=True,exist_ok=True)
 report={'profile':mapping['profile'],'implementation_release':'0.9.5','generated_at':datetime.now(timezone.utc).isoformat().replace('+00:00','Z'),'passed':passed,'total':len(manifest['vectors']),'results':results}
 (outdir/'a2a-registry-report.json').write_text(json.dumps(report,indent=2)+"\n")
-bundle={'type':'arpa-a2a-registry-evidence-bundle','implementation_release':'0.9.5','report':'artifacts/interoperability/a2a-registry-report.json','mapping':'mappings/a2a-v1.0-arpa-mapping.yaml','publication_schema':'schemas/a2a-publication-projection.schema.json','compatibility_schema':'schemas/a2a-card-compatibility-result.schema.json','vector_manifest':'conformance/test-vectors/a2a-v1.0/manifest.json','invariants':['exact-source-uri','caller-filtered-visibility','immutable-snapshot','discovery-not-authority','arpa-state-precedence','actor-chain-is-attribution-not-authority','monotonic-narrowing-is-well-formedness-only','evidence-state-separation','context-bound-evidence-reference']}
+bundle={'type':'arpa-a2a-registry-evidence-bundle','implementation_release':'0.9.5','report':'artifacts/interoperability/a2a-registry-report.json','mapping':'mappings/a2a-v1.0-arpa-mapping.yaml','publication_schema':'schemas/a2a-publication-projection.schema.json','compatibility_schema':'schemas/a2a-card-compatibility-result.schema.json','anab_assurance_schema':'schemas/a2a-anab-assurance-result.schema.json','vector_manifest':'conformance/test-vectors/a2a-v1.0/manifest.json','invariants':['exact-source-uri','caller-filtered-visibility','immutable-snapshot','discovery-not-authority','arpa-state-precedence','actor-chain-is-attribution-not-authority','monotonic-narrowing-is-well-formedness-only','evidence-state-separation','context-bound-evidence-reference','name-assurance-is-not-authority','assurance-freshness-and-status']}
 (outdir/'a2a-registry-evidence-bundle.json').write_text(json.dumps(bundle,indent=2)+"\n")
 
 print(f"validate_a2a_interoperability.py: {passed}/{len(manifest['vectors'])} OK")
