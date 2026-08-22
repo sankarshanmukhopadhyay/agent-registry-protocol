@@ -68,7 +68,7 @@ pages-stage-ietf: pages-build ietf-check
 		_site/ietf/generated/draft-sankarshan-agent-registry-protocol-00.xml \
 		_site/ietf/generated/draft-sankarshan-agent-registry-protocol-00.txt \
 		_site/ietf/generated/draft-sankarshan-agent-registry-protocol-00.html \
-		> _site/ietf/generated/SHA256SUMS
+		> _site/ietf/generated/SHA256SUMS.txt
 pages-validate: pages-stage-ietf
 	python3 scripts/validate_publication.py --baseurl "/agent-registry-protocol"
 docs-links: pages-stage-ietf
