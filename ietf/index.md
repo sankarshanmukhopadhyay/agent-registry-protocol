@@ -41,7 +41,7 @@ The checked-in Markdown file is the repository authoring source. RFCXML v3, plai
 - [Rendered Internet-Draft — HTML](generated/draft-sankarshan-agent-registry-protocol-00.html)
 - [Rendered Internet-Draft — plaintext](generated/draft-sankarshan-agent-registry-protocol-00.txt)
 - [RFCXML v3](generated/draft-sankarshan-agent-registry-protocol-00.xml)
-- [Generated-artifact SHA-256 checksums](generated/SHA256SUMS)
+- [Generated-artifact SHA-256 checksums](generated/SHA256SUMS.txt)
 - [Protocol extraction and provenance map](PROTOCOL_EXTRACTION.html)
 - [Submission-readiness checklist](SUBMISSION_CHECKLIST.html)
 - [Repository authoring guide](https://github.com/sankarshanmukhopadhyay/agent-registry-protocol/blob/main/ietf/README.md)
