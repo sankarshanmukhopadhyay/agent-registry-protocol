@@ -1,0 +1,176 @@
+{
+  "schema_version": "1.0.0",
+  "arpa_version": "0.9.1",
+  "suite": "adversarial-authority-hardening",
+  "governing_invariant": "No affirmative authority or reliance outcome may result merely from absent, incomparable, stale, conflicting, inaccessible, unsupported, non-converged, or ambiguous required semantics.",
+  "vectors": [
+    {
+      "id": "ADV-001",
+      "scenario": "child-omits-parent-limit",
+      "expected_decision": "deny_or_indeterminate",
+      "prohibited_decisions": ["allow", "allow_with_conditions", "not_applicable"],
+      "required_reason_codes": ["delegation_scope_not_proven"],
+      "required_evidence": ["parent_authority", "child_authority", "effective_intersection"]
+    },
+    {
+      "id": "ADV-002",
+      "scenario": "incomparable-scope-vocabularies",
+      "expected_decision": "indeterminate",
+      "prohibited_decisions": ["allow", "allow_with_conditions"],
+      "required_reason_codes": ["scope_subset_unresolved"],
+      "required_evidence": ["upstream_vocabulary", "downstream_vocabulary", "mapping_or_absence"]
+    },
+    {
+      "id": "ADV-003",
+      "scenario": "action-at-effective-until",
+      "expected_decision": "deny",
+      "prohibited_decisions": ["allow", "allow_with_conditions"],
+      "required_reason_codes": ["authority_expired"],
+      "required_evidence": ["effective_from", "effective_until", "evaluation_time"]
+    },
+    {
+      "id": "ADV-004",
+      "scenario": "contradictory-events-same-time-unordered",
+      "expected_decision": "indeterminate",
+      "prohibited_decisions": ["allow", "allow_with_conditions"],
+      "required_reason_codes": ["event_order_unresolved"],
+      "required_evidence": ["event_ids", "timestamps", "ordering_metadata"]
+    },
+    {
+      "id": "ADV-005",
+      "scenario": "future-dated-status-outside-clock-skew",
+      "expected_decision": "indeterminate",
+      "prohibited_decisions": ["allow", "allow_with_conditions"],
+      "required_reason_codes": ["status_time_invalid"],
+      "required_evidence": ["status_timestamp", "evaluation_time", "clock_skew_policy"]
+    },
+    {
+      "id": "ADV-006",
+      "scenario": "revoked-authority-propagation-pending",
+      "expected_decision": "deny",
+      "prohibited_decisions": ["allow", "allow_with_conditions"],
+      "required_reason_codes": ["authority_revoked", "revocation_propagation_pending"],
+      "required_evidence": ["revocation_event", "effective_time", "unresolved_enforcement_targets"]
+    },
+    {
+      "id": "ADV-007",
+      "scenario": "equally-competent-authoritative-conflict",
+      "expected_decision": "indeterminate",
+      "prohibited_decisions": ["allow", "allow_with_conditions"],
+      "required_reason_codes": ["recognized_sources_conflict"],
+      "required_evidence": ["conflicting_claims", "competence_basis", "precedence_policy"]
+    },
+    {
+      "id": "ADV-008",
+      "scenario": "stale-positive-projection-fresh-negative-authority",
+      "expected_decision": "deny",
+      "prohibited_decisions": ["allow", "allow_with_conditions"],
+      "required_reason_codes": ["authoritative_negative_state", "projection_stale"],
+      "required_evidence": ["projection_checkpoint", "authoritative_checkpoint", "freshness_policy"]
+    },
+    {
+      "id": "ADV-009",
+      "scenario": "unknown-critical-extension",
+      "expected_decision": "indeterminate",
+      "prohibited_decisions": ["allow", "allow_with_conditions"],
+      "required_reason_codes": ["critical_extension_unsupported"],
+      "required_evidence": ["extension_namespace", "criticality"]
+    },
+    {
+      "id": "ADV-010",
+      "scenario": "valid-proof-incompetent-issuer",
+      "expected_decision": "deny",
+      "prohibited_decisions": ["allow", "allow_with_conditions"],
+      "required_reason_codes": ["issuer_not_authorized"],
+      "required_evidence": ["proof_result", "issuer_competence"]
+    },
+    {
+      "id": "ADV-011",
+      "scenario": "assurance-wrong-deployment",
+      "expected_decision": "deny_or_indeterminate",
+      "prohibited_decisions": ["allow", "allow_with_conditions"],
+      "required_reason_codes": ["assurance_not_applicable"],
+      "required_evidence": ["assured_deployment", "current_deployment"]
+    },
+    {
+      "id": "ADV-012",
+      "scenario": "material-change-after-assurance",
+      "expected_decision": "deny_or_indeterminate",
+      "prohibited_decisions": ["allow", "allow_with_conditions"],
+      "required_reason_codes": ["material_change_requires_reevaluation"],
+      "required_evidence": ["assurance_claim", "material_change_event", "transition_policy"]
+    },
+    {
+      "id": "ADV-013",
+      "scenario": "pairwise-continuity-without-authorized-linkage",
+      "expected_decision": "indeterminate",
+      "prohibited_decisions": ["allow_continuity_claim"],
+      "required_reason_codes": ["continuity_not_proven"],
+      "required_evidence": ["scoped_identifiers", "linkage_proof_or_absence"]
+    },
+    {
+      "id": "ADV-014",
+      "scenario": "historical-evidence-unavailable",
+      "expected_decision": "indeterminate",
+      "prohibited_decisions": ["authoritative_complete", "reconstructed_complete"],
+      "required_reason_codes": ["historical_evidence_unavailable"],
+      "required_evidence": ["retention_boundary", "missing_evidence"]
+    },
+    {
+      "id": "ADV-015A",
+      "scenario": "retroactive-revocation-with-competent-governance-basis",
+      "expected_decision": "governance_defined",
+      "prohibited_decisions": [],
+      "required_reason_codes": ["retroactive_effect_governed"],
+      "required_evidence": ["revocation_event", "governance_rule", "competent_authority"]
+    },
+    {
+      "id": "ADV-015B",
+      "scenario": "retroactive-revocation-without-governance-basis",
+      "expected_decision": "indeterminate",
+      "prohibited_decisions": ["retroactive_invalidity_asserted"],
+      "required_reason_codes": ["retroactive_effect_unresolved"],
+      "required_evidence": ["revocation_event", "governance_rule_absence"]
+    },
+    {
+      "id": "ADV-016",
+      "scenario": "missing-delegation-proposed-as-not-applicable",
+      "expected_decision": "deny_or_indeterminate",
+      "prohibited_decisions": ["not_applicable", "allow", "allow_with_conditions"],
+      "required_reason_codes": ["required_authority_missing"],
+      "required_evidence": ["evaluation_domain", "delegation_search_result"]
+    },
+    {
+      "id": "ADV-017",
+      "scenario": "permissive-and-restrictive-recognized-sources-unresolved",
+      "expected_decision": "indeterminate",
+      "prohibited_decisions": ["allow", "allow_with_conditions"],
+      "required_reason_codes": ["recognized_sources_conflict"],
+      "required_evidence": ["claims", "recognition_rules", "competence_scope"]
+    },
+    {
+      "id": "ADV-018",
+      "scenario": "child-drops-upstream-prohibition",
+      "expected_decision": "deny",
+      "prohibited_decisions": ["allow", "allow_with_conditions"],
+      "required_reason_codes": ["prohibition_inheritance_violation"],
+      "required_evidence": ["parent_prohibitions", "child_prohibitions", "effective_intersection"]
+    },
+    {
+      "id": "ADV-019",
+      "scenario": "child-switches-to-incomparable-constraint-language",
+      "expected_decision": "indeterminate",
+      "prohibited_decisions": ["allow", "allow_with_conditions"],
+      "required_reason_codes": ["scope_subset_unresolved"],
+      "required_evidence": ["constraint_languages", "mapping_or_absence"]
+    },
+    {
+      "id": "ADV-020",
+      "scenario": "receipt-replay-after-material-authority-boundary-change",
+      "expected_decision": "deny",
+      "prohibited_decisions": ["allow", "allow_with_conditions"],
+      "required_reason_codes": ["decision_receipt_invalidated"],
+      "required_evidence": ["decision_receipt", "material_state_event", "source_checkpoints"]
+    }
+  ]
+}
