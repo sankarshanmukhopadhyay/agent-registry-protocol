@@ -65,6 +65,29 @@ make ietf-check
 
 Generated files are written to `ietf/generated/`.
 
+## Generated artifact policy
+
+`ietf/draft-sankarshan-agent-registry-protocol.md` is the checked-in authoring
+source. The RFCXML v3, plaintext, HTML, and any derived PDF are deterministic
+build products and remain excluded from Git by `ietf/.gitignore`.
+
+GitHub Actions owns generation and publication of the submission renderings:
+
+1. the dedicated IETF workflow runs `make ietf-check` and retains XML, TXT, and
+   HTML as an Actions artifact for CI inspection;
+2. the GitHub Pages workflow independently runs the same IETF validation gate;
+3. a successful Pages build publishes XML, TXT, HTML, and SHA-256 checksums under
+   `/ietf/generated/`;
+4. the checksum file is also copied into the Pages assurance artifact so the
+   published draft outputs can be tied to retained deployment evidence; and
+5. a failed IETF build or failed complete-publication validation blocks the Pages
+   deployment.
+
+This keeps generated content reproducible and developer-accessible without
+allowing generated files to drift as independently committed repository state.
+The generated artifacts are publication products, not a separate authority
+surface.
+
 ## Pre-submission gates
 
 Before submitting `-00` through the IETF Datatracker:
@@ -76,8 +99,9 @@ Before submitting `-00` through the IETF Datatracker:
 5. complete overlap review against active IETF work, particularly workload identity and OAuth/delegation work;
 6. run `make ietf-check` and `make release-check-all`;
 7. inspect generated TXT and HTML renderings manually;
-8. submit the generated RFCXML v3 artifact; and
-9. record the Datatracker URL and submitted revision in this README.
+8. verify the published SHA-256 checksums against the generated submission files;
+9. submit the generated RFCXML v3 artifact; and
+10. record the Datatracker URL and submitted revision in this README.
 
 ## Version provenance
 
