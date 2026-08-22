@@ -35,15 +35,23 @@ Project governance, conformance programmes, A2A/TRQP profiles, deployment guidan
 
 ## Authoring and assurance artifacts
 
-- [Internet-Draft source](draft-sankarshan-agent-registry-protocol.html)
+The checked-in Markdown file is the repository authoring source. RFCXML v3, plaintext, and HTML are deterministic build products generated and validated by GitHub Actions from that source.
+
+- [Internet-Draft authoring source](draft-sankarshan-agent-registry-protocol.html)
+- [Rendered Internet-Draft — HTML](generated/draft-sankarshan-agent-registry-protocol-00.html)
+- [Rendered Internet-Draft — plaintext](generated/draft-sankarshan-agent-registry-protocol-00.txt)
+- [RFCXML v3](generated/draft-sankarshan-agent-registry-protocol-00.xml)
+- [Generated-artifact SHA-256 checksums](generated/SHA256SUMS)
 - [Protocol extraction and provenance map](PROTOCOL_EXTRACTION.html)
 - [Submission-readiness checklist](SUBMISSION_CHECKLIST.html)
 - [Repository authoring guide](https://github.com/sankarshanmukhopadhyay/agent-registry-protocol/blob/main/ietf/README.md)
 
 The Internet-Draft revision series is independent of ARPA semantic versions. The initial submission candidate is revision `-00`; later IETF revisions increment independently from ARPA project releases.
 
-## Build and validation
+## Build, publication, and validation
 
-The repository builds the Markdown source to RFCXML v3, plaintext, and HTML through the dedicated IETF workflow and Make targets. Repository validation also checks the IETF source before release gating.
+Every GitHub Pages deployment installs the IETF authoring toolchain, runs `make ietf-check`, and publishes the resulting RFCXML v3, plaintext, and HTML artifacts under `/ietf/generated/`. The deployment fails if the IETF build or the complete publication validation fails.
 
-Generated submission artifacts are intentionally not treated as project authority until the corresponding draft revision is reviewed and submitted.
+The same generated outputs remain excluded from Git so they cannot drift independently from the checked-in authoring source. SHA-256 checksums are published with the rendered artifacts and retained in the Pages assurance artifact for build evidence.
+
+Generated submission artifacts are intentionally not treated as independent project authority until the corresponding draft revision is reviewed and submitted.

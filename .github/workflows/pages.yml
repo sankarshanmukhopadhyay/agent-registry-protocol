@@ -33,6 +33,10 @@ jobs:
           ruby-version: "3.3"
           bundler-cache: true
           cache-version: 2
+      - name: Install IETF authoring dependencies
+        run: make ietf-setup
+      - name: Build and validate Internet-Draft
+        run: make ietf-check
       - name: Configure GitHub Pages
         id: pages
         uses: actions/configure-pages@v6
@@ -42,13 +46,25 @@ jobs:
         run: bundle exec jekyll build --trace --baseurl "${{ steps.pages.outputs.base_path }}"
         env:
           JEKYLL_ENV: production
+      - name: Publish generated Internet-Draft
+        run: |
+          mkdir -p _site/ietf/generated
+          cp ietf/generated/draft-sankarshan-agent-registry-protocol-00.xml _site/ietf/generated/
+          cp ietf/generated/draft-sankarshan-agent-registry-protocol-00.txt _site/ietf/generated/
+          cp ietf/generated/draft-sankarshan-agent-registry-protocol-00.html _site/ietf/generated/
+          sha256sum \
+            _site/ietf/generated/draft-sankarshan-agent-registry-protocol-00.xml \
+            _site/ietf/generated/draft-sankarshan-agent-registry-protocol-00.txt \
+            _site/ietf/generated/draft-sankarshan-agent-registry-protocol-00.html \
+            > _site/ietf/generated/SHA256SUMS
       - name: Validate complete publication
         run: python scripts/validate_publication.py --baseurl "${{ steps.pages.outputs.base_path }}"
       - name: Write deployment evidence
         run: |
           mkdir -p _site/assets artifacts/pages
-          printf '{\n  "repository": "%s",\n  "commit": "%s",\n  "specification_version": "0.9.0"\n}\n' \
+          printf '{\n  "repository": "%s",\n  "commit": "%s",\n  "specification_version": "0.9.0",\n  "ietf_draft": "draft-sankarshan-agent-registry-protocol-00",\n  "ietf_generated": true\n}\n' \
             "${{ github.repository }}" "${{ github.sha }}" > _site/assets/build-info.json
+          cp _site/ietf/generated/SHA256SUMS artifacts/pages/ietf-generated-sha256sums.txt
       - name: Publish assurance summary
         run: |
           python - <<'PY' >> "$GITHUB_STEP_SUMMARY"
@@ -57,6 +73,8 @@ jobs:
           print('## GitHub Pages assurance report')
           for k in ('source_pages','rendered_html_pages','internal_references_checked','fragment_references_checked','local_assets_checked','mermaid_pages'):
               print(f'- {k.replace("_"," ").title()}: {r[k]}')
+          print('- IETF Internet-Draft: `draft-sankarshan-agent-registry-protocol-00`')
+          print('- IETF generated outputs: RFCXML v3, plaintext, HTML')
           print(f'- Published commit: `${{ github.sha }}`')
           PY
       - name: Upload publication evidence
