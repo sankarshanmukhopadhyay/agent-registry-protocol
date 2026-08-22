@@ -6,12 +6,13 @@ import sys
 
 ROOT = Path(__file__).resolve().parents[1]
 DRAFT = ROOT / "ietf" / "draft-sankarshan-agent-registry-protocol.md"
+HARDENING = ROOT / "ietf" / "fragments" / "adversarial-hardening.md"
 README = ROOT / "ietf" / "README.md"
 EXTRACTION = ROOT / "ietf" / "PROTOCOL_EXTRACTION.md"
 CHECKLIST = ROOT / "ietf" / "SUBMISSION_CHECKLIST.md"
 
 errors = []
-for path in (DRAFT, README, EXTRACTION, CHECKLIST):
+for path in (DRAFT, HARDENING, README, EXTRACTION, CHECKLIST):
     if not path.exists():
         errors.append(f"missing required IETF artifact: {path.relative_to(ROOT)}")
 
@@ -52,6 +53,23 @@ if DRAFT.exists():
     for bad in ("layout: default", "nav_exclude:"):
         if bad in text:
             errors.append(f"IETF source contains project/Jekyll metadata: {bad}")
+
+if HARDENING.exists():
+    hardening = HARDENING.read_text(encoding="utf-8")
+    required_hardening = [
+        "# Adversarial Authority Processing",
+        "semantic intersection",
+        "half-open",
+        "`not_applicable` is not an authority-failure result",
+        "effective authoritative revocation immediately makes the revoked authority non-affirmative",
+        "proof input transformation",
+    ]
+    for needle in required_hardening:
+        if needle not in hardening:
+            errors.append(f"IETF hardening fragment missing required invariant: {needle}")
+    for bad in ("layout: default", "nav_exclude:", "CC BY 4.0", "CC-BY-4.0"):
+        if bad in hardening:
+            errors.append(f"IETF hardening fragment contains project-only metadata/license text: {bad}")
 
 if errors:
     print("IETF draft validation failed:")
