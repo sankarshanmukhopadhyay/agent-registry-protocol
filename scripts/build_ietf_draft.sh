@@ -29,10 +29,10 @@ from pathlib import Path
 import sys
 source = Path(sys.argv[1]).read_text(encoding="utf-8")
 fragment = Path(sys.argv[2]).read_text(encoding="utf-8").strip()
-marker = "\n--- back\n"
+marker = "\n# Acknowledgements\n{:unnumbered}\n"
 if marker not in source:
-    raise SystemExit("error: IETF source is missing the '--- back' marker")
-combined = source.replace(marker, f"\n\n{fragment}\n\n--- back\n", 1)
+    raise SystemExit("error: IETF source is missing the unnumbered Acknowledgements marker")
+combined = source.replace(marker, f"\n\n{fragment}\n\n# Acknowledgements\n{{:unnumbered}}\n", 1)
 Path(sys.argv[3]).write_text(combined, encoding="utf-8")
 PY
 
