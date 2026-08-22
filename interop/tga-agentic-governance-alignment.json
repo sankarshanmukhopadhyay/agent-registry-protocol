@@ -1,0 +1,49 @@
+{
+  "alignmentId": "arpa-tga-agentic-governance-v1",
+  "relationship": "informative-implementation-alignment",
+  "sourceRepository": "agent-registry-protocol",
+  "sourceImplementationRelease": "v0.9.5",
+  "sourceNormativeBaseline": "v0.9.0",
+  "targetRepository": "trust-graph-artifacts",
+  "targetGuide": "guides/agentic-systems-architecture-and-governance/",
+  "semanticAuthority": "trust-systems-meta-model",
+  "portableContractAuthority": "trust-infrastructure-schemas",
+  "authorityBoundary": {
+    "arpaOwns": [
+      "ARPA protocol modules",
+      "agent registry lifecycle and resolution behavior",
+      "ARPA authority evaluation and conformance",
+      "ARPA evidence and interoperability artifacts"
+    ],
+    "tgaOwns": [
+      "generic agentic governance architecture",
+      "TGA patterns and assurance cases",
+      "guide-specific implementation and negative-test methodology"
+    ],
+    "nonDependency": true
+  },
+  "moduleMappings": {
+    "ARPA-Core": ["discovery", "persistent-agent-identity", "lifecycle", "historical-resolution"],
+    "ARPA-Relations": ["principal-and-operator-relationships", "issuer-competence"],
+    "ARPA-Assurance": ["capability-assurance", "scoped-assessment"],
+    "ARPA-Authority": ["delegation", "authority-control", "conditions", "prohibitions", "decision-receipts"],
+    "ARPA-Evidence": ["execution-receipts", "reconstruction", "retention", "audit"],
+    "ARPA-Federation": ["cross-domain-recognition", "foreign-record-resolution", "withdrawal"]
+  },
+  "nonImplications": [
+    "identity != authority",
+    "capability != permission",
+    "registration != authority",
+    "relationship != delegated_authority",
+    "technical_federation != governance_recognition",
+    "execution_success != legitimate_effect"
+  ],
+  "guideResponsibilitiesOutsideArpa": [
+    "job decomposition and orchestration",
+    "capability brokering and enforcement implementation",
+    "fan-out convergence governance",
+    "generic effect-admission architecture",
+    "TSMM semantic definitions",
+    "TIS portable schema contracts"
+  ]
+}
