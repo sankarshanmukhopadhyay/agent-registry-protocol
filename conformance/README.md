@@ -12,7 +12,7 @@ ARPA conformance is evidence-based across six dimensions: protocol, semantic, cr
 - `test-vectors/TV-*` contains the original profile decision vectors.
 - `test-vectors/extended/` covers digests, issuer competence, transfer effects, event gaps, aliases, multi-hop delegation, recognition withdrawal and appeal restoration.
 - `test-vectors/operational-resilience/` covers retry multiplication, partial outage, event isolation, dependency amplification and sustained-load progress.
-- `test-vectors/adversarial-authority-v0.9.1.json` covers hostile boundary interpretations of delegation narrowing, time, revocation, source conflict, proof competence, pairwise continuity, historical evidence, `not_applicable`, prohibition inheritance and receipt replay.
+- `test-vectors/adversarial/adversarial-authority-v0.9.1.json` covers hostile boundary interpretations of delegation narrowing, time, revocation, source conflict, proof competence, pairwise continuity, historical evidence, `not_applicable`, prohibition inheritance and receipt replay.
 - `reports/` contains the implementation-report schema, template and generated reference report.
 
 The v0.9.1 hardening requirement catalogue is `registries/adversarial-hardening-requirements-v0.9.1.json`. It maps the normative hardening amendment to adversarial vectors or explicit inspection evidence. `scripts/validate_candidate_hardening.py` release-gates the catalogue, vector structure and fail-safe outcome constraints.
