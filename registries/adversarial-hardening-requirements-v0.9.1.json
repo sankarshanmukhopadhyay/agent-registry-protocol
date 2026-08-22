@@ -1,0 +1,103 @@
+{
+  "schema_version": "1.0.0",
+  "arpa_version": "0.9.1",
+  "authority": "spec/agent-registry-protocol-v0.9.1-hardening.md",
+  "entries": [
+    {
+      "id": "ARPA-HARD-001",
+      "title": "Monotonic delegation intersection",
+      "section": "1",
+      "requirement": "Downstream effective authority is the semantic intersection of upstream effective authority and child-declared scope; ambiguity is non-affirmative.",
+      "verification": ["ADV-001", "ADV-002", "ADV-018", "ADV-019"],
+      "expected_evidence": ["parent_authority", "child_authority", "effective_intersection"]
+    },
+    {
+      "id": "ARPA-HARD-002",
+      "title": "Half-open temporal validity",
+      "section": "2",
+      "requirement": "Validity is effective_from <= evaluation_time < effective_until unless a stricter profile rule applies.",
+      "verification": ["ADV-003"],
+      "expected_evidence": ["effective_from", "effective_until", "evaluation_time"]
+    },
+    {
+      "id": "ARPA-HARD-003",
+      "title": "Clock and event ordering safety",
+      "section": "2",
+      "requirement": "Clock ambiguity or unresolved contradictory event ordering cannot yield affirmative material state.",
+      "verification": ["ADV-004", "ADV-005"],
+      "expected_evidence": ["clock_skew_policy", "ordering_metadata"]
+    },
+    {
+      "id": "ARPA-HARD-004",
+      "title": "Non-applicability boundary",
+      "section": "3",
+      "requirement": "not_applicable cannot represent missing, invalid, unavailable, unsupported, stale, conflicting, or otherwise unresolved required authority.",
+      "verification": ["ADV-016"],
+      "expected_evidence": ["evaluation_domain", "delegation_search_result"]
+    },
+    {
+      "id": "ARPA-HARD-005",
+      "title": "Authoritative conflict safety",
+      "section": "4",
+      "requirement": "Unresolved conflict between simultaneously competent authoritative sources is non-affirmative.",
+      "verification": ["ADV-007", "ADV-017"],
+      "expected_evidence": ["conflicting_claims", "competence_basis", "precedence_policy"]
+    },
+    {
+      "id": "ARPA-HARD-006",
+      "title": "Revocation effectiveness separated from convergence",
+      "section": "5",
+      "requirement": "Effective revocation makes new authority evaluations non-affirmative even while enforcement convergence is pending or failed.",
+      "verification": ["ADV-006"],
+      "expected_evidence": ["revocation_event", "effective_time", "enforcement_acknowledgements"]
+    },
+    {
+      "id": "ARPA-HARD-007",
+      "title": "Reproducible evaluation tuple",
+      "section": "6",
+      "requirement": "Consequential decisions retain evaluation time, policy, authoritative record set/checkpoints, freshness and competence state sufficient for reconstruction.",
+      "verification": ["ADV-020"],
+      "expected_evidence": ["decision_receipt", "source_checkpoints", "policy_version"]
+    },
+    {
+      "id": "ARPA-HARD-008",
+      "title": "Proof input semantics",
+      "section": "7",
+      "requirement": "Proof interoperability requires declared proof-input transformation and related suite semantics; proof validity alone is not authority.",
+      "verification": ["ADV-009", "ADV-010"],
+      "expected_evidence": ["proof_result", "proof_input_semantics", "issuer_competence"]
+    },
+    {
+      "id": "ARPA-HARD-009",
+      "title": "Monotonic multidimensional status composition",
+      "section": "8",
+      "requirement": "Independent status dimensions compose toward safety; restrictive or indeterminate material state cannot be cancelled by an affirmative dimension.",
+      "verification": ["ADV-008", "ADV-011", "ADV-012"],
+      "expected_evidence": ["status_dimensions", "composition_policy"]
+    },
+    {
+      "id": "ARPA-HARD-010",
+      "title": "Privacy-preserving continuity",
+      "section": "9",
+      "requirement": "Cross-context continuity for scoped identifiers requires an authorized linkage mechanism and cannot be inferred from correlation.",
+      "verification": ["ADV-013"],
+      "expected_evidence": ["scoped_identifiers", "linkage_proof_or_absence"]
+    },
+    {
+      "id": "ARPA-HARD-011",
+      "title": "Schema correction authority boundary",
+      "section": "10",
+      "requirement": "Schema-only corrections cannot change normative semantics or broaden authority without a Candidate Specification version change.",
+      "verification": ["inspection"],
+      "expected_evidence": ["schema_change_rationale", "compatibility_impact", "prose_alignment"]
+    },
+    {
+      "id": "ARPA-HARD-012",
+      "title": "Historical retroactivity requires governance basis",
+      "section": "11",
+      "requirement": "Retroactive effect requires a competent governance basis; absent that basis historical interpretation is not upgraded to asserted retroactive invalidity.",
+      "verification": ["ADV-014", "ADV-015A", "ADV-015B"],
+      "expected_evidence": ["historical_evidence", "governance_rule", "competent_authority"]
+    }
+  ]
+}
