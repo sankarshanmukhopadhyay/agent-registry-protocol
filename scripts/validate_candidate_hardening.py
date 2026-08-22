@@ -57,7 +57,7 @@ cat=load('registries/normative-requirements.json')
 if not cat.get('entries'): errors.append('normative requirements catalogue empty')
 
 # v0.9.1 adversarial authority hardening vectors are required and structurally bounded.
-adv=load('conformance/test-vectors/adversarial-authority-v0.9.1.json')
+adv=load('conformance/test-vectors/adversarial/adversarial-authority-v0.9.1.json')
 if adv.get('arpa_version')!='0.9.1': errors.append('adversarial vector suite must declare arpa_version 0.9.1')
 vectors=adv.get('vectors',[])
 vector_ids=[v.get('id') for v in vectors]
