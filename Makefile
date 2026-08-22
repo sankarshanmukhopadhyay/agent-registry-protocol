@@ -1,4 +1,4 @@
-.PHONY: pilot-up pilot-down pilot-seed pilot-check pilot-reset setup validate test interop candidate run report typescript-check cross-runtime network-interop ietf-setup ietf-repo-check ietf-build ietf-lint ietf-check pages-manifest pages-build pages-validate docs-links pages-check release-check release-check-all package clean
+.PHONY: pilot-up pilot-down pilot-seed pilot-check pilot-reset setup validate test interop candidate run report typescript-check cross-runtime network-interop ietf-setup ietf-repo-check ietf-build ietf-lint ietf-check pages-manifest pages-build pages-stage-ietf pages-validate docs-links pages-check release-check release-check-all package clean
 setup:
 	python3 -m pip install -r scripts/requirements.txt
 validate:
@@ -57,13 +57,23 @@ ietf-check: ietf-lint
 
 pages-manifest:
 	python3 scripts/build_publication_manifest.py
-pages-build:
+pages-build: pages-manifest
 	bundle exec jekyll build --trace --baseurl "/agent-registry-protocol"
-pages-validate:
+pages-stage-ietf: pages-build ietf-check
+	mkdir -p _site/ietf/generated
+	cp ietf/generated/draft-sankarshan-agent-registry-protocol-00.xml _site/ietf/generated/
+	cp ietf/generated/draft-sankarshan-agent-registry-protocol-00.txt _site/ietf/generated/
+	cp ietf/generated/draft-sankarshan-agent-registry-protocol-00.html _site/ietf/generated/
+	sha256sum \
+		_site/ietf/generated/draft-sankarshan-agent-registry-protocol-00.xml \
+		_site/ietf/generated/draft-sankarshan-agent-registry-protocol-00.txt \
+		_site/ietf/generated/draft-sankarshan-agent-registry-protocol-00.html \
+		> _site/ietf/generated/SHA256SUMS
+pages-validate: pages-stage-ietf
 	python3 scripts/validate_publication.py --baseurl "/agent-registry-protocol"
-docs-links:
+docs-links: pages-stage-ietf
 	python3 scripts/validate_docs_links.py --baseurl "/agent-registry-protocol"
-pages-check: pages-manifest pages-build pages-validate docs-links
+pages-check: pages-validate docs-links
 release-check: validate test interop candidate report
 release-check-all: release-check typescript-check cross-runtime network-interop
 package: release-check-all
