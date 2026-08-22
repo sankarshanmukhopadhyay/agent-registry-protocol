@@ -38,7 +38,7 @@ The generated individual draft is assembled from two checked-in IETF authoring i
 1. `ietf/draft-sankarshan-agent-registry-protocol.md` — base protocol extraction; and
 2. `ietf/fragments/adversarial-hardening.md` — protocol-core semantics imported from the v0.9.1 Candidate hardening amendment.
 
-`scripts/build_ietf_draft.sh` inserts the hardening fragment before `--- back` and then runs `kramdown-rfc` and `xml2rfc`. The fragment is therefore present in generated RFCXML, TXT and HTML. Generated files remain derivative publication artifacts and are not committed as independent normative state.
+`scripts/build_ietf_draft.sh` inserts the hardening fragment immediately before the unnumbered `Acknowledgements` and back matter and then runs `kramdown-rfc` and `xml2rfc`. The fragment is therefore numbered protocol body text in generated RFCXML, TXT and HTML. Generated files remain derivative publication artifacts and are not committed as independent normative state.
 
 ## Non-implication and adversarial invariants retained in the I-D
 
@@ -64,6 +64,6 @@ Every normative I-D change should identify:
 - the executable test or inspection procedure, where objectively testable; and
 - the evidence artifact expected from validation.
 
-For the v0.9.1 hardening import, machine-readable requirement-to-vector traceability is recorded in `registries/adversarial-hardening-requirements-v0.9.1.json` and `conformance/test-vectors/adversarial-authority-v0.9.1.json`.
+For the v0.9.1 hardening import, machine-readable requirement-to-vector traceability is recorded in `registries/adversarial-hardening-requirements-v0.9.1.json` and `conformance/test-vectors/adversarial/adversarial-authority-v0.9.1.json`.
 
 This keeps IETF prose reviewable without making the I-D depend on repository-only tooling for normative interpretation.
