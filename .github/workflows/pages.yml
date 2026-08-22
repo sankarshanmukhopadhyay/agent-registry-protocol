@@ -56,7 +56,7 @@ jobs:
             _site/ietf/generated/draft-sankarshan-agent-registry-protocol-00.xml \
             _site/ietf/generated/draft-sankarshan-agent-registry-protocol-00.txt \
             _site/ietf/generated/draft-sankarshan-agent-registry-protocol-00.html \
-            > _site/ietf/generated/SHA256SUMS
+            > _site/ietf/generated/SHA256SUMS.txt
       - name: Validate complete publication
         run: python scripts/validate_publication.py --baseurl "${{ steps.pages.outputs.base_path }}"
       - name: Write deployment evidence
@@ -64,7 +64,7 @@ jobs:
           mkdir -p _site/assets artifacts/pages
           printf '{\n  "repository": "%s",\n  "commit": "%s",\n  "specification_version": "0.9.0",\n  "ietf_draft": "draft-sankarshan-agent-registry-protocol-00",\n  "ietf_generated": true\n}\n' \
             "${{ github.repository }}" "${{ github.sha }}" > _site/assets/build-info.json
-          cp _site/ietf/generated/SHA256SUMS artifacts/pages/ietf-generated-sha256sums.txt
+          cp _site/ietf/generated/SHA256SUMS.txt artifacts/pages/ietf-generated-sha256sums.txt
       - name: Publish assurance summary
         run: |
           python - <<'PY' >> "$GITHUB_STEP_SUMMARY"
