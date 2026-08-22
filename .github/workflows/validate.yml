@@ -52,6 +52,8 @@ jobs:
           ruby-version: "3.3"
           bundler-cache: true
           cache-version: 2
+      - name: Install IETF authoring dependencies
+        run: make ietf-setup
       - name: Build and validate complete GitHub Pages site
         run: make pages-check
       - name: Upload publication evidence
