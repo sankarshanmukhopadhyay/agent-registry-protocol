@@ -1,7 +1,7 @@
 # ARPA IETF Internet-Draft Track
 
 This directory is the IETF authoring surface for the **Agent Registry Protocol**.
-It is deliberately separate from `spec/agent-registry-protocol-v0.9.0.md`.
+It is deliberately separate from the project-level ARPA Candidate Specification.
 
 ## Draft identity
 
@@ -34,6 +34,14 @@ Project governance, conformance programmes, A2A/TRQP profiles, deployment
 guidance, and assurance evidence remain supporting ARPA artifacts unless later
 standardized separately.
 
+ARPA v0.9.1 adversarial hardening changes that affect the interoperable protocol
+core are included in the generated Internet-Draft through the checked-in source
+fragment `ietf/fragments/adversarial-hardening.md`. The fragment covers delegation
+scope intersection, time boundaries, non-applicability, recognition conflicts,
+revocation/effectiveness, decision reproducibility and proof-input semantics.
+It is inserted before the Internet-Draft back matter by the deterministic build
+script and therefore becomes part of the generated RFCXML/TXT/HTML publication.
+
 ## Legal status
 
 Files under `ietf/` are prepared as prospective **IETF Contributions**. Submission
@@ -41,7 +49,8 @@ to the IETF is governed by the IETF Trust Legal Provisions and applicable BCP 78
 terms. This does not change the artifact-specific licensing of the existing ARPA
 project specification, code, schemas, test vectors, or documentation.
 
-Do not add a separate CC BY 4.0 notice to the Internet-Draft body.
+Do not add a separate CC BY 4.0 notice to the Internet-Draft body or IETF source
+fragments.
 
 ## Build
 
@@ -67,21 +76,35 @@ Generated files are written to `ietf/generated/`.
 
 ## Generated artifact policy
 
-`ietf/draft-sankarshan-agent-registry-protocol.md` is the checked-in authoring
-source. The RFCXML v3, plaintext, HTML, and any derived PDF are deterministic
-build products and remain excluded from Git by `ietf/.gitignore`.
+The checked-in IETF authoring source set consists of:
+
+- `ietf/draft-sankarshan-agent-registry-protocol.md` — the base individual-draft source; and
+- `ietf/fragments/adversarial-hardening.md` — the v0.9.1 protocol-hardening source fragment.
+
+`scripts/build_ietf_draft.sh` deterministically inserts the hardening fragment
+before the draft back matter and then produces RFCXML v3, plaintext, and HTML.
+Those generated files and any derived PDF remain excluded from Git by
+`ietf/.gitignore`.
 
 GitHub Actions owns generation and publication of the submission renderings:
 
-1. the dedicated IETF workflow runs `make ietf-check` and retains XML, TXT, and
-   HTML as an Actions artifact for CI inspection;
-2. the GitHub Pages workflow independently runs the same IETF validation gate;
-3. a successful Pages build publishes XML, TXT, HTML, and SHA-256 checksums under
-   `/ietf/generated/`;
-4. the checksum file is also copied into the Pages assurance artifact so the
-   published draft outputs can be tied to retained deployment evidence; and
-5. a failed IETF build or failed complete-publication validation blocks the Pages
+1. the dedicated IETF workflow runs `make ietf-check` on every push or PR touching
+   `ietf/**`, the IETF build/validation scripts, the Makefile, or the workflow itself;
+2. the workflow retains generated XML, TXT, and HTML as an Actions artifact for
+   CI inspection;
+3. the GitHub Pages workflow independently runs the same IETF validation gate;
+4. a successful Pages build publishes XML, TXT, HTML, the local RFC stylesheet
+   hook, and SHA-256 checksums under `/ietf/generated/`;
+5. the checksum file is copied into the Pages assurance artifact so published
+   outputs can be tied to retained deployment evidence; and
+6. a failed IETF build or failed complete-publication validation blocks Pages
    deployment.
+
+This means generated IETF content is automatically regenerated whenever an IETF
+source or build input changes. A change only to a project-level `spec/` file does
+**not** automatically rewrite the IETF authoring source; protocol-core changes
+must be explicitly synchronized into the IETF source set. The v0.9.1 hardening
+work does that through the checked-in hardening fragment.
 
 This keeps generated content reproducible and developer-accessible without
 allowing generated files to drift as independently committed repository state.
@@ -99,14 +122,16 @@ Before submitting `-00` through the IETF Datatracker:
 5. complete overlap review against active IETF work, particularly workload identity and OAuth/delegation work;
 6. run `make ietf-check` and `make release-check-all`;
 7. inspect generated TXT and HTML renderings manually;
-8. verify the published SHA-256 checksums against the generated submission files;
-9. submit the generated RFCXML v3 artifact; and
-10. record the Datatracker URL and submitted revision in this README.
+8. verify that the adversarial-hardening section appears in the generated TXT and HTML;
+9. verify the published SHA-256 checksums against the generated submission files;
+10. submit the generated RFCXML v3 artifact; and
+11. record the Datatracker URL and submitted revision in this README.
 
 ## Version provenance
 
 The initial I-D is derived from the ARPA v0.9.x repository state and the v0.9.0
-Candidate Specification baseline, including subsequent candidate-hardening
-changes represented by machine-readable normative artifacts. The I-D MUST NOT
-silently track a moving `Unreleased` state. Any normative change imported from
-ARPA must be reviewed and recorded in the I-D change history before submission.
+Candidate Specification baseline, including the v0.9.1 adversarial-hardening
+amendment where its semantics belong to the interoperable protocol core. The I-D
+MUST NOT silently track a moving `Unreleased` state. Any normative change imported
+from ARPA must be reviewed, represented in the checked-in IETF source set, and
+recorded in the I-D change history before submission.
