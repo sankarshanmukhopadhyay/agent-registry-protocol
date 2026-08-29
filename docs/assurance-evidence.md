@@ -1,3 +1,8 @@
+---
+layout: default
+title: Assurance Evidence
+---
+
 # Assurance evidence contract
 
 This repository treats repository-native GitHub Actions evidence as the authoritative execution record for portfolio assurance.
