@@ -1,0 +1,162 @@
+[
+  {
+    "vector_id": "KYA-ARPA-01",
+    "proposition": "PQ-3",
+    "description": "Verified runtime evidence plus competent recognized authority and active lifecycle permits the requested action.",
+    "external_evidence": {
+      "proof_verified": true,
+      "subject": "agent:alpha",
+      "principal": "principal:acme",
+      "delegation": {"scope": ["ticket.create"], "valid_from": "2026-09-01T00:00:00Z", "valid_until": "2026-09-30T00:00:00Z", "projection_lossless": true, "depth": 0},
+      "action": {"protocol_binding": "mcp", "operation": "ticket.create", "resource": "project:alpha"},
+      "observed_at": "2026-09-03T00:00:00Z"
+    },
+    "arpa_context": {"agent_state": "active", "delegator_competent": true, "recognized_authority_source": true, "scope_allows_action": true, "evaluation_time": "2026-09-03T00:00:00Z", "authority_conflict": false, "enforcement_converged": true},
+    "expected": {"proof_result": "verified", "authority_result": "authorized", "outcome": "allow"},
+    "falsifier": "ARPA allows solely because proof verification succeeded without independently requiring competence, recognition, scope, and lifecycle state."
+  },
+  {
+    "vector_id": "KYA-ARPA-02",
+    "proposition": "PQ-2",
+    "description": "Cryptographically valid delegation from a delegator that ARPA does not consider competent must fail closed.",
+    "external_evidence": {
+      "proof_verified": true,
+      "subject": "agent:alpha",
+      "principal": "principal:unrecognized-delegator",
+      "delegation": {"scope": ["ticket.create"], "valid_from": "2026-09-01T00:00:00Z", "valid_until": "2026-09-30T00:00:00Z", "projection_lossless": true, "depth": 0},
+      "action": {"protocol_binding": "mcp", "operation": "ticket.create", "resource": "project:alpha"},
+      "observed_at": "2026-09-03T00:00:00Z"
+    },
+    "arpa_context": {"agent_state": "active", "delegator_competent": false, "recognized_authority_source": true, "scope_allows_action": true, "evaluation_time": "2026-09-03T00:00:00Z", "authority_conflict": false, "enforcement_converged": true},
+    "expected": {"proof_result": "verified", "authority_result": "denied", "outcome": "deny", "finding": "delegator-not-competent"},
+    "falsifier": "A valid signing chain is treated as sufficient evidence that the delegator was competent to delegate."
+  },
+  {
+    "vector_id": "KYA-ARPA-03",
+    "proposition": "PQ-4",
+    "description": "Verified evidence for an agent suspended in authoritative ARPA state must be denied.",
+    "external_evidence": {
+      "proof_verified": true,
+      "subject": "agent:alpha",
+      "principal": "principal:acme",
+      "delegation": {"scope": ["ticket.create"], "valid_from": "2026-09-01T00:00:00Z", "valid_until": "2026-09-30T00:00:00Z", "projection_lossless": true, "depth": 0},
+      "action": {"protocol_binding": "mcp", "operation": "ticket.create", "resource": "project:alpha"},
+      "observed_at": "2026-09-03T00:00:00Z"
+    },
+    "arpa_context": {"agent_state": "suspended", "delegator_competent": true, "recognized_authority_source": true, "scope_allows_action": true, "evaluation_time": "2026-09-03T00:00:00Z", "authority_conflict": false, "enforcement_converged": true},
+    "expected": {"proof_result": "verified", "authority_result": "denied", "outcome": "deny", "finding": "agent-suspended"},
+    "falsifier": "Current authoritative lifecycle state is ignored because the external proof remains cryptographically valid."
+  },
+  {
+    "vector_id": "KYA-ARPA-04",
+    "proposition": "PQ-4",
+    "description": "Revocation is effective even when enforcement convergence is incomplete; decision remains deny and convergence is separately visible.",
+    "external_evidence": {
+      "proof_verified": true,
+      "subject": "agent:alpha",
+      "principal": "principal:acme",
+      "delegation": {"scope": ["ticket.create"], "valid_from": "2026-09-01T00:00:00Z", "valid_until": "2026-09-30T00:00:00Z", "projection_lossless": true, "depth": 0},
+      "action": {"protocol_binding": "mcp", "operation": "ticket.create", "resource": "project:alpha"},
+      "observed_at": "2026-09-03T00:00:00Z"
+    },
+    "arpa_context": {"agent_state": "revoked", "delegator_competent": true, "recognized_authority_source": true, "scope_allows_action": true, "evaluation_time": "2026-09-03T00:00:00Z", "authority_conflict": false, "enforcement_converged": false},
+    "expected": {"proof_result": "verified", "authority_result": "denied", "outcome": "deny", "finding": "revoked-enforcement-convergence-incomplete"},
+    "falsifier": "Incomplete enforcement convergence is used to keep revoked authority effective or to convert revocation into authorization."
+  },
+  {
+    "vector_id": "KYA-ARPA-05",
+    "proposition": "PQ-4",
+    "description": "Unresolved conflict between simultaneously competent authority sources cannot silently produce authorization.",
+    "external_evidence": {
+      "proof_verified": true,
+      "subject": "agent:alpha",
+      "principal": "principal:acme",
+      "delegation": {"scope": ["ticket.create"], "valid_from": "2026-09-01T00:00:00Z", "valid_until": "2026-09-30T00:00:00Z", "projection_lossless": true, "depth": 0},
+      "action": {"protocol_binding": "mcp", "operation": "ticket.create", "resource": "project:alpha"},
+      "observed_at": "2026-09-03T00:00:00Z"
+    },
+    "arpa_context": {"agent_state": "active", "delegator_competent": true, "recognized_authority_source": true, "scope_allows_action": true, "evaluation_time": "2026-09-03T00:00:00Z", "authority_conflict": true, "conflict_resolved": false, "enforcement_converged": true},
+    "expected": {"proof_result": "verified", "authority_result": "indeterminate", "outcome": "indeterminate", "finding": "unresolved-authority-conflict"},
+    "falsifier": "One valid external proof is allowed to resolve a governance-source conflict without an ARPA conflict rule or evidence."
+  },
+  {
+    "vector_id": "KYA-ARPA-06",
+    "proposition": "PQ-4",
+    "description": "Current proof validity does not rewrite historical authority at the requested evaluation time.",
+    "external_evidence": {
+      "proof_verified": true,
+      "subject": "agent:alpha",
+      "principal": "principal:acme",
+      "delegation": {"scope": ["ticket.read"], "valid_from": "2026-09-01T00:00:00Z", "valid_until": "2026-09-30T00:00:00Z", "projection_lossless": true, "depth": 0},
+      "action": {"protocol_binding": "mcp", "operation": "ticket.read", "resource": "project:alpha"},
+      "observed_at": "2026-09-03T00:00:00Z"
+    },
+    "arpa_context": {"agent_state": "active", "delegator_competent": true, "recognized_authority_source": true, "scope_allows_action": true, "evaluation_time": "2026-08-15T00:00:00Z", "authority_conflict": false, "enforcement_converged": true, "historical_authorized": false},
+    "expected": {"proof_result": "verified", "authority_result": "denied", "outcome": "deny", "finding": "not-authorized-at-evaluation-time"},
+    "falsifier": "Current validity is projected backwards and changes the result of a historical authority evaluation."
+  },
+  {
+    "vector_id": "KYA-ARPA-07",
+    "proposition": "PQ-3",
+    "description": "Signed discovery/entity evidence without an ARPA-recognized authority source does not establish authority.",
+    "external_evidence": {
+      "proof_verified": true,
+      "subject": "agent:discovered",
+      "principal": "principal:publisher",
+      "delegation": {"scope": ["ticket.read"], "valid_from": "2026-09-01T00:00:00Z", "valid_until": "2026-09-30T00:00:00Z", "projection_lossless": true, "depth": 0},
+      "action": {"protocol_binding": "mcp", "operation": "ticket.read", "resource": "project:alpha"},
+      "observed_at": "2026-09-03T00:00:00Z"
+    },
+    "arpa_context": {"agent_state": "active", "delegator_competent": true, "recognized_authority_source": false, "scope_allows_action": true, "evaluation_time": "2026-09-03T00:00:00Z", "authority_conflict": false, "enforcement_converged": true},
+    "expected": {"proof_result": "verified", "authority_result": "denied", "outcome": "deny", "finding": "no-recognized-authority-source"},
+    "falsifier": "Signed or portable discovery material is treated as authoritative merely because it verifies."
+  },
+  {
+    "vector_id": "KYA-ARPA-08",
+    "proposition": "PQ-1",
+    "description": "Evidence that cannot be projected losslessly into ARPA delegation semantics is rejected rather than guessed.",
+    "external_evidence": {
+      "proof_verified": true,
+      "subject": "agent:alpha",
+      "principal": "principal:acme",
+      "delegation": {"scope": ["vendor-specific:opaque-authority"], "valid_from": "2026-09-01T00:00:00Z", "valid_until": "2026-09-30T00:00:00Z", "projection_lossless": false, "depth": 2},
+      "action": {"protocol_binding": "mcp", "operation": "ticket.create", "resource": "project:alpha"},
+      "observed_at": "2026-09-03T00:00:00Z"
+    },
+    "arpa_context": {"agent_state": "active", "delegator_competent": true, "recognized_authority_source": true, "scope_allows_action": false, "evaluation_time": "2026-09-03T00:00:00Z", "authority_conflict": false, "enforcement_converged": true},
+    "expected": {"proof_result": "verified", "authority_result": "projection-rejected", "outcome": "reject", "finding": "semantic-projection-loss"},
+    "falsifier": "The adapter silently widens, narrows, or drops delegation semantics in order to manufacture an ARPA decision."
+  },
+  {
+    "vector_id": "KYA-ARPA-09",
+    "proposition": "PQ-3",
+    "description": "Tampered or unverifiable runtime evidence is rejected before any authority inference is made.",
+    "external_evidence": {
+      "proof_verified": false,
+      "subject": "agent:alpha",
+      "principal": "principal:acme",
+      "delegation": {"scope": ["ticket.create"], "valid_from": "2026-09-01T00:00:00Z", "valid_until": "2026-09-30T00:00:00Z", "projection_lossless": true, "depth": 0},
+      "action": {"protocol_binding": "mcp", "operation": "ticket.create", "resource": "project:alpha"},
+      "observed_at": "2026-09-03T00:00:00Z"
+    },
+    "arpa_context": {"agent_state": "active", "delegator_competent": true, "recognized_authority_source": true, "scope_allows_action": true, "evaluation_time": "2026-09-03T00:00:00Z", "authority_conflict": false, "enforcement_converged": true},
+    "expected": {"proof_result": "rejected", "authority_result": "denied", "outcome": "reject", "finding": "external-proof-unverified"},
+    "falsifier": "ARPA authority inference proceeds from evidence that failed external verification."
+  },
+  {
+    "vector_id": "KYA-ARPA-10",
+    "proposition": "PQ-1",
+    "description": "A narrowed sub-delegation remains within the parent's authority and does not amplify privilege.",
+    "external_evidence": {
+      "proof_verified": true,
+      "subject": "agent:subdelegate",
+      "principal": "agent:delegate",
+      "delegation": {"scope": ["ticket.read"], "valid_from": "2026-09-01T00:00:00Z", "valid_until": "2026-09-30T00:00:00Z", "projection_lossless": true, "depth": 1},
+      "action": {"protocol_binding": "mcp", "operation": "ticket.read", "resource": "project:alpha"},
+      "observed_at": "2026-09-03T00:00:00Z"
+    },
+    "arpa_context": {"agent_state": "active", "delegator_competent": true, "recognized_authority_source": true, "scope_allows_action": true, "evaluation_time": "2026-09-03T00:00:00Z", "authority_conflict": false, "enforcement_converged": true},
+    "expected": {"proof_result": "verified", "authority_result": "authorized", "outcome": "allow", "finding": "narrowed-subdelegation"},
+    "falsifier": "Sub-delegation creates an action scope that exceeds the parent authority or the adapter fails to preserve delegation depth."
+  }
+]
