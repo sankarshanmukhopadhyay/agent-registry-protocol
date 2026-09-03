@@ -1,0 +1,15 @@
+{
+  "profile": "kya-os-arpa-informative-v1",
+  "authority_statement": "KYA-OS supplies externally verified runtime evidence; ARPA independently resolves governed authority.",
+  "mappings": [
+    {"external_concept": "subject", "arpa_concept": "agent identity assertion", "authority": "evidence-only"},
+    {"external_concept": "principal", "arpa_concept": "asserted delegator/responsible party", "authority": "requires ARPA recognition and competence evaluation"},
+    {"external_concept": "delegation.scope", "arpa_concept": "candidate authority scope", "authority": "must intersect ARPA-governed scope; cannot enlarge it"},
+    {"external_concept": "delegation.valid_from/valid_until", "arpa_concept": "delegation temporal evidence", "authority": "evaluated against ARPA evaluation time and lifecycle"},
+    {"external_concept": "proof verification", "arpa_concept": "external evidence verification result", "authority": "never authorization by itself"},
+    {"external_concept": "action.operation/resource", "arpa_concept": "requested governed action", "authority": "must be independently authorized by ARPA"},
+    {"external_concept": "host protocol binding", "arpa_concept": "transport/integration provenance", "authority": "non-normative to ARPA core"}
+  ],
+  "unsupported_semantics_rule": "reject-projection-rather-than-guess",
+  "mandatory_core_dependencies": []
+}
