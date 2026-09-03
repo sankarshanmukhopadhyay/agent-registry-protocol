@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sankarshanmukhopadhyay.github.io/agent-registry-protocol/conformance/kya-os/vector-schema.json",
+  "title": "ARPA KYA-OS interoperability vector",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "vector_id",
+    "proposition",
+    "external_evidence",
+    "arpa_context",
+    "expected",
+    "falsifier"
+  ],
+  "properties": {
+    "vector_id": {"type": "string", "pattern": "^KYA-ARPA-[0-9]{2}$"},
+    "proposition": {"type": "string", "enum": ["PQ-1", "PQ-2", "PQ-3", "PQ-4"]},
+    "description": {"type": "string", "minLength": 1},
+    "external_evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["proof_verified", "subject", "principal", "delegation", "action", "observed_at"],
+      "properties": {
+        "proof_verified": {"type": "boolean"},
+        "subject": {"type": "string", "minLength": 1},
+        "principal": {"type": "string", "minLength": 1},
+        "delegation": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["scope", "valid_from", "valid_until", "projection_lossless"],
+          "properties": {
+            "scope": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+            "valid_from": {"type": "string", "format": "date-time"},
+            "valid_until": {"type": "string", "format": "date-time"},
+            "projection_lossless": {"type": "boolean"},
+            "depth": {"type": "integer", "minimum": 0}
+          }
+        },
+        "action": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["operation", "resource"],
+          "properties": {
+            "protocol_binding": {"type": "string"},
+            "operation": {"type": "string", "minLength": 1},
+            "resource": {"type": "string", "minLength": 1}
+          }
+        },
+        "observed_at": {"type": "string", "format": "date-time"}
+      }
+    },
+    "arpa_context": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "agent_state",
+        "delegator_competent",
+        "recognized_authority_source",
+        "scope_allows_action",
+        "evaluation_time",
+        "authority_conflict",
+        "enforcement_converged"
+      ],
+      "properties": {
+        "agent_state": {"type": "string", "enum": ["active", "suspended", "revoked"]},
+        "delegator_competent": {"type": "boolean"},
+        "recognized_authority_source": {"type": "boolean"},
+        "scope_allows_action": {"type": "boolean"},
+        "evaluation_time": {"type": "string", "format": "date-time"},
+        "authority_conflict": {"type": "boolean"},
+        "conflict_resolved": {"type": "boolean"},
+        "enforcement_converged": {"type": "boolean"},
+        "historical_authorized": {"type": "boolean"}
+      }
+    },
+    "expected": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["proof_result", "authority_result", "outcome"],
+      "properties": {
+        "proof_result": {"type": "string", "enum": ["verified", "rejected"]},
+        "authority_result": {"type": "string", "enum": ["authorized", "denied", "indeterminate", "projection-rejected"]},
+        "outcome": {"type": "string", "enum": ["allow", "deny", "indeterminate", "reject"]},
+        "finding": {"type": "string"}
+      }
+    },
+    "falsifier": {"type": "string", "minLength": 1}
+  }
+}
