@@ -13,6 +13,8 @@ from pathlib import Path
 
 from jsonschema import Draft202012Validator, FormatChecker
 
+from reference.kya_os_adapter import evaluate_external_evidence
+
 ROOT = Path(__file__).resolve().parents[1]
 PROFILE = ROOT / "conformance" / "kya-os"
 SCHEMA = PROFILE / "vector-schema.json"
@@ -20,29 +22,8 @@ VECTORS = PROFILE / "vectors.json"
 
 
 def expected_decision(vector: dict) -> tuple[str, str, str | None]:
-    evidence = vector["external_evidence"]
-    context = vector["arpa_context"]
-
-    if not evidence["proof_verified"]:
-        return "denied", "reject", "external-proof-unverified"
-    if not evidence["delegation"]["projection_lossless"]:
-        return "projection-rejected", "reject", "semantic-projection-loss"
-    if context.get("historical_authorized") is False:
-        return "denied", "deny", "not-authorized-at-evaluation-time"
-    if context["agent_state"] == "suspended":
-        return "denied", "deny", "agent-suspended"
-    if context["agent_state"] == "revoked":
-        finding = "revoked-enforcement-convergence-incomplete" if not context["enforcement_converged"] else "agent-revoked"
-        return "denied", "deny", finding
-    if not context["delegator_competent"]:
-        return "denied", "deny", "delegator-not-competent"
-    if not context["recognized_authority_source"]:
-        return "denied", "deny", "no-recognized-authority-source"
-    if context["authority_conflict"] and not context.get("conflict_resolved", False):
-        return "indeterminate", "indeterminate", "unresolved-authority-conflict"
-    if not context["scope_allows_action"]:
-        return "denied", "deny", "action-outside-governed-scope"
-    return "authorized", "allow", None
+    decision = evaluate_external_evidence(vector["external_evidence"], vector["arpa_context"])
+    return decision.authority_result, decision.outcome, decision.finding
 
 
 def validate_vector(vector: dict, validator: Draft202012Validator) -> list[str]:
@@ -57,17 +38,19 @@ def validate_vector(vector: dict, validator: Draft202012Validator) -> list[str]:
         return errors
 
     expected = vector["expected"]
-    proof_result = "verified" if vector["external_evidence"]["proof_verified"] else "rejected"
-    if expected["proof_result"] != proof_result:
-        errors.append(f"{vector_id}: proof_result must reflect external verification independently of ARPA authority")
+    decision = evaluate_external_evidence(vector["external_evidence"], vector["arpa_context"])
 
-    authority_result, outcome, finding = expected_decision(vector)
-    if expected["authority_result"] != authority_result:
-        errors.append(f"{vector_id}: expected authority_result={expected['authority_result']} but ARPA boundary requires {authority_result}")
-    if expected["outcome"] != outcome:
-        errors.append(f"{vector_id}: expected outcome={expected['outcome']} but ARPA boundary requires {outcome}")
-    if finding and expected.get("finding") != finding:
-        errors.append(f"{vector_id}: expected finding must be {finding}")
+    if expected["proof_result"] != decision.proof_result:
+        errors.append(f"{vector_id}: proof_result must reflect external verification independently of ARPA authority")
+    if expected["authority_result"] != decision.authority_result:
+        errors.append(
+            f"{vector_id}: expected authority_result={expected['authority_result']} "
+            f"but ARPA boundary requires {decision.authority_result}"
+        )
+    if expected["outcome"] != decision.outcome:
+        errors.append(f"{vector_id}: expected outcome={expected['outcome']} but ARPA boundary requires {decision.outcome}")
+    if decision.finding and expected.get("finding") != decision.finding:
+        errors.append(f"{vector_id}: expected finding must be {decision.finding}")
 
     # Proof validity must never be treated as a sufficient authorization rule.
     if vector["external_evidence"]["proof_verified"] and expected["authority_result"] == "authorized":
