@@ -13,9 +13,12 @@ from pathlib import Path
 
 from jsonschema import Draft202012Validator, FormatChecker
 
+ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
 from reference.kya_os_adapter import evaluate_external_evidence
 
-ROOT = Path(__file__).resolve().parents[1]
 PROFILE = ROOT / "conformance" / "kya-os"
 SCHEMA = PROFILE / "vector-schema.json"
 VECTORS = PROFILE / "vectors.json"
